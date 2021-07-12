@@ -1,40 +1,9 @@
 \chapter{Introduction and Background}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat \cite{ref1}. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur \cite{ref2}. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+What is the strongest biomedical evidence about a disease for discovery of novel pharmaceutical therapies? This is a fundamental challenge for biomedical scientists, but also directly translates to a parallel question for informatics and data science: Can we systematically assemble and query biomedical heterogeneous knowledge graphs in a computational discovery platform guided by rational, algorithmic measures of relevance and confidence, facilitating scientific discovery? And, how have continuing waves of scientific and technological progress informed and empowered these inquiries? 
+
+The research described herein consists of several distinct projects unified by this common theme. The two main projects are (1) KGAP: Knowledge graph analytics platform, and (2) TIGA: Target illumination GWAS analytics. KGAP combines data from two NIH programs, LINCS (Library of integrated network-based cell signatures)  and IDG (Illuminating the druggable genome) to generate and evaluate hypotheses for novel drug targets. TIGA processes data from the NHGRI-EBI GWAS Catalog to aggregate experimental genomic variant to trait associations as novel drug target hypotheses.  Both KGAP and TIGA have led to publications in 2021 (KGAP in 2nd minor revision review, TIGA published 6/4/21). Several other, prior projects are also described, each different but reinforcing the common theme, that scientific discovery is empowered by rational, algorithmic, semantic, domain-aware assembly and querying of knowledge graphs. 
+
+This line of investigation builds upon the prior contributions of Wild, Ding, Oprea and others, particularly Chem2Bio2RDF\cite{Chen2010-to}, SLAP\cite{Chen2012-iq}, and IDG\cite{Oprea2018-cp}. These influential resources have contributed to the advancement of systems biology through informatics approaches.  Despite progress many challenges remain, for (1) foundational biomedical sciences and understanding complex processes of molecular physiology and pathology, and (2) informatics and data science, to develop effective systems for biomedical knowledge representation, processing, and analysis.  The term "big data" is vague but is a useful shorthand for the problems of data volume, velocity, variety and veracity, which must be addressed in data-intensive areas such as biomedicine.  A centrally important consequence is that access to big data is insufficient, and to be useful, manageable subsets must be searchable and organized for focused analysis.  A simple but profound example of this is Google's initial PageRank algorithm, game-changing for web search, by allowing hundreds of thousands of hits to be manageable by ranking with sufficient relevance for human utility and acceptance.  This research has been motivated by observed use cases where drug discovery scientists focused on a specialized disease area seek to identify and harness the relevant, reliable knowledge to both develop an improved understanding of the underlying biology and explore new hypotheses for drug therapies, whether by novel or repurposed compounds. Key examples are (1) prioritizing hit compounds from a high throughput bioassay, and (2) prioritizing gene hypotheses from GWAS.
+What types of knowledge are relevant to biomedical and pharmaceutical research?  A wide variety, which may be termed the translational spectrum, from basic science to clinical research and observational data. Given that discoveries build upon knowledge, with stronger knowledge increasing chances for discovery, what are the best measures for confidence?  Confidence evaluation is an essential aspect of any procedure for converting raw data to knowledge.  Assigning confidence levels may also be equivalent to prediction, but in some ways is superior.  Whereas an ML approach may generate a model regardless of the data quality, a confidence level approach should be able to identify cases where the appropriate conclusion is none, an important result in science. Knowledge graphs are well suited to represent human knowledge and provide a platform for research applications. By incorporating measures of confidence and relevance, knowledge graphs can interactively empower and augment human cognition for scientific discovery.
 
 
-% This is a figure
-\begin{figure}
-	\includegraphics[width=\textwidth]{figures/exampleFigure.png}
-	\caption{This is an example Figure.}
-	\label{Figure in Chapter 1}
-\end{figure}
-
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat \cite{ref1}. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur \cite{ref2}. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum \cite{ref3}.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat \cite{ref1}. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur \cite{ref2}. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat \cite{ref1}. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur \cite{ref2}. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat \cite{ref1}. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur \cite{ref2}. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat \cite{ref1}. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur \cite{ref2}. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat \cite{ref1}. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur \cite{ref2}. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-% This is a table
-
-\begin{table}
-\caption{This is an example Table.}
-\begin{center}
-\begin{tabular}{ccc}
-x & f(x) & g(x) \\
-\hline
-1 & 6 & 4  \\
-2 & 6 & 3  \\
-3 & 6 & 2  \\
-4 & 6 & 2  \\
-\label{Table in Chapter 1}
-\end{tabular}
-\end{center}
-\end{table}
