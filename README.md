@@ -1,2 +1,3 @@
-# Dissertation_JJYang
+# `Dissertation (JJYang)`
+
 IU Informatics PhD dissertation
