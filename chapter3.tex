@@ -1,2 +1,47 @@
-\chapter{Results}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\chapter{TIGA (Target illumination GWAS analytics)}
+
+\section{Abstract}
+
+Genome wide association studies (GWAS) can reveal important genotype–phenotype associations, however, data quality and interpretability issues must be addressed. For drug discovery scientists seeking to prioritize targets based on the available evidence, these issues go beyond the single study. Here, we describe rational ranking, filtering and interpretation of inferred gene–trait associations and data aggregation across studies by leveraging existing curation and harmonization efforts. Each gene–trait association is evaluated for confidence, with scores derived solely from aggregated statistics, linking a protein-coding gene and phenotype. We propose a method for assessing confidence in gene–trait associations from evidence aggregated across studies, including a bibliometric assessment of scientific consensus based on the iCite Relative Citation Ratio, and meanRank scores, to aggregate multivariate evidence. This method, intended for drug target hypothesis generation, scoring and ranking, has been implemented as an analytical pipeline, available as open source, with public datasets of results, and a web application designed for usability by drug discovery scientists, at https://unmtid-shinyapps.net/tiga/[41].
+
+\section{Keywords}
+
+GWAS, data science, drug discovery, drug target, druggable genome
+
+\section{Introduction}
+
+Over the two decades since the first draft human genome was published, dramatic progress has been achieved in foundational biology with translational benefits to medicine and human health. Genome wide association studies (GWAS) contribute to this progress by inferring associations between genomic variations and phenotypic traits [42,43]. These associations are correlations which may or may not be causal. While GWAS can reveal important genotype–phenotype associations, data quality and interpretability must be addressed [44–47].  For drug discovery scientists seeking to prioritize targets based on evidence from multiple studies, quality and interpretability issues are broader than for GWAS specialists. For this use case, GWAS are one of several evidence sources to be explored and considered, and interpretability must be in terms of genes corresponding to plausible targets, and traits corresponding to diseases of interest.
+
+Single nucleotide variants (SNV) are the fundamental unit of genomic variation, and the term single nucleotide polymorphism (SNP) refers to SNVs identified as common sites of variation relative to a reference genome, and measured by microarray or sequencing technologies. The NHGRI-EBI GWAS Catalog [48] -- hereafter "Catalog" -- curates associations between SNPs and traits from GWAS publications, shares metadata and summary data, standardizes heterogeneous submissions, maps formats and harmonizes content, mitigating widespread data and meta-data issues according to FAIR (Findable, Accessible, Interoperable and Reusable) principles [49]. These challenges are exacerbated by rapid advances in experimental and computational methodology. As de facto GWAS registrar, the Catalog interacts directly with investigators and accepts submissions of summary statistic data in advance of publication. Proposing and maintaining metadata standards the Catalog advocates and advances FAIRness in GWAS, for the benefit of the community. The Catalog addresses many difficulties due to content and format heterogeneity, but there are continuing difficulties and limitations both from lack of reporting standards and the variability of experimental methodology and diagnostic criteria.
+
+Other GWAS data collections include the Genome-Wide Repository of Associations between SNPs and Phenotypes, GRASP [50] and The Framingham Heart Study, which employs non-standard phenotypes and some content from the Catalog (not updated since 2015). GWASdb [51] integrates over 40 data sources in addition to the Catalog, includes less significant variants to address a variety of use cases, and has been maintained continually since 2011. GWAS Central, continually updated through 2019, includes less significant associations and provides tools for a variety of exploration modes based on Catalog data, but is not freely available for download. PheGenI [52] integrates Catalog data with other NCBI datasets and tools. Others integrate GWAS with additional data (e.g. pathways, expression, linkage disequilibrium) to associate traits or diseases with genes [20,53–56]. Each of these resources offers unique value and features. For this use case, the Catalog is the logical choice, given its applicability and commitment to expert curation, data standards, support and maintenance.
+
+Here we describe TIGA (Target Illumination GWAS Analytics), an application for illuminating understudied drug targets. TIGA enables ranking, filtering and interpretation of inferred gene-trait associations aggregated across studies from the Catalog. Each inferred gene-to-trait association is evaluated for confidence, with scores derived solely from evidence aggregated across studies, linking a phenotypic trait and protein-coding gene, mapped from single nucleotide polymorphism (SNP) variation. TIGA uses the Relative Citation Ratio, RCR [57], a bibliometric statistic from iCite [58]. TIGA does not index the full corpus of GWAS associations, but focuses on the strongest associations at the protein-coding gene level instead, filtered by disease areas that are relevant to drug discovery. For instance, GWAS for highly polygenic traits are considered less likely to illuminate druggable genes. Here, we describe the web application and its interpretability for non-GWAS specialists. We discuss TIGA as an application of data science for scientific consensus and interpretability, including statistical and semantical challenges. Code and data are available under BSD-2-Clause license from https://github.com/unmtransinfo/tiga-gwas-explorer.
+
+\section{Methods}
+
+\subsection{NHGRI-EBI GWAS Catalog preprocessing}
+
+The 2021-02-12 release of the Catalog references 11671 studies and 4865 PubMed IDs. The curated associations include 8235 studies and 2706 EFO-mapped traits. After filtering studies to require (1) mapped trait, (2) p-value below 5e-8, (3) reported effect size (odds-ratio or beta), and (4) mapped protein-coding gene, we obtain 4118 studies, 1521 traits, and 10264 genes. For consistency between studies, only genes mapped by the Ensembl pipeline for genomics annotations were considered (not author-reported). Figures 1 and 2 illustrate the growth of GWAS research as measured by counts of studies and subjects.  
+
+
+Fig 1: GWAS Catalog study counts by year and vendor, indicating growth and platform trends.
+
+Fig 2: GWAS Catalog sample size distributions by year, on log scale, indicating variance in statistical power.
+
+\subsection{RCRAS = Relative Citation Ratio (RCR) Aggregated Score}
+
+The purpose of TIGA is to evaluate the evidence for a gene-trait association, by aggregating multiple studies and their corresponding publications.  The iCite RCR [57] is a bibliometric statistic designed to evaluate the impact of an individual publication (in contrast to the journal impact factor).  By field- and time-normalizing per-publication citation counts, the RCR measures evolving impact, in effect a proxy for scientific consensus.  Hence by aggregating RCRs we seek a corresponding measure of scientific consensus for associations.
+
+\begin{equation} RCRAS_{gt} = \sum_{study} \left(\frac{1}{gc} \sum_{pub} \frac{log_{2}(RCR + 1)}{sc}\right)
+\end{equation}
+
+Where \\
+\begin{center}
+\begin{tabular}{ r c l }
+    $study$ & $=$ & GWAS (study\_accession) \\
+	$gc$ & $=$ & gene count (in study)	\\
+	$pub$ & $=$ & publication (PubMed ID)	\\
+	$sc$ & $=$ & study count (in publication)	\\
+\end{tabular}
+\end{center}
