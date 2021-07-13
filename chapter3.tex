@@ -147,7 +147,7 @@ Hits are ranked by meanRankScore described in Methods. Scatterplot axes are Effe
 
 \subsection{Using TIGA for drug target illumination}
 
-The main motivation of developing TIGA is to capture GWAS data when illuminating drug targets. Table 1 shows how many targets from each protein family and IDG Target Development Level (TDL) are covered with associated traits in TIGA, with families as defined by Drug Target Ontology[76] (DTO) Level 2. IDG TDL is a knowledge based classification: Tclin = high-confidence drug targets; Tchem = small-molecule modulator exists; Tbio = biological function elucidated; Tdark = minimal knowledge [3]. Coverage for the understudied 2,469 Tdark proteins is of particular interest. However, the data for other TDLs can also provide unique and complementary evidence, especially in case of Tbio proteins that are biologically characterized but have not before been clinically validated.
+The main motivation of developing TIGA is to capture GWAS data when illuminating drug targets. Table \ref{table:idg_counts} shows how many targets from each protein family and IDG Target Development Level (TDL) are covered with associated traits in TIGA, with families as defined by Drug Target Ontology[76] (DTO) Level 2. IDG TDL is a knowledge based classification: Tclin = high-confidence drug targets; Tchem = small-molecule modulator exists; Tbio = biological function elucidated; Tdark = minimal knowledge [3]. Coverage for the understudied 2,469 Tdark proteins is of particular interest. However, the data for other TDLs can also provide unique and complementary evidence, especially in case of Tbio proteins that are biologically characterized but have not before been clinically validated.
 
 
 \begin{table}
@@ -155,7 +155,9 @@ The main motivation of developing TIGA is to capture GWAS data when illuminating
 \begin{center}
 \begin{tabular}{ |l|c|c|c|c|c| } 
 \hline
-\textbf{Family \ TDL} & \textbf{Tclin} & \textbf{Tchem} & \textbf{Tbio} & \textbf{Tdark} & \textbf{Total} \\
+ & \multicolumn{4}{|c|}{\textbf{TDL}} &  \\
+\hline
+\textbf{Family} & \textbf{Tclin} & \textbf{Tchem} & \textbf{Tbio} & \textbf{Tdark} & \textbf{Total} \\
 \hline
 G-protein coupled receptor & 73 / 101 & 78 / 143 & 73 / 129 & 110 / 407 & 334 / 780 \\
 Ion channel & 97 / 127 & 59 / 89 & 72 / 116 & 12 / 20 & 240 / 352 \\
@@ -179,6 +181,7 @@ Signaling & 13 / 24 & 24 / 32 & 245 / 338 & 17 / 34 & 299 / 428 \\
 Storage & 0 / 1 & 0 / 1 & 2 / 7 & 1 / 2 & 3 / 11 \\
 Surfactant & 0 / 0 & 0 / 0 & 3 / 5 & 0 / 0 & 3 / 5 \\
 Other & 95 / 134 & 233 / 337 & 3973 / 6131 & 1734 / 3416 & 6035 / 10018 \\
+\hline
 Total & 492 / 676 & 1139 / 1624 & 7625 / 11628 & 2469 / 4989 & 11725 / 18917 \\
 \hline
 \end{tabular}
@@ -186,4 +189,110 @@ Total & 492 / 676 & 1139 / 1624 & 7625 / 11628 & 2469 / 4989 & 11725 / 18917 \\
 \label{table:idg_counts}
 \end{table}
 
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/tiga/FIG05_EFO_0004612_hitlist.png}
+	\caption{Examples of understudied genes for trait "high density lipoprotein cholesterol measurement" in TIGA.}
+	\label{fig:TIGA_05}
+\end{figure}
+
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/tiga/FIG06_EFO_0004612-GIMAP6_provenance.png}
+	\caption{Provenance for association between gene GIMAP6 “GTPase IMAP family member 6” and trait "high density lipoprotein cholesterol measurement".}
+	\label{fig:TIGA_06}
+\end{figure}
+
+
+Figures \ref{fig:TIGA_app} and \ref{fig:TIGA_05} illustrate a typical use case, the plot and gene list for trait "high density lipoprotein cholesterol measurement", which monitors blood levels of high density lipoprotein cholesterol as a risk factor for heart disease. Figure 6 shows the provenance for one of the associated genes, GIMAP6 “GTPase IMAP family member 6” with the scores and studies for this gene-trait association, including links to the Catalog and PubMed. GIMAP6 is an understudied (Tbio) member of the GTPases of immunity-associated protein family (GIMAP). Although literature-based evidence of its potential role in cholesterol homeostasis is scarce [77,78], this finding is substantiated by significantly increased circulating HDL cholesterol levels in GIMAP6-knock-out female mice [https://bit.ly/3uznvCU], suggesting that loss of GIMAP6 function may be associated with hypercholesterolemia-associated disorders.
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/tiga/FIG07_ EFO_0004541_Plot.png}
+	\caption{TIGA web application at https://unmtid-shinyapps.net/tiga/, displaying a plot of genes associated with trait "HbA1c measurement" (EFO\_0004541).}
+	\label{fig:TIGA_07}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/tiga/FIG08_EFO_0004541-SLC25A44_provenance.png}
+	\caption{Provenance for association between gene SLC25A44 "Solute carrier family 25 member 44" and trait "HbA1c measurement".}
+	\label{fig:TIGA_08}
+\end{figure}
+
+Figures \ref{fig:TIGA_07} and \ref{fig:TIGA_08} illustrate another target illumination example, for trait "HbA1c measurement" (glycated hemoglobin, signifying prolonged hyperglycemia), highly relevant to the management of type 2 diabetes mellitus[79,80]. Figure 8 shows the provenance for one of the associated genes, SLC25A44 "Solute carrier family 25 member 44" with the scores and studies for this gene-trait association, including links to the Catalog and PubMed. SLC25A44 is an understudied (Tdark) branched-chain amino acid (BCAA) transporter that acts as metabolic filter in brown adipose tissue, contributing to metabolic health [81]. SLC25A44 may be involved in subcutaneous white adipose BCAA uptake and catabolism[82]. 
+
+\section{Discussion}
+
+\subsection{Target illumination}
+
+The explicit goal of the NIH Illuminating the Druggable Genome (IDG) program [3] is to "map the knowledge gaps around proteins encoded by the human genome." TIGA is fully aligned with this goal, as it evaluates the GWAS evidence for disease (trait) – gene associations. TIGA generates GWAS-centric trait–gene association dataset using an automated, sustainable workflow amenable for integration into the Pharos portal [83,84]. The Open Targets platform [25,85] uses Catalog data and other sources, assisted by supervised machine learning, to identify probable causal genes, and validate therapeutic targets by aggregating and scoring disease–gene associations for "practicing biological scientists in the pharmaceutical industry and in academia." Open Targets associations are enhanced, but also limited, by the training data and knowledge sources reflecting current understandings of genetics. In contrast, TIGA provides aggregated evidence solely from the Catalog, reflecting experimental results with minimal or no bias, thus more interpretable in terms of provenance and methodology, and more suitable for some downstream consumers and use cases.
+From information to useful knowledge
+
+In data-intensive fields such as genomics, specialized tools facilitate knowledge discovery, yet interpretation and integration can be problematic for non-specialists. Accordingly, this unmet need for integration and interpretation requires certain layers of abstraction and aggregation, which depend on specific use cases and objectives. Our target audience is drug discovery scientists for whom the aggregated findings of GWAS, appropriately interpreted, can provide additional value as they seek to prioritize targets. This clear purpose serves to focus and simplify all aspects of its design. Our approach for evidence aggregation is simple, easily comprehensible, and based on what may be regarded as axiomatic in science and rational inductive learning: First and foremost, evidence is measured by counting independent confirmatory results.
+
+Interpretability concerns exist throughout science, but GWAS is understood to present particular challenges [44–47]. The main premise of GWAS is that genotype-phenotype correlations reveal underlying molecular mechanisms. While correlation does not imply causation, it contributes to plausibility of causation.  Genomic dataset size adds difficulty.  The standard GWAS p-value significance threshold is 5e-8, based on overall p-value 0.05 and Bonferroni multiple testing adjustment for 1-10 million tests/SNPs [46]. The statistical interpretation is that the family-wise error rate (FWER), or overall probability of a type-1 error, is 5\%, but associations to mapped genes require additional interpretation. Motivated by, and despite these difficulties, it is our belief that GWAS data can be rationally interpreted and used by non-specialists, if suitably aggregated. Accordingly, TIGA is a rational way to suggest and rank research hypotheses, with the caveat that the identified signals may be accompanied by experimental noise and systematic uncertainty.
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/tiga/FIG09_TIGA_Workflow.jpg}
+	\caption{TIGA data sources and interfaces. TIGA integrates GWAS data from the Catalog and several other sources to rank gene-disease associations. These associations can be accessed through the TIGA webapp and are integrated into the DISEASES [67] and Pharos platforms. Bulk download is also available.}
+	\label{fig:TIGA_09}
+\end{figure}
+
+\subsection{Designing for downstream integration}
+
+Biomedical knowledge discovery depends on integration of sources and data types which are heterogeneous in the extreme, reflecting the underlying complexity of biomedical science. These challenges are increasingly understood and addressed by improving data science methodology. However, provenance, interpretability and confidence aspects are underappreciated and rarely discussed. As in all signal propagation, errors and uncertainty accrue and confidence decays. Here, we proposed the use of simple, transparent, and comprehensible metrics to assess the relative confidence of disease-gene associations, via the unbiased meanRank scores. Figure \ref{fig:TIGA_09}, summarizing TIGA sources and interfaces, illustrates its well-defined role. Continuous confidence scores support algorithmic weighting and filtering. Standard identifiers and semantics support rigorous integration. Limiting provenance to the Catalog and its linked publications, semantic interpretability is enhanced. 
+
+\section{Conclusions}
+
+We agree with Visscher et al. that: "the paradigm of 'one gene, one function, one trait' is the wrong way to view genetic variation"[45]. Yet given the intrinsic complexity of biomedical science, progress often requires simplifying assumptions. Findings must be interpreted in context for an audience and application. Mindful of these concerns and limitations, TIGA provides a directly interpretable window into GWAS data, specifically for drug target hypothesis generation and elucidation. As interest in "interpretable machine learning" and "explainable artificial intelligence" [86] grows, TIGA summarizes gene-trait associations derived solely and transparently from GWAS summary- and meta-data, with rational and intuitive evidence metrics and a robust, open-source pipeline designed for continual updates and improvements. Whether in stand-alone mode, or by integration with other interfaces, TIGA aims to contribute to drug target identification and prioritization. 
+
+\section{Abbreviations and Definitions}
+
+Common terms used in GWAS and related fields can vary in their definitions and connotations depending on context. Therefore for clarity and rigor the following definitions are provided, which we consider consistent with best practices in the GWAS and drug discovery communities.
+
+\begin{table}
+\caption{Abbreviations and Definitions}
+\begin{center}
+\begin{tabular}{|p{0.3\linewidth}|p{0.7\linewidth}|}
+\hline
+\textbf{genotype}
+& An organism has one genotype, comprised of a germ line genome and multiple somatic genomes. Statistical models may assume a population distribution hence a population genotype. \\
+\hline
+\textbf{phenotype}
+& An organism has one phenotype, comprised of (potentially) all non-genomic observable characteristics, a.k.a. phenotypic traits. \\
+\hline
+\textbf{gene}
+& Genomic unit responsible for an expression product. Protein coding genes are a subset of this definition.  \\
+\hline
+\textbf{trait}
+& Single non-genomic, observable characteristic. \\
+\hline
+\textbf{drug target}
+& Biomolecular entity involved in the mechanism of action of a drug. The IDG project is protein-centric; hence drug targets are all proteins. \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\section{Supplementary material}
+
+\subsection{Benchmark using additional variables against gold-standard disease–gene associations}
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/tiga/SupFIG01_AdditionalROCs.png}
+	\caption{The performance of TIGA variables on the gold standard of gene-disease associations. Results for additional individual variables of merit not in the top 3 selected for TIGA scoring and included in Fig 4.}
+	\label{fig:TIGA_Sup01}
+\end{figure}
+
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/tiga/SupFIG02_distance_weighting_function.jpg}
+	\caption{SNP-gene distances for (up|down)stream genes and TIGA weighting function}
+	\label{fig:TIGA_Sup02}
+\end{figure}
+
+
+\begin{center}
+$W_{Exp}(d) = 2^{-d/k}$ \\
+where d = distance in base pairs \\ 
+and k = ”half-life distance” (50k) \\
+\end{center}
 
