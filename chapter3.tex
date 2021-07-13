@@ -24,8 +24,11 @@ Here we describe TIGA (Target Illumination GWAS Analytics), an application for i
 
 The 2021-02-12 release of the Catalog references 11671 studies and 4865 PubMed IDs. The curated associations include 8235 studies and 2706 EFO-mapped traits. After filtering studies to require (1) mapped trait, (2) p-value below 5e-8, (3) reported effect size (odds-ratio or beta), and (4) mapped protein-coding gene, we obtain 4118 studies, 1521 traits, and 10264 genes. For consistency between studies, only genes mapped by the Ensembl pipeline for genomics annotations were considered (not author-reported). Figures 1 and 2 illustrate the growth of GWAS research as measured by counts of studies and subjects.  
 
-
-Fig 1: GWAS Catalog study counts by year and vendor, indicating growth and platform trends.
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/tiga}
+	\caption{GWAS Catalog study counts by year and vendor, indicating growth and platform trends.}
+	\label{fig:KGAP_LINCS-IDG_Schematic}
+\end{figure}
 
 Fig 2: GWAS Catalog sample size distributions by year, on log scale, indicating variance in statistical power.
 
