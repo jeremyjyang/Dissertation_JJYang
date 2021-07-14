@@ -84,11 +84,13 @@ Experienced practitioners of HTS know that errors occur despite diligent use of 
 \label{table:ba_ranges}
 \end{table}
 
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/badapple/badapple_formula.png}
+	\caption{Badapple score dependence on assay-active and assay-tested statistics}
+	\label{fig:BA_01}
+\end{figure}
 
-
-Fig. 1: Badapple score dependence on assay-active and assay-tested statistics
-
-In Fig. 1, the color bands indicate the ranges of Badapple scores: low, moderate and high. It is clear that the score is not dependent only on the BA, i.e. ratio of actives to tested, since then the range boundaries would be straight lines through the origin. Rather, when the aTested is below a certain threshold (i.e. the weight of evidence is insufficient), moderate or high scores are disallowed. Below another threshold, high scores are disallowed. In this figure, the substance and well terms are held constant. Given the three-way symmetry of the Badapple formula, the corresponding figure for substance and well statistics would reflect the same properties.
+In figure \ref{fig:BA_01}, the color bands indicate the ranges of Badapple scores: low, moderate and high. It is clear that the score is not dependent only on the BA, i.e. ratio of actives to tested, since then the range boundaries would be straight lines through the origin. Rather, when the aTested is below a certain threshold (i.e. the weight of evidence is insufficient), moderate or high scores are disallowed. Below another threshold, high scores are disallowed. In this figure, the substance and well terms are held constant. Given the three-way symmetry of the Badapple formula, the corresponding figure for substance and well statistics would reflect the same properties.
 
 \subsection{Statistical, Bayesian learning}
 
@@ -103,9 +105,8 @@ where
 \item[] R = average rating for the movie \\
 v = votes for the movie \\
 m = minimum votes to be in Top 250 (currently 25,000) \\
-C = the mean vote across the whole report (currently 7.0) 
+C = the mean vote across the whole report (currently 7.0) \\
 \end{itemize}
-
 
 In particular, the use of the minimum-votes expression has a similar effect in devaluing high BAs if the weight of evidence is relatively low. IMDb describes their score as a “Bayesian Estimate” (BE). Although neither Badapple nor IMDb makes use of Bayes’ theorem, it may be both justified and explanatory to represent these methods as Bayesian-like. Badapple shares some key features of Bayesian approaches: (1) absence of any assumed probability distribution, and (2) by iterative learning cycles, new data can be used to continually improve the prediction model. Badapple also reflects systematic skeptical bias, meaning restricting the number of high scores using weight of evidence as a marker of confidence, because in the domain of bioassay data analysis, a semi-automated endeavor requiring human judgment, there is a limit to the number of red flags which can be readily processed.
 
@@ -124,19 +125,30 @@ The BioAssay Research Database (BARD)[152] is designed as a resource for bioassa
 \emph{The privileged and notorious few}
 
 Approach Rigorous classification of assays and targets in bioassay databases has been a continuing challenge, with efforts ongoing by the projects BAO and BARD. However, MLP assays were selected for scientific merit and therefore tend to be non-redundant. Likewise, MLSMR is a non-redundant screening library by design. Accordingly, for this study, and because Badapple was originally designed for HTS bioassay data analysis, the dataset chosen for analysis consists of MLP HTS assays and MLSMR compounds. Additionally, as the community may be familiar with this data, this well characterized dataset can facilitate interpretation and replication of results.
-Output scores and statistics Complete Badapple output is provided in the Additional file 2 for all scaffolds in for the BARD-based version “bard1”. These results include computed Badapple scores, plus assay, substance and sample statistics for each scaffold. PostgreSQL databases used in this study are also available via links provided in Additional file 2. The R code used for analysis is also provided, and top scoring scaffolds are presented in Fig. 2.
+Output scores and statistics Complete Badapple output is provided in the Additional file 2 for all scaffolds in for the BARD-based version “bard1”. These results include computed Badapple scores, plus assay, substance and sample statistics for each scaffold. PostgreSQL databases used in this study are also available via links provided in Additional file 2. The R code used for analysis is also provided, and top scoring scaffolds are presented in figure \ref{fig:BA_02}.
 
-Fig. 2 Top promiscuous scaffolds, ranked by Badapple score (see Additional file 2 for full statistics)
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/badapple/Badapple_Fig2.png}
+	\caption{Top promiscuous scaffolds, ranked by Badapple score (see Additional file 2 for full statistics)}
+	\label{fig:BA_02}
+\end{figure}
 
-The total scaffold count is 146,024, of which 383 (0.3 \%) are high scoring, 1692 (1.2 \%) are moderate, and the remaining 143,949 (98.6 \%) are low scoring. The distribution is shown in Fig. 3. While the cutoff values are arbitrary (and rooted in observed distributions), they are informed by the overall need to efficiently support scientific workflows. Too many “red flags” would increase the chance of false alarms and would themselves be increasingly costly to analyze. Users with sufficient time should not rely on cutoffs but investigate as many high and moderate scores as time permits.
+The total scaffold count is 146,024, of which 383 (0.3 \%) are high scoring, 1692 (1.2 \%) are moderate, and the remaining 143,949 (98.6 \%) are low scoring. The distribution is shown in figure \ref{fig:BA_03}. While the cutoff values are arbitrary (and rooted in observed distributions), they are informed by the overall need to efficiently support scientific workflows. Too many “red flags” would increase the chance of false alarms and would themselves be increasingly costly to analyze. Users with sufficient time should not rely on cutoffs but investigate as many high and moderate scores as time permits.
 
-Fig. 3 Promiscuity score distribution
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/badapple/Badapple_Fig3.png}
+	\caption{Promiscuity score distribution}
+	\label{fig:BA_03}
+\end{figure}
 
 Although there are relatively few high scoring scaffolds, those “privileged” few account for a disproportionate share of the bioactivity in the dataset (i.e. samples deemed active by the assay). Figure 4 illustrates this skewness via receiver operating characteristic (ROC) curves, which plot the percentage of active samples retrieved, with the horizontal axis the top scaffolds (top 5 \%) in ranked by score. Overall, 50 \% of all bioactivity is associated with 1.4 \% (1979) of the scaffolds. (By “50 \% of all bioactivity” we mean 50 \% of all active samples.) For drug-scaffolds, 50 \% of all bioactivity is associated with 2.8 \% (54) of the scaffolds. These data support the Badapple approach of identifying a relative few scaffolds for scrutiny, partly because human investigators have limited time, but also because nature appears to confer special properties to a relative few.
 
-Fig. 4: ROC curves, total bioactivity versus ranked top scaffolds for top 5 \%
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/badapple/Badapple_Fig4.png}
+	\caption{ROC curves, total bioactivity versus ranked top scaffolds for top 5 \%}
+	\label{fig:BA_04}
+\end{figure}
 
-Fig. 5 HScaf scaffolds of quinine
 
 \subsection{Prediction, validation, and history}
 
@@ -144,19 +156,19 @@ Fig. 5 HScaf scaffolds of quinine
 
 The Badapple algorithm is intended as a tool to quickly assess the likely promiscuity of HTS hits or arbitrary compounds of interest. It has been noted that predicting the future is hard. Fortunately, if a future instance is very similar to a prior instance, studying history can suffice. History can also be hard since it requires good information, often a precious commodity. Supervised machine learning (ML) predictive models are also trained on historical data. ML models can be powerful and useful, but are prone to overfitting and often uninterpretable. In contrast, a Badapple score is a statistic, an algebraic function of empirical, historical data.
 
-To validate Badapple we used retrospective datasets to indicate whether scores generated in the past would have been predictive, in other words, consistent with subsequent bioassay findings. The scores and rankings of scaffolds were compared using conventional Pearson correlation and also Spearman rank correlation. Spearman rank is included since for operational purposes where only top-X hits can be investigated, rank may be more important than raw score. We compare scaffolds for which older data yield high scores and new data exists. By comparing the newer, updated scores with the older scores for this subset, we can evaluate the usefulness of Badapple. Refer to Tables 2, 3 4 and 5 for this analysis.
+To validate Badapple we used retrospective datasets to indicate whether scores generated in the past would have been predictive, in other words, consistent with subsequent bioassay findings. The scores and rankings of scaffolds were compared using conventional Pearson correlation and also Spearman rank correlation. Spearman rank is included since for operational purposes where only top-X hits can be investigated, rank may be more important than raw score. We compare scaffolds for which older data yield high scores and new data exists. By comparing the newer, updated scores with the older scores for this subset, we can evaluate the usefulness of Badapple. Refer to tables \ref{table:ba_cmp_scaf}, \ref{table:ba_cmp_corr}, \ref{table:ba_cmp_xval} and \ref{table:ba_cmp_retro} for this analysis.
 
 \begin{table}
 \caption{Badapple datasets}
 \begin{center}
 \begin{tabular}{ |l|c|c|c|c|c|c|l| } 
 \hline
-& \textbf{\#scafs} & \textbf{Tested} & \textbf{Nonzero} & \textbf{\#assy} & \textbf{Activities} & \textbf{Date} & \textbf{Source}
+& \textbf{\#scafs} & \textbf{Tested} & \textbf{Nonzero} & \textbf{\#assy} & \textbf{Activities} & \textbf{Date} & \textbf{Source} \\
 \hline
-Bard1 & 146,024 & 141,642 & 54,136 & 510 & 30M & 2013-01 & BARD
-Bard2 & 143,098 & 137,668 & 52,328 & 383 & 46M & 2014-06 & BARD
-Pc1 & 143,098 & 141,533 & 60,200 & 822 & 223M & 2014-06 & PubChem
-Pc2 & 143,098 & 125,940 & 50,912 & 527 & 113M & 2010-12 & PubChem
+Bard1 & 146,024 & 141,642 & 54,136 & 510 & 30M & 2013-01 & BARD \\
+Bard2 & 143,098 & 137,668 & 52,328 & 383 & 46M & 2014-06 & BARD \\
+Pc1 & 143,098 & 141,533 & 60,200 & 822 & 223M & 2014-06 & PubChem \\
+Pc2 & 143,098 & 125,940 & 50,912 & 527 & 113M & 2010-12 & PubChem \\
 \hline
 \end{tabular}
 \end{center}
@@ -172,11 +184,13 @@ BARD assay counts are experiment counts. Tested means bioassay data exist. Nonze
 \begin{center}
 \begin{tabular}{ |r|c|c|c| } 
 \hline
-& \textbf{Bard2} & \textbf{Pc2} & \textbf{Pc1}
+& \textbf{Bard2} & \textbf{Pc2} & \textbf{Pc1} \\
 \hline
-\textbf{Bard1} & 141896 ; 41,218 & 141,629 ; 49,844 & 141,629 ; 43,951
-\textbf{Bard2} & & 142,817 ; 43,083 & 142,817 ; 40,463
-\textbf{Pc2} & & & 143,087 ; 47,252
+\textbf{Bard1} & 141896 ; 41,218 & 141,629 ; 49,844 & 141,629 ; 43,951 \\
+\hline
+\textbf{Bard2} & & 142,817 ; 43,083 & 142,817 ; 40,463 \\
+\hline
+\textbf{Pc2} & & & 143,087 ; 47,252 \\
 \hline
 \end{tabular}
 \end{center}
@@ -193,7 +207,9 @@ BARD assay counts are experiment counts. Tested means bioassay data exist. Nonze
 & \textbf{Bard2} & \textbf{Pc2} & \textbf{Pc1} \\
 \hline
 \textbf{Bard1} & 0.85 ; 0.73 & 0.95 ; 0.89 & 0.92 ; 0.85 \\
+\hline
 \textbf{Bard2} & & 0.86 ; 0.69 & 0.85 ; 0.72 \\
+\hline
 \textbf{Pc2} & & & 0.96 ; 0.87 \\
 \hline
 \end{tabular}
@@ -222,7 +238,7 @@ results are summarized in table \ref{table:ba_cmp_corr}.
 & 443 & 369 & 74 & 2,644,122 \\
 & 432 & 392 & 40 & 1,701,524 \\
 & 578 & 468 & 110 & 1,652,980 \\
-& 618 & 627 & −9 & 1,019,584 \\
+& 618 & 627 & -9 & 1,019,584 \\
 & 375 & 315 & 60 & 899,779 \\
 & 463 & 366 & 97 & 654,420 \\
 & 365 & 361 & 4 & 524,438 \\
@@ -230,7 +246,7 @@ results are summarized in table \ref{table:ba_cmp_corr}.
 & 358 & 303 & 55 & 422,280 \\
 & 805 & 696 & 109 & 376,575 \\
 & 403 & 331 & 72 & 358,012 \\
-& 459 & 487 & −28 & 319,746 \\
+& 459 & 487 & -28 & 319,746 \\
 & 841 & 721 & 120 & 318,307 \\
 \hline
 \end{tabular}
@@ -242,7 +258,7 @@ results are summarized in table \ref{table:ba_cmp_corr}.
 \begin{table}
 \caption{K-fold cross validation (K = 5): Ntotal = 389,533, Pearson correlation, all test scores}
 \begin{center}
-\begin{tabular}{ |c|c|c|c|c| } 
+\begin{tabular}{ |c|c|c|c| } 
 \hline
 \textbf{k} & \textbf{Ntrain} & \textbf{Ntest} & \textbf{Correlation} \\
 \hline
@@ -260,7 +276,7 @@ results are summarized in table \ref{table:ba_cmp_corr}.
 
 \begin{table}
 \caption{Medchem analysis of selected high scoring, promiscuous scaffolds}
-\begin{tabular}{|p{0.3\linewidth}p{0.7\linewidth}}
+\begin{tabular}{p{0.3\linewidth}p{0.7\linewidth}}
 & Scaffold of well-known toxin toxoflavin present in Burkholderia glumae, it was also previously identified by workers at Abbott using the ALARM NMR assay as a
 thiol trap and cause of false positives in HTS [37] \\
 & Scaffold a 6H-anthra[1,9-cd]isoxazol-6-one is known to react with DMSO acting as a nucleophile and undergoes N–O cleavage of the isoxazole ring to form the ring
@@ -276,20 +292,32 @@ found in the photostabilizer Tinuvin P \\
 \end{table}
 
 
-Fig. 5 HScaf scaffolds of quinine
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/badapple/Badapple_Fig5.png}
+	\caption{HScaf scaffolds of quinine}
+	\label{fig:BA_05}
+\end{figure}
 
+\subsection{PubChem assays and BARD experiments}
 
-\subsection{PubChem assays and BARD experiments
-}
 Badapple depends on the quantity and quality of input data, where quality includes both accuracy and semantic interpretability. In particular, it should be possible to rigorously resolve whether two assay results reflect the same or different bioactivity phenomena. This challenge has motivated several efforts to improve bioassay annotations, metadata and ontologies, including BAO and BARD. Badapple was designed to accommodate the uncertainties associated with the limited annotations of MLP assays in PubChem. However, it has been well understood that ontology improvements would offer new opportunities for Badapple and related extensions, for example, promiscuity assessment specific to a target class such as G-protein coupled receptors, and automatic extraction of privileged scaffolds from large scale screening data.
 
 \subsection{Reconciling big data and small data}
 
-Drug discovery campaigns rely on the expert judgment of medicinal chemists for key decisions on which leads to pursue. That expertise derives from formal training, project experience, and community knowledge which may be global or institutional. Cheminformatics and other areas have contributed tools to assist medicinal chemists, and Badapple is such a tool. As such, acceptance and effective use of Badapple will be enhanced if its advice is comprehensible and demonstrably consistent with expert medchem knowledge. To this end the medicinal chemist among us (CAL) evaluated and annotated top scoring scaffolds for chemical issues as drug leads, which are shown in Table 7, accompanied by relevant literature references[154–156].
+Drug discovery campaigns rely on the expert judgment of medicinal chemists for key decisions on which leads to pursue. That expertise derives from formal training, project experience, and community knowledge which may be global or institutional. Cheminformatics and other areas have contributed tools to assist medicinal chemists, and Badapple is such a tool. As such, acceptance and effective use of Badapple will be enhanced if its advice is comprehensible and demonstrably consistent with expert medchem knowledge. To this end the medicinal chemist among us (CAL) evaluated and annotated top scoring scaffolds for chemical issues as drug leads, which are shown in table \ref{table:ba_cmp_medchem}, accompanied by relevant literature references[154–156].
 
-Fig. 6 Badapple public web app, available at http://datascience.unm.edu/public-biocomputing-apps
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/badapple/Badapple_Fig6.png}
+	\caption{Badapple public web app, available at https://datascience.unm.edu/public-biocomputing-apps}
+	\label{fig:BA_06}
+\end{figure}
 
-Fig. 7 Database workflow
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/badapple/Badapple_Fig7.png}
+	\caption{Database workflow}
+	\label{fig:BA_07}
+\end{figure}
 
 \section{Conclusions}
 
@@ -297,11 +325,11 @@ Badapple is an easy-to-use, readily interpretable algorithm and tool that can as
 
 \section{Methods}
 
-The Badapple datasets are all prepared from the MLSMR compound library and HTS bioassays involving at least 20K compounds, to optimize applicability to high-throughput screening methods. The “bard1” dataset was downloaded from BARD in January 2013 and is the default dataset for the analyses herein. BARD was in an early development phase at that time and the dataset is for all intents and purposes equivalent to a PubChem dataset. Accordingly, “bard1” is used in this paper to enhance reproducibility and comprehensibility. The “bard2” dataset was downloaded from BARD in June 2014, and includes fewer assays, reflecting the ongoing annotation and curation efforts at the time. For each dataset the compound library was filtered to remove any salt part and normalize charges. In total, the training data for Badapple was comprised of 389,533 compounds, 438,583 substances, 143,098 scaffolds, 822 HTS PubChem assays, and more than 220 million activity data. In these counts and workflows the terms “compound” and “substance” are defined as by PubChem: compounds as unique chemical structures, identified by CID, and substances as sourced and registered experimental materials, identified by SID. The HierS “hierarchical scaffold” algorithm was used to generate the scaffold library for all compounds. An illustration of the algorithm is shown in Fig. 5. The HierS algorithm perceives for any molecule a hierarchical set of scaffolds, the largest one being equivalent to the “Bemis–Murcko framework”[96], which consists of all ring-systems and linkers. Additional scaffolds represent all the combinations of ring-systems and linkers contained therein. Comprehensive output files and R code used for analysis are provided in supplemental materials (Additional file 2).
+The Badapple datasets are all prepared from the MLSMR compound library and HTS bioassays involving at least 20K compounds, to optimize applicability to high-throughput screening methods. The “bard1” dataset was downloaded from BARD in January 2013 and is the default dataset for the analyses herein. BARD was in an early development phase at that time and the dataset is for all intents and purposes equivalent to a PubChem dataset. Accordingly, “bard1” is used in this paper to enhance reproducibility and comprehensibility. The “bard2” dataset was downloaded from BARD in June 2014, and includes fewer assays, reflecting the ongoing annotation and curation efforts at the time. For each dataset the compound library was filtered to remove any salt part and normalize charges. In total, the training data for Badapple was comprised of 389,533 compounds, 438,583 substances, 143,098 scaffolds, 822 HTS PubChem assays, and more than 220 million activity data. In these counts and workflows the terms “compound” and “substance” are defined as by PubChem: compounds as unique chemical structures, identified by CID, and substances as sourced and registered experimental materials, identified by SID. The HierS “hierarchical scaffold” algorithm was used to generate the scaffold library for all compounds. An illustration of the algorithm is shown in figure \ref{fig:BA_05}. The HierS algorithm perceives for any molecule a hierarchical set of scaffolds, the largest one being equivalent to the “Bemis–Murcko framework”[96], which consists of all ring-systems and linkers. Additional scaffolds represent all the combinations of ring-systems and linkers contained therein. Comprehensive output files and R code used for analysis are provided in supplemental materials (Additional file 2).
 
-HierS and Badapple were implemented using the ChemAxon JChem Java toolkit [41] with both command line and web interfaces. The HierS implementation has been open-sourced [42]. Badapple is available as a public web app (see Fig. 6). See also supplementary figure of the Badapple plugin via BARD web client (Additional file 2).
+HierS and Badapple were implemented using the ChemAxon JChem Java toolkit [41] with both command line and web interfaces. The HierS implementation has been open-sourced [42]. Badapple is available as a public web app (see figure \ref{fig:BA_06}). See also supplementary figure of the Badapple plugin via BARD web client (Additional file 2).
 
-A Badapple database was implemented with PostgreSQL, since rapid scoring, possibly for large numbers of compounds and scaffolds, requires pre-computing and storing aggregate statistics efficiently. OpenChord from gNova was used as a chemical cartridge. Scaffold analysis is performed for all compounds, resulting in links from scaffolds to compounds and substances. Activity data associates substances with an outcome for each sample (typically a well in a multiwell plate) in all the assays in the dataset. Typically there are hundreds of millions of samples. The workflow is outlined in Fig. 7. R was used for statistical analyses.
+A Badapple database was implemented with PostgreSQL, since rapid scoring, possibly for large numbers of compounds and scaffolds, requires pre-computing and storing aggregate statistics efficiently. OpenChord from gNova was used as a chemical cartridge. Scaffold analysis is performed for all compounds, resulting in links from scaffolds to compounds and substances. Activity data associates substances with an outcome for each sample (typically a well in a multiwell plate) in all the assays in the dataset. Typically there are hundreds of millions of samples. The workflow is outlined in figure \ref{fig:BA_07}. R was used for statistical analyses.
 
 \section{Abbreviations}
 
