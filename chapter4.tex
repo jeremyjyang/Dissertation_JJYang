@@ -146,154 +146,137 @@ The Badapple algorithm is intended as a tool to quickly assess the likely promis
 
 To validate Badapple we used retrospective datasets to indicate whether scores generated in the past would have been predictive, in other words, consistent with subsequent bioassay findings. The scores and rankings of scaffolds were compared using conventional Pearson correlation and also Spearman rank correlation. Spearman rank is included since for operational purposes where only top-X hits can be investigated, rank may be more important than raw score. We compare scaffolds for which older data yield high scores and new data exists. By comparing the newer, updated scores with the older scores for this subset, we can evaluate the usefulness of Badapple. Refer to Tables 2, 3 4 and 5 for this analysis.
 
-Table 2 Badapple datasets
+\begin{table}
+\caption{Badapple datasets}
+\begin{center}
+\begin{tabular}{ |l|c|c|c|c|c|c|l| } 
+\hline
+& \textbf{\#scafs} & \textbf{Tested} & \textbf{Nonzero} & \textbf{\#assy} & \textbf{Activities} & \textbf{Date} & \textbf{Source}
+\hline
+Bard1 & 146,024 & 141,642 & 54,136 & 510 & 30M & 2013-01 & BARD
+Bard2 & 143,098 & 137,668 & 52,328 & 383 & 46M & 2014-06 & BARD
+Pc1 & 143,098 & 141,533 & 60,200 & 822 & 223M & 2014-06 & PubChem
+Pc2 & 143,098 & 125,940 & 50,912 & 527 & 113M & 2010-12 & PubChem
+\hline
+\end{tabular}
+\end{center}
+\label{table:ba_dsets}
+\end{table}
 
 
-
-
-\#scafs
-Tested
-Nonzero
-\#assy
-Activities
-Date
-Source
-Bard1
-146,024
-141,642
-54,136
-510
-30M
-2013-01
-BARD
-Bard2
-143,098
-137,668
-52,328
-383
-46M
-2014-06
-BARD
-Pc1
-143,098
-141,533
-60,200
-822
-223M
-2014-06
-PubChem
-Pc2
-143,098
-125,940
-50,912
-527
-113M
-2010-12
-PubChem
 BARD assay counts are experiment counts. Tested means bioassay data exist. Nonzero means tested with nonzero scores
 
 
-Table 3 Badapple dataset comparison: scaffolds in common (total/non-zero)
-
-Bard2
-Pc2
-Pc1
-Bard1
-141896 ; 41,218
-141,629 ; 49,844
-141,629 ; 43,951
-Bard2
-
-
-142,817 ; 43,083
-142,817 ; 40,463
-Pc2
-
-
-
-
-143,087 ; 47,252
-Badapple dataset comparison: scaffolds in common (total ; non-zero)
-
-
-Table 4 Badapple dataset comparison: PScore correlation, Pearson/Spearman-rank
-
-
-Bard2
-Pc2
-Pc1
-Bard1
-0.85 ; 0.73
-0.95 ; 0.89
-0.92 ; 0.85
-Bard2
-
-
-0.86 ; 0.69
-0.85 ; 0.72
-Pc2
+\begin{table}
+\caption{Badapple dataset comparison: scaffolds in common (total/non-zero)}
+\begin{center}
+\begin{tabular}{ |r|c|c|c| } 
+\hline
+& \textbf{Bard2} & \textbf{Pc2} & \textbf{Pc1}
+\hline
+\textbf{Bard1} & 141896 ; 41,218 & 141,629 ; 49,844 & 141,629 ; 43,951
+\textbf{Bard2} & & 142,817 ; 43,083 & 142,817 ; 40,463
+\textbf{Pc2} & & & 143,087 ; 47,252
+\hline
+\end{tabular}
+\end{center}
+\label{table:ba_cmp_scaf}
+\end{table}
 
 
 
-
-0.96 ; 0.87
-Badapple dataset comparison: PScore correlation, Pearson ; Spearman-rank
-
-As an additional validation, the global compound set (389,533) was subjected to randomly partitioned fivefold cross validation. For each fold, 1/5th of the dataset served as test set, with 4/5th as training set. By recalculating all scores for the training set scaffolds, using only activity data for training set compounds, we simulated the situation where test set compounds are new and unknown. For each compound, we associate the score from its highest scoring scaffold. For each fold, compounds which previously had associated Badapple scores may not, since the training set is reduced relative to the original Badapple training set. This can be interpreted as a loss of predictive scope. The Pearson correlation was calculated for each fold, for all test compounds, with those unscored assigned a score of zero, to reflect overall predictive power from each training set. Each correlation was approximately 0.9, indicating strong and consistent predictive power. These results are summarized in Table 6.
-
-Table 5 Retrospective comparison of high scores, pc2 versus pc1
-Scaffold pscore\_pc2
-pscore\_pc1 pscore\_diff
-wTested\_diff
-7,234,388
-5,511,793
-2,644,122
-1,701,524
-1,652,980
-1,019,584
-899,779
-654,420
-524,438
-496,504
-422,280
-376,575
-358,012
-319,746
-     436 395 41
-374 343 31
-443 369 74
-432 392 40
-578 468 110
-618 627 −9 375 315 60 463 366 97
-365 361 4
-461 367 94
-358 303 55
-805 696 109
-403 331 72
-459 487 −28
-
-841 721 120
-318,307             
-
-Table 6 K-fold cross validation (K = 5): Ntotal = 389,533, Pearson correlation, all test scores
-k Ntrain
-1 311,540 2 311,463 3 311,652 4 311,565 5 311,454
-Ntest Correlation
-77,993 0.895 78,070 0.891 77,881 0.898 77,968 0.901 78,079 0.903
+\begin{table}
+\caption{Badapple dataset comparison: PScore correlation, Pearson/Spearman-rank}
+\begin{center}
+\begin{tabular}{ |r|c|c|c| } 
+\hline
+& \textbf{Bard2} & \textbf{Pc2} & \textbf{Pc1} \\
+\hline
+\textbf{Bard1} & 0.85 ; 0.73 & 0.95 ; 0.89 & 0.92 ; 0.85 \\
+\textbf{Bard2} & & 0.86 ; 0.69 & 0.85 ; 0.72 \\
+\textbf{Pc2} & & & 0.96 ; 0.87 \\
+\hline
+\end{tabular}
+\end{center}
+\label{table:ba_cmp_corr}
+\end{table}
 
 
+As an additional validation, the global compound set (389,533) was subjected to randomly partitioned fivefold cross validation. For each fold, 1/5th of the dataset
+served as test set, with 4/5th as training set. By recalculating all scores for the training set scaffolds, using only activity data for training set compounds, we
+simulated the situation where test set compounds are new and unknown. For each compound, we associate the score from its highest scoring scaffold. For each fold,
+compounds which previously had associated Badapple scores may not, since the training set is reduced relative to the original Badapple training set. This can be
+interpreted as a loss of predictive scope. The Pearson correlation was calculated for each fold, for all test compounds, with those unscored assigned a score of
+zero, to reflect overall predictive power from each training set. Each correlation was approximately 0.9, indicating strong and consistent predictive power. These
+results are summarized in table \ref{table:ba_cmp_corr}.
 
-Table 7 Medchem analysis of selected high scoring, promiscuous scaffolds
-Scaffold of well-known toxin toxoflavin present in Burkholderia glumae, it was also previously identified by workers at Abbott using the ALARM NMR assay as a thiol trap and cause of false positives in HTS [37]
-Scaffold a 6H-anthra[1,9-cd]isoxazol-6-one is known to react with DMSO acting as a nucleophile and undergoes N–O cleavage of the isoxazole ring to form the ring opened anthraquinone, a species known to form covalent adducts [38]
-Scaffold likely made by reaction of orthophenylene diamine with the corresponding furanyl alpha diketone. It could be a false positive if contaminated with the furanyl alpha diketone. It has only weak metal coordinating activity
-Scaffold the synthesis of the tricyclic scaffold by a malononitrile cyclization with a 2-amino-3-formyl- 4-oxo-4H-pyrido[1,2-a] pyrimidine suggests that the scaffold in this series may be susceptible to Michael attack at what was originally the formyl precursor carbon
-Scaffold is reported to possess strong fluorescence, UV absorbance as well as strong mutagenic activity [39]. The phenyl-2-(2H-benzotriazol-2-yl) scaffold is also found in the photostabilizer Tinuvin P
+\begin{table}
+\caption{Retrospective comparison of high scores, pc2 versus pc1}
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| } 
+\hline
+\textbf{Scaffold} & \textbf{pscore\_pc2} & \textbf{pscore\_pc1} & \textbf{pscore\_diff} & \textbf{wTested\_diff} \\
+\hline
+& 436 & 395 & 41 & 7,234,388 \\
+& 374 & 343 & 31 & 5,511,793 \\
+& 443 & 369 & 74 & 2,644,122 \\
+& 432 & 392 & 40 & 1,701,524 \\
+& 578 & 468 & 110 & 1,652,980 \\
+& 618 & 627 & −9 & 1,019,584 \\
+& 375 & 315 & 60 & 899,779 \\
+& 463 & 366 & 97 & 654,420 \\
+& 365 & 361 & 4 & 524,438 \\
+& 461 & 367 & 94 & 496,504 \\
+& 358 & 303 & 55 & 422,280 \\
+& 805 & 696 & 109 & 376,575 \\
+& 403 & 331 & 72 & 358,012 \\
+& 459 & 487 & −28 & 319,746 \\
+& 841 & 721 & 120 & 318,307 \\
+\hline
+\end{tabular}
+\end{center}
+\label{table:ba_cmp_retro}
+\end{table}
+
+
+\begin{table}
+\caption{K-fold cross validation (K = 5): Ntotal = 389,533, Pearson correlation, all test scores}
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| } 
+\hline
+\textbf{k} & \textbf{Ntrain} & \textbf{Ntest} & \textbf{Correlation} \\
+\hline
+1 & 311,540 & 77,993 & 0.895 \\
+2 & 311,463 & 78,070 & 0.891 \\
+3 & 311,652 & 77,881 & 0.898 \\
+4 & 311,565 & 77,968 & 0.901 \\
+5 & 311,454 & 78,079 & 0.903 \\
+\hline
+\end{tabular}
+\end{center}
+\label{table:ba_cmp_xval}
+\end{table}
+
+
+\begin{table}
+\caption{Medchem analysis of selected high scoring, promiscuous scaffolds}
+\begin{tabular}{|p{0.3\linewidth}p{0.7\linewidth}}
+& Scaffold of well-known toxin toxoflavin present in Burkholderia glumae, it was also previously identified by workers at Abbott using the ALARM NMR assay as a
+thiol trap and cause of false positives in HTS [37] \\
+& Scaffold a 6H-anthra[1,9-cd]isoxazol-6-one is known to react with DMSO acting as a nucleophile and undergoes N–O cleavage of the isoxazole ring to form the ring
+opened anthraquinone, a species known to form covalent adducts [38] \\
+& Scaffold likely made by reaction of orthophenylene diamine with the corresponding furanyl alpha diketone. It could be a false positive if contaminated with the
+furanyl alpha diketone. It has only weak metal coordinating activity \\
+& Scaffold the synthesis of the tricyclic scaffold by a malononitrile cyclization with a 2-amino-3-formyl- 4-oxo-4H-pyrido[1,2-a] pyrimidine suggests that the
+scaffold in this series may be susceptible to Michael attack at what was originally the formyl precursor carbon \\
+& Scaffold is reported to possess strong fluorescence, UV absorbance as well as strong mutagenic activity [39]. The phenyl-2-(2H-benzotriazol-2-yl) scaffold is also
+found in the photostabilizer Tinuvin P \\
+\end{tabular}
+\label{table:ba_cmp_medchem}
+\end{table}
 
 
 Fig. 5 HScaf scaffolds of quinine
-
-
 
 
 \subsection{PubChem assays and BARD experiments
