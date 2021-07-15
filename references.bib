@@ -2682,3 +2682,899 @@
              Advanced Analytics (DSAA)",
   year    =  2018
 }
+
+@ARTICLE{Yang2016-gn,
+  title    = "Badapple: promiscuity patterns from noisy evidence",
+  author   = "Yang, Jeremy J and Ursu, Oleg and Lipinski, Christopher A and
+              Sklar, Larry A and Oprea, Tudor I and Bologa, Cristian G",
+  abstract = "BACKGROUND: Bioassay data analysis continues to be an essential,
+              routine, yet challenging task in modern drug discovery and
+              chemical biology research. The challenge is to infer reliable
+              knowledge from big and noisy data. Some aspects of this problem
+              are general with solutions informed by existing and emerging data
+              science best practices. Some aspects are domain specific, and
+              rely on expertise in bioassay methodology and chemical biology.
+              Testing compounds for biological activity requires complex and
+              innovative methodology, producing results varying widely in
+              accuracy, precision, and information content. Hit selection
+              criteria involve optimizing such that the overall probability of
+              success in a project is maximized, and resource-wasteful ``false
+              trails'' are avoided. This ``fail-early'' approach is embraced
+              both in pharmaceutical and academic drug discovery, since
+              follow-up capacity is resource-limited. Thus, early
+              identification of likely promiscuous compounds has practical
+              value. RESULTS: Here we describe an algorithm for identifying
+              likely promiscuous compounds via associated scaffolds which
+              combines general and domain-specific features to assist and
+              accelerate drug discovery informatics, called Badapple:
+              bioassay-data associative promiscuity pattern learning engine.
+              Results are described from an analysis using data from MLP assays
+              via the BioAssay Research Database (BARD) http://bard.nih.gov.
+              Specific examples are analyzed in the context of medicinal
+              chemistry, to illustrate associations with mechanisms of
+              promiscuity. Badapple has been developed at UNM, released and
+              deployed for public use two ways: (1) BARD plugin, integrated
+              into the public BARD REST API and BARD web client; and (2) public
+              web app hosted at UNM. CONCLUSIONS: Badapple is a method for
+              rapidly identifying likely promiscuous compounds via associated
+              scaffolds. Badapple generates a score associated with a
+              pragmatic, empirical definition of promiscuity, with the overall
+              goal to identify ``false trails'' and streamline workflows.
+              Unlike methods reliant on expert curation of chemical
+              substructure patterns, Badapple is fully evidence-driven,
+              automated, self-improving via integration of additional data, and
+              focused on scaffolds. Badapple is robust with respect to noise
+              and errors, and skeptical of scanty evidence.",
+  journal  = "J. Cheminform.",
+  volume   =  8,
+  pages    = "29",
+  month    =  may,
+  year     =  2016,
+  keywords = "Compound promiscuity; Drug discovery informatics; High-throughput
+              screening (HTS); Molecular scaffolds; Statistical learning",
+  language = "en"
+}
+
+@MISC{Lipinski1997-vm,
+  title   = "Experimental and computational approaches to estimate solubility
+             and permeability in drug discovery and development settings",
+  author  = "Lipinski, Christopher A and Lombardo, Franco and Dominy, Beryl W
+             and Feeney, Paul J",
+  journal = "Advanced Drug Delivery Reviews",
+  volume  =  23,
+  number  = "1-3",
+  pages   = "3--25",
+  year    =  1997
+}
+
+@MISC{Rishton1997-ns,
+  title   = "Reactive compounds and in vitro false positives in {HTS}",
+  author  = "Rishton, Gilbert M",
+  journal = "Drug Discovery Today",
+  volume  =  2,
+  number  =  9,
+  pages   = "382--384",
+  year    =  1997
+}
+
+@ARTICLE{Roche2002-ii,
+  title    = "Development of a virtual screening method for identification of
+              ``frequent hitters'' in compound libraries",
+  author   = "Roche, Olivier and Schneider, Petra and Zuegge, Jochen and Guba,
+              Wolfgang and Kansy, Manfred and Alanine, Alexander and Bleicher,
+              Konrad and Danel, Franck and Gutknecht, Eva-Maria and
+              Rogers-Evans, Mark and Neidhart, Werner and Stalder, Henri and
+              Dillon, Michael and Sj{\"o}gren, Eric and Fotouhi, Nader and
+              Gillespie, Paul and Goodnow, Robert and Harris, William and
+              Jones, Phil and Taniguchi, Mikio and Tsujii, Shinji and von der
+              Saal, Wolfgang and Zimmermann, Gerd and Schneider, Gisbert",
+  abstract = "A computer-based method was developed for rapid and automatic
+              identification of potential ``frequent hitters''. These compounds
+              show up as hits in many different biological assays covering a
+              wide range of targets. A scoring scheme was elaborated from
+              substructure analysis, multivariate linear and nonlinear
+              statistical methods applied to several sets of one and
+              two-dimensional molecular descriptors. The final model is based
+              on a three-layered neural network, yielding a predictive Matthews
+              correlation coefficient of 0.81. This system was able to
+              correctly classify 90\% of the test set molecules in a 10-times
+              cross-validation study. The method was applied to database
+              filtering, yielding between 8\% (compilation of trade drugs) and
+              35\% (Available Chemicals Directory) potential frequent hitters.
+              This filter will be a valuable tool for the prioritization of
+              compounds from large databases, for compound purchase and
+              biological testing, and for building new virtual libraries.",
+  journal  = "J. Med. Chem.",
+  volume   =  45,
+  number   =  1,
+  pages    = "137--142",
+  month    =  jan,
+  year     =  2002,
+  language = "en"
+}
+
+@MISC{McGovern2003-nc,
+  title   = "A Specific Mechanism of Nonspecific Inhibition",
+  author  = "McGovern, Susan L and Helfand, Brian T and Feng, Brian and
+             Shoichet, Brian K",
+  journal = "Journal of Medicinal Chemistry",
+  volume  =  46,
+  number  =  20,
+  pages   = "4265--4272",
+  year    =  2003
+}
+
+@ARTICLE{Seidler2003-na,
+  title    = "Identification and prediction of promiscuous aggregating
+              inhibitors among known drugs",
+  author   = "Seidler, James and McGovern, Susan L and Doman, Thompson N and
+              Shoichet, Brian K",
+  abstract = "Some small molecules, often hits from screening, form aggregates
+              in solution that inhibit many enzymes. In contrast, drugs are
+              thought to act specifically. To investigate this assumption, 50
+              unrelated drugs were tested for promiscuous inhibition via
+              aggregation. Each drug was tested against three unrelated model
+              enzymes: beta-lactamase, chymotrypsin, and malate dehydrogenase,
+              none of which are considered targets of these drugs. To be judged
+              promiscuous, the drugs had to inhibit all three enzymes, do so in
+              a time-dependent manner, be sensitive to detergent and to enzyme
+              concentration, and form particles detectable by light scattering.
+              Of the 50 drugs tested, 43 were nonpromiscuous by these criteria.
+              Surprisingly, four of the drugs showed promiscuous,
+              aggregation-based inhibition at concentrations below 100 microM:
+              clotrimazole, benzyl benzoate, nicardipine, and delavirdine.
+              Three other drugs also behaved as aggregation-based inhibitors,
+              but only at high concentrations (about 400 microM). To
+              investigate possible structure-activity relationships among
+              promiscuous drugs, five analogues of the antifungal clotrimazole
+              were studied. Three of these, miconazole, econazole, and
+              sulconazole, were promiscuous but the other two, fluconazole and
+              ketoconazole, were not. Using recursive partitioning, these
+              experimental results were used to develop a model for predicting
+              aggregate-based promiscuity. This model correctly classified 94\%
+              of 111 compounds-47 aggregators and 64 nonaggregators-that have
+              been studied for this effect. To evaluate the model, it was used
+              to predict the behavior of 75 drugs not previously investigated
+              for aggregation. Several preliminary points emerge. Most drugs
+              are not promiscuous, even at high concentrations. Nevertheless,
+              at high enough concentrations (20-400 microM), some drugs can
+              aggregate and act promiscuously, suggesting that aggregation may
+              be common among small molecules at micromolar concentrations, at
+              least in biochemical buffers.",
+  journal  = "J. Med. Chem.",
+  volume   =  46,
+  number   =  21,
+  pages    = "4477--4486",
+  month    =  oct,
+  year     =  2003,
+  language = "en"
+}
+
+@MISC{Teague1999-ce,
+  title   = "The Design of Leadlike Combinatorial Libraries",
+  author  = "Teague, Simon J and Davis, Andrew M and Leeson, Paul D and Oprea,
+             Tudor",
+  journal = "Angewandte Chemie International Edition",
+  volume  =  38,
+  number  =  24,
+  pages   = "3743--3748",
+  year    =  1999
+}
+
+@MISC{Oprea2010-kd,
+  title   = "{ChemInform} Abstract: Is There a Difference Between Leads and
+             Drugs? A Historical Perspective",
+  author  = "Oprea, Tudor I and Davis, Andrew M and Teague, Simon J and Leeson,
+             Paul D",
+  journal = "ChemInform",
+  volume  =  32,
+  number  =  48,
+  pages   = "no--no",
+  year    =  2010
+}
+
+@ARTICLE{Ajay1998-ju,
+  title    = "Can we learn to distinguish between ``drug-like'' and
+              ``nondrug-like'' molecules?",
+  author   = "Ajay, A and Walters, W P and Murcko, M A",
+  abstract = "We have used a Bayesian neural network to distinguish between
+              drugs and nondrugs. For this purpose, the CMC acts as a surrogate
+              for drug-like molecules while the ACD is a surrogate for
+              nondrug-like molecules. This task is performed by using two
+              different set of 1D and 2D parameters. The 1D parameters contain
+              information about the entire molecule like the molecular weight
+              and the the 2D parameters contain information about specific
+              functional groups within the molecule. Our best results predict
+              correctly on over 90\% of the compounds in the CMC while
+              classifying about 10\% of the molecules in the ACD as drug-like.
+              Excellent generalization ability is shown by the models in that
+              roughly 80\% of the molecules in the MDDR are classified as
+              drug-like. We propose to use the models to design combinatorial
+              libraries. In a computer experiment on generating a drug-like
+              library of size 100 from a set of 10 000 molecules we obtain at
+              least a 3 or 4 order of magnitude improvement over random
+              methods. The neighborhoods defined by our models are not similar
+              to the ones generated by standard Tanimoto similarity
+              calculations. Therefore, new and different information is being
+              generated by our models, and so it can supplement standard
+              diversity approaches to library design.",
+  journal  = "J. Med. Chem.",
+  volume   =  41,
+  number   =  18,
+  pages    = "3314--3324",
+  month    =  aug,
+  year     =  1998,
+  language = "en"
+}
+
+@ARTICLE{Sadowski1998-uq,
+  title    = "A scoring scheme for discriminating between drugs and nondrugs",
+  author   = "Sadowski, J and Kubinyi, H",
+  abstract = "A scoring scheme for the rapid and automatic classification of
+              molecules into drugs and nondrugs was developed. The method is a
+              valuable new tool that can aid in the selection and
+              prioritization of compounds from large compound collections for
+              purchase or biological testing and that can replace a
+              considerable amount of laborious manual work by a more unbiased
+              approach. It is based on the extraction of knowledge from large
+              databases of drugs and nondrugs. The method was set up by using
+              atom type descriptors for encoding the molecular structures and
+              by training a feedforward neural network for classifying the
+              molecules. It was parametrized and validated by using large
+              databases of drugs and nondrugs (169 331 molecules from the
+              Available Chemicals Directory, ACD, and 38 416 molecules from the
+              World Drug Index, WDI). The method revealed features in the
+              molecular descriptors that either qualify or disqualify a
+              molecule for being a drug and classified 83\% of the ACD and 77\%
+              of the WDI adequately.",
+  journal  = "J. Med. Chem.",
+  volume   =  41,
+  number   =  18,
+  pages    = "3325--3329",
+  month    =  aug,
+  year     =  1998,
+  language = "en"
+}
+
+@ARTICLE{Hann2001-qd,
+  title    = "Molecular complexity and its impact on the probability of finding
+              leads for drug discovery",
+  author   = "Hann, M M and Leach, A R and Harper, G",
+  abstract = "Using a simple model of ligand-receptor interactions, the
+              interactions between ligands and receptors of varying
+              complexities are studied and the probabilities of binding
+              calculated. It is observed that as the systems become more
+              complex the chance of observing a useful interaction for a
+              randomly chosen ligand falls dramatically. The implications of
+              this for the design of combinatorial libraries is explored. A
+              large set of drug leads and optimized compounds is profiled using
+              several different properties relevant to molecular recognition.
+              The changes observed for these properties during the drug
+              optimization phase support the hypothesis that less complex
+              molecules are more common starting points for the discovery of
+              drugs. An extreme example of the use of simple molecules for
+              directed screening against thrombin is provided.",
+  journal  = "J. Chem. Inf. Comput. Sci.",
+  volume   =  41,
+  number   =  3,
+  pages    = "856--864",
+  month    =  may,
+  year     =  2001,
+  language = "en"
+}
+
+@ARTICLE{Hopkins2004-qj,
+  title    = "Ligand efficiency: a useful metric for lead selection",
+  author   = "Hopkins, Andrew L and Groom, Colin R and Alex, Alexander",
+  journal  = "Drug Discov. Today",
+  volume   =  9,
+  number   =  10,
+  pages    = "430--431",
+  month    =  may,
+  year     =  2004,
+  language = "en"
+}
+
+@MISC{Hajduk2007-ry,
+  title   = "A decade of fragment-based drug design: strategic advances and
+             lessons learned",
+  author  = "Hajduk, Philip J and Greer, Jonathan",
+  journal = "Nature Reviews Drug Discovery",
+  volume  =  6,
+  number  =  3,
+  pages   = "211--219",
+  year    =  2007
+}
+
+@BOOK{Jahnke2006-zd,
+  title     = "Fragment-based Approaches in Drug Discovery",
+  author    = "Jahnke, Wolfgang and Erlanson, Daniel A",
+  abstract  = "This first systematic summary of the impact of fragment-based
+               approaches on the drug development process provides essential
+               information that was previously unavailable. Adopting a
+               practice-oriented approach, this represents a book by
+               professionals for professionals, tailor-made for drug developers
+               in the pharma and biotech sector who need to keep up-to-date on
+               the latest technologies and strategies in pharmaceutical ligand
+               design. The book is clearly divided into three sections on
+               ligand design, spectroscopic techniques, and screening and drug
+               discovery, backed by numerous case studies.",
+  publisher = "John Wiley \& Sons",
+  month     =  dec,
+  year      =  2006,
+  language  = "en"
+}
+
+@ARTICLE{Olah2004-rl,
+  title    = "Strategies for compound selection",
+  author   = "Olah, Marius M and Bologa, Cristian G and Oprea, Tudor I",
+  abstract = "In-house pharmaceutical collections are no longer sufficient for
+              sampling chemical spaces. As novel bioactive chemotypes are
+              successfully identified by virtual and high -throughput
+              screening, the ability to rapidly sift through large numbers of
+              chemicals prior to acquisition or experiment is required.
+              Strategies for compound selection include some of the following
+              steps: 1.) database assembly ('in silico' inventory); 2a.)
+              structural integrity verification (keep unique structures only);
+              2b.) limited exploration of alternative chemical representations
+              for the uniques (stereoisomers, tautomers, ionization states);
+              3.) property and structural filtering (remove unwanted
+              structures); 4.) 3D-structure generation (for virtual screening
+              or 3D-based similarity); 5a.) clustering or statistical design
+              for selection; 5b.) similarity-based selection (if bioactives are
+              known); 5c.) receptor-based selection (if target binding site is
+              known); 6.) add a random subset to the final list.",
+  journal  = "Curr. Drug Discov. Technol.",
+  volume   =  1,
+  number   =  3,
+  pages    = "211--220",
+  month    =  oct,
+  year     =  2004,
+  language = "en"
+}
+
+@ARTICLE{Huth2005-ow,
+  title    = "{ALARM} {NMR}: a rapid and robust experimental method to detect
+              reactive false positives in biochemical screens",
+  author   = "Huth, Jeffrey R and Mendoza, Renaldo and Olejniczak, Edward T and
+              Johnson, Robert W and Cothron, Darlene A and Liu, Yaya and
+              Lerner, Claude G and Chen, Jun and Hajduk, Philip J",
+  abstract = "High-throughput screening (HTS) of large compound collections
+              typically results in numerous small molecule hits that must be
+              carefully evaluated to identify valid drug leads. Although
+              several filtering mechanisms and other tools exist that can
+              assist the chemist in this process, it is often the case that
+              costly synthetic resources are expended in pursuing false
+              positives. We report here a rapid and reliable NMR-based method
+              for identifying reactive false positives including those that
+              oxidize or alkylate a protein target. Importantly, the reactive
+              species need not be the parent compound, as both reactive
+              impurities and breakdown products can be detected. The assay is
+              called ALARM NMR (a La assay to detect reactive molecules by
+              nuclear magnetic resonance) and is based on monitoring
+              DTT-dependent (13)C chemical shift changes of the human La
+              antigen in the presence of a test compound or mixture. Extensive
+              validation has been performed to demonstrate the reliability and
+              utility of using ALARM NMR to assess thiol reactivity. This
+              included comparing ALARM NMR to a glutathione-based fluorescence
+              assay, as well as testing a collection of more than 3500
+              compounds containing HTS hits from 23 drug targets. The data show
+              that current in silico filtering tools fail to identify more than
+              half of the compounds that can act via reactive mechanisms.
+              Significantly, we show how ALARM NMR data has been critical in
+              identifying reactive compounds that would otherwise have been
+              prioritized for lead optimization. In addition, a new filtering
+              tool has been developed on the basis of the ALARM NMR data that
+              can augment current in silico programs for identifying nuisance
+              compounds and improving the process of hit triage.",
+  journal  = "J. Am. Chem. Soc.",
+  volume   =  127,
+  number   =  1,
+  pages    = "217--224",
+  month    =  jan,
+  year     =  2005,
+  language = "en"
+}
+
+@ARTICLE{Hann1999-mr,
+  title    = "Strategic pooling of compounds for high-throughput screening",
+  author   = "Hann, M and Hudson, B and Lewell, X and Lifely, R and Miller, L
+              and Ramsden, N",
+  abstract = "Bringing new medicines to the market depends on the rapid
+              discovery of new and effective drugs, often initiated through the
+              biological testing of many thousands of compounds in
+              high-throughput screening (HTS). Mixing compounds together into
+              pools for screening is one way to accelerate this process and
+              reduce costs. This paper contains both theoretical and
+              experimental data which suggest that careful selection of
+              compounds to be pooled together is necessary in order to reduce
+              the risk of reactivity between compounds within the pools.",
+  journal  = "J. Chem. Inf. Comput. Sci.",
+  volume   =  39,
+  number   =  5,
+  pages    = "897--902",
+  month    =  sep,
+  year     =  1999,
+  language = "en"
+}
+
+@ARTICLE{Baell2010-wi,
+  title    = "New substructure filters for removal of pan assay interference
+              compounds ({PAINS}) from screening libraries and for their
+              exclusion in bioassays",
+  author   = "Baell, Jonathan B and Holloway, Georgina A",
+  abstract = "This report describes a number of substructural features which
+              can help to identify compounds that appear as frequent hitters
+              (promiscuous compounds) in many biochemical high throughput
+              screens. The compounds identified by such substructural features
+              are not recognized by filters commonly used to identify reactive
+              compounds. Even though these substructural features were
+              identified using only one assay detection technology, such
+              compounds have been reported to be active from many different
+              assays. In fact, these compounds are increasingly prevalent in
+              the literature as potential starting points for further
+              exploration, whereas they may not be.",
+  journal  = "J. Med. Chem.",
+  volume   =  53,
+  number   =  7,
+  pages    = "2719--2740",
+  month    =  apr,
+  year     =  2010,
+  language = "en"
+}
+
+% The entry below contains non-ASCII chars that could not be converted
+% to a LaTeX equivalent.
+@ARTICLE{Hu2010-ex,
+  title    = "Polypharmacology directed compound data mining: identification of
+              promiscuous chemotypes with different activity profiles and
+              comparison to approved drugs",
+  author   = "Hu, Ye and Bajorath, J{\"u}rgen",
+  abstract = "Increasing evidence that many pharmaceutically relevant compounds
+              elicit their effects through binding to multiple targets,
+              so-called polypharmacology, is beginning to change conventional
+              drug discovery and design strategies. In light of this paradigm
+              shift, we have mined publicly available compound and bioactivity
+              data for promiscuous chemotypes. For this purpose, a hierarchy of
+              active compounds, atomic property based scaffolds, and unique
+              molecular topologies were generated, and activity annotations
+              were analyzed using this framework. Starting from ∼35 000
+              compounds active against human targets with at least 1 $\mu$M
+              potency, 33 chemotypes with distinct topology were identified
+              that represented molecules active against at least 3 different
+              target families. Network representations were utilized to study
+              scaffold-target family relationships and activity profiles of
+              scaffolds corresponding to promiscuous chemotypes. A subset of
+              promiscuous chemotypes displayed a significant enrichment in
+              drugs over bioactive compounds. A total of 190 drugs were
+              identified that had on average only 2 known target annotations
+              but belonged to the 7 most promiscuous chemotypes that were
+              active against 8-15 target families. These drugs should be
+              attractive candidates for polypharmacological profiling.",
+  journal  = "J. Chem. Inf. Model.",
+  volume   =  50,
+  number   =  12,
+  pages    = "2112--2118",
+  month    =  dec,
+  year     =  2010,
+  language = "en"
+}
+
+@ARTICLE{Yang2010-ag,
+  title    = "Investigation of the relationship between topology and
+              selectivity for druglike molecules",
+  author   = "Yang, Yidong and Chen, Hongming and Nilsson, Ingemar and Muresan,
+              Sorel and Engkvist, Ola",
+  abstract = "There is a strong interest in drug discovery and development to
+              advance the understanding of pharmacological promiscuity.
+              Improved understanding of how a molecular structure is related to
+              promiscuity could help to reduce the attrition of compounds in
+              the drug discovery process. For this purpose, a descriptor is
+              introduced that describes the structural complexity of a compound
+              based on the size of its molecular framework (MF) in relation to
+              its overall size. It is defined as the fraction of the size of
+              the molecular framework versus the size of the whole molecule
+              (f(MF)). It is demonstrated that promiscuity correlates with
+              f(MF) for large f(MF) values. The observed correlation is not due
+              to lipophilicity. To provide further explanation of this
+              observation, it was found that the number of terminal ring
+              systems in a compound is correlated with promiscuity. The
+              analysis presented here might help medicinal chemists to improve
+              the selectivity for compounds in drug discovery projects.",
+  journal  = "J. Med. Chem.",
+  volume   =  53,
+  number   =  21,
+  pages    = "7709--7714",
+  month    =  nov,
+  year     =  2010,
+  language = "en"
+}
+
+@MISC{Austin2004-qc,
+  title   = "{MOLECULAR} {BIOLOGY}: {NIH} Molecular Libraries Initiative",
+  author  = "Austin, C P",
+  journal = "Science",
+  volume  =  306,
+  number  =  5699,
+  pages   = "1138--1139",
+  year    =  2004
+}
+
+@ARTICLE{Kaiser2008-cx,
+  title    = "Molecular biology. Industrial-style screening meets academic
+              biology",
+  author   = "Kaiser, Jocelyn",
+  journal  = "Science",
+  volume   =  321,
+  number   =  5890,
+  pages    = "764--766",
+  month    =  aug,
+  year     =  2008,
+  language = "en"
+}
+
+@ARTICLE{Arrowsmith2015-mw,
+  title    = "Corrigendum: The promise and peril of chemical probes",
+  author   = "Arrowsmith, Cheryl H and Audia, James E and Austin, Christopher
+              and Baell, Jonathan and Bennett, Jonathan and Blagg, Julian and
+              Bountra, Chas and Brennan, Paul E and Brown, Peter J and Bunnage,
+              Mark E and Buser-Doepner, Carolyn and Campbell, Robert M and
+              Carter, Adrian J and Cohen, Philip and Copeland, Robert A and
+              Cravatt, Ben and Dahlin, Jayme L and Dhanak, Dashyant and
+              Edwards, Aled M and Frederiksen, Mathias and Frye, Stephen V and
+              Gray, Nathanael and Grimshaw, Charles E and Hepworth, David and
+              Howe, Trevor and Huber, Kilian V M and Jin, Jian and Knapp,
+              Stefan and Kotz, Joanne D and Kruger, Ryan G and Lowe, Derek and
+              Mader, Mary M and Marsden, Brian and Mueller-Fahrnow, Anke and
+              M{\"u}ller, Susanne and O'Hagan, Ronan C and Overington, John P
+              and Owen, Dafydd R and Rosenberg, Saul H and Ross, Ruth and Roth,
+              Bryan and Schapira, Matthieu and Schreiber, Stuart L and
+              Shoichet, Brian and Sundstr{\"o}m, Michael and Superti-Furga,
+              Giulio and Taunton, Jack and Toledo-Sherman, Leticia and Walpole,
+              Chris and Walters, Michael A and Willson, Timothy M and Workman,
+              Paul and Young, Robert N and Zuercher, William J",
+  journal  = "Nat. Chem. Biol.",
+  volume   =  11,
+  number   =  11,
+  pages    = "887",
+  month    =  nov,
+  year     =  2015,
+  language = "en"
+}
+
+@ARTICLE{Oprea2009-cp,
+  title    = "A crowdsourcing evaluation of the {NIH} chemical probes",
+  author   = "Oprea, Tudor I and Bologa, Cristian G and Boyer, Scott and
+              Curpan, Ramona F and Glen, Robert C and Hopkins, Andrew L and
+              Lipinski, Christopher A and Marshall, Garland R and Martin,
+              Yvonne C and Ostopovici-Halip, Liliana and Rishton, Gilbert and
+              Ursu, Oleg and Vaz, Roy J and Waller, Chris and Waldmann, Herbert
+              and Sklar, Larry A",
+  abstract = "Between 2004 and 2008, the US National Institutes of Health
+              Molecular Libraries and Imaging initiative pilot phase funded 10
+              high-throughput screening centers, resulting in the deposition of
+              691 assays into PubChem and the nomination of 64 chemical probes.
+              We crowdsourced the Molecular Libraries and Imaging initiative
+              output to 11 experts, who expressed medium or high levels of
+              confidence in 48 of these 64 probes.",
+  journal  = "Nat. Chem. Biol.",
+  volume   =  5,
+  number   =  7,
+  pages    = "441--447",
+  month    =  jul,
+  year     =  2009,
+  language = "en"
+}
+
+@ARTICLE{Edwards2014-ik,
+  title    = "The University of New Mexico Center for Molecular Discovery",
+  author   = "Edwards, Bruce S and Gouveia, Kristine and Oprea, Tudor I and
+              Sklar, Larry A",
+  abstract = "The University of New Mexico Center for Molecular Discovery
+              (UNMCMD) is an academic research center that specializes in
+              discovery using high throughput flow cytometry (HTFC) integrated
+              with virtual screening, as well as knowledge mining and drug
+              informatics. With a primary focus on identifying small molecules
+              that can be used as chemical probes and as leads for drug
+              discovery, it is a central core resource for research and
+              translational activities at UNM that supports implementation and
+              management of funded screening projects as well as ``up-front''
+              services such as consulting for project design and
+              implementation, assistance in assay development and generation of
+              preliminary data for pilot projects in support of competitive
+              grant applications. The HTFC platform in current use represents
+              advanced, proprietary technology developed at UNM that is now
+              routinely capable of processing bioassays arrayed in 96-, 384-
+              and 1536-well formats at throughputs of 60,000 or more wells per
+              day. Key programs at UNMCMD include screening of research targets
+              submitted by the international community through NIH's Molecular
+              Libraries Program; a multi-year effort involving translational
+              partnerships at UNM directed towards drug repurposing -
+              identifying new uses for clinically approved drugs; and a
+              recently established personalized medicine initiative for
+              advancing cancer therapy by the application of ``smart'' oncology
+              drugs in selected patients based on response patterns of their
+              cancer cells in vitro. UNMCMD discoveries, innovation, and
+              translation have contributed to a wealth of inventions, patents,
+              licenses and publications, as well as startup companies, clinical
+              trials and a multiplicity of domestic and international
+              collaborative partnerships to further the research enterprise.",
+  journal  = "Comb. Chem. High Throughput Screen.",
+  volume   =  17,
+  number   =  3,
+  pages    = "256--265",
+  month    =  mar,
+  year     =  2014,
+  language = "en"
+}
+
+@MISC{Tseng2013-bm,
+  title   = "Cheminformatics aspects of high throughput screening: from robots
+             to models: symposium summary",
+  author  = "Tseng, Y Jane and Jane Tseng, Y and Martin, Eric and Bologa,
+             Cristian G and Shelat, Anang A",
+  journal = "Journal of Computer-Aided Molecular Design",
+  volume  =  27,
+  number  =  5,
+  pages   = "443--453",
+  year    =  2013
+}
+
+@ARTICLE{Vempati2012-ns,
+  title    = "Formalization, annotation and analysis of diverse drug and probe
+              screening assay datasets using the {BioAssay} Ontology ({BAO})",
+  author   = "Vempati, Uma D and Przydzial, Magdalena J and Chung, Caty and
+              Abeyruwan, Saminda and Mir, Ahsan and Sakurai, Kunie and Visser,
+              Ubbo and Lemmon, Vance P and Sch{\"u}rer, Stephan C",
+  abstract = "Huge amounts of high-throughput screening (HTS) data for probe
+              and drug development projects are being generated in the
+              pharmaceutical industry and more recently in the public sector.
+              The resulting experimental datasets are increasingly being
+              disseminated via publically accessible repositories. However,
+              existing repositories lack sufficient metadata to describe the
+              experiments and are often difficult to navigate by non-experts.
+              The lack of standardized descriptions and semantics of biological
+              assays and screening results hinder targeted data retrieval,
+              integration, aggregation, and analyses across different HTS
+              datasets, for example to infer mechanisms of action of small
+              molecule perturbagens. To address these limitations, we created
+              the BioAssay Ontology (BAO). BAO has been developed with a focus
+              on data integration and analysis enabling the classification of
+              assays and screening results by concepts that relate to format,
+              assay design, technology, target, and endpoint. Previously, we
+              reported on the higher-level design of BAO and on the semantic
+              querying capabilities offered by the ontology-indexed triple
+              store of HTS data. Here, we report on our detailed design,
+              annotation pipeline, substantially enlarged annotation
+              knowledgebase, and analysis results. We used BAO to annotate
+              assays from the largest public HTS data repository, PubChem, and
+              demonstrate its utility to categorize and analyze diverse HTS
+              results from numerous experiments. BAO is publically available
+              from the NCBO BioPortal at
+              http://bioportal.bioontology.org/ontologies/1533. BAO provides
+              controlled terminology and uniform scope to report probe and drug
+              discovery screening assays and results. BAO leverages description
+              logic to formalize the domain knowledge and facilitate the
+              semantic integration with diverse other resources. As a
+              consequence, BAO offers the potential to infer new knowledge from
+              a corpus of assay results, for example molecular mechanisms of
+              action of perturbagens.",
+  journal  = "PLoS One",
+  volume   =  7,
+  number   =  11,
+  pages    = "e49198",
+  month    =  nov,
+  year     =  2012,
+  language = "en"
+}
+
+@ARTICLE{De_Souza2014-rf,
+  title    = "An Overview of the Challenges in Designing, Integrating, and
+              Delivering {BARD}: A Public {Chemical-Biology} Resource and Query
+              Portal for Multiple Organizations, Locations, and Disciplines",
+  author   = "de Souza, Andrea and Bittker, Joshua A and Lahr, David L and
+              Brudz, Steve and Chatwin, Simon and Oprea, Tudor I and Waller,
+              Anna and Yang, Jeremy J and Southall, Noel and Guha, Rajarshi and
+              Sch{\"u}rer, Stephan C and Vempati, Uma D and Southern, Mark R
+              and Dawson, Eric S and Clemons, Paul A and Chung, Thomas D Y",
+  abstract = "Recent industry-academic partnerships involve collaboration among
+              disciplines, locations, and organizations using publicly funded
+              ``open-access'' and proprietary commercial data sources. These
+              require the effective integration of chemical and biological
+              information from diverse data sources, which presents key
+              informatics, personnel, and organizational challenges. The
+              BioAssay Research Database (BARD) was conceived to address these
+              challenges and serve as a community-wide resource and intuitive
+              web portal for public-sector chemical-biology data. Its initial
+              focus is to enable scientists to more effectively use the
+              National Institutes of Health Roadmap Molecular Libraries Program
+              (MLP) data generated from the 3-year pilot and 6-year production
+              phases of the Molecular Libraries Probe Production Centers
+              Network (MLPCN), which is currently in its final year. BARD
+              evolves the current data standards through structured assay and
+              result annotations that leverage BioAssay Ontology and other
+              industry-standard ontologies, and a core hierarchy of assay
+              definition terms and data standards defined specifically for
+              small-molecule assay data. We initially focused on migrating the
+              highest-value MLP data into BARD and bringing it up to this new
+              standard. We review the technical and organizational challenges
+              overcome by the interdisciplinary BARD team, veterans of public-
+              and private-sector data-integration projects, who are
+              collaborating to describe (functional specifications), design
+              (technical specifications), and implement this next-generation
+              software solution.",
+  journal  = "J. Biomol. Screen.",
+  volume   =  19,
+  number   =  5,
+  pages    = "614--627",
+  month    =  jun,
+  year     =  2014,
+  keywords = "Chemical biological database standards; visualization; web portal",
+  language = "en"
+}
+
+@ARTICLE{Wilkens2005-ja,
+  title    = "{HierS}: hierarchical scaffold clustering using topological
+              chemical graphs",
+  author   = "Wilkens, Steven J and Janes, Jeff and Su, Andrew I",
+  abstract = "An exhaustive ring-based algorithm, HierS, has been developed in
+              order to provide an intuitive approach to compound clustering for
+              analyzing high-throughput screening results. The recursive
+              algorithm rapidly identifies all possible ring-delimited
+              substructures within a set of compounds. Molecules are grouped by
+              shared ring substructures (scaffolds) so that common scaffolds
+              obtain higher membership. Once all of the scaffolds for a set of
+              compounds are identified, the hierarchical structural
+              relationships between the scaffold structures are established.
+              The complex network of hierarchical relationships is then
+              utilized to navigate compounds in a structurally directed
+              fashion. When the scaffold hierarchy is traversed,
+              over-represented structural features can be rapidly identified so
+              that excess compounds that contain them can be removed without
+              significantly impacting the structural diversity landscape of the
+              compound set. Furthermore, the removed compounds can provide the
+              opportunity to follow-up on active compounds that had previously
+              been discarded because of practical limitations on follow-up
+              capacity. A Web-based interface has been developed that
+              incorporates this algorithm in order to allow for an interactive
+              analysis. In addition, biological data are coupled to scaffolds
+              by the inclusion of activity histograms, which indicate how the
+              compounds in each scaffold class performed in previous
+              high-throughput screening campaigns.",
+  journal  = "J. Med. Chem.",
+  volume   =  48,
+  number   =  9,
+  pages    = "3182--3193",
+  month    =  may,
+  year     =  2005,
+  language = "en"
+}
+
+@ARTICLE{Bemis1996-jg,
+  title    = "The properties of known drugs. 1. Molecular frameworks",
+  author   = "Bemis, G W and Murcko, M A",
+  abstract = "In order to better understand the common features present in drug
+              molecules, we use shape description methods to analyze a database
+              of commercially available drugs and prepare a list of common drug
+              shapes. A useful way of organizing this structural data is to
+              group the atoms of each drug molecule into ring, linker,
+              framework, and side chain atoms. On the basis of the
+              two-dimensional molecular structures (without regard to atom
+              type, hybridization, and bond order), there are 1179 different
+              frameworks among the 5120 compounds analyzed. However, the shapes
+              of half of the drugs in the database are described by the 32 most
+              frequently occurring frameworks. This suggests that the diversity
+              of shapes in the set of known drugs is extremely low. In our
+              second method of analysis, in which atom type, hybridization, and
+              bond order are considered, more diversity is seen; there are 2506
+              different frameworks among the 5120 compounds in the database,
+              and the most frequently occurring 42 frameworks account for only
+              one-fourth of the drugs. We discuss the possible interpretations
+              of these findings and the way they may be used to guide future
+              drug discovery research.",
+  journal  = "J. Med. Chem.",
+  volume   =  39,
+  number   =  15,
+  pages    = "2887--2893",
+  month    =  jul,
+  year     =  1996,
+  language = "en"
+}
+
+@MISC{Draper2013-at,
+  title   = "The Signal and the Noise: Why So Many Predictions Fail - But Some
+             Don't by Nate Silver",
+  author  = "Draper, Norman R",
+  journal = "International Statistical Review",
+  volume  =  81,
+  number  =  2,
+  pages   = "332--333",
+  year    =  2013
+}
+
+@MISC{IMDb_undated-ci,
+  title        = "{IMDb} {Votes/Ratings} Top Frequently Asked Questions",
+  booktitle    = "{IMDb}",
+  author       = "{IMDb}",
+  howpublished = "\url{http://www.imdb.com/help/show_leaf?votestopfaq}",
+  note         = "Accessed: 2014-7-1"
+}
+
+@ARTICLE{Huth2007-kc,
+  title    = "Toxicological evaluation of thiol-reactive compounds identified
+              using a la assay to detect reactive molecules by nuclear magnetic
+              resonance",
+  author   = "Huth, Jeffrey R and Song, Danying and Mendoza, Renaldo R and
+              Black-Schaefer, Candice L and Mack, Jamey C and Dorwin, Sarah A
+              and Ladror, Uri S and Severin, Jean M and Walter, Karl A and
+              Bartley, Diane M and Hajduk, Philip J",
+  abstract = "We have recently reported on the development of a La assay to
+              detect reactive molecules by nuclear magnetic resonance (ALARM
+              NMR) to detect reactive false positive hits from high-throughput
+              screening, in which we observed a surprisingly large number of
+              compounds that can oxidize or form covalent adducts with protein
+              thiols groups. In the vast majority of these cases, the covalent
+              interactions are largely nonspecific (e.g., affect many protein
+              targets) and therefore unsuitable for drug development. However,
+              certain thiol-reactive species do appear to inhibit the target of
+              interest in a specific manner. The question then arises as to the
+              potential toxicology risks of developing a drug that can react
+              with protein thiol groups. Here, we report on the evaluation of a
+              large set of ALARM-reactive and -nonreactive compounds against a
+              panel of additional proteins (aldehyde dehydrogenase, superoxide
+              dismutase, and three cytochrome P450 enzymes). It was observed
+              that ALARM-reactive compounds have significantly increased risks
+              of interacting with one or more of these enzymes in vitro. Thus,
+              ALARM NMR seems to be a sensitive tool to rapidly identify
+              compounds with an enhanced risk of producing side effects in
+              humans, including alcohol intolerance, the formation of reactive
+              oxygen species, and drug-drug interactions. In conjunction with
+              other toxicology assays, ALARM NMR should be a valuable tool for
+              prioritizing compounds for lead optimization and animal testing.",
+  journal  = "Chem. Res. Toxicol.",
+  volume   =  20,
+  number   =  12,
+  pages    = "1752--1759",
+  month    =  dec,
+  year     =  2007,
+  language = "en"
+}
+
+@ARTICLE{Sutter1982-qu,
+  title     = "Ring opening reactions of 6H-anthra[1,9-cd]isoxazol-6-ones and
+               related compounds",
+  author    = "Sutter, P and Weis, C D",
+  journal   = "J. Heterocycl. Chem.",
+  publisher = "Wiley",
+  volume    =  19,
+  number    =  5,
+  pages     = "997--1011",
+  month     =  sep,
+  year      =  1982,
+  language  = "en"
+}
+
+@MISC{Oda2008-at,
+  title   = "Genotoxic activation of 2-phenylbenzotriazole-type compounds by
+             human cytochrome {P4501A1} and N-acetyltransferase expressed in
+             Salmonella typhimurium umu strains",
+  author  = "Oda, Yoshimitsu and Watanabe, Tetsushi and Terao, Yoshiyasu and
+             Nukaya, Haruo and Wakabayashi, Keiji",
+  journal = "Mutation Research/Genetic Toxicology and Environmental Mutagenesis",
+  volume  =  654,
+  number  =  1,
+  pages   = "52--57",
+  year    =  2008
+}
+
+@MISC{ChemAxon2012-py,
+  title  = "{JChem}",
+  author = "{ChemAxon}",
+  year   =  2012
+}
+
+@MISC{Yang2012-qd,
+  title  = "{HScaf}",
+  author = "Yang, Jeremy J",
+  year   =  2012
+}
