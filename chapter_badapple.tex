@@ -128,13 +128,35 @@ The BioAssay Research Database (BARD)\cite{De_Souza2014-rf} is designed as a res
 \emph{The privileged and notorious few}
 
 Approach Rigorous classification of assays and targets in bioassay databases has been a continuing challenge, with efforts ongoing by the projects BAO and BARD. However, MLP assays were selected for scientific merit and therefore tend to be non-redundant. Likewise, MLSMR is a non-redundant screening library by design. Accordingly, for this study, and because Badapple was originally designed for HTS bioassay data analysis, the dataset chosen for analysis consists of MLP HTS assays and MLSMR compounds. Additionally, as the community may be familiar with this data, this well characterized dataset can facilitate interpretation and replication of results.
-Output scores and statistics Complete Badapple output is provided in the Additional file 2 for all scaffolds in for the BARD-based version “bard1”. These results include computed Badapple scores, plus assay, substance and sample statistics for each scaffold. PostgreSQL databases used in this study are also available via links provided in Additional file 2. The R code used for analysis is also provided, and top scoring scaffolds are presented in figure \ref{fig:BA_02}.
+Output scores and statistics Complete Badapple output is provided in the Additional file 2 for all scaffolds in for the BARD-based version “bard1”. These results include computed Badapple scores, plus assay, substance and sample statistics for each scaffold. PostgreSQL databases used in this study are also available via links provided in Additional file 2. The R code used for analysis is also provided, and top scoring scaffolds are presented in table \ref{table:BA_Fig2}.
 
-\begin{figure}
-	\includegraphics[width=\textwidth]{figures/badapple/Badapple_Fig2.png}
-	\caption{Top promiscuous scaffolds, ranked by Badapple score (see Additional file 2 for full statistics)}
-	\label{fig:BA_02}
-\end{figure}
+\begin{table}
+\caption{Top promiscuous scaffolds, ranked by Badapple score (see Additional file 2 for full statistics)}
+\begin{center}
+\begin{tabular}{ |c|c|c|c| } 
+\hline
+\includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_01.png} 
+& \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_02.png}
+& \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_03.png}
+& \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_04.png} \\
+\texttt{2544} & \texttt{2445} & \texttt{2413} & \texttt{2315} \\
+\hline
+\includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_05.png} 
+& \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_06.png}
+& \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_07.png}
+& \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_08.png} \\
+\texttt{2182} & \texttt{2147} & \texttt{1996} & \texttt{1888} \\
+\hline
+\includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_09.png} 
+& \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_10.png}
+& \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_11.png}
+& \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_12.png} \\
+\texttt{1888} & \texttt{1707} & \texttt{1631} & \texttt{1443} \\
+\hline
+\end{tabular}
+\end{center}
+\label{table:BA_Fig2}
+\end{table}
 
 The total scaffold count is 146,024, of which 383 (0.3 \%) are high scoring, 1692 (1.2 \%) are moderate, and the remaining 143,949 (98.6 \%) are low scoring. The distribution is shown in figure \ref{fig:BA_03}. While the cutoff values are arbitrary (and rooted in observed distributions), they are informed by the overall need to efficiently support scientific workflows. Too many “red flags” would increase the chance of false alarms and would themselves be increasingly costly to analyze. Users with sufficient time should not rely on cutoffs but investigate as many high and moderate scores as time permits.
 
