@@ -33,6 +33,13 @@ One of the key distinguishing features of CARLSBAD is that CCPs are pre-calculat
 
 The CARLSBAD database is implemented as a PostgreSQL relational database with entities such as substance, compound, activity, target and so forth, and the various relationships between them (Figure 1). The CHORD chemical cartridge from gNova Scientific Software (http://www.gnova.com/) is used to provide fast chemical functionalities such as SMILES canonicalization\cite{Weininger1989-kh}, chemical fingerprints and structure searching. CHORD is based on the OEChem toolkit, available from OpenEye Scientific Software (https://www.eyesopen.com/).
 
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figures/carlsbad/CB1_Screenshots.png}
+    \caption{CARLSBAD schematic}
+    \label{fig:cb_schematic}
+\end{figure}
+
 Figure 1.
 CARLSBAD database entity relationship diagram.
 
@@ -139,8 +146,10 @@ CARLSBAD is a database focused on high-quality subsets aggregated from several b
 \section{OPDDR: Open phenotypic drug discovery resource}
 
 OPDDR: Open Phenotypic Drug Discovery Resource
-Novel Phenotypic Outcomes Identified for a Public Collection of Approved Drugs from a Publicly Accessible Panel of Assays, J. Lee, et al, PLoS ONE, 2015.
+Novel Phenotypic Outcomes Identified for a Public Collection of Approved Drugs from a Publicly Accessible Panel of Assays, J. Lee, et al, PLoS ONE, 2015\cite{Lee2015-vg}.
+
 Collaboration involving Lilly's Open Innovation Drug Discovery (OIDD), NIN-NCATS, Data2Discovery and IU.  
+
 My role included converting the dataset to RDF,  annotating assays using BioAssay Ontology (BAO), and coordinating with PubChem and Open PHACTS to deposit assay results and incorporate OPDDR.
 Poster: https://zenodo.org/record/4844529
 
@@ -151,10 +160,11 @@ This report is submitted in accordance with the Lilly Resarch Collaboration Agre
 \subsection{Accomplishments}
 
 As per the agreement, the OPDDR has been developed and deployed, hosted by NCATS. 
-Related publication: Novel Phenotypic Outcomes Identified for a Public Collection of Approved Drugs from a Publicly Accessible Panel of Assays , Lee JA, Shinn P, Jaken S, Oliver S, Willard FS, Heidler S, Peery RB, Oler J, Chu S, Southall N, Dexheimer TS, Smallwood J, Huang R, Guha R, Jadhav A, Cox K, Austin C AP, Simeonov, Sittampalam GS, Husain S, Franklin N, Wild DJ, Yang JJ, Sutherland JJ, Thomas CJ, (2015) PLoS ONE 10(7): e0130796. doi: 10.1371/journal.pone.0130796.
+
 The recently and significantly revised (June 2015) PubChem RDF data model was integrated, informed via engagement with PubChem team (Bolton et al.) initiated by Data2Discovery.
 
 BioAssay Ontology (BAO) integration informed by discussions with BAO team (S. Schurer), and with AstraZeneca (O. Enqvist) regarding their assay annotation template. 
+
 OpenPHACTS (OP) integration informed by discussions with OP, which entailed major revisions in the KN, and also revisions in the OP data model and API, to handle phenotypic assays. 
 
 \subsection{Knowledge Network Description}
