@@ -361,9 +361,15 @@ where $T_k$ and $D_k$ are the numbers of targets and diseases in abstract k, res
 
 \subsection{Application Example}
 
-In Figure 1, TIN-X displays targets for a selected disease class, "lung cancer".  The DO hierarchy is navigated in the left panel, and the targets are plotted with log-log Importance-Novelty axes. Searching by disease name and by target name (with auto-suggest) is supported. In the current layout, targets with stronger associations are in the upper part of the plot, while targets with a higher number of publications are on the left side of the plot. In general, more interesting associations will be on the upper right boundary of the plot, where data points represent non-dominated solutions to the multi-objective optimization maximizing both Importance and Novelty.  Targets can be filtered based on Target Development Level, with Tclin representing mode-of-action drug targets\cite{Santos2017-sd}, and Tdark representing the understudied proteins\cite{Nguyen2017-lo}. Targets can also be filtered by protein superfamily, which are currently limited to kinases, ion channels, G-protein coupled receptors (olfactory or not), and nuclear receptors, respectively. In the Fig. 1 example, the target shown is "Potassium voltage-gated channel subfamily H member 4" (KCNH4), which links to 11 articles relevant in lung cancer.  In addition to titles and citations, clicking on each article reveals full abstracts and links out to the complete PubMed record. 
+In figure \ref{fig:tinx_01}, TIN-X displays targets for a selected disease class, "Parkinson's disease" (PD).  The DO hierarchy is navigated in the left panel, and the targets are plotted with log-log Importance-Novelty axes. Searching by disease name and by target name (with auto-suggest) is supported. In the current layout, targets with stronger associations are in the upper part of the plot, while targets with a higher number of publications are on the left side of the plot. In general, more interesting associations will be on the upper right boundary of the plot, where data points represent non-dominated solutions to the multi-objective optimization maximizing both Importance and Novelty.  Targets can be filtered based on Target Development Level, with Tclin representing mode-of-action drug targets\cite{Santos2017-sd}, and Tdark representing the understudied proteins\cite{Nguyen2017-lo}. Targets can also be filtered by protein superfamily, which are currently limited to kinases, ion channels, G-protein coupled receptors (olfactory or not), and nuclear receptors, respectively. In the figure \ref{fig:tinx_01} example, the target shown is "Synaptogyrin-3" (SYNGR3), which links to 2 articles relevant to PD.  In addition to titles and citations, clicking on each article reveals full abstracts and links out to the complete PubMed record. 
 
-Figure 1. Screenshot of TIN-X.
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/tinx/TINX_SYNRG3_rev3.png}
+    \caption{Screenshot of TIN-X.}
+    \label{fig:tinx_01}
+\end{figure}
+
 
 \subsection{Conclusions and Future Directions}
 
