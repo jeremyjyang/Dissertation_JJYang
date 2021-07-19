@@ -58,13 +58,13 @@ When pairing structures with targets and bioactivities in a similar effort, Tikk
 \hline
 \textbf{Processed substance–target pairs} & \textbf{Number of bioactivities} \\
 \hline
-975,117 &	Initial aggregated data   \\
-975,110 &	Valid processed pairs   \\
-84,794 &	WOMBAT only   \\
-658,917 &	Only one activity on record  \\ 
-192,736 &	Only one activity type (each entered)  \\ 
-38,670 &	Multiple activity types processed   \\
-932,881 &	total activities loaded   \\
+975,117 & Initial aggregated data   \\
+975,110 & Valid processed pairs   \\
+84,794 & WOMBAT only   \\
+658,917 & Only one activity on record  \\ 
+192,736 & Only one activity type (each entered)  \\ 
+38,670 & Multiple activity types processed   \\
+932,881 & total activities loaded   \\
 \hline
 \end{tabular}
 \caption{CARLSBAD database consolidation process summary}
@@ -101,22 +101,22 @@ The availability of massive amount of molecular bioactivity data creates rich ne
 The net result of chemical, bioactivity and target aggregation, curation and harmonization is summarized in table \ref{tab:cb_02}: the number of substances, i.e. chemicals tested for bioactivity, is smaller than the one obtained by summing the five databases by 17.27\%. A similar trend is observed when examining bioactivities (34.35\% reduction) and CCPs (23.1\% reduction using HierS and 25\% using MCES). The aforementioned values are the result of machine-based harmonization and consolidation of multiple data objects in chemical, bioactivity and CCP space. An independent study by Tiikkainen and Franke[66,104], comparing ChEMBL (release 14) and WOMBAT 2012.01, showed >394 000 unique bioactivities in WOMBAT, compared with nearly 3.3 million bioactivities in ChEMBL; and 2755 unique targets in ChEMBL, compared with 1486 unique targets in WOMBAT. The harmonization trends suggest that a consolidated database is preferable to a federated collection, at least in this case, when seeking to evaluate global bioactivity trends. This solution was, for example, implemented in the ‘Merz Virtual Bioactivity Database’, which integrates ChEMBL and WOMBAT, among other data sources.
 
 \begin{table}[]
-    \centering
-    \begin{tabular}{lllccl}
-    \hline
-\textbf{Source} &	\textbf{Version} &	\textbf{Release date} &	\textbf{Structures} &	\textbf{Activities} &	\textbf{CCPs} \\
+\caption{Overview of the numbers of substances, activities and CCP data in the original databases, as well as the consolidated CARLSBAD database}
+\label{tab:cb_02}
+\centering
+\begin{tabular}{lllccl}
 \hline
-ChEMBL & 13 & 2012–02–21 & 267,744 & 798,755 & 182,496 scaff 32,794  mces  \\
+\textbf{Source} & \textbf{Version} & \textbf{Release date} & \textbf{Structures} & \textbf{Activities} & \textbf{CCPs} \\
+\hline
+ChEMBL & 13 & 2012–02–21 & 267,744 & 798,755 & 182,496 scaff, 32,794  mces  \\
 IUPHAR & & 2011 & 2297 & 6049 & 2704 scaff 652 mces  \\
-PDSP & kidb110121 &	3499 & 22,202 & 3422 scaff 823 mces  \\
-PubChem & & MLP & 2011–11–04 & 133,435 & 320,311 & 83,570 scaff 20,867 mces \\
-WOMBAT &	2011.2  &	 	124,873  &	273,572  &	88,135 scaff 17,086 mces  \\
-Total 	  &	 	531,848  &	1,420,889  &	360,327 scaff 72,222 mces  \\
-CARLSBAD  &	2012.1 	 & 	439,985  &	932,881  &	277,140 scaff 54,135 mces  \\
+PDSP & kidb110121 & 3499 & 22,202 & 3422 scaff, 823 mces  \\
+PubChem & & MLP & 2011–11–04 & 133,435 & 320,311 & 83,570 scaff, 20,867 mces \\
+WOMBAT & 2011.2  &   124,873  & 273,572  & 88,135 scaff, 17,086 mces  \\
+Total    &   531,848  & 1,420,889  & 360,327 scaff, 72,222 mces  \\
+CARLSBAD  & 2012.1   &  439,985  & 932,881  & 277,140 scaff, 54,135 mces  \\
 \hline
 \end{tabular}
-    \caption{Overview of the numbers of substances, activities and CCP data in the original databases, as well as the consolidated CARLSBAD database}
-    \label{tab:cb_02}
 \end{table}
 
 Comparing the databases, it is apparent that ChEMBL is the most populated in terms of substances, bioactivities and CCPs, followed by WOMBAT and PubChem/MLP. This is to be expected, given their chemogenomic purpose. Two of the databases dedicated to pharmacology, IUPHAR and PDSP, are significantly smaller. An in-depth comparison with respect to targets, bioactivities and chemistry coverage for some of these databases has been performed[94]. Each of these databases provided relevant contributions in terms of CARLSBAD aggregation.
@@ -165,207 +165,174 @@ The initial version of the KN is intended to provide a clear and easily comprehe
 
 The KN uses the following ontologies:
 
-PubChem RDF
-Primary reference for this project.  Mainly because assays and substances have been deposited into PubChem. 
-<http://rdf.ncbi.nlm.nih.gov/pubchem/>
-BAO
-Bioassay classification.  Initially using a minimal set based on annotation template provided by AstraZeneca.  Only bao\_vocabulary\_assay.owl is required currently.
-<http://www.bioassayontology.org/bao\#>
-ChEMBL RDF
-ChEMBL, Reactome, Uniprot endpoint \& downloads available.
+\begin{table}[]
+\caption{Ontologies}
+\label{tab:opddr_01}
+\centering
+\begin{tabular}{p{0.3\linewidth}p{0.7\linewidth}}
+\hline
+\textbf{PubChem RDF}
+& Primary reference for this project.  Mainly because assays and substances have been deposited into PubChem. 
+<http://rdf.ncbi.nlm.nih.gov/pubchem/> \\
+\textbf{BAO}
+& Bioassay classification.  Initially using a minimal set based on annotation template provided by AstraZeneca.  Only bao\_vocabulary\_assay.owl is required currently.
+<http://www.bioassayontology.org/bao\#> \\
+\textbf{ChEMBL RDF}
+& ChEMBL, Reactome, Uniprot endpoint \& downloads available.
 CCO = ChEMBL Core Ontology
-<http://rdf.ebi.ac.uk/terms/chembl\#>
-OBO
-Open Biological and Biomedical Ontologies
-BFO = Basic Formal Ontology
-<http://purl.obolibrary.org/obo/>
-SIO
-Semanticscience Integrated Ontology
-<http://semanticscience.org/resource/>
+<http://rdf.ebi.ac.uk/terms/chembl\#> \\
+\textbf{OBO}
+& Open Biological and Biomedical Ontologies \\
+\textbf{BFO = Basic Formal Ontology
+& <http://purl.obolibrary.org/obo/> \\
+\textbf{SIO}
+& Semanticscience Integrated Ontology
+<http://semanticscience.org/resource/> \\
+\end{tabular}
+\end{table}
 
 
 \subsubsection{Entities}
 
-entity [abbr] namespace
-example
-substance
-<http://rdf.ncbi.nlm.nih.gov/pubchem/substance/>
-SID124893119
-
-
-compound
-<http://rdf.ncbi.nlm.nih.gov/pubchem/compound/>
-CID1131
-
-
-assay (bioassay)
-<http://rdf.ncbi.nlm.nih.gov/pubchem/bioassay/>
-AID1117354
-measuregroup (measureg)
-<http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup/>
-AID1117354
-endpoint
-<http://rdf.ncbi.nlm.nih.gov/pubchem/endpoint/>
-SID124893119\_AID1117354
-protein
-<http://rdf.ncbi.nlm.nih.gov/pubchem/protein/>
-GI124375976
-target
-<http://rdf.ebi.ac.uk/resource/chembl/target/>
-CHEMBL3038470
-targetcomponent (target\_cmpt)
-<http://rdf.ebi.ac.uk/resource/chembl/targetcomponent/>
-CHEMBL\_TC\_1927
-UniprotRef (uniprot)
-<http://rdf.ebi.ac.uk/terms/chembl\#UniprotRef>
-P53350
-assay
-<http://rdf.ebi.ac.uk/resource/chembl/assay/>
-CHEMBL987214
-activity
-<http://rdf.ebi.ac.uk/resource/chembl/activity/>
-CHEMBL\_ACT\_2470294
-molecule
-<http://rdf.ebi.ac.uk/resource/chembl/molecule/>
-CHEMBL44884
+\begin{table}[]
+\caption{Entities}
+\label{tab:opddr_02}
+\centering
+\begin{tabular}{ccl}
+\hline
+\textbf{entity (abbr)} & \textbf{namespace} & \textbf{example} \\
+substance & <http://rdf.ncbi.nlm.nih.gov/pubchem/substance/> & SID124893119 \\
+compound & <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/> & CID1131 \\
+assay (bioassay) & <http://rdf.ncbi.nlm.nih.gov/pubchem/bioassay/> & AID1117354 \\
+measuregroup (measureg) & <http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup/> & AID1117354 \\
+endpoint & <http://rdf.ncbi.nlm.nih.gov/pubchem/endpoint/> & SID124893119\_AID1117354 \\
+protein & <http://rdf.ncbi.nlm.nih.gov/pubchem/protein/> & GI124375976 \\
+target & <http://rdf.ebi.ac.uk/resource/chembl/target/> & CHEMBL3038470 \\
+targetcomponent (target\_cmpt) & <http://rdf.ebi.ac.uk/resource/chembl/targetcomponent/> & CHEMBL\_TC\_1927 \\
+UniprotRef (uniprot) & <http://rdf.ebi.ac.uk/terms/chembl\#UniprotRef> & P53350 \\
+assay & <http://rdf.ebi.ac.uk/resource/chembl/assay/> & CHEMBL987214 \\
+activity & <http://rdf.ebi.ac.uk/resource/chembl/activity/> & CHEMBL\_ACT\_2470294 \\
+molecule & <http://rdf.ebi.ac.uk/resource/chembl/molecule/> & CHEMBL44884 \\
+\hline
+\end{tabular}
+\end{table}
 
 Note that PubChem compounds are required in addition to substances.  Compounds refer to canonically defined and identifiable chemical entities which can be linked across databases; Substances refer to specific samples of compounds as provided by a supplier.  We thus include both, to be as comprehensive and specific as possible.   Note also that PubChem measuregroups are defined for each assay, for example, the measuregroup URI for AID12345 is http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup/AID12345.  PubChem endpoints represent activity outcomes.  ChEMBL RDF represents bioactivities somewhat differently than PubChem, but we can rigorously link these data via chemical structure and CIDs.
 
-Table: KN Statistics
+\begin{table}[]
+\caption{KN Statistics}
+\label{tab:opddr_03}
+\centering
+\begin{tabular}{ccl}
+\hline
+\textbf{type} & \textbf{count} & \textbf{notes} \\
+\hline
+substance & 2511 & PubChem SIDs \\
+compound & 2511 & PubChem CIDs \\
+assay & 35 & PubChem AIDs.  Summary AID is 36th. \\
+measuregroup & 35 & PubChem AIDs.  Default for assay. \\
+endpoint & 2511*35 & PubChem SID-AID pairs. \\
+targets & 4977 & ChEMBL IDs.  All single-component. \\
+protein & 4977 & A.k.a. target component.  With UniprotRefs. \\
+protein activity & 584,157 & From ChEMBL, but includes PubChem data. \\
+PD2 activity & 5320 & All “ACTIVE” outcomes from results. \\
+assay classifications & 155 & Manually curated PD2 to BAO associations.  Exported from worksheet. \\
+\hline
+\end{tabular}
+\end{table}
 
-type
-count
-notes
-substance
-2511
-PubChem SIDs
-compound
-2511
-PubChem CIDs
-assay
-35
-PubChem AIDs.  Summary AID is 36th.
-measuregroup
-35
-PubChem AIDs.  Default for assay.
-endpoint
-2511*35
-PubChem SID-AID pairs.
-targets
-4977
-ChEMBL IDs.  All single-component.
-protein
-4977
-A.k.a. target component.  With UniprotRefs.
-protein activity
-584,157
-From ChEMBL, but includes PubChem data.
-PD2 activity
-5320
-All “ACTIVE” outcomes from results.
-assay classifications
-155
-Manually curated PD2 to BAO associations.  Exported from worksheet.
-
-Table: Asserted triplets, patterns and examples 
-
-description
-examples
-assay to BAO class
-bioassay:AID1117354 rdf:type bao:BAO\_0000015
-assay title
-bioassay:AID1117354 dcterms:title "human JAK2 kinase inhibition-screen"@en
-assay to measuregroup
-bioassay:AID1117354 bao:BAO\_0000209 measuregroup:AID1117354
-substance to NCGC ID
-substance:SID144206486 skos:exactMatch ncats\_sample:NCGC00182710-02 .
-substance to measure group
-substance:SID124882766 obo:BFO\_0000056 measureg:AID1117326
-endpoint outcome (activity)
-endpoint:SID170466632\_AID743241 vocabulary:PubChemAssayOutcome vocabulary:inactive
-endpoint class
-endpoint:SID103164874\_AID443491 rdf:type bao:BAO\_0000190
-substance to compound association
-substance:SID124893119 sio:CHEMINF\_000477 compound:CID1131
-assay to OIDD ID
-bioassay:AID1117350 skos:exactMatch  oidd\_assay:17
-ChEMBL target to UniProt
-chembl\_target:CHEMBL5464 cco:targetXref uniprot:Q13546
-ChEMBL target to assay
-chembl\_target:CHEMBL5464 cco:hasAssay assay:CHEMBL3110727
-ChEMBL target to target component
-chembl\_target:CHEMBL1867 cco:hasTargetComponent chembl\_targetcmpt:CHEMBL\_TC\_180
-ChEMBL target component to Uniprot
-chembl\_targetcmpt:CHEMBL\_TC\_180 cco:targetCmptXref uniprot:P08913
-ChEMBL assay to activity
-assay:CHEMBL3110727 cco:hasActivity activity:CHEMBL\_ACT\_13890030
-ChEMBL molecule to activity
-chembl\_molecule:CHEMBL313842 cco:hasActivity activity:CHEMBL\_ACT\_14447741
-PubChem substance to ChEMBL molecule
-substance:SID225144242 skos:exactMatch molecule:CHEMBL1474122 
+\begin{table}[]
+\caption{Asserted triplets, patterns and examples }
+\label{tab:opddr_04}
+\centering
+\begin{tabular}{lllccl}
+\hline
+\textbf{description} & \textbf{examples} \\
+\hline
+assay to BAO class & bioassay:AID1117354 rdf:type bao:BAO\_0000015 \\
+assay title & bioassay:AID1117354 dcterms:title "human JAK2 kinase inhibition-screen"@en \\
+assay to measuregroup & bioassay:AID1117354 bao:BAO\_0000209 measuregroup:AID1117354 \\
+substance to NCGC ID & substance:SID144206486 skos:exactMatch ncats\_sample:NCGC00182710-02 . \\
+substance to measure group & substance:SID124882766 obo:BFO\_0000056 measureg:AID1117326 \\
+endpoint outcome (activity) & endpoint:SID170466632\_AID743241 vocabulary:PubChemAssayOutcome vocabulary:inactive \\
+endpoint class & endpoint:SID103164874\_AID443491 rdf:type bao:BAO\_0000190 \\
+substance to compound association & substance:SID124893119 sio:CHEMINF\_000477 compound:CID1131 \\
+assay to OIDD ID & bioassay:AID1117350 skos:exactMatch  oidd\_assay:17 \\
+ChEMBL target to UniProt & chembl\_target:CHEMBL5464 cco:targetXref uniprot:Q13546 \\
+ChEMBL target to assay & chembl\_target:CHEMBL5464 cco:hasAssay assay:CHEMBL3110727 \\
+ChEMBL target to target component & chembl\_target:CHEMBL1867 cco:hasTargetComponent chembl\_targetcmpt:CHEMBL\_TC\_180 \\
+ChEMBL target component to Uniprot & chembl\_targetcmpt:CHEMBL\_TC\_180 cco:targetCmptXref uniprot:P08913 \\
+ChEMBL assay to activity & assay:CHEMBL3110727 cco:hasActivity activity:CHEMBL\_ACT\_13890030 \\
+ChEMBL molecule to activity & chembl\_molecule:CHEMBL313842 cco:hasActivity activity:CHEMBL\_ACT\_14447741 \\
+PubChem substance to ChEMBL molecule & substance:SID225144242 skos:exactMatch molecule:CHEMBL1474122  \\
+\hline
+\end{tabular}
+\end{table}
 
 Fig: OPDDR RDF schema, simplified, showing source relationships.
 
 \subsubsection{Files}
 
-The following files comprise this release.  Files are grouped below by source, each file from one source only.
-file
-source
-description
-npcpd2\_assay.ttl
-OPDDR
-Assay links to OIDD namespace.
-bioassay:AID1117326 skos:exactMatch oidd\_assay:4
+\begin{table}[]
+\caption{The following files comprise this release.  Files are grouped below by source, each file from one source only.}
+\label{tab:opddr_05}
+\centering
+\begin{tabular}{p{0.2\linewidth}p{0.2\linewidth}p{0.6\linewidth}}
+\hline
+\textbf{file} & \textbf{source} & \textbf{description} \newline
+npcpd2\_assay.ttl & OPDDR & Assay links to OIDD namespace. \newline
+bioassay:AID1117326 skos:exactMatch oidd\_assay:4 \\
 npcpd2\_bao.ttl
-OPDDR
-Manually curated BAO classifications.
-bioassay:AID1117352 rdf:type bao:BAO\_0000219
+& OPDDR
+& Manually curated BAO classifications. \newline
+bioassay:AID1117352 rdf:type bao:BAO\_0000219 \\
 npcpd2\_substance.ttl
-OPDDR
-Substance links to NCATS namespace.
-substance:SID170465644 skos:exactMatch ncats\_sample:NCGC00160518-03
+& OPDDR
+& Substance links to NCATS namespace. \newline
+substance:SID170465644 skos:exactMatch ncats\_sample:NCGC00160518-03 \\
 bao\_vocabulary\_assay.owl
-BAO
-BAO module with bioassay class hierarchy. 
+& BAO
+& BAO module with bioassay class hierarchy.  \\
 pubchem\_vocabulary.owl
 PubChem
-PubChem module with bioactivity terms etc.
+PubChem module with bioactivity terms etc. \\
 pubchem\_pd2\_assay.ttl
-PubChem
-PubChem RDF, includes titles, measuregroups.
-bioassay:AID1117356 bao:BAO\_0000209 measuregroup:AID1117356
-
-bioassay:AID1117351 dcterms:title "Increased HeLa cells with 4N DNA content-IC50"@en 
+& PubChem
+& PubChem RDF, includes titles, measuregroups. \\
+bioassay:AID1117356 bao:BAO\_0000209 measuregroup:AID1117356 \newline
+bioassay:AID1117351 dcterms:title "Increased HeLa cells with 4N DNA content-IC50"@en  \newline
 pubchem\_pd2\_substance.ttl
-PubChem
-PubChem RDF, includes CIDs, measuregroups.
-substance:SID124882766 obo:BFO\_0000056 measuregroup:AID1117326 .
-endpoint:SID124882766\_AID1117342 obo:IAO\_0000136 substance:SID124882766 .
+& PubChem
+& PubChem RDF, includes CIDs, measuregroups. \newline
+substance:SID124882766 obo:BFO\_0000056 measuregroup:AID1117326 . \newline
+endpoint:SID124882766\_AID1117342 obo:IAO\_0000136 substance:SID124882766 . \\
 pubchem\_pd2\_endpoint.ttl
-PubChem
-PubChem RDF, includes endpoints, activity results.
-endpoint:SID170464708\_AID1117354
-    obo:IAO\_0000136 substance:SID170464708 ;
-    vocabulary:PubChemAssayOutcome vocabulary:inactive .
-
-measuregroup:AID1117354 obo:OBI\_0000299 endpoint:SID170464708\_AID1117354 .
+& PubChem
+& PubChem RDF, includes endpoints, activity results. \\
+endpoint:SID170464708\_AID1117354 \newline
+    obo:IAO\_0000136 substance:SID170464708 ; \newline
+    vocabulary:PubChemAssayOutcome vocabulary:inactive . \newline
+measuregroup:AID1117354 obo:OBI\_0000299 endpoint:SID170464708\_AID1117354 . \\
 chembl\_cco.ttl
-ChEMBL
-ChEMBL Core Ontology
+& ChEMBL
+ChEMBL Core Ontology \\
 chembl\_target.ttl
-ChEMBL
-ChEMBL protein targets.
-chembl\_target:CHEMBL2366239 a cco:SingleProtein ;
-        dcterms:title "KLE"
+& ChEMBL
+& ChEMBL protein targets. \newline
+chembl\_target:CHEMBL2366239 a cco:SingleProtein ; \newline
+        dcterms:title "KLE" \\
 chembl\_rdf\_activity.ttl
-ChEMBL
-PubChem substance links to ChEMBL molecules, activities, assays, targets, target components, Uniprots.
-substance:SID170466134 skos:exactMatch chembl\_molecule:CHEMBL1230222
-chembl\_molecule:CHEMBL44884 cco:hasActivity chembl\_activity:CHEMBL\_ACT\_7667167 .
-chembl\_target:CHEMBL218 cco:hasAssay chembl\_assay:CHEMBL1909122 .
-chembl\_target:CHEMBL218 cco:hasTargetComponent chembl\_targetcmpt:CHEMBL\_TC\_172 .
-chembl\_targetcmpt:CHEMBL\_TC\_172 cco:targetCmptXref uniprot:P21554 .
-uniprot:P21554 a cco:UniprotRef .
+& ChEMBL
+& PubChem substance links to ChEMBL molecules, activities, assays, targets, target components, Uniprots. \newline
+\texttt{substance:SID170466134 skos:exactMatch chembl\_molecule:CHEMBL1230222 \newline
+chembl\_molecule:CHEMBL44884 cco:hasActivity chembl\_activity:CHEMBL\_ACT\_7667167 . \newline
+chembl\_target:CHEMBL218 cco:hasAssay chembl\_assay:CHEMBL1909122 . \newline
+chembl\_target:CHEMBL218 cco:hasTargetComponent chembl\_targetcmpt:CHEMBL\_TC\_172 . \newline
+chembl\_targetcmpt:CHEMBL\_TC\_172 cco:targetCmptXref uniprot:P21554 . \newline
+uniprot:P21554 a cco:UniprotRef .} \\
+\hline
+\end{tabular}
+\end{table}
 
 
 \subsection{Project Status, Future}
