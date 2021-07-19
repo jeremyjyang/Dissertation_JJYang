@@ -7,11 +7,11 @@ The CARLSBAD Database: A Confederated Database of Chemical Bioactivities, S.L. M
 
 Integrated, chemically intelligent bioactivity knowledge graph
 
-Abstract
+\subsection{Abstract}
 
 Many bioactivity databases offer information regarding the biological activity of small molecules on protein targets. Information in these databases is often hard to resolve with certainty because of subsetting different data in a variety of formats; use of different bioactivity metrics; use of different identifiers for chemicals and proteins; and having to access different query interfaces, respectively. Given the multitude of data sources, interfaces and standards, it is challenging to gather relevant facts and make appropriate connections and decisions regarding chemical–protein associations. The CARLSBAD database has been developed as an integrated resource, focused on high-quality subsets from several bioactivity databases, which are aggregated and presented in a uniform manner, suitable for the study of the relationships between small molecules and targets. In contrast to data collection resources, CARLSBAD provides a single normalized activity value of a given type for each unique chemical–protein target pair. Two types of scaffold perception methods have been implemented and are available for datamining: HierS (hierarchical scaffolds) and MCES (maximum common edge subgraph). The 2012 release of CARLSBAD contains 439 985 unique chemical structures, mapped onto 1,420 889 unique bioactivities, and annotated with 277 140 HierS scaffolds and 54 135 MCES chemical patterns, respectively. Of the 890 323 unique structure–target pairs curated in CARLSBAD, 13.95\% are aggregated from multiple structure–target values: 94 975 are aggregated from two bioactivities, 14 544 from three, 7 930 from four and 2214 have five bioactivities, respectively. CARLSBAD captures bioactivities and tags for 1435 unique chemical structures of active pharmaceutical ingredients (i.e. ‘drugs’). CARLSBAD processing resulted in a net 17.3\% data reduction for chemicals, 34.3\% reduction for bioactivities, 23\% reduction for HierS and 25\% reduction for MCES, respectively. The CARLSBAD database supports a knowledge mining system that provides non-specialists with novel integrative ways of exploring chemical biology space to facilitate knowledge mining in drug discovery and repurposing.
 
-Introduction
+\subsection{Introduction}
 
 As the number of chemicals and screening efforts multiply, the number of bioactivity databases offering information on biological activity of small molecules is increasing. They represent a rich source of information in our quest to map the chemical space of bioactive molecules to phenotypic and target space. We estimate that the space of publicly available bioactivity data indexes over at least 1.15 million unique chemicals, annotated onto >15 000 targets[87], with potentially an equal number of phenotypic screens. The exact magnitude of this space could be derived only if one could uniformly process these data into a single database and harmonize chemicals, targets, bioassays and bioactivities. Each of the many sources and databases available has its own interface and data query style, with both strengths and weaknesses. Such multitude of sources, interfaces and styles is likely to make it difficult for scientists who are not expert in data mining to gather all facts, make connections and appropriate decisions that would lead their own research to the best possible outcome.
 
@@ -27,76 +27,97 @@ For the purpose of data mining, patent analytics and decision making, a single (
 
 One of the key distinguishing features of CARLSBAD is that CCPs are pre-calculated and stored for all chemical structures in the database. CCPs were derived using the maximum common edge subgraph (MCES) and hierarchical scaffold (HierS) algorithms, as discussed further. The choice of MCES and HierS for CCPs is due to the complementarity of these methods, as each method perceives chemical scaffolds and structural features for small molecules in a different manner. The cross-indexing of bioactivity, target and CCP data enables scientists to perform multiple tasks related to data mining, hypothesis generation and chemical biology space exploration. Classes of structural features that might be responsible for invoking certain biological responses can thus be examined within the CARLSBAD platform. Alternatively, biological targets could be categorized based on their preference toward particular CCPs.
 
-Methods
+\subsection{Methods}
 
-Database implementation and schema
+\subsubsection{Database implementation and schema}
 
 The CARLSBAD database is implemented as a PostgreSQL relational database with entities such as substance, compound, activity, target and so forth, and the various relationships between them (Figure 1). The CHORD chemical cartridge from gNova Scientific Software (http://www.gnova.com/) is used to provide fast chemical functionalities such as SMILES canonicalization[93], chemical fingerprints and structure searching. CHORD is based on the OEChem toolkit, available from OpenEye Scientific Software (http://www.eyesopen.com/).
 
 Figure 1.
 CARLSBAD database entity relationship diagram.
 
-Data sources, extraction and curation
+\subsubsection{Data sources, extraction and curation}
+
 Separate extract, transform and load (ETL) pipelines were built for each of the data sources. The sections later in the text detail the specific source of data used and the extraction criteria applied for each.
 
-ChEMBL. A MySQL dump of ChEMBL v13, 2012–02–21 was downloaded from the website and used to create a local MySQL staging database that served as the source from which data were extracted and used to populate the CARLSBAD database (2). ChEMBL data passing the following filters were loaded into CARLSBAD. Only activities from publications were loaded; activities associated with pharmacokinetic, cellular and in vivo assays, and any other activities not associated with a protein target were not imported; activities not associated with human, rat and mouse targets were skipped; and activities without values or units that could be converted to -log(molar) were also skipped. Activities of the following type were loaded: EC50, IC50, pEC50, pIC50, Log EC50, Log IC50, Ki, Kb, Kd, pKi, pKb, pKd, Log Ki, Log Kb, LogKd, ED50, IC80, IC90, A2, D2, pA2, pD2 and Km. Also, activities with units expressed in molarity, as well as activities with an associated structure were loaded. Additionally, activity values were converted to molar wherever necessary and converted to negative log where appropriate.
+\textbf{ChEMBL}. A MySQL dump of ChEMBL v13, 2012–02–21 was downloaded from the website and used to create a local MySQL staging database that served as the source from which data were extracted and used to populate the CARLSBAD database (2). ChEMBL data passing the following filters were loaded into CARLSBAD. Only activities from publications were loaded; activities associated with pharmacokinetic, cellular and in vivo assays, and any other activities not associated with a protein target were not imported; activities not associated with human, rat and mouse targets were skipped; and activities without values or units that could be converted to -log(molar) were also skipped. Activities of the following type were loaded: EC50, IC50, pEC50, pIC50, Log EC50, Log IC50, Ki, Kb, Kd, pKi, pKb, pKd, Log Ki, Log Kb, LogKd, ED50, IC80, IC90, A2, D2, pA2, pD2 and Km. Also, activities with units expressed in molarity, as well as activities with an associated structure were loaded. Additionally, activity values were converted to molar wherever necessary and converted to negative log where appropriate.
 
-IUPHAR. Data were programmatically extracted from the IUPHAR website (http://www.iuphar-db.org/) and used to populate a local MySQL staging database. This staging database was constructed during February 2011 and served as the source from which data were extracted and used to populate the CARLSBAD database. Only activities with the following classes were loaded: agonists, antagonists, pore blockers, activators, allosteric regulators, gating inhibitors and channel blockers. In addition, midpoints or medians were used for affinities expressed as ranges. Activities not associated with human, rat and mouse targets as well as activities with unknown affinities or units were excluded.
+\textbf{IUPHAR}. Data were programmatically extracted from the IUPHAR website (http://www.iuphar-db.org/) and used to populate a local MySQL staging database. This staging database was constructed during February 2011 and served as the source from which data were extracted and used to populate the CARLSBAD database. Only activities with the following classes were loaded: agonists, antagonists, pore blockers, activators, allosteric regulators, gating inhibitors and channel blockers. In addition, midpoints or medians were used for affinities expressed as ranges. Activities not associated with human, rat and mouse targets as well as activities with unknown affinities or units were excluded.
 
-PDSP. The text file (kidb110121.txt) was downloaded from the website (http://pdsp.med.unc.edu/indexR.html). UniProt IDs were added to this file by the group of Stephan Schurer, University of Miami. This file was used as the source from which data were extracted and used to populate the CARLSBAD database. Only PDSP data passing the following filters were loaded into CARLSBAD. Activities associated with structures not parseable by gNOVA, and activities with qualified values (i.e. >x) were skipped.
+\textbf{PDSP}. The text file (kidb110121.txt) was downloaded from the website (http://pdsp.med.unc.edu/indexR.html). UniProt IDs were added to this file by the group of Stephan Schurer, University of Miami. This file was used as the source from which data were extracted and used to populate the CARLSBAD database. Only PDSP data passing the following filters were loaded into CARLSBAD. Activities associated with structures not parseable by gNOVA, and activities with qualified values (i.e. >x) were skipped.
 
-PubChem. Only the subset of PubChem derived from the Molecular Libraries Probe Network (PubChem MLP) was used. The PubChem Assays and Substances to be loaded into CARLSBAD were selected using the Entrez EUtils API to search pcassay with the following queries/filters: ‘Molecular Libraries Probe Production Centers Network[SourceCategory]’, confirmatory[Filter] and pcassay\_protein\_target[Filter]. Substance structures were retrieved as SMILES using the PubChem Power User Gateway (PUG). Assay data were loaded from xml and csv files downloaded from the PubChem ftp site. PubChem MLP data passing all of the following filters were loaded into CARLSBAD. Only activities associated with human, rat or mouse targets were loaded. Only activities with the following result types were loaded: various versions of EC50, AC50, IC50, Ki and Potency. Activities without values or units were skipped. Only activities with units expressed in molarity were loaded. Only activities with an associated structure were loaded. Additionally, activity values were converted to molarity if necessary, and activity values were converted to negative Log10 if necessary.
+\textbf{PubChem}. Only the subset of PubChem derived from the Molecular Libraries Probe Network (PubChem MLP) was used. The PubChem Assays and Substances to be loaded into CARLSBAD were selected using the Entrez EUtils API to search pcassay with the following queries/filters: ‘Molecular Libraries Probe Production Centers Network[SourceCategory]’, confirmatory[Filter] and pcassay\_protein\_target[Filter]. Substance structures were retrieved as SMILES using the PubChem Power User Gateway (PUG). Assay data were loaded from xml and csv files downloaded from the PubChem ftp site. PubChem MLP data passing all of the following filters were loaded into CARLSBAD. Only activities associated with human, rat or mouse targets were loaded. Only activities with the following result types were loaded: various versions of EC50, AC50, IC50, Ki and Potency. Activities without values or units were skipped. Only activities with units expressed in molarity were loaded. Only activities with an associated structure were loaded. Additionally, activity values were converted to molarity if necessary, and activity values were converted to negative Log10 if necessary.
 
-WOMBAT. Version 2011.2 (SDF and activities.tab files) was used as the source from which data were extracted and used to populate the CARLSBAD database. Only activities of the following types were loaded: EC50, ED50, IC50, IC80, IC90, Ki, Kb, Kd, Km, A2 and D2. In addition, the following data were skipped: activities not associated with a known target; activities not associated with human, rat and mouse targets; activities associated with targets without an associated UniProt identifier; activities from primary screening; activities labeled ‘inactive’; and activities with descriptive values (e.g. ‘active’).
+\textbf{WOMBAT}. Version 2011.2 (SDF and activities.tab files) was used as the source from which data were extracted and used to populate the CARLSBAD database. Only activities of the following types were loaded: EC50, ED50, IC50, IC80, IC90, Ki, Kb, Kd, Km, A2 and D2. In addition, the following data were skipped: activities not associated with a known target; activities not associated with human, rat and mouse targets; activities associated with targets without an associated UniProt identifier; activities from primary screening; activities labeled ‘inactive’; and activities with descriptive values (e.g. ‘active’).
 
-When pairing structures with targets and bioactivities in a similar effort, Tikkainen and Franke observed that only 3.6\% (i.e. 410 of 11 278) of the scientific articles with activity indexed in more than one database matched each other. Indeed, data discrepancies are ubiquitous as far as data curation is concerned[94]. The processing log for CARLSBAD is summarized in Table 1: of 975 117 unique structure–target pairs in the database, 84 794 were found unique to WOMBAT and, therefore, have not been processed into CARLSBAD. For the remaining 890 323 structure–target pairs, 124 231 (13.95\%) were aggregated from multiple structure–target values: 94 975 from two bioactivities, 14 544 from three, 7930 from four and 2214 from five bioactivities, respectively. The highest number of consolidated bioactivities is 109, with the second highest number being 106. As data aggregation is the intended purpose for CARLSBAD, we focused on eliminating extremes in the bioactivity spectrum, and aggregating values towards a mean value. Hierarchical processing (i.e. confidence levels) was used in $\sim$25\% of the cases (192 736 + 38 670 substance–target pairs) when generating the CARLSBAD activity.
+When pairing structures with targets and bioactivities in a similar effort, Tikkainen and Franke observed that only 3.6\% (i.e. 410 of 11,278) of the scientific articles with activity indexed in more than one database matched each other. Indeed, data discrepancies are ubiquitous as far as data curation is concerned[94]. The processing log for CARLSBAD is summarized in Table 1: of 975,117 unique structure–target pairs in the database, 84 794 were found unique to WOMBAT and, therefore, have not been processed into CARLSBAD. For the remaining 890 323 structure–target pairs, 124,231 (13.95\%) were aggregated from multiple structure–target values: 94,975 from two bioactivities, 14,544 from three, 7930 from four and 2214 from five bioactivities, respectively. The highest number of consolidated bioactivities is 109, with the second highest number being 106. As data aggregation is the intended purpose for CARLSBAD, we focused on eliminating extremes in the bioactivity spectrum, and aggregating values towards a mean value. Hierarchical processing (i.e. confidence levels) was used in $\sim$25\% of the cases (192,736 + 38,670 substance–target pairs) when generating the CARLSBAD activity.
 
-Table 1.CARLSBAD database consolidation process summary
+\begin{table}[]
+\centering
+\begin{tabular}{c|c}
+\hline
+\textbf{Processed substance–target pairs} & \textbf{Number of bioactivities} \\
+\hline
+975,117 &	Initial aggregated data   \\
+975,110 &	Valid processed pairs   \\
+84,794 &	WOMBAT only   \\
+658,917 &	Only one activity on record  \\ 
+192,736 &	Only one activity type (each entered)  \\ 
+38,670 &	Multiple activity types processed   \\
+932,881 &	total activities loaded   \\
+\hline
+\end{tabular}
+\caption{CARLSBAD database consolidation process summary}
+\label{tab:cb_01}
+\end{table}
 
-Processed substance–target pairs	Number of bioactivities
-975 117 	Initial aggregated data 
-975 110 	Valid processed pairs 
-84 794 	WOMBAT only 
-658 917 	Only one activity on record 
-192 736 	Only one activity type (each entered) 
-38 670 	Multiple activity types processed 
-932 881 	total activities loaded 
-
-Chemical curation
+\subsubsection{Chemical curation}
 
 In the CARLSBAD database, chemical substances are distinguished from compounds in a manner analogous to the PubChem terminology. In this paradigm, compounds represent the abstract structure of any of the components of the substance. Chemical structures are stored as canonical SMILES using CHORD (gNova/OpenEye). The corresponding SDF format is also stored if present in the input database. In addition, 26 chemical descriptors are calculated and stored for each unique compound. These descriptors (e.g. molecular weight, number of rings and so forth) are provided for convenience to users interested in specific subsets of chemical space. A key feature of the CARLSBAD database is the common chemical patterns (CCPs), which are calculated and associated with the corresponding chemical structures. Later in the text, we briefly describe the methods used to calculate the two types of CCPs and how they are stored.
 
+\subsubsection{HierS}
+
 HierS, the hierarchical scaffold grouping algorithm[95] (9), is based on the molecular framework concept described by Bemis and Murcko[96]. The ‘scaffold’ concept is central in medicinal chemistry and provides a chemically intuitive manner to visualize chemical classes, as ring-based linkages are central structural features in most (>90\%) drug molecules. The algorithm relates any two compounds by their common shared scaffolds. HierS has two advantages: (i) speed and (ii) HierS scaffolds are considered by some to be more meaningful than the typical maximum common substructure (MCS). To our knowledge, there is no currently available implementation of HierS in any commercial or open-source package. These tools are implemented in an open-source Java library (http://code.google.com/p/unm-biocomp-hscaf/) built on the JChem toolkit from ChemAxon.
 
-MCES. The maximum common edge subgraph (MCES) concept[97] can be used to compute similarity between two molecular graphs and has been widely used in many applications[98–100][101–103]. However, MCES computation is NP complete, and several heuristics have been proposed to reduce computational time, although computational time required for large chemical datasets is prohibitive. Thus, in the CARLSBAD database, additional heuristics based on common ring systems/scaffolds were applied to further reduce computational time and make feasible MCES computation for large libraries. The CARLSBAD database contains 435 578 compounds with >99\% compounds containing at least one ring. As ring system determination using HierS is efficient and fast, scaffold information determined using HierS was used to group compounds based on the number of common scaffolds shared between them. Once this preliminary heuristic was applied, pairwise MCES between compounds sharing the same set of scaffolds was computed. Thus, the MCES algorithm was run on the CARLSBAD database and used to identify clusters of compounds with shared maximum common substructures.
+\subsubsection{MCES}
 
-Target curation
+MCES. The maximum common edge subgraph (MCES) concept[97] can be used to compute similarity between two molecular graphs and has been widely used in many applications[98–100][101–103]. However, MCES computation is NP complete, and several heuristics have been proposed to reduce computational time, although computational time required for large chemical datasets is prohibitive. Thus, in the CARLSBAD database, additional heuristics based on common ring systems/scaffolds were applied to further reduce computational time and make feasible MCES computation for large libraries. The CARLSBAD database contains 435,578 compounds with >99\% compounds containing at least one ring. As ring system determination using HierS is efficient and fast, scaffold information determined using HierS was used to group compounds based on the number of common scaffolds shared between them. Once this preliminary heuristic was applied, pairwise MCES between compounds sharing the same set of scaffolds was computed. Thus, the MCES algorithm was run on the CARLSBAD database and used to identify clusters of compounds with shared maximum common substructures.
+
+\subsubsection{Target curation}
 
 Representation of targets varies greatly across source databases, and this creates several challenges. In particular, targets are named and identified in different ways, which makes it difficult to know whether a target from one data source is the same as a target from another source, i.e. target matching and ‘unification’. As the goal was to have one target record in CARLSBAD for each unique protein represented in assays, a target curation step was performed after each data source was loaded, where newly loaded targets were annotated with data from UniProt[66], to expedite the target unification process. Targets identified in the source data by SwissProt or UniProt IDs were annotated with name, description, sequence and other identifiers (NCBI gi, RefSeq, Gene, UniGene and PDB) from UniProt. This allowed a comparison for target redundancy by sequence and identifiers after each data source was loaded to be made. Data from UniProt were also used to annotate targets in the CARLSBAD database with the following classifiers: InterPro, Pfam and PROSITE domains; GO terms; and UniProt family.
 
-Web interface
+\subsubsection{Web interface}
 
 A browsing and query interface to the CARLSBAD database is available (http://carlsbad.health.unm.edu/carlsbad/) (Figure 2). This web interface is delivered via the open source Apache web server. The application is written in the Perl programming language and uses Marvin Java applets from ChemAxon for drawing and displaying chemical structures. Users can query from structures by name, structure and/or properties; and for targets by name, species, type and/or identifier.
 
 Figure 2.
 CARLSBAD Web Application. (A) Query forms. (B) Activity search results. (C) Substance view.
 
-Discussion
+\subsection{Discussion}
 
 The availability of massive amount of molecular bioactivity data creates rich new opportunities, yet for typical scientists involved in biomedical discovery research, the difficulty of processing and analyzing that data can often be a barrier. With the occasional, less experienced end-user in mind, we have developed a small molecule bioactivity database that facilitates navigation in the small molecule/bioactivity space. The unique features and underlying data structure of the CARLSBAD database are designed to support polypharmacology-driven drug discovery scenarios, such as drug repurposing, side effect/off-target prediction and lead identification workflows.
 
-The net result of chemical, bioactivity and target aggregation, curation and harmonization is summarized in Table 2: the number of substances, i.e. chemicals tested for bioactivity, is smaller than the one obtained by summing the five databases by 17.27\%. A similar trend is observed when examining bioactivities (34.35\% reduction) and CCPs (23.1\% reduction using HierS and 25\% using MCES). The aforementioned values are the result of machine-based harmonization and consolidation of multiple data objects in chemical, bioactivity and CCP space. An independent study by Tiikkainen and Franke[66,104], comparing ChEMBL (release 14) and WOMBAT 2012.01, showed >394 000 unique bioactivities in WOMBAT, compared with nearly 3.3 million bioactivities in ChEMBL; and 2755 unique targets in ChEMBL, compared with 1486 unique targets in WOMBAT. The harmonization trends suggest that a consolidated database is preferable to a federated collection, at least in this case, when seeking to evaluate global bioactivity trends. This solution was, for example, implemented in the ‘Merz Virtual Bioactivity Database’, which integrates ChEMBL and WOMBAT, among other data sources.
+The net result of chemical, bioactivity and target aggregation, curation and harmonization is summarized in table \ref{tab:cb_02}: the number of substances, i.e. chemicals tested for bioactivity, is smaller than the one obtained by summing the five databases by 17.27\%. A similar trend is observed when examining bioactivities (34.35\% reduction) and CCPs (23.1\% reduction using HierS and 25\% using MCES). The aforementioned values are the result of machine-based harmonization and consolidation of multiple data objects in chemical, bioactivity and CCP space. An independent study by Tiikkainen and Franke[66,104], comparing ChEMBL (release 14) and WOMBAT 2012.01, showed >394 000 unique bioactivities in WOMBAT, compared with nearly 3.3 million bioactivities in ChEMBL; and 2755 unique targets in ChEMBL, compared with 1486 unique targets in WOMBAT. The harmonization trends suggest that a consolidated database is preferable to a federated collection, at least in this case, when seeking to evaluate global bioactivity trends. This solution was, for example, implemented in the ‘Merz Virtual Bioactivity Database’, which integrates ChEMBL and WOMBAT, among other data sources.
 
-Table 2.Overview of the numbers of substances, activities and CCP data in the original databases, as well as the consolidated CARLSBAD database
-
-Source	Version	Release date	Structures	Activities	CCPs
-ChEMBL 	13 	2012–02–21 	267 744 	798 755 	182 496 scaff 32 794 mces 
-IUPHAR 	 	2011 	2297 	6049 	2704 scaff 652 mces 
-PDSP 	kidb110121 	 	3499 	22 202 	3422 scaff 823 mces 
-PubChem MLP 	 	2011–11–04 	133 435 	320 311 	83 570 scaff 20 867 mces 
-WOMBAT 	2011.2 	 	124 873 	273 572 	88 135 scaff 17 086 mces 
-Total 	 	 	531 848 	1 420 889 	360 327 scaff 72 222 mces 
-CARLSBAD 	2012.1 	 	439 985 	932 881 	277 140 scaff 54 135 mces 
+\begin{table}[]
+    \centering
+    \begin{tabular}{lllccl}
+    \hline
+\textbf{Source} &	\textbf{Version} &	\textbf{Release date} &	\textbf{Structures} &	\textbf{Activities} &	\textbf{CCPs} \\
+\hline
+ChEMBL & 13 & 2012–02–21 & 267,744 & 798,755 & 182,496 scaff 32,794  mces  \\
+IUPHAR & & 2011 & 2297 & 6049 & 2704 scaff 652 mces  \\
+PDSP & kidb110121 &	3499 & 22,202 & 3422 scaff 823 mces  \\
+PubChem & & MLP & 2011–11–04 & 133,435 & 320,311 & 83,570 scaff 20,867 mces \\
+WOMBAT &	2011.2  &	 	124,873  &	273,572  &	88,135 scaff 17,086 mces  \\
+Total 	  &	 	531,848  &	1,420,889  &	360,327 scaff 72,222 mces  \\
+CARLSBAD  &	2012.1 	 & 	439,985  &	932,881  &	277,140 scaff 54,135 mces  \\
+\hline
+\end{tabular}
+    \caption{Overview of the numbers of substances, activities and CCP data in the original databases, as well as the consolidated CARLSBAD database}
+    \label{tab:cb_02}
+\end{table}
 
 Comparing the databases, it is apparent that ChEMBL is the most populated in terms of substances, bioactivities and CCPs, followed by WOMBAT and PubChem/MLP. This is to be expected, given their chemogenomic purpose. Two of the databases dedicated to pharmacology, IUPHAR and PDSP, are significantly smaller. An in-depth comparison with respect to targets, bioactivities and chemistry coverage for some of these databases has been performed[94]. Each of these databases provided relevant contributions in terms of CARLSBAD aggregation.
 
@@ -108,7 +129,7 @@ Chemical space overlap between structures in the CARLSBAD database and drugs app
 
 CARLSBAD represents only a first step in our effort to assist non-expert scientists to navigate chemical biology data. For example, all protein targets related to estrogen biology can be identified via a single CARLSBAD query. However, their inter-connectedness via chemicals and CCPs is intended to be explored in the networked environment provided by Cytoscape[108]. The CARLSBAD network extraction tool (SNAKE), the Cytoscape plugin and the process of visualizing networks of connected protein targets, chemical structures and bioactivities, are described elsewhere (Hines-Kay et al., submitted for publication).
 
-Summary
+\subsection{Summary}
 
 CARLSBAD is a database focused on high-quality subsets aggregated from several bioactivity databases, which are integrated in a uniform interface and manner, suitable for chemical biology and drug discovery studies, as well as large scale, ‘big data’ informatics and knowledge mining. In contrast to the original data collections, CARLSBAD provides a single normalized activity value of a given type for each unique chemical–protein target pair. Aggregation accounted for $\sim$25\% of the >975 000 structure–target pairs processed, up to and including 109 bioactivities for a single chemical. CARLSBAD data processing resulted in a net 17.3\% reduction in terms of unique chemicals, 34.3\% reduction in terms of unique bioactivities and >23\% reduction in terms of CCPs, respectively, suggesting that data consolidation is preferable to a federated database system, at least where bioactivity is concerned. We implemented two types of scaffold perception for common chemical pattern detection HierS and MCES, respectively. The 2012 release of CARLSBAD contains 439 985 unique chemical structures, mapped onto 1 420 889 unique bioactivities and annotated with 277 140 HierS scaffolds and 54 135 MCES patterns, respectively. It also contains bioactivities and tags for 1435 unique active pharmaceutical ingredients. The CARLSBAD database can be accessed using SNAKE; our dedicated subnet extraction tool, and Cytoscape, via the CARLSBAD plugin (Hines-Kay et al., submitted for publication).
 
@@ -123,11 +144,11 @@ Collaboration involving Lilly's Open Innovation Drug Discovery (OIDD), NIN-NCATS
 My role included converting the dataset to RDF,  annotating assays using BioAssay Ontology (BAO), and coordinating with PubChem and Open PHACTS to deposit assay results and incorporate OPDDR.
 Poster: https://zenodo.org/record/4844529
 
-Introduction
+\subsection{Introduction}
 
 This report is submitted in accordance with the Lilly Resarch Collaboration Agreement between Eli Lilly \& Co (Lilly) and Data2Discovery, executed on June 11, 2015.  The work is part of an ongoing collaboration involving Lilly, NIH-NCATS, and Data2Discovery.  The role of Data2Discovery is informatics: transforming and integrating data to enhance semantic value, development of a Knowledge Network (KN), a publicly shared Open Phenotypic Drug Discovery Resource (OPDDR, aka PD2) which can be used to identify relationships between National Pharmaceutical Collection (NPC) compounds, phenotypic assays, ontological classes of assays, and associated public data on related molecular targets.
 
-Accomplishments
+\subsection{Accomplishments}
 
 As per the agreement, the OPDDR has been developed and deployed, hosted by NCATS. 
 Related publication: Novel Phenotypic Outcomes Identified for a Public Collection of Approved Drugs from a Publicly Accessible Panel of Assays , Lee JA, Shinn P, Jaken S, Oliver S, Willard FS, Heidler S, Peery RB, Oler J, Chu S, Southall N, Dexheimer TS, Smallwood J, Huang R, Guha R, Jadhav A, Cox K, Austin C AP, Simeonov, Sittampalam GS, Husain S, Franklin N, Wild DJ, Yang JJ, Sutherland JJ, Thomas CJ, (2015) PLoS ONE 10(7): e0130796. doi: 10.1371/journal.pone.0130796.
@@ -135,10 +156,12 @@ The recently and significantly revised (June 2015) PubChem RDF data model was in
 
 BioAssay Ontology (BAO) integration informed by discussions with BAO team (S. Schurer), and with AstraZeneca (O. Enqvist) regarding their assay annotation template. 
 OpenPHACTS (OP) integration informed by discussions with OP, which entailed major revisions in the KN, and also revisions in the OP data model and API, to handle phenotypic assays. 
-Knowledge Network Description
+
+\subsection{Knowledge Network Description}
+
 The initial version of the KN is intended to provide a clear and easily comprehensible first step of describing the OPDDR compounds and assays in accordance with standardized community ontologies and namespaces, and relating these to protein targets from ChEMBL.  Biological networks can be extremely complex, and many further entity classes can be integrated in future (e.g. pathways), and will be facilitated by this initial KN.
 
-Ontologies Used
+\subsubsection{Ontologies Used}
 
 The KN uses the following ontologies:
 
@@ -161,7 +184,8 @@ Semanticscience Integrated Ontology
 <http://semanticscience.org/resource/>
 
 
-Entities:
+\subsubsection{Entities}
+
 entity [abbr] namespace
 example
 substance
@@ -207,7 +231,8 @@ CHEMBL44884
 
 Note that PubChem compounds are required in addition to substances.  Compounds refer to canonically defined and identifiable chemical entities which can be linked across databases; Substances refer to specific samples of compounds as provided by a supplier.  We thus include both, to be as comprehensive and specific as possible.   Note also that PubChem measuregroups are defined for each assay, for example, the measuregroup URI for AID12345 is http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup/AID12345.  PubChem endpoints represent activity outcomes.  ChEMBL RDF represents bioactivities somewhat differently than PubChem, but we can rigorously link these data via chemical structure and CIDs.
 
-KN Statistics
+Table: KN Statistics
+
 type
 count
 notes
@@ -242,7 +267,8 @@ assay classifications
 155
 Manually curated PD2 to BAO associations.  Exported from worksheet.
 
-Asserted triplets, patterns and examples 
+Table: Asserted triplets, patterns and examples 
+
 description
 examples
 assay to BAO class
@@ -280,7 +306,8 @@ substance:SID225144242 skos:exactMatch molecule:CHEMBL1474122
 
 Fig: OPDDR RDF schema, simplified, showing source relationships.
 
-Files:
+\subsubsection{Files}
+
 The following files comprise this release.  Files are grouped below by source, each file from one source only.
 file
 source
@@ -341,7 +368,7 @@ chembl\_targetcmpt:CHEMBL\_TC\_172 cco:targetCmptXref uniprot:P21554 .
 uniprot:P21554 a cco:UniprotRef .
 
 
-Project Status, Future
+\subsection{Project Status, Future}
 
 This initial KN Beta Version provides sufficient associations for semantic exploration across PD2 phenotypic and public biochemical assays for the NPC substances.  The integration with PubChem, ChEMBL, and OpenPHACTS adds value in multiple ways, linking to a large, diverse and expanding ecosystem of public biomedical knowledge.  Additional assay annotations can add further value, whereby the knowledge model developed can represent and derive high value from the unique knowledge of domain specialists and facilitate the links which power and advance data intensive research.
 
@@ -356,30 +383,37 @@ Estimates and visualizes the association between proteins and diseases, based on
 Web application: https://newdrugtargets.org
 Poster: https://zenodo.org/record/5038628
 
-Abstract
+\subsection{Abstract}
 
 Summary: The increasing amount of peer-reviewed manuscripts requires the development of specific mining tools to facilitate the visual exploration of evidence linking diseases and proteins. We developed TIN-X, the Target Importance and Novelty eXplorer, to visualize the association between proteins and diseases, based on text mining data processed from scientific literature. In the current implementation, TIN-X supports exploration of data for G-protein coupled receptors, kinases, ion channels, and nuclear receptors. TIN-X supports browsing and navigating across proteins and diseases based on ontology classes, and displays a scatter plot with two proposed new bibliometric statistics: Importance and Novelty. 
 Availability  and implementation:  available at http://www.newdrugtargets.org/
 
-Introduction
+\subsection{Introduction}
 
 Science builds upon past discoveries, traditionally communicated through words and symbols assembled into works of (peer-reviewed) scientific literature. However, scale-out of traditional and alternate publication modes has exceeded the limit of how much the human mind can process, creating the need for computer-assisted methods. Text mining, ontologies, and interactive visualization are some of the emerging technologies that can alleviate information overload. We present a new method and software tool utilizing these technologies, to provide biomedical scientists with rankings and visualizations linking proteins and diseases.  The information is derived from PubMed abstracts, text mined using previously published tools for named entity recognition (NER) of gene/protein and disease names (Szklarczyk et al., 2015; Pletscher-Frankild et al., 2015). We propose two new bibliometric indices based on NER mentions, specifically devised to address research planning use cases. Our goal is to enable scientists to identify research subjects with sufficient evidence of importance, but not already well-studied. Novelty measures the scarcity of publications about a protein target (see also Eq. 1). Importance measures the strength of the association between that target and a disease (see also Eq. 2). By visualizing Novelty and Importance on a 2D plot, users can easily examine the strength of the evidence linking protein targets and diseases of interest. TIN-X is a web application which allows users to navigate targets via the Drug Target Ontology (DTO, http://drugtargetontology.org) and diseases via the Disease Ontology (DO) (Kibbe et al., 2015), and for selected classes, to display and browse Importance–Novelty plots. These plots are interactive, with built-in drill-down and link-out functionality for in-depth examination of selected targets. TIN-X was inspired by and developed for the Illuminating the Druggable Genome (IDG) Knowledge Management Center (KMC, http://targetcentral.ws), which seeks to identify and prioritize understudied genes and proteins for investigation and validation as new drug targets.
 
-Methods and Implementation
+\subsection{Methods and Implementation}
 
-The TIN-X web application is implemented in Scala using the Lift web framework (http://liftweb.net), which provides inherent scalability and compatibility with Java.  The back-end utilizes a PostgreSQL database built using the knowledge base developed by the IDG-KMC, and known as the Target Central Research Database (TCRD) (Nguyen, et al., 2017).  TCRD compiles data from a variety of sources, including Disease Ontology, and, by special arrangement with IDG-KMC network members, (1) U. Miami, developers of DTO, and (2) NNFCPR, mapping to genes/proteins and diseases using a highly efficient dictionary-based named entity recognition engine (Pafilis et al., 2013) with dictionaries from the STRING (Szklarczyk et al., 2015) and DISEASES (Pletscher-Frankild et al., 2015) databases, respectively.  Data is transferred, processed, and loaded into TCRD by automated and semi-automated protocols, with routine updates approximately bi-annually.  PubMed abstracts are obtained via NCBI web services.  Bibliometric statistics and the derived novelty (Ni) and importance (Iij) scores are pre-computed for runtime performance, using the following formulae:
+The TIN-X web application is implemented in Scala using the Lift web framework (http://liftweb.net), which provides inherent scalability and compatibility with Java.  The back-end utilizes a PostgreSQL database built using the knowledge base developed by the IDG-KMC, and known as the Target Central Research Database (TCRD) (Nguyen, et al., 2017).  TCRD compiles data from a variety of sources, including Disease Ontology, and, by special arrangement with IDG-KMC network members, (1) U. Miami, developers of DTO, and (2) NNFCPR, mapping to genes/proteins and diseases using a highly efficient dictionary-based named entity recognition engine (Pafilis et al., 2013) with dictionaries from the STRING (Szklarczyk et al., 2015) and DISEASES (Pletscher-Frankild et al., 2015) databases, respectively.  Data is transferred, processed, and loaded into TCRD by automated and semi-automated protocols, with routine updates approximately bi-annually.  PubMed abstracts are obtained via NCBI web services.  Bibliometric statistics and the derived novelty ($N_i$) and importance ($I_{ij}$) scores are pre-computed for runtime performance, using equations \ref{eq:tinx_n} and \ref{eq:tinx_i}.
 
-Ni=1/k1Tk      Eq. 1
-Iij=k1TkDk    Eq. 2
+\begin{equation}
+N_i = \frac{1}{\sum_{k}^{}\frac{1}{T_k}}
+\label{eq:tinx_n}
+\end{equation}
 
-where Tk and Dk are the numbers of targets and diseases in abstract k, respectively, and summation over all publications including target (i), and for importance, also including disease (j). Fractional counts are employed to reflect strength of association.  E.g. if a paper mentions three targets, each receives a fractional count 1/T = $\frac{1}{3}$.
+\begin{equation}
+I_{ij} = \sum_{k}^{}\frac{1}{T_kD_k}
+\label{eq:tinx_i}
+\end{equation}
 
-Application Example
+where $T_k$ and $D_k$ are the numbers of targets and diseases in abstract k, respectively, and summation over all publications including target (i), and for importance, also including disease (j). Fractional counts are employed to reflect strength of association.  E.g. if a paper mentions three targets, each receives a fractional count $\frac{1}{T} = \frac{1}{3}$.
+
+\subsection{Application Example}
 
 In Figure 1, TIN-X displays targets for a selected disease class, "lung cancer".  The DO hierarchy is navigated in the left panel, and the targets are plotted with log-log Importance-Novelty axes. Searching by disease name and by target name (with auto-suggest) is supported. In the current layout, targets with stronger associations are in the upper part of the plot, while targets with a higher number of publications are on the left side of the plot. In general, more interesting associations will be on the upper right boundary of the plot, where data points represent non-dominated solutions to the multi-objective optimization maximizing both Importance and Novelty.  Targets can be filtered based on Target Development Level, with Tclin representing mode-of-action drug targets (Santos et al., 2017), and Tdark representing the understudied proteins (Nguyen et al., 2017). Targets can also be filtered by protein superfamily, which are currently limited to kinases, ion channels, G-protein coupled receptors (olfactory or not), and nuclear receptors, respectively. In the Fig. 1 example, the target shown is "Potassium voltage-gated channel subfamily H member 4" (KCNH4), which links to 11 articles relevant in lung cancer.  In addition to titles and citations, clicking on each article reveals full abstracts and links out to the complete PubMed record. 
 
 Figure 1. Screenshot of TIN-X.
 
-Conclusions and Future Directions
+\subsection{Conclusions and Future Directions}
 
 TIN-X provides an intuitive visualization, ranking, and prioritization platform for scientists interested in potentially novel drug targets, and exploring the relationship between diseases, disease categories, proteins and protein classes, using literature mining.  As with all current text mining, TIN-X cannot replace expert human readers and curators, yet, it is increasingly clear that automated bibliometry is essential given the volume of literature to be processed.  TIN-X is an important interactive tool in the IDG project, and future plans include adding functionality relating to known drugs and drug classes, and inclusion of additional protein classes. More information about Tclin, Tdark and other target development levels can be found at http://www.nature.com/nrd/posters/druggablegenome/nrd\_druggablegenome.pdf
