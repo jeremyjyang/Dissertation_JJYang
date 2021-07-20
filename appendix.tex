@@ -6,10 +6,74 @@
 
 %Begin individual appendices, separated as chapters
 
-\chapter{Experimental Equipment}
+\chapter{Data science as scholarly discipline}
+
+At the time of this writing, the contributions of this dissertation are best defined by the relatively new term \textbf{data science}. Though increasingly recognized as a field of study, definitions vary and may continue to evolve. Thus, this appendix is provided to establish a definition for data science as context for the dissertation.
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\chapter{Data Processing}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\chapter{Glossary of data science terms}
+
+Supervised learning	ML involving a training set of labeled cases.
+Unsupervised learning	ML with no training, detecting patterns as in clustering.
+Clustering	Grouping of cases, which may be overlapping or disjoint, hierarchical or not, with many possible algorithms.
+Validation	Assessment of a predictive model versus some asserted truth.
+Cross-validation	Splitting a dataset into training and test cases, and repeatedly training and testing the resulting models.
+Overfitting	Training a model to fit the training data, but with sub-optimal applicability to other cases.
+Regularization	In training a predictive model, a method of reducing overfitting.
+Loss function	In training a predictive model, a measure of performance loss, to be minimized.  A.k.a. cost function.
+Confusion matrix	For a predictive classification model, a matrix of true positives, true negatives, false positives, etc., i.e. counts comprising the performance.
+True Positives, False Positives, True Negatives, etc.	True Positive means predicted true by the model and labeled true in a classification scenario.  Abbreviated TP, FP, TN, FN.
+Accuracy	(TP + TN) / (P + N).  Equivalently, fraction of correct predictions.
+Sensitivity or Recall	TP / P
+Specificity	TN / N
+F1 Score	2TP / (2TP + FP + FN)
+Classification	Predicting non-numerical classes to cases, for example, recognizing a character from an image.
+Binary classifier	Classifier with two possibilities.
+Regression	Predicting a numerical endpoint.
+Cases	Instances of the entity under study, e.g. customers, patients, website sessions, molecules or genes.
+Features	The variables describing each case.
+Endpoints	One or more results or observations to be analyzed and/or predicted.
+Labels	Label generally means a known endpoint, suitable for training.
+Vectorization	Transformation of nominal features into numeric.  A set of numerical features for a single case is thereby a vector, a.k.a. 1D array or matrix row.
+Numerical vs. Categorical data	Input data may be numerical or if not, categorical, normally identified by some textual name.
+Binary feature	True or False, Yes or No, equivalently 1 or 0.
+Ordinal data	Categorical but ordered, e.g. Low, Medium, High.
+Nominal data	Non-numerical, textual names.
+Training set	For a supervised ML workflow, the dataset used to train the predictive model.
+Test set	For a supervised ML workflow, the dataset used to test the predictive model.
+Online learning	Whereas many ML scenarios start with gathering a defined dataset, online learning implies a continuous stream of input data.  Thus, the methods applied must be capable of continuous learning.
+Predictive model	A formal, explicit, method for computing classes or quantities from input cases.
+Statistical model	The characteristics of the probability distribution of a population feature is one important meaning of this term.  E.g. human weight may be assumed to be normally distributed in the overall population to assess percentiles.
+Model selection	In ML this may mean attempting several types of predictive model and selecting the best performing.
+Feature selection	Rational selection of input features to improve performance, or to discard redundant or non-informative features.
+Bias and variance	In ML bias and variance are terms describing a predictive model which should be balanced to avoid overfitting or underfitting, respectively.  I.e. excess bias means overly biased toward the training set.  Excess variance means the model will vary excessively from the training set.
+Parameters	In terms of predictive models, the parameters define the model within a given family.  For example a simple 2D linear regression has two parameters, slope and y-intercept.  A neural network has a weight parameter for every input to every node in every layer, input, hidden and output.  In all scenarios, training the model means determining the parameters.
+Recommender system	A type of predictive model which an entity of some defined output type, to an input case of another type.  E.g. Netflix recommends movies to users.  A sales recommender might recommend prospects for a given product.
+Linear Regression	Supervised regression method whereby endpoints are formulated as linear sums of input variables weighted by parameter coefficients.  N. B. input variables may be raw features or some transformation (e.g. log or square).
+K-Nearest Neighbors Algorithm	Supervised classification method based on distances in a space of dimensionality equal to the feature count, and voting by the K nearest neighbors to any case, where K is an adjustable parameter.
+K-Means Clustering Algorithm	Unsupervised method, based on distances in a space of dimensionality equal to the feature count, where here K is a pre-defined count of clusters to be detected.
+Support Vector Machine (SVM) Algorithm	Supervised classification method, based on distances in a space of dimensionality equal to the feature count, which generates a decision boundary, by minimizing based on a cost "kernel" function.
+Naïve Bayes Algorithm	Using Bayes theorem, and assuming independence, training cases can be used to infer conditional probabilities and thereby predict new cases.
+Decision Trees Algorithm	Also known as Classification and Regression Trees (CART).  At each node in a tree, a decision based on partitioning of one feature is designed to optimize information gain.
+Random Forests Algorithm	An extension of CART, whereby ensembles (forests) of decision trees are generated with random selection of training cases and features.
+Logistic Regression	Uses a sigmoid function domain [-Inf, +Inf] and range [0,1] interpretable as a probability and a binary classification.  This is employed as the activation function of each neuron (node) of a neural net.
+Artificial Neural Network (ANN) Algorithm	Supervised classification method, modeled on a specific conception of biological neurocognition.  The network consists of neurons (a.k.a. nodes) in  one input layer, one output layer, and one or more hidden layers.  Each neuron is represented by a logistic activation function, linear weighted combination of inputs from the preceding layer, and a single output.  Learning is achieved by assessing the error (a.k.a. loss or cost) at the outputs, then back-propagating that error through the layers to optimize the weight parameters.  Overall learning is by iteratively processing errors from many training cases.
+Deep Learning	Typically refers to ANN with multiple (3+) hidden layers.
+Evolutionary Algorithm	A.k.a. genetic algorithm.  Involves an intial population, and successive generations selected according to a fitness function, and mutated, possibly by combination and cross-linking of genetic units (genes).
+Probabalistic Graph Models	Two main types are Bayesian and Markov Networks.  Variables are nodes, and edges represent dependencies, possibly causal.
+Agent Based Models	Agents a.k.a. cellular automata.  Some classic examples are ant colonies, economic systems, and terrorists.  In contrast to models involving centralized command and control, in agent based models, behavior is an emergent property of the group.
+Complex, adaptive, and non-linear systems	A large commercial aircraft is a very complicated machine with millions of parts, but these terms refer to a very different kind of complexity.  Whereas the aircraft is designed to behave very precisely and reproducibly for a given set of inputs, according to defined mathematical functions, complex and adaptive systems cannot be described thus.  Agent based modeling is a promising approach.  The overall behavior is said to have emergent properties.
+A/B Testing	Onlne evaluation of two (or more) options, such as in e-commerce or political solicitation.
+Reinforcement Learning	With no initial training set, but defined success criteria, the space must be explored, behaviors learned and reinforced by successful outcomes, and successful strategies exploited.   Thus a balance is required between exploration and exploitation.  The prototypical scenario is the "Multi-armed bandit". 
+Transfer Learning	
+Representation Learning	
+Generative Adversarial Network	
+Autoencoder	
+Feature Engineering	
+Regularization	
+Interpretability	
+
+
 
 \end{appendices}
