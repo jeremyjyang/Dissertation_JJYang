@@ -245,11 +245,12 @@ interpreted as a loss of predictive scope. The Pearson correlation was calculate
 zero, to reflect overall predictive power from each training set. Each correlation was approximately 0.9, indicating strong and consistent predictive power. These
 results are summarized in table \ref{table:ba_cmp_corr}.
 
-\begin{table}
-\caption{Retrospective comparison of high scores, pc2 versus pc1}
-\begin{center}
-\begin{tabular}{ |c|c|c|c|c| } 
-\hline
+\renewcommand{\arraystretch}{1.3}
+
+\begin{longtable}
+% \caption{Retrospective comparison of high scores, pc2 versus pc1}
+\centering
+\begin{tabular}{ p{0.2\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.15\textwidth} }
 \textbf{Scaffold} & \textbf{pscore\_pc2} & \textbf{pscore\_pc1} & \textbf{pscore\_diff} & \textbf{wTested\_diff} \\
 \hline
 \includegraphics[align=c,width=0.2\textwidth]{data/badapple/scaf_01.png} & 436 & 395 & 41 & 7,234,388 \\
@@ -269,9 +270,8 @@ results are summarized in table \ref{table:ba_cmp_corr}.
 \includegraphics[align=c,width=0.2\textwidth]{data/badapple/scaf_15.png} & 841 & 721 & 120 & 318,307 \\
 \hline
 \end{tabular}
-\end{center}
 \label{table:ba_cmp_retro}
-\end{table}
+\end{longtable}
 
 
 \begin{table}
