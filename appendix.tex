@@ -14,7 +14,145 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 \chapter{Glossary of data science terms}
 
+
 \begin{table}
+\caption{Data science terms: Interpretation}
+\begin{tabular}{p{0.3\linewidth}p{0.7\linewidth}}
+\hline
+\textbf{Intelligibility} & Similar to interpretability, can processes or results be understood by humans. However, not all humans understand equally. So perhaps
+intelligibiilty is context-dependent. \\
+\textbf{Evaluation (of interpretation)} & An interpretation is an intelligible assertion about the world that may be evaluated in various ways, such as usefulness,
+or validation by quantifyable proxy. \\
+\textbf{Explainability} & Explaining model behavior, why or how a result is generated. Interpretability is necessary but not sufficient for explainability. \\
+\textbf{Completeness} & Accuracy of explanations. A simplified, less-complete explanation may be intelligible and pursuasive, but potentially misleading or
+unethical. \\
+\textbf{Contrastive explanation} & Explaining a result by contrast with a different case. E.g. Why was my application rejected but this other one accepted? \\
+\textbf{Algorithmic Transparency} & Opposite of opacity and black-boxes, can the system's processes by investigated. \\
+\textbf{Algorithmic Fairness} & Are results unbiased? In some domains could violate legal anti-discrimination protections. In research science, could raise COI
+concerns. \\
+\textbf{Accountability} & Related to transparency, can methods and results be accounted for algorithmically. E.g. waiter, how was this service charge calculated?
+And how was the price of the paella determined from the ingredient list, labor costs, and overhead? \\
+\textbf{Black-box system} & Non-transparent, opaque system, not explainable since the specifics of the process for generating a result are inaccessible. \\
+\textbf{Pursuasive systems} & Human opinions and decisions can be affected, and systems can be optimized for pursuasiveness, but accuracy may be compromised. \\
+\textbf{Context-aware systems} & For HCI issues of Interaction Design and Learnability, context-aware systems connect the application logic to the user and UI
+designer.  \\
+\textbf{iML} & Interpretable ML \\
+\textbf{FATML} & Fair, accountable and transparent ML \\
+\textbf{XAI} & Explainable AI, a term favored by US-DARPA. \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\caption{Data science terms: Wrangling}
+\begin{tabular}{p{0.3\linewidth}p{0.7\linewidth}}
+\hline
+\textbf{Data cleaning} & Processing of files to fix or remove various kinds of errors and inconsistencies and prepare for analysis.  E.g. numerical values which are
+not interpretable as numbers, removal of cases with missing necessary values, values which are obvious errors (e.g. DOB in future).  E.g. converting problematic
+character encodings to ASCII or UTF-8. \\
+\textbf{Dirty data} & Needs a lot of cleaning, maybe much of the overall effort. \\
+\textbf{Tidy data} & Data organized and described well by metadata, such as in tables with well defined columns, and files with standard formats (e.g. CSV). \\
+\textbf{Data munging} & Approximately: Various transformations to process data into clean and tidy files.  Converting among formats, parsing multiple fields from
+one delimited string, etc. \\
+\textbf{Noisy data} & Data may be clean and tidy but the values may reflect much randomness, such as measurement error.  E.g. resting blood pressure measurements
+may vary a lot from the "true" value for a patient. \\
+\textbf{Data wrangling} & Approximately: Various processes for cleaning, tidying, and transforming data into forms suitable for computation. \\
+\textbf{Data formats} & File types used to contain and communicate data, such as JSON, XML, and CSV, but which can vary greatly within these and other general
+families. \\
+\textbf{Extract, Transform and Load (ETL)} & Common term describing the wrangling workflow for building a database from a data source. \\
+\textbf{Feature Extraction} & Some types of raw data such as image or audio lack well defined features, which must be defined based on domain knowledge. \\
+\textbf{ML-Ready Dataset} & After all the cleaning and other wrangling is done, and the dataset is an acceptable input file for the ML components, it is said to be
+ML-ready.  Many ML examples, tutorials and challenges (e.g. Kaggle) deal with ML-ready data only and ignore or minimize the importance of data wrangling. \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\caption{Data science terms: Semantics and metadata}
+\begin{tabular}{p{0.3\linewidth}p{0.7\linewidth}}
+\hline
+\textbf{Data dictionary} & Defines the datatypes in a dataset or database.. \\
+\textbf{Schema} & Defines datatypes in a dataset or database, and usually more such as relationships, mappings, primary and foreign keys. \\
+\textbf{Identifiers} & Names or numbers used to identify entities. \\
+\textbf{Entity mapping} & Associating data fields corresponding to the same entity, but using different systems of identifiers. \\
+\textbf{Persistent Identifiers} & Designed to be unchanging, reliable in the future. \\
+\textbf{URI vs. URL} & Uniform Resource Identifier are persistent IDs employed in RDF, which may or may not be URLs available on the WWW. \\
+\textbf{Controlled Vocabulary} & Set of pre-defined terms for a specific purpose, e.g. disease names defined by the World Health Organization International
+Classification of Diseases. \\
+\textbf{Taxonomy} & Hierarchical organization of entities, such as the taxonomy of organisms into plants, animals, etc. \\
+\textbf{Ontology} & Refers to both an organization of entities and relations and related knowledge, and the study of such knowledge systems. \\
+\textbf{Semantic Web Technologies} & A set of community approaches, formats and methods first inspired by Tim Berners Lee in 2001, and organized through the W3C. \\
+\textbf{RDF} & Resource Description Framework, a foundation of SWT, wherein all knowledge is represented by semantic triples. \\
+\textbf{Semantic Triples} & Subject - predicate - object triples, the unit of knowledge in RDF. \\
+\textbf{Sparql} & RDF query language. \\
+\textbf{Knowledge Representation} & Refers to the methods and formats of encoding and storing human knowledge, such as by RDF semantic triples, but also the basic
+issue in cognitive science which applies to human and artificial intelligence alike: What is knowledge in relation to cognition? \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\caption{Data science terms: Statistics}
+\begin{tabular}{p{0.3\linewidth}p{0.7\linewidth}}
+\hline
+\multicolumn{2}{c}{\emph{(See statistics textbooks and other resources for more authoritative definitions of these terms.)}} \\ 
+\textbf{Confidence Interval (CI)} & Typical 95\% CI means given the sample data and assumptions, the parameter will be within the CI 95\% of the time if the data is
+re-sampled. \\
+\textbf{P-Value} & Probability of the sample data if the null hypothesis is true. \\
+\textbf{Probability Distribution} & For a discrete random variable, gives the probability of any value, for a continuous random variable, gives the probability of
+any interval. \\
+\textbf{Statistic} & Any formulaic numerical descriptor of a sample (e.g. mean, median). \\
+\textbf{Parameter} & The parameters of a normal or Gaussian distribution are the mean and variance.  For any such family, the function can be fully defined by the
+parameters.  Parametric statistics is largely focused on estimating population (global) parameters and their uncertainty from sample data. \\
+\textbf{Multiple Testing} & If a coin is flipped 5 times, all heads, the coin is likely unfair.  However, if 100 coins are all flipped 5 times, it is highly likely
+at least one will be all heads, and that will provide no evidence of unfairness.  In this way the interpretation of P-values and other metrics much be adjusted in
+multiple testing scenarios. \\
+\textbf{Chance Correlation} & With random variables, correlation may reflect explanatory truths, or simply be due to random chance. \\
+\textbf{False Discovery Rate} & A quantification of the probability of false discovery, or chance correlation.  (See XKCD comic on M&M associated risks.) \\
+\textbf{Confounder} & When associating two variables, a confounder is another third variable which may be more explanatory.  In an ideally executed randomized
+controlled trial, confounders are impossible since only the controlled independent variables differ between the control and test groups. \\
+\textbf{Independent Variables} & Random variables which are not correlated, not affecting each other or each affected by another variable. \\
+\textbf{Correlation versus causation} & Despite being a fundamental truth of statistics and rationality, an common area of confusion and misinterpretation in
+science, and in human cognition more generally. \\
+\textbf{Random sampling} & Selecting a representative subset of a population by some random process. \\
+\textbf{Sampling bias} & Non-random sampling.  For example, online surveys are biased toward persons who are online and like to respond to surveys, thus not
+representative of the general population. \\
+\textbf{Population} & Conceptually the global set of entities of interest.  For analytics pertaining to US federal elections, the population would be all US voters.
+For anti-depressant drug trials, the population might be all humans diagnosed with major depressive disorder. In a study, a sample is used to make inferences about
+the population. \\
+\textbf{Frequentist versus Bayesian Statistics} & Among statisticians and statistical scholarship, there are two main schools, frequentist and Bayesian.
+Oversimplifying somewhat, these schools don't disagree about math, including Bayes Theorem, but do disagree about interpretations.  Frequentists tend to view
+population parameters as truth.  Bayesians tend to view evidence as updating belief. \\
+\textbf{Bayesian Approach} & Somewhat beyond the basic truth of Bayes Theorem, a Bayesian approach is often iterative, and can adjust the parameters of a
+distribution, as a way of continuous learning from streams of evidence. \\
+\textbf{Prior Distribution} & A Bayesian learning iteration begins with belief in a prior distribution, to be adjusted according to the evidence in the sample data.
+In a simple univariate case, this involves multiplication by a Bayesian factor.  For a simple coin flip, we would probably believe in a prior of 50-50\% head vs
+tail.  Posterior Distribution	After adjustment of the belief represented by the prior distribution, the result of the Bayesian learning iteration is the posterior
+distribution.  After flipping our coin and getting 5 heads in a row, our posterior might be 70-30\% head vs tail. \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\caption{Data science terms: Visualization}
+\begin{tabular}{p{0.3\linewidth}p{0.7\linewidth}}
+\hline
+\textbf{Heatmap} & Represents a real valued matrix with a color spectrum. \\
+\textbf{Histogram} & Represents the sample distribution of a numerical variable, binned into intervals, shown as bars of height proportional to count in the bin. \\
+\textbf{Bar Chart} & Heights of bars proportional to some quantity, more general than histogram as the bars may be categorical (e.g. national populations). \\
+\textbf{Radar Chart} & Similar to bar chart, but radial. \\
+\textbf{Scatter Plot} & Points on 2D (or maybe 3D) axes. \\
+\textbf{Box Plot} & Visualizes the distribution of a variable, including the median, 1st and 3rd quartile.  WIth a "box and whiskers" plot, the whiskers may
+indicate the 2nd and 98th percentiles. \\
+\textbf{Visual Channels} & Informative characteristics, such as color or shape or size. \\
+\textbf{Pre-Cognitive Awareness} & Visualization can facilitate cognition by employing this natural pattern recognition capability.  For example, seeing patches of
+color in a heatmap is easier than reading and abstracting from all the numbers. \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\caption{Data science terms: Machine learning}
 \begin{tabular}{p{0.3\linewidth}p{0.7\linewidth}}
 \hline
 \textbf{Supervised learning} & ML involving a training set of labeled cases. \\
@@ -80,6 +218,47 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 \end{tabular}
 \end{table}
 
+\begin{table}
+\caption{Data science terms: Packages and products}
+\begin{tabular}{p{0.3\linewidth}p{0.7\linewidth}}
+\hline
+\textbf{Tableau} & Commercial package for visualization and analysis.   \\
+\textbf{WEKA} & Open source ML package for Java \\
+\textbf{SciKit-Learn} & Open source ML package for Python \\
+\textbf{R} & Open source statistics and analytics framework, with many community packages. \\
+\textbf{MapReduce} & Parallelization algorithm invented at Google, designed for big data and large, distributed computing clusters. \\
+\textbf{Hadoop} & Apache open source implementation of MapReduce. \\
+\textbf{TensorFlow} & Google based open source ANN package. \\
+\textbf{MATLAB} & Commercial math and analytics platform.  MAT = matrix.  Many packages available including many for ML. \\
+\textbf{Octave} & Open source equivalent to MATLAB, quite code compatible. \\
+\textbf{KNIME} & Open source workflow development platform, with many packages. \\
+\textbf{Plotly} & Interactive plotting package with APIs for Python, R and more. \\
+\textbf{Matplotlib} & Excellent Python plotting package. \\
+\hline
+\end{tabular}
+\end{table}
 
+\begin{table}
+\caption{Data science terms: Miscellaneous}
+\begin{tabular}{p{0.3\linewidth}p{0.7\linewidth}}
+\hline
+\textbf{Machine Learning} & Somewhat imprecise term, but generally a set of computational approaches for perceiving patterns or predicting endpoints from data, and
+often big data.  Historically ML is associated with computer science, but shares much with statistics and other fields. \\
+\textbf{Exploratory Data Analysis (EDA)} & Analysis without specific hypothesis, usually to learn about a dataset, describe, and discover patterns and potential
+hypotheses for further investigation. \\
+\textbf{Data Mining} & EDA focused on knowledge discovery \\
+\textbf{Confirmatory Data Analysis} & Involves a pre-defined hypothesis, tested by the analysis.  A randomized controlled trial is an important example. \\
+\textbf{Randomized Controlled Trial (RCT)} & In medicine, a designed, prospective study involving patients randomly assigned to test and control groups, and
+normally "double blind" procedures whereby neither the patient nor the clinician administering the treatment knows whether the treatment is test or control. \\
+\textbf{Domain Knowledge} & Refers to the domain where the final value and impact of the analysis is assessed, such as business, medicine, sports, military. \\
+\textbf{Retrospective Study} & Involves existing data, predicting outcomes which must be hidden during training for strong validation. \\
+\textbf{Prospective Study} & Involves predicting and validating against future outcomes. \\
+\textbf{Artificial Intelligence} & Big topic with much history and varying meanings and nuances.  Somewhat inseparable from the study of human cognition, since one
+important driver of AI is its resemblance to human cognition and ability to perform tasks previously requiring humans.  Autonomous cars and other robots are fairly
+clear examples of AI. \\
+\textbf{Knowledge Graph} & Nodes and edges, like any graph, but representing entities and relationships. \\
+\hline
+\end{tabular}
+\end{table}
 
 \end{appendices}
