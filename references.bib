@@ -1,3 +1,209 @@
+@ARTICLE{Yang2016-gn,
+  title    = "Badapple: promiscuity patterns from noisy evidence",
+  author   = "Yang, Jeremy J and Ursu, Oleg and Lipinski, Christopher A and
+              Sklar, Larry A and Oprea, Tudor I and Bologa, Cristian G",
+  abstract = "BACKGROUND: Bioassay data analysis continues to be an essential,
+              routine, yet challenging task in modern drug discovery and
+              chemical biology research. The challenge is to infer reliable
+              knowledge from big and noisy data. Some aspects of this problem
+              are general with solutions informed by existing and emerging data
+              science best practices. Some aspects are domain specific, and
+              rely on expertise in bioassay methodology and chemical biology.
+              Testing compounds for biological activity requires complex and
+              innovative methodology, producing results varying widely in
+              accuracy, precision, and information content. Hit selection
+              criteria involve optimizing such that the overall probability of
+              success in a project is maximized, and resource-wasteful ``false
+              trails'' are avoided. This ``fail-early'' approach is embraced
+              both in pharmaceutical and academic drug discovery, since
+              follow-up capacity is resource-limited. Thus, early
+              identification of likely promiscuous compounds has practical
+              value. RESULTS: Here we describe an algorithm for identifying
+              likely promiscuous compounds via associated scaffolds which
+              combines general and domain-specific features to assist and
+              accelerate drug discovery informatics, called Badapple:
+              bioassay-data associative promiscuity pattern learning engine.
+              Results are described from an analysis using data from MLP assays
+              via the BioAssay Research Database (BARD) http://bard.nih.gov.
+              Specific examples are analyzed in the context of medicinal
+              chemistry, to illustrate associations with mechanisms of
+              promiscuity. Badapple has been developed at UNM, released and
+              deployed for public use two ways: (1) BARD plugin, integrated
+              into the public BARD REST API and BARD web client; and (2) public
+              web app hosted at UNM. CONCLUSIONS: Badapple is a method for
+              rapidly identifying likely promiscuous compounds via associated
+              scaffolds. Badapple generates a score associated with a
+              pragmatic, empirical definition of promiscuity, with the overall
+              goal to identify ``false trails'' and streamline workflows.
+              Unlike methods reliant on expert curation of chemical
+              substructure patterns, Badapple is fully evidence-driven,
+              automated, self-improving via integration of additional data, and
+              focused on scaffolds. Badapple is robust with respect to noise
+              and errors, and skeptical of scanty evidence.",
+  journal  = "J. Cheminform.",
+  volume   =  8,
+  pages    = "29",
+  month    =  may,
+  year     =  2016,
+  keywords = "Compound promiscuity; Drug discovery informatics; High-throughput
+              screening (HTS); Molecular scaffolds; Statistical learning",
+  language = "en"
+}
+
+@ARTICLE{Yang2021-di,
+  title    = "{TIGA}: Target illumination {GWAS} analytics",
+  author   = "Yang, Jeremy J and Grissa, Dhouha and Lambert, Christophe G and
+              Bologa, Cristian G and Mathias, Stephen L and Waller, Anna and
+              Wild, David J and Jensen, Lars Juhl and Oprea, Tudor I",
+  abstract = "MOTIVATION: Genome wide association studies (GWAS) can reveal
+              important genotype-phenotype associations, however, data quality
+              and interpretability issues must be addressed. For drug discovery
+              scientists seeking to prioritize targets based on the available
+              evidence, these issues go beyond the single study. METHODS: Here,
+              we describe rational ranking, filtering and interpretation of
+              inferred gene-trait associations and data aggregation across
+              studies by leveraging existing curation and harmonization
+              efforts. Each gene-trait association is evaluated for confidence,
+              with scores derived solely from aggregated statistics, linking a
+              protein-coding gene and phenotype. We propose a method for
+              assessing confidence in gene-trait associations from evidence
+              aggregated across studies, including a bibliometric assessment of
+              scientific consensus based on the iCite Relative Citation Ratio,
+              and meanRank scores, to aggregate multivariate evidence. RESULTS:
+              This method, intended for drug target hypothesis generation,
+              scoring and ranking, has been implemented as an analytical
+              pipeline, available as open source, with public datasets of
+              results, and a web application designed for usability by drug
+              discovery scientists. AVAILABILITY: Web application, datasets,
+              and source code via: https://unmtid-shinyapps.net/tiga/.
+              SUPPLEMENTARY INFORMATION: Supplementary data are available at
+              Bioinformatics online.",
+  journal  = "Bioinformatics",
+  month    =  jun,
+  year     =  2021,
+  language = "en"
+}
+
+@ARTICLE{Mathias2013-hj,
+  title    = "The {CARLSBAD} database: a confederated database of chemical
+              bioactivities",
+  author   = "Mathias, Stephen L and Hines-Kay, Jarrett and Yang, Jeremy J and
+              Zahoransky-Kohalmi, Gergely and Bologa, Cristian G and Ursu, Oleg
+              and Oprea, Tudor I",
+  abstract = "Many bioactivity databases offer information regarding the
+              biological activity of small molecules on protein targets.
+              Information in these databases is often hard to resolve with
+              certainty because of subsetting different data in a variety of
+              formats; use of different bioactivity metrics; use of different
+              identifiers for chemicals and proteins; and having to access
+              different query interfaces, respectively. Given the multitude of
+              data sources, interfaces and standards, it is challenging to
+              gather relevant facts and make appropriate connections and
+              decisions regarding chemical-protein associations. The CARLSBAD
+              database has been developed as an integrated resource, focused on
+              high-quality subsets from several bioactivity databases, which
+              are aggregated and presented in a uniform manner, suitable for
+              the study of the relationships between small molecules and
+              targets. In contrast to data collection resources, CARLSBAD
+              provides a single normalized activity value of a given type for
+              each unique chemical-protein target pair. Two types of scaffold
+              perception methods have been implemented and are available for
+              datamining: HierS (hierarchical scaffolds) and MCES (maximum
+              common edge subgraph). The 2012 release of CARLSBAD contains 439
+              985 unique chemical structures, mapped onto 1,420 889 unique
+              bioactivities, and annotated with 277 140 HierS scaffolds and 54
+              135 MCES chemical patterns, respectively. Of the 890 323 unique
+              structure-target pairs curated in CARLSBAD, 13.95\% are
+              aggregated from multiple structure-target values: 94 975 are
+              aggregated from two bioactivities, 14 544 from three, 7 930 from
+              four and 2214 have five bioactivities, respectively. CARLSBAD
+              captures bioactivities and tags for 1435 unique chemical
+              structures of active pharmaceutical ingredients (i.e. 'drugs').
+              CARLSBAD processing resulted in a net 17.3\% data reduction for
+              chemicals, 34.3\% reduction for bioactivities, 23\% reduction for
+              HierS and 25\% reduction for MCES, respectively. The CARLSBAD
+              database supports a knowledge mining system that provides
+              non-specialists with novel integrative ways of exploring chemical
+              biology space to facilitate knowledge mining in drug discovery
+              and repurposing. Database URL:
+              http://carlsbad.health.unm.edu/carlsbad/.",
+  journal  = "Database",
+  volume   =  2013,
+  pages    = "bat044",
+  month    =  jun,
+  year     =  2013,
+  language = "en"
+}
+
+@ARTICLE{Lee2015-vg,
+  title    = "Novel Phenotypic Outcomes Identified for a Public Collection of
+              Approved Drugs from a Publicly Accessible Panel of Assays",
+  author   = "Lee, Jonathan A and Shinn, Paul and Jaken, Susan and Oliver,
+              Sarah and Willard, Francis S and Heidler, Steven and Peery,
+              Robert B and Oler, Jennifer and Chu, Shaoyou and Southall, Noel
+              and Dexheimer, Thomas S and Smallwood, Jeffrey and Huang, Ruili
+              and Guha, Rajarshi and Jadhav, Ajit and Cox, Karen and Austin,
+              Christopher P and Simeonov, Anton and Sittampalam, G Sitta and
+              Husain, Saba and Franklin, Natalie and Wild, David J and Yang,
+              Jeremy J and Sutherland, Jeffrey J and Thomas, Craig J",
+  abstract = "Phenotypic assays have a proven track record for generating leads
+              that become first-in-class therapies. Whole cell assays that
+              inform on a phenotype or mechanism also possess great potential
+              in drug repositioning studies by illuminating new activities for
+              the existing pharmacopeia. The National Center for Advancing
+              Translational Sciences (NCATS) pharmaceutical collection (NPC) is
+              the largest reported collection of approved small molecule
+              therapeutics that is available for screening in a high-throughput
+              setting. Via a wide-ranging collaborative effort, this library
+              was analyzed in the Open Innovation Drug Discovery (OIDD)
+              phenotypic assay modules publicly offered by Lilly. The results
+              of these tests are publically available online at
+              www.ncats.nih.gov/expertise/preclinical/pd2 and via the PubChem
+              Database (https://pubchem.ncbi.nlm.nih.gov/) (AID 1117321).
+              Phenotypic outcomes for numerous drugs were confirmed, including
+              sulfonylureas as insulin secretagogues and the anti-angiogenesis
+              actions of multikinase inhibitors sorafenib, axitinib and
+              pazopanib. Several novel outcomes were also noted including the
+              Wnt potentiating activities of rotenone and the antifolate class
+              of drugs, and the anti-angiogenic activity of cetaben.",
+  journal  = "PLoS One",
+  volume   =  10,
+  number   =  7,
+  pages    = "e0130796",
+  month    =  jul,
+  year     =  2015,
+  language = "en"
+}
+
+@ARTICLE{Cannon2017-af,
+  title    = "{TIN-X}: target importance and novelty explorer",
+  author   = "Cannon, Daniel C and Yang, Jeremy J and Mathias, Stephen L and
+              Ursu, Oleg and Mani, Subramani and Waller, Anna and Sch{\"u}rer,
+              Stephan C and Jensen, Lars Juhl and Sklar, Larry A and Bologa,
+              Cristian G and Oprea, Tudor I",
+  abstract = "Motivation: The increasing amount of peer-reviewed manuscripts
+              requires the development of specific mining tools to facilitate
+              the visual exploration of evidence linking diseases and proteins.
+              Results: We developed TIN-X, the Target Importance and Novelty
+              eXplorer, to visualize the association between proteins and
+              diseases, based on text mining data processed from scientific
+              literature. In the current implementation, TIN-X supports
+              exploration of data for G-protein coupled receptors, kinases, ion
+              channels, and nuclear receptors. TIN-X supports browsing and
+              navigating across proteins and diseases based on ontology
+              classes, and displays a scatter plot with two proposed new
+              bibliometric statistics: Importance and Novelty. Availability and
+              Implementation: http://www.newdrugtargets.org. Contact:
+              cbologa@salud.unm.edu.",
+  journal  = "Bioinformatics",
+  volume   =  33,
+  number   =  16,
+  pages    = "2601--2603",
+  month    =  aug,
+  year     =  2017,
+  language = "en"
+}
+
 @MISC{Shotton2020-ph,
   title  = "{SCoRO}, the Scholarly Contributions and Roles Ontology",
   author = "Shotton, D and Peroni, S",
@@ -104,7 +310,6 @@
   language = "en"
 }
 
-
 @MISC{National_Institutes_of_Health_US_Department_of_Health_and_Human_Services_undated-jt,
   title        = "National Institutes of Health Common Fund",
   booktitle    = "{NIH} Office of Strategic Coordination - The Common Fund",
@@ -113,7 +318,6 @@
   howpublished = "\url{https://commonfund.nih.gov/}",
   note         = "Accessed: 2020-12-21"
 }
-
 
 @ARTICLE{Keenan2018-sf,
   title    = "The Library of Integrated {Network-Based} Cellular Signatures
@@ -326,35 +530,6 @@
   pages    = "D267--70",
   month    =  jan,
   year     =  2004,
-  language = "en"
-}
-
-@ARTICLE{Cannon2017-af,
-  title    = "{TIN-X}: target importance and novelty explorer",
-  author   = "Cannon, Daniel C and Yang, Jeremy J and Mathias, Stephen L and
-              Ursu, Oleg and Mani, Subramani and Waller, Anna and Sch{\"u}rer,
-              Stephan C and Jensen, Lars Juhl and Sklar, Larry A and Bologa,
-              Cristian G and Oprea, Tudor I",
-  abstract = "Motivation: The increasing amount of peer-reviewed manuscripts
-              requires the development of specific mining tools to facilitate
-              the visual exploration of evidence linking diseases and proteins.
-              Results: We developed TIN-X, the Target Importance and Novelty
-              eXplorer, to visualize the association between proteins and
-              diseases, based on text mining data processed from scientific
-              literature. In the current implementation, TIN-X supports
-              exploration of data for G-protein coupled receptors, kinases, ion
-              channels, and nuclear receptors. TIN-X supports browsing and
-              navigating across proteins and diseases based on ontology
-              classes, and displays a scatter plot with two proposed new
-              bibliometric statistics: Importance and Novelty. Availability and
-              Implementation: http://www.newdrugtargets.org. Contact:
-              cbologa@salud.unm.edu.",
-  journal  = "Bioinformatics",
-  volume   =  33,
-  number   =  16,
-  pages    = "2601--2603",
-  month    =  aug,
-  year     =  2017,
   language = "en"
 }
 
@@ -839,57 +1014,6 @@
   language = "en"
 }
 
-@ARTICLE{Mathias2013-hj,
-  title    = "The {CARLSBAD} database: a confederated database of chemical
-              bioactivities",
-  author   = "Mathias, Stephen L and Hines-Kay, Jarrett and Yang, Jeremy J and
-              Zahoransky-Kohalmi, Gergely and Bologa, Cristian G and Ursu, Oleg
-              and Oprea, Tudor I",
-  abstract = "Many bioactivity databases offer information regarding the
-              biological activity of small molecules on protein targets.
-              Information in these databases is often hard to resolve with
-              certainty because of subsetting different data in a variety of
-              formats; use of different bioactivity metrics; use of different
-              identifiers for chemicals and proteins; and having to access
-              different query interfaces, respectively. Given the multitude of
-              data sources, interfaces and standards, it is challenging to
-              gather relevant facts and make appropriate connections and
-              decisions regarding chemical-protein associations. The CARLSBAD
-              database has been developed as an integrated resource, focused on
-              high-quality subsets from several bioactivity databases, which
-              are aggregated and presented in a uniform manner, suitable for
-              the study of the relationships between small molecules and
-              targets. In contrast to data collection resources, CARLSBAD
-              provides a single normalized activity value of a given type for
-              each unique chemical-protein target pair. Two types of scaffold
-              perception methods have been implemented and are available for
-              datamining: HierS (hierarchical scaffolds) and MCES (maximum
-              common edge subgraph). The 2012 release of CARLSBAD contains 439
-              985 unique chemical structures, mapped onto 1,420 889 unique
-              bioactivities, and annotated with 277 140 HierS scaffolds and 54
-              135 MCES chemical patterns, respectively. Of the 890 323 unique
-              structure-target pairs curated in CARLSBAD, 13.95\% are
-              aggregated from multiple structure-target values: 94 975 are
-              aggregated from two bioactivities, 14 544 from three, 7 930 from
-              four and 2214 have five bioactivities, respectively. CARLSBAD
-              captures bioactivities and tags for 1435 unique chemical
-              structures of active pharmaceutical ingredients (i.e. 'drugs').
-              CARLSBAD processing resulted in a net 17.3\% data reduction for
-              chemicals, 34.3\% reduction for bioactivities, 23\% reduction for
-              HierS and 25\% reduction for MCES, respectively. The CARLSBAD
-              database supports a knowledge mining system that provides
-              non-specialists with novel integrative ways of exploring chemical
-              biology space to facilitate knowledge mining in drug discovery
-              and repurposing. Database URL:
-              http://carlsbad.health.unm.edu/carlsbad/.",
-  journal  = "Database",
-  volume   =  2013,
-  pages    = "bat044",
-  month    =  jun,
-  year     =  2013,
-  language = "en"
-}
-
 @ARTICLE{Yoon2017-jv,
   title    = "Use of Graph Database for the Integration of Heterogeneous
               Biological Data",
@@ -1156,40 +1280,6 @@
   number  =  1,
   pages   = "185--193",
   year    =  1978
-}
-
-@ARTICLE{Yang2021-di,
-  title    = "{TIGA}: Target illumination {GWAS} analytics",
-  author   = "Yang, Jeremy J and Grissa, Dhouha and Lambert, Christophe G and
-              Bologa, Cristian G and Mathias, Stephen L and Waller, Anna and
-              Wild, David J and Jensen, Lars Juhl and Oprea, Tudor I",
-  abstract = "MOTIVATION: Genome wide association studies (GWAS) can reveal
-              important genotype-phenotype associations, however, data quality
-              and interpretability issues must be addressed. For drug discovery
-              scientists seeking to prioritize targets based on the available
-              evidence, these issues go beyond the single study. METHODS: Here,
-              we describe rational ranking, filtering and interpretation of
-              inferred gene-trait associations and data aggregation across
-              studies by leveraging existing curation and harmonization
-              efforts. Each gene-trait association is evaluated for confidence,
-              with scores derived solely from aggregated statistics, linking a
-              protein-coding gene and phenotype. We propose a method for
-              assessing confidence in gene-trait associations from evidence
-              aggregated across studies, including a bibliometric assessment of
-              scientific consensus based on the iCite Relative Citation Ratio,
-              and meanRank scores, to aggregate multivariate evidence. RESULTS:
-              This method, intended for drug target hypothesis generation,
-              scoring and ranking, has been implemented as an analytical
-              pipeline, available as open source, with public datasets of
-              results, and a web application designed for usability by drug
-              discovery scientists. AVAILABILITY: Web application, datasets,
-              and source code via: https://unmtid-shinyapps.net/tiga/.
-              SUPPLEMENTARY INFORMATION: Supplementary data are available at
-              Bioinformatics online.",
-  journal  = "Bioinformatics",
-  month    =  jun,
-  year     =  2021,
-  language = "en"
 }
 
 % The entry below contains non-ASCII chars that could not be converted
@@ -2675,57 +2765,6 @@
   year    =  2018
 }
 
-@ARTICLE{Yang2016-gn,
-  title    = "Badapple: promiscuity patterns from noisy evidence",
-  author   = "Yang, Jeremy J and Ursu, Oleg and Lipinski, Christopher A and
-              Sklar, Larry A and Oprea, Tudor I and Bologa, Cristian G",
-  abstract = "BACKGROUND: Bioassay data analysis continues to be an essential,
-              routine, yet challenging task in modern drug discovery and
-              chemical biology research. The challenge is to infer reliable
-              knowledge from big and noisy data. Some aspects of this problem
-              are general with solutions informed by existing and emerging data
-              science best practices. Some aspects are domain specific, and
-              rely on expertise in bioassay methodology and chemical biology.
-              Testing compounds for biological activity requires complex and
-              innovative methodology, producing results varying widely in
-              accuracy, precision, and information content. Hit selection
-              criteria involve optimizing such that the overall probability of
-              success in a project is maximized, and resource-wasteful ``false
-              trails'' are avoided. This ``fail-early'' approach is embraced
-              both in pharmaceutical and academic drug discovery, since
-              follow-up capacity is resource-limited. Thus, early
-              identification of likely promiscuous compounds has practical
-              value. RESULTS: Here we describe an algorithm for identifying
-              likely promiscuous compounds via associated scaffolds which
-              combines general and domain-specific features to assist and
-              accelerate drug discovery informatics, called Badapple:
-              bioassay-data associative promiscuity pattern learning engine.
-              Results are described from an analysis using data from MLP assays
-              via the BioAssay Research Database (BARD) http://bard.nih.gov.
-              Specific examples are analyzed in the context of medicinal
-              chemistry, to illustrate associations with mechanisms of
-              promiscuity. Badapple has been developed at UNM, released and
-              deployed for public use two ways: (1) BARD plugin, integrated
-              into the public BARD REST API and BARD web client; and (2) public
-              web app hosted at UNM. CONCLUSIONS: Badapple is a method for
-              rapidly identifying likely promiscuous compounds via associated
-              scaffolds. Badapple generates a score associated with a
-              pragmatic, empirical definition of promiscuity, with the overall
-              goal to identify ``false trails'' and streamline workflows.
-              Unlike methods reliant on expert curation of chemical
-              substructure patterns, Badapple is fully evidence-driven,
-              automated, self-improving via integration of additional data, and
-              focused on scaffolds. Badapple is robust with respect to noise
-              and errors, and skeptical of scanty evidence.",
-  journal  = "J. Cheminform.",
-  volume   =  8,
-  pages    = "29",
-  month    =  may,
-  year     =  2016,
-  keywords = "Compound promiscuity; Drug discovery informatics; High-throughput
-              screening (HTS); Molecular scaffolds; Statistical learning",
-  language = "en"
-}
 
 @MISC{Lipinski1997-vm,
   title   = "Experimental and computational approaches to estimate solubility
@@ -4193,46 +4232,6 @@
   number   = "Database issue",
   pages    = "D1071--8",
   month    =  jan,
-  year     =  2015,
-  language = "en"
-}
-
-@ARTICLE{Lee2015-vg,
-  title    = "Novel Phenotypic Outcomes Identified for a Public Collection of
-              Approved Drugs from a Publicly Accessible Panel of Assays",
-  author   = "Lee, Jonathan A and Shinn, Paul and Jaken, Susan and Oliver,
-              Sarah and Willard, Francis S and Heidler, Steven and Peery,
-              Robert B and Oler, Jennifer and Chu, Shaoyou and Southall, Noel
-              and Dexheimer, Thomas S and Smallwood, Jeffrey and Huang, Ruili
-              and Guha, Rajarshi and Jadhav, Ajit and Cox, Karen and Austin,
-              Christopher P and Simeonov, Anton and Sittampalam, G Sitta and
-              Husain, Saba and Franklin, Natalie and Wild, David J and Yang,
-              Jeremy J and Sutherland, Jeffrey J and Thomas, Craig J",
-  abstract = "Phenotypic assays have a proven track record for generating leads
-              that become first-in-class therapies. Whole cell assays that
-              inform on a phenotype or mechanism also possess great potential
-              in drug repositioning studies by illuminating new activities for
-              the existing pharmacopeia. The National Center for Advancing
-              Translational Sciences (NCATS) pharmaceutical collection (NPC) is
-              the largest reported collection of approved small molecule
-              therapeutics that is available for screening in a high-throughput
-              setting. Via a wide-ranging collaborative effort, this library
-              was analyzed in the Open Innovation Drug Discovery (OIDD)
-              phenotypic assay modules publicly offered by Lilly. The results
-              of these tests are publically available online at
-              www.ncats.nih.gov/expertise/preclinical/pd2 and via the PubChem
-              Database (https://pubchem.ncbi.nlm.nih.gov/) (AID 1117321).
-              Phenotypic outcomes for numerous drugs were confirmed, including
-              sulfonylureas as insulin secretagogues and the anti-angiogenesis
-              actions of multikinase inhibitors sorafenib, axitinib and
-              pazopanib. Several novel outcomes were also noted including the
-              Wnt potentiating activities of rotenone and the antifolate class
-              of drugs, and the anti-angiogenic activity of cetaben.",
-  journal  = "PLoS One",
-  volume   =  10,
-  number   =  7,
-  pages    = "e0130796",
-  month    =  jul,
   year     =  2015,
   language = "en"
 }
