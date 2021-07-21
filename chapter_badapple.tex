@@ -245,31 +245,37 @@ interpreted as a loss of predictive scope. The Pearson correlation was calculate
 zero, to reflect overall predictive power from each training set. Each correlation was approximately 0.9, indicating strong and consistent predictive power. These
 results are summarized in table \ref{table:ba_cmp_corr}.
 
-\renewcommand{\arraystretch}{1.3}
-
-\begin{longtable}
-% \caption{Retrospective comparison of high scores, pc2 versus pc1}
-\centering
-\begin{tabular}{ p{0.2\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.15\textwidth} }
+\begin{longtable}{ccccc}
+\caption{Retrospective comparison of high scores, pc2 versus pc1}\\
+\hline
 \textbf{Scaffold} & \textbf{pscore\_pc2} & \textbf{pscore\_pc1} & \textbf{pscore\_diff} & \textbf{wTested\_diff} \\
 \hline
-\includegraphics[align=c,width=0.2\textwidth]{data/badapple/scaf_01.png} & 436 & 395 & 41 & 7,234,388 \\
-\includegraphics[align=c,width=0.2\textwidth]{data/badapple/scaf_02.png} & 374 & 343 & 31 & 5,511,793 \\
-\includegraphics[align=c,width=0.2\textwidth]{data/badapple/scaf_03.png} & 443 & 369 & 74 & 2,644,122 \\
-\includegraphics[align=c,width=0.2\textwidth]{data/badapple/scaf_04.png} & 432 & 392 & 40 & 1,701,524 \\
-\includegraphics[align=c,width=0.2\textwidth]{data/badapple/scaf_05.png} & 578 & 468 & 110 & 1,652,980 \\
-\includegraphics[align=c,width=0.2\textwidth]{data/badapple/scaf_06.png} & 618 & 627 & -9 & 1,019,584 \\
-\includegraphics[align=c,width=0.2\textwidth]{data/badapple/scaf_07.png} & 375 & 315 & 60 & 899,779 \\
-\includegraphics[align=c,width=0.2\textwidth]{data/badapple/scaf_08.png} & 463 & 366 & 97 & 654,420 \\
-\includegraphics[align=c,width=0.2\textwidth]{data/badapple/scaf_09.png} & 365 & 361 & 4 & 524,438 \\
-\includegraphics[align=c,width=0.2\textwidth]{data/badapple/scaf_10.png} & 461 & 367 & 94 & 496,504 \\
-\includegraphics[align=c,width=0.2\textwidth]{data/badapple/scaf_11.png} & 358 & 303 & 55 & 422,280 \\
-\includegraphics[align=c,width=0.2\textwidth]{data/badapple/scaf_12.png} & 805 & 696 & 109 & 376,575 \\
-\includegraphics[align=c,width=0.2\textwidth]{data/badapple/scaf_13.png} & 403 & 331 & 72 & 358,012 \\
-\includegraphics[align=c,width=0.2\textwidth]{data/badapple/scaf_14.png} & 459 & 487 & -28 & 319,746 \\
-\includegraphics[align=c,width=0.2\textwidth]{data/badapple/scaf_15.png} & 841 & 721 & 120 & 318,307 \\
+\endfirsthead
+\multicolumn{5}{c}
+{\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
 \hline
-\end{tabular}
+\textbf{Scaffold} & \textbf{pscore\_pc2} & \textbf{pscore\_pc1} & \textbf{pscore\_diff} & \textbf{wTested\_diff} \\
+\hline
+\endhead
+\hline \multicolumn{5}{r}{\textit{Continued on next page}} \\
+\endfoot
+\endlastfoot
+\includegraphics[width=60px]{data/badapple/scaf_01.png} & \makecell[{{m{1cm}}}]{436} & 395 & 41 & 7,234,388 \\
+\includegraphics[width=60px]{data/badapple/scaf_02.png} & 374 & 343 & 31 & 5,511,793 \\
+\includegraphics[width=60px]{data/badapple/scaf_03.png} & 443 & 369 & 74 & 2,644,122 \\
+\includegraphics[width=60px]{data/badapple/scaf_04.png} & 432 & 392 & 40 & 1,701,524 \\
+\includegraphics[width=60px]{data/badapple/scaf_05.png} & 578 & 468 & 110 & 1,652,980 \\
+\includegraphics[width=60px]{data/badapple/scaf_06.png} & 618 & 627 & -9 & 1,019,584 \\
+\includegraphics[width=60px]{data/badapple/scaf_07.png} & 375 & 315 & 60 & 899,779 \\
+\includegraphics[width=60px]{data/badapple/scaf_08.png} & 463 & 366 & 97 & 654,420 \\
+\includegraphics[width=60px]{data/badapple/scaf_09.png} & 365 & 361 & 4 & 524,438 \\
+\includegraphics[width=60px]{data/badapple/scaf_10.png} & 461 & 367 & 94 & 496,504 \\
+\includegraphics[width=60px]{data/badapple/scaf_11.png} & 358 & 303 & 55 & 422,280 \\
+\includegraphics[width=60px]{data/badapple/scaf_12.png} & 805 & 696 & 109 & 376,575 \\
+\includegraphics[width=60px]{data/badapple/scaf_13.png} & 403 & 331 & 72 & 358,012 \\
+\includegraphics[width=60px]{data/badapple/scaf_14.png} & 459 & 487 & -28 & 319,746 \\
+\includegraphics[width=60px]{data/badapple/scaf_15.png} & 841 & 721 & 120 & 318,307 \\
+\hline
 \label{table:ba_cmp_retro}
 \end{longtable}
 
