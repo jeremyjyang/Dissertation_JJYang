@@ -1,11 +1,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Document type, global settings, and packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \documentclass[12pt]{report}   %12 point font for Times New Roman
 \usepackage{graphicx}  %for images and plots
 \usepackage[letterpaper, left=1.5in, right=1in, top=1in, bottom=1in]{geometry}
-\usepackage[doublespacing]{setspace}  %use this package to set linespacing as desired
+\usepackage[doublespacing]{setspace}
 \usepackage{times}  %set Times New Roman as the font
 \usepackage[explicit]{titlesec}  %title control and formatting
 \usepackage[titles]{tocloft}  %table of contents control and formatting
@@ -45,19 +44,16 @@
 %%%%%%%%%%%%%%%%%%%%%%
 % Start of Document
 
-
 \begin{document}
 %\doublespacing  %set line spacing
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title Page
-
 \currentpdfbookmark{Title Page}{titlePage}  %add PDF bookmark for this page
 \input{titlePage.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Approval Page
-
 \pagenumbering{roman}
 \setcounter{page}{2} % set the page number appropriately based on the number of intro pages
 \newpage
@@ -65,19 +61,16 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Copyright
-
 \newpage
 \input{copyright.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Dedication
-
 \newpage
 \input{dedication.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Acknowledgments
-
 \newpage
 \phantomsection
 \addcontentsline{toc}{chapter}{Acknowledgements}
@@ -85,7 +78,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Abstract
-
 \newpage
 \phantomsection
 \addcontentsline{toc}{chapter}{Abstract}
@@ -106,7 +98,7 @@
 \renewcommand{\cftsubsecafterpnum}{\vskip\baselineskip} %set correct spacing for entries in single space environment
 \renewcommand{\cftsubsubsecafterpnum}{\vskip\baselineskip} %set correct spacing for entries in single space environment
 
-%format title font size and position (this also applys to list of figures and list of tables)
+%format title font size and position
 \titleformat{\chapter}[display]
 {\normalfont\bfseries\filcenter}{\chaptertitlename\ \thechapter}{0pt}{\MakeUppercase{#1}}
 
@@ -124,7 +116,7 @@
 \phantomsection
 \addcontentsline{toc}{chapter}{List of Tables}
 \begin{singlespace}
-\setlength\cftbeforetabskip{\baselineskip}  %manually set spacing between entries
+\setlength\cftbeforetabskip{\baselineskip}  %set spacing between entries
 \listoftables
 \end{singlespace}
 
@@ -133,7 +125,7 @@
 \phantomsection
 \addcontentsline{toc}{chapter}{List of Figures}
 \begin{singlespace}
-\setlength\cftbeforefigskip{\baselineskip}  %manually set spacing between entries
+\setlength\cftbeforefigskip{\baselineskip}  %set spacing between entries
 \listoffigures
 \end{singlespace}
 
@@ -183,17 +175,13 @@
 % Chapter: Conclusion
 \input{chapter_conclusion.tex}
 
+%%%%%%%%%%%%%%%%
 % Appendices
 \input{appendix.tex}
 
-% References
 %%%%%%%%%%%%%%%%
-%\begin{singlespace}  % use single-line spacing for multi-line text within a single reference
-%	\setlength\bibitemsep{\baselineskip}  %manually set separation between items in bibliography to double space
-%	\printbibliography[heading=bibintoc,title={References}]
-%\end{singlespace}
+% References
 \printbibliography[heading=bibintoc,title={References}]
-%\addcontentsline{toc}{chapter}{References}  %add References to ToC
 
 %%%%%%%%%%%%%%%%
 % Vita 

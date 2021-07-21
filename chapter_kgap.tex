@@ -256,13 +256,18 @@ Z \sim \frac{\sum_{n=1}^{k}w_iZ_i}{\sqrt{\sum_{n=1}^{k}w_i^2}}
 
 Cypher query used for PD target association:
 
-\begin{lstlisting}
+\begin{singlespace}
+\begin{lstlisting}[caption=KGAP Cypher query]
 MATCH p=(d:Drug)-[]-(s:Signature)-[r]-(g:Gene), p1=(s)-[]-(c:Cell)
-WHERE (d.pubchem_cid in [2130, 2381, 4167, 4601, 4850, 4919, 5095, 5572, 6005, 6047, 23497, 26757, 30843, 31101,47811, 59227, 77991, 119570, 131682, 1201549, 1201549, 3052776, 4659569, 5281081, 10071196, 135565903])
+WHERE (d.pubchem_cid in [2130, 2381, 4167, 4601, 4850, 4919, 5095, 
+    5572, 6005, 6047, 23497, 26757, 30843, 31101,47811, 59227, 
+    77991, 119570, 131682, 1201549, 1201549, 3052776, 4659569, 
+    5281081, 10071196, 135565903])
 WITH g, sum(r.zscore)/sqrt(count(r)) AS score
 RETURN g.id, g.name, score
 ORDER BY score DESC
 \end{lstlisting}
+\end{singlespace}
 
 \subsection{Executing the KGAP workflow}
 

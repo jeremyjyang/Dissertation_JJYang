@@ -45,7 +45,7 @@ Scaffolds are used to aggregate data and detect patterns for several reasons: (1
 
 \subsection{Badapple formula for scaffold promiscuity}
 
-The Badapple formula is shown as equation \ref{eq:ba_f}. The promiscuity score (pScore) is a product of three terms, related to substances, assays and samples, each of which needs to be high to produce a high score. Medians are computed across the entire dataset. The use of medians normalizes in such a way that scores are unlikely to be high if the weight of evidence is relatively low.
+The Badapple formula is shown as equation \ref{eq:ba_formula}. The promiscuity score (pScore) is a product of three terms, related to substances, assays and samples, each of which needs to be high to produce a high score. Medians are computed across the entire dataset. The use of medians normalizes in such a way that scores are unlikely to be high if the weight of evidence is relatively low.
 
 \begin{equation}
 score = \frac{s_A}{s_T + med(s_T)} * \frac{a_A}{a_T + med(a_T)} * \frac{w_A}{w_T + med(w_T)} * 10^5
