@@ -2,21 +2,32 @@
 
 IU Informatics PhD dissertation
 
+___Evidence evaluation biomedical in knowledge graphs for pharmaceutical
+discovery___
+
 Thanks to [Liang Chen](https://github.com/liang-chen/) for the
 [Thesis template](https://github.com/liang-chen/IU-PhD-Thesis-Template)
 upon which this is based.
 
-To compile, run the following commands in sequence:
+To compile, run the following command:
 
 ```
-pdflatex main.tex
+latexmk -pdf main.tex
 ```
 
-or with MacTex
+or since `.latexmkrc` defines main file, simply:
 
 ```
-xelatex main.tex
+latexmk
 ```
+
+To clean:
+
+```
+latexmk -C
+```
+
+`latexmk` included with MacTeX or installed separately for Linux.
 
 Alternativly, compilation can be done via [Overleaf](https://overleaf.com).
 
