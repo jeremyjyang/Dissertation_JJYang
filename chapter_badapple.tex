@@ -353,8 +353,6 @@ HierS and Badapple were implemented using the ChemAxon JChem Java toolkit\cite{C
 
 A Badapple database was implemented with PostgreSQL, since rapid scoring, possibly for large numbers of compounds and scaffolds, requires pre-computing and storing aggregate statistics efficiently. OpenChord from gNova was used as a chemical cartridge. Scaffold analysis is performed for all compounds, resulting in links from scaffolds to compounds and substances. Activity data associates substances with an outcome for each sample (typically a well in a multiwell plate) in all the assays in the dataset. Typically there are hundreds of millions of samples. The workflow is outlined in figure \ref{fig:BA_07}. R was used for statistical analyses.
 
-\section{Abbreviations}
-
 \begin{table}
 \caption{Abbreviations}
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}rl}
@@ -382,6 +380,15 @@ A Badapple database was implemented with PostgreSQL, since rapid scoring, possib
 \end{tabular*}
 \end{table}
 
-\section{Authors’ contributions}
+\section{Author contributions}
 
-CGB developed the scoring function and tested the method. JJY performed the data analysis and implemented the algorithm. CAL manually reviewed highly scored scaffolds. TIO conceptualized and coordinated the project, jointly with LAS. JJY, CGB, OU and TIO wrote and edited the manuscript. CAL and LAS reviewed the manuscript. All authors read and approved the final manuscript.
+Cristian Bologa originally developed the Badapple scoring function. Christopher Lipinsky manually reviewed highly scored scaffolds. Tudor Oprea and Larry Sklar supervised the project. JY provided a leading and major effort (\href{http://purl.org/spar/scoro/major-effort}{scoro:major-effort}) including:
+
+\begin{itemize}
+    \item Implemented the HScaf scaffold perception algorithm.
+    \item Implemented Badapple scoring function.
+    \item Implemented PubChem and BARD workflows.
+    \item Implemented Badapple web application.
+    \item Performed data analysis, including 5-fold cross-validation.
+    \item Support, documentation and outreach (see \href{https://zenodo.org/record/4844970}{poster}).
+\end{itemize}
