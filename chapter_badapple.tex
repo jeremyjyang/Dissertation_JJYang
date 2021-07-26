@@ -67,7 +67,7 @@ Experienced practitioners of HTS know that errors occur despite diligent use of 
 \begin{table}
 \caption{Badapple pScore ranges}
 \begin{center}
-\begin{tabular}{ |r|l| } 
+\begin{tabular}{r|l} 
 \hline
 \textbf{pScore range} & \textbf{Advisory} \\
 \hline
@@ -185,8 +185,11 @@ To validate Badapple we used retrospective datasets to indicate whether scores g
 & \textbf{\#scafs} & \textbf{Tested} & \textbf{Nonzero} & \textbf{\#assy} & \textbf{Activities} & \textbf{Date} & \textbf{Source} \\
 \hline
 Bard1 & 146,024 & 141,642 & 54,136 & 510 & 30M & 2013-01 & BARD \\
+\hline
 Bard2 & 143,098 & 137,668 & 52,328 & 383 & 46M & 2014-06 & BARD \\
+\hline
 Pc1 & 143,098 & 141,533 & 60,200 & 822 & 223M & 2014-06 & PubChem \\
+\hline
 Pc2 & 143,098 & 125,940 & 50,912 & 527 & 113M & 2010-12 & PubChem \\
 \hline
 \end{tabular}
@@ -288,9 +291,13 @@ results are summarized in table \ref{table:ba_cmp_corr}.
 \textbf{k} & \textbf{Ntrain} & \textbf{Ntest} & \textbf{Correlation} \\
 \hline
 1 & 311,540 & 77,993 & 0.895 \\
+\hline
 2 & 311,463 & 78,070 & 0.891 \\
+\hline
 3 & 311,652 & 77,881 & 0.898 \\
+\hline
 4 & 311,565 & 77,968 & 0.901 \\
+\hline
 5 & 311,454 & 78,079 & 0.903 \\
 \hline
 \end{tabular}
@@ -353,34 +360,7 @@ HierS and Badapple were implemented using the ChemAxon JChem Java toolkit\cite{C
 
 A Badapple database was implemented with PostgreSQL, since rapid scoring, possibly for large numbers of compounds and scaffolds, requires pre-computing and storing aggregate statistics efficiently. OpenChord from gNova was used as a chemical cartridge. Scaffold analysis is performed for all compounds, resulting in links from scaffolds to compounds and substances. Activity data associates substances with an outcome for each sample (typically a well in a multiwell plate) in all the assays in the dataset. Typically there are hundreds of millions of samples. The workflow is outlined in figure \ref{fig:BA_07}. R was used for statistical analyses.
 
-\begin{table}
-\caption{Abbreviations}
-\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}rl}
-\hline
-\textbf{BA} & batting average \\
-\hline
-\textbf{BAO} & BioAssay Ontology \\
-\hline
-\textbf{BARD} & BioAssay Research Database \\
-\hline
-\textbf{HTS} & high-throughput screening \\
-\hline
-\textbf{ML} & machine learning \\
-\hline
-\textbf{MLP} & Molecular Libraries Program \\
-\hline
-\textbf{MLSMR} & Molecular Libraries Small Molecule Repository \\
-\hline
-\textbf{Ro5} & Rule of 5 \\
-\hline
-\textbf{SAR} & structure–activity relationships \\
-\hline
-\textbf{UNMCMD} & University of New Mexico Center for Molecular Discovery \\
-\hline
-\end{tabular*}
-\end{table}
-
-\section{Author contributions}
+\section{Researcher contributions}
 
 Cristian Bologa originally developed the Badapple scoring function. Christopher Lipinsky manually reviewed highly scored scaffolds. Tudor Oprea and Larry Sklar supervised the project. JY provided a leading and major effort (\href{http://purl.org/spar/scoro/major-effort}{scoro:major-effort}) including:
 
@@ -390,5 +370,6 @@ Cristian Bologa originally developed the Badapple scoring function. Christopher 
     \item Implemented PubChem and BARD workflows.
     \item Implemented Badapple web application.
     \item Performed data analysis, including 5-fold cross-validation.
-    \item Support, documentation and outreach (see \href{https://zenodo.org/record/4844970}{poster}).
+    \item Support, documentation and outreach (see \textunderscore{\href{https://zenodo.org/record/4844970}{poster}}).
 \end{itemize}
+

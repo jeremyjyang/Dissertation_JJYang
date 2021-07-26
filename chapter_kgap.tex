@@ -8,7 +8,7 @@ Integrating LINCS and IDG, we built the Knowledge Graph Analytics Platform (KGAP
 
 The synergy of LINCS and IDG, via KG methods, empowers graph analytics methods for the investigation of the molecular basis of complex diseases, and specifically for identification and prioritization of novel drug targets. The KGAP approach enables downstream applications via integration with resources similarly aligned with modern KG methodology. The generality of the approach indicates that KGAP is applicable to many disease areas, in addition to PD.
 
-\section{Keywords}
+\subsection{Keywords}
 Knowledge graph, graph analytics, systems biology, drug discovery, drug target, druggable genome, Parkinson's disease
 
 \section{Background}
@@ -21,10 +21,10 @@ We have combined the complementary strengths of LINCS and IDG to derive new drug
 
 \begin{table}
 \caption{Key concepts from LINCS and IDG}
-\begin{center}
+\label{table:LINCS-IDG-Conc}
 \begin{tabular}{|p{0.5\linewidth}|p{0.5\linewidth}|}
 \hline
-\textbf{LINCS key concepts} & \textbf{IDG key concepts} \\
+\makecell[c]{\textbf{LINCS key concepts}} & \makecell[c]{\textbf{IDG key concepts}} \\
 \hline
 \textbf{L1000}: Broad Institute microarray platform and LINCS project involving landmark genes. \newline
 \textbf{Landmark Gene}: approximately 1000 genes representing the full human genome, from which a maximum set of gene responses can be inferred.\newline
@@ -39,13 +39,11 @@ We have combined the complementary strengths of LINCS and IDG to derive new drug
 \textbf{Target Development Level (TDL)}: Simple measure of illumination: Tdark, Tbio, Tchem and Tclin.\newline
 \textbf{Target Importance and Novelty}: Bibliometric measures from TIN-X for target prioritization. \\
 \hline
-\multicolumn{2}{|p{1.0\linewidth}|}{\textbf{LINCS-IDG semantic linkage}} \\
+\multicolumn{2}{|c|}{\textbf{LINCS-IDG semantic linkage}} \\
 \hline
 \multicolumn{2}{|p{1.0\linewidth}|}{LINCS centers utilize in-depth gene and protein expression assays to generate signatures directly mappable to IDG protein targets. Disease and phenotype ontology mapping is a community challenge with useful, working solutions such as UMLS\cite{Bodenreider2004-gn}. LINCS perturbagens include rigorously defined chemical entities and small molecule drugs included in IDG resource DrugCentral. Therefore, LINCS’s vast number of human cell lines and experimental chemical perturbation datasets, combined with IDG’s protein targets (gene and protein IDs) and DrugCentral active pharmaceutical ingredients (drug compounds) databases, provide a tightly integrated combination resource for drug target discovery.} \\
 \hline
 \end{tabular}
-\end{center}
-\label{table:LINCS-IDG-Conc}
 \end{table}
 
 
@@ -59,14 +57,13 @@ We have combined the complementary strengths of LINCS and IDG to derive new drug
 
 \subsection{Graph analytics for evidence aggregation}
 
-We used the list of PD drugs as starting points for evidence paths in KGAP to identify likely and novel PD targets. KGs and graph analytics provide an intuitive and powerful way to aggregate instances of evidence paths, yielding a score measuring the aggregated evidence. As illustrated schematically in figure \ref{fig:KGAP_LINCS-IDG_Schematic}, each evidence path connects a drug with expression signature and gene. The magnitude of the expression perturbation is represented by a z-score which can be used for thresholding and/or weighting. The search resulted in 641 genes, ranked by KGAP score produced by the graph analytics algorithm described in Methods and specified by Cypher query Listing 1.
+We used the list of PD drugs as starting points for evidence paths in KGAP to identify likely and novel PD targets. KGs and graph analytics provide an intuitive and powerful way to aggregate instances of evidence paths, yielding a score measuring the aggregated evidence. As illustrated schematically in figure \ref{fig:KGAP_LINCS-IDG_Schematic}, each evidence path connects a drug with expression signature and gene. The magnitude of the expression perturbation is represented by a z-score which can be used for thresholding and/or weighting. The search resulted in 641 genes, ranked by KGAP score produced by the graph analytics algorithm described in Methods and specified by Cypher query listing \ref{listing:kgap_01}.
 
 \subsection{Validation versus known mechanism-of-action targets}
 
 Solving the fundamental challenges of molecular biomedicine is an ongoing effort. Specifically, there are no gold standard validation datasets of causal or druggable genes for complex diseases, including cancers, neurodegenerative, metabolic, and cardiovascular diseases. Therefore it is pertinent to elucidate the genomic basis of diseases, and the fundamental uncertainties and difficulties concerning the definitions and diagnostic criteria for complex diseases such as PD. Mindful of these difficulties, we validated against a dataset of known drug targets, for the same PD drugs described above, all based on peer-reviewed references, and with elucidated mechanism-of-action (MoA), as manually curated in the DrugCentral database. Given the scientific and regulatory standards for efficacy met by approved drugs, and the standards of evidence for peer-reviewed, manually curated MoA targets, we consider this approach the most useful and informative dataset validation available. LINCS is experimental based, thus derived independently from the curation of MoA targets from DrugCentral, or in machine learning terms, there is strict separation of training and test data.
 
 \begin{figure}[h]
-
 \begin{subfigure}{0.5\textwidth}
 \includegraphics[width=0.95\linewidth]{figures/kgap/KGAP-LINCS_ROC_dweighted_Parkinson.png} 
 \caption{}
@@ -173,8 +170,11 @@ Table \ref{table:kg_rel} shows the complete list of relationships present in the
 \textbf{Vertex type} & \textbf{Edge type} & \textbf{Vertex type} & \textbf{Source} & \textbf{Count} \\ 
 \hline
 \textbf{Signature} & SIGNATURE\_GENE & Gene & L1000 & 45623637 \\ 
+\hline
 \textbf{Cell} & CELL\_SIGNATURE & Signature & L1000 & 591676 \\ 
+\hline
 \textbf{Drug} & DRUG\_SIGNATURE & Signature & L1000 & 85814 \\ 
+\hline
 \textbf{Drug} & INDICATION & Concept & DrugCentral, L1000 & 7164 \\ 
 \hline
 \end{tabular}
@@ -190,9 +190,13 @@ Table \ref{table:kg_rel} shows the complete list of relationships present in the
 \textbf{Vertex type} & \textbf{Source} & \textbf{Count} \\ 
 \hline
 Signature & L1000 & 591676 \\ 
+\hline
 Gene & L1000, TCRD & 12329 \\ 
+\hline
 Concept & DrugCentral 2021 & 2241 \\ 
+\hline
 Drug & L1000, DrugCentral 2021 & 1613 \\ 
+\hline
 Cell & L1000 & 99 \\ 
 \hline
 \end{tabular}
@@ -208,36 +212,60 @@ We filter the 45.6M signature associations at z-score threshold $|z|>3$, to iden
 To apply KGAP to PD knowledge discovery, the set of drugs indicated by PD and related conditions were identified using DrugCentral, which derives drug indication from FDA DailyMed (provides trustworthy information about marketed drugs in the United States), and maps SNOMED to OMOP terms\cite{Hripcsak2015-xo} for interoperability. A simple substring search for "Parkinson" matches five terms: "Parkinsonism", "Parkinson's disease", "Arteriosclerotic Parkinsonism", "Dementia associated with Parkinson's Disease", and "Neuroleptic-induced Parkinsonism." Requiring Anatomical and Therapeutic Classification (ATC) "nervous system" is intended to focus on the neurological etiology of PD rather than symptoms. This query returns 25 drugs, shown in table \ref{table:pd_drugset} with their PubChem CID, of which 22 / 25 are present in LINCS. This drug-set represents PD knowledge as in drug-set enrichment analysis (DSEA)\cite{Napolitano2016-ya}, analogous to gene-set enrichment analysis (GSEA).
 
 \begin{table}
-\caption{Drug-set representing Parkinson's disease}
+\caption{Drug-set representing Parkinson's disease, with DrugCentral and PubChem IDs}
 \begin{center}
 \begin{tabular}{ |l|c|c|c| } 
 \hline
 \textbf{Name} & \textbf{Struct\_ID} & \textbf{PubChem\_CID} & \textbf{In\_LINCS} \\
 \hline
 amantadine & 144 & 2130 & TRUE \\
+\hline
 apomorphine & 228 & 6005 & TRUE \\
+\hline
 benzatropine & 333 & 1201549 & TRUE \\
+\hline
 biperiden & 374 & 2381 & TRUE \\
+\hline
 bromocriptine & 403 & 31101 & TRUE \\
+\hline
 dexetimide & 831 & 30843 & FALSE \\
+\hline
 entacapone & 1018 & 5281081 & TRUE \\
+\hline
 levodopa & 1567 & 6047 & TRUE \\
+\hline
 melevodopa & 1673 & 23497 & FALSE \\
+\hline
 metixene & 1780 & 4167 & TRUE \\
+\hline
 opicapone & 5143 & 135565903 & FALSE \\
+\hline
 orphenadrine & 1999 & 4601 & TRUE \\
+\hline
 pergolide & 2105 & 47811 & TRUE \\
+\hline
 pimavanserin & 5142 & 10071196 & TRUE \\
+\hline
 piribedil & 2202 & 4850 & TRUE \\
+\hline
 pramipexole & 2233 & 119570 & TRUE \\
+\hline
 procyclidine & 2276 & 4919 & TRUE \\
+\hline
 rasagiline & 3521 & 3052776 & TRUE \\
+\hline
 rivastigmine & 2392 & 77991 & TRUE \\
+\hline
 ropinirole & 2402 & 5095 & TRUE \\
+\hline
 rotigotine & 2407 & 59227 & TRUE \\
+\hline
 safinamide & 4921 & 131682 & TRUE \\
+\hline
 selegiline & 2429 & 26757 & TRUE \\
+\hline
 tolcapone & 2697 & 4659569 & TRUE \\
+\hline
 trihexyphenidyl & 2745 & 5572 & TRUE \\
 \hline
 \end{tabular}
@@ -247,17 +275,17 @@ trihexyphenidyl & 2745 & 5572 & TRUE \\
 
 \subsection{Graph analytics for evidence aggregation}
 
-KGAP consists of the graph database described plus code and tools used to query the database for target associations from the input drug-set representing the disease of interest. In the current version of the platform, the queries were implemented via the Neo4j Python Driver\cite{Neo4j_Inc_undated-ly} and our prototype Python3 command-line applications and notebooks. As in the data modeling in the construction of the database, the Cypher graph queries must be crafted to accurately express the biomedical question, and justify useful interpretation of results. However, since the database was designed precisely for target association and ranking, the Cypher queries involved can be relatively terse. The query used to generate PD target associations is shown in Listing 1. The scoring function is responsible for aggregating evidence from signature counts and z-scores, to reflect that confidence increases with additional confirmatory data, and is an implementation of Stouffer's function, with all weights set to one (equation \ref{eq:kgap_stouffer}) for z-score meta-analysis, based on Fisher's function using p-values\cite{Rosenthal1978-in}. Though not used in KGAP for hypothesis testing, the reference indicates the function is well behaved and combines z-scores as intended. 
+KGAP consists of the graph database described plus code and tools used to query the database for target associations from the input drug-set representing the disease of interest. In the current version of the platform, the queries were implemented via the Neo4j Python Driver\cite{Neo4j_Inc_undated-ly} and our prototype Python3 command-line applications and notebooks. As in the data modeling in the construction of the database, the Cypher graph queries must be crafted to accurately express the biomedical question, and justify useful interpretation of results. However, since the database was designed precisely for target association and ranking, the Cypher queries involved can be relatively terse. The query used to generate PD target associations is shown in listing \ref{listing:kgap_01}. The scoring function is responsible for aggregating evidence from signature counts and z-scores, to reflect that confidence increases with additional confirmatory data, and is an implementation of Stouffer's function, with all weights set to one (equation \ref{eq:kgap_stouffer}) for z-score meta-analysis, based on Fisher's function using p-values\cite{Rosenthal1978-in}. Though not used in KGAP for hypothesis testing, the reference indicates the function is well behaved and combines z-scores as intended. 
 
 \begin{equation}
 Z \sim \frac{\sum_{n=1}^{k}w_iZ_i}{\sqrt{\sum_{n=1}^{k}w_i^2}}
 \label{eq:kgap_stouffer}
 \end{equation}
 
-Cypher query used for PD target association:
-
+Cypher query used for PD target association:\\
+\rule[0.5ex]{\linewidth}{1pt}
 \begin{singlespace}
-\begin{lstlisting}[caption=KGAP Cypher query]
+\begin{lstlisting}[caption=KGAP Cypher query,label=listing:kgap_01]
 MATCH p=(d:Drug)-[]-(s:Signature)-[r]-(g:Gene), p1=(s)-[]-(c:Cell)
 WHERE (d.pubchem_cid in [2130, 2381, 4167, 4601, 4850, 4919, 5095, 
     5572, 6005, 6047, 23497, 26757, 30843, 31101,47811, 59227, 
@@ -267,11 +295,12 @@ WITH g, sum(r.zscore)/sqrt(count(r)) AS score
 RETURN g.id, g.name, score
 ORDER BY score DESC
 \end{lstlisting}
+\rule[0.5ex]{\linewidth}{1pt}
 \end{singlespace}
 
 \subsection{Executing the KGAP workflow}
 
-In the current version, the workflow is executed via Python3 command-line application kgap\_analysis.py. Alternatively, the workflow may be executed via integrated development environment (IDE) such as PyCharm, as shown in figure \ref{fig:pycharm}. More details, including a Jupyter notebook KGAP workflow implementation, are available via the GitHub repository, https://github.com/IUIDSL/kgap\_lincs-idg. 
+In the current version, the workflow is executed via Python3 command-line application kgap\_analysis.py. Alternatively, the workflow may be executed via integrated development environment (IDE) such as PyCharm, as shown in figure \ref{fig:pycharm}. More details, including a Jupyter notebook KGAP workflow implementation, are available via the GitHub repository, \href{https://github.com/IUIDSL/kgap\_lincs-idg}{https://github.com/IUIDSL/kgap\_lincs-idg}. 
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{figures/kgap/KGAP_PyCharm_composite2.png}
@@ -283,30 +312,20 @@ In the current version, the workflow is executed via Python3 command-line applic
 
 Human interaction with the KG through an effective GUI can greatly facilitate understanding and insights.  In this project we used (1) Neo4j Desktop, (2) Neo4j  Browser web client, used to produce Figure \ref{fig:neo4jmetagraph}, and (3) Cytoscape (v3.8.1) with the Neo4j plugin, which was used to produce figure \ref{fig:SYNGR3_subnet}.  
 
-\begin{table}
-\caption{List of abbreviations}
-\begin{center}
-\begin{tabular}{p{0.3\linewidth}p{0.7\linewidth}}
-\hline
-\textbf{ATC} & Anatomical Therapeutic Chemical Classification (WHO) \\
-\textbf{AUROC} & Area under receiver operator characteristic (ROC) curve \\
-\textbf{IDG} & Illuminating the druggable genome (NIH Common Fund) \\
-\textbf{KG} & Knowledge graph, also known as a knowledge network \\
-\textbf{KGAP} & Knowledge graph analytics platform \\
-\textbf{LINCS1000} & "Landmark genes" (approximately 1000) from LINCS, chosen for maximal inference of full genomic expression. \\
-\textbf{LINCS} & Library of integrated network-based cellular signatures (NIH Common Fund) \\
-\textbf{MoA} & Mechanism of action, describing biomolecular details of drug effect \\
-\textbf{PD} & Parkinson's disease \\
-\textbf{SYNGR3} & Synaptogyrin-3, a human gene, subject of case study in this paper \\
-\textbf{TCRD} & Target central resource database (IDG) \\
-\textbf{TDL} & Target development level (IDG) \\
-\textbf{TIN-X} & Target Importance and Novelty Explorer (IDG) \\
-\hline
-\end{tabular}
-\end{center}
-\label{tab:abbr}
-\end{table}
+\section{Availability of data and materials}
 
-\subsection{Availability of data and materials}
+Source code for processing and analysis is available publicly under Creative Commons Zero v1.0 Universal license at  \href{https://github.com/IUIDSL/kgap\_lincs-idg}{https://github.com/IUIDSL/kgap\_lincs-idg}. A Knime workflow is employed to extract, transform and load the graph database from sources, and generate TSV files of nodes and relationships. The database is queried, and results reported and visualized using Python and Cypher. A full dump of the KGAP\_LINCS-IDG dataset is available at \href{https://cheminfov.informatics.indiana.edu/projects/kgap/data/dclneodb.dump}{https://cheminfov.informatics.indiana.edu/projects/kgap/data/dclneodb.dump}. Source datasets used to build Neo4j database are: (1) DrugCentral-LINCS database dump: \href{https://cheminfov.informatics.indiana.edu/projects/kgap/data/drugcentral\_lincs.pgdump}{https://cheminfov.informatics.indiana.edu/projects/kgap/data/drugcentral\_lincs.pgdump}; (2) TCRD targets: \href{https://cheminfov.informatics.indiana.edu/projects/kgap/data/tcrd\_targets.tsv.gz}{https://cheminfov.informatics.indiana.edu/projects/kgap/data/tcrd\_targets.tsv.gz}. Neo4j Community Edition, Python, Scikit-learn, Cytoscape and other packages used in this work are freely and easily findable and accessible.
 
-Source code for processing and analysis is available publicly under Creative Commons Zero v1.0 Universal license at  https://github.com/IUIDSL/kgap\_lincs-idg. A Knime workflow is employed to extract, transform and load the graph database from sources, and generate TSV files of nodes and relationships. The database is queried, and results reported and visualized using Python and Cypher. A full dump of the KGAP\_LINCS-IDG dataset is available at http://cheminfov.informatics.indiana.edu/projects/kgap/data/dclneodb.dump. Source datasets used to build Neo4j database are: (1) DrugCentral-LINCS database dump: http://cheminfov.informatics.indiana.edu/projects/kgap/data/drugcentral\_lincs.pgdump; (2) TCRD targets: http://cheminfov.informatics.indiana.edu/projects/kgap/data/tcrd\_targets.tsv.gz. Neo4j Community Edition, Python, Scikit-learn, Cytoscape and other packages used in this work are freely and easily findable and accessible.
+\section{Researcher contributions}
+
+KGAP was an team science effort with several contributors. Joel Duerksen was lead developer for the Neo4j knowledge graph. Murat Ozturk was lead developer for the web UI LIDIA. Christopher Gessner was lead in graph analytics  and visualization methodology. Daniel Bieber contributed in application data science, and Jessica Binder in the biological case study of Synaptogyrin-3. JY was the overall scientific and informatics lead (\href{http://purl.org/spar/scoro/major-effort}{scoro:major-effort}), specifically:
+
+\begin{itemize}
+    \item Conceived and led research project (\href{http://purl.org/spar/scoro/conceives-project}{scoro:conceives-project}, \href{http://purl.org/spar/scoro/project-leader}{scoro:project-leader})
+    \item Principal author of paper(\href{http://purl.org/spar/scoro/principal-author}{scoro:principal-author})
+    \item Identified and sourced datasets from IDG and LINCS.
+    \item Developed design for (1) knowledge graph, and (2) web UI
+    \item Developed KGAP analysis and validation workflow via Cypher, Python and Jupyter. 
+\end{itemize}
+
+

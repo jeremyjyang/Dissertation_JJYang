@@ -242,28 +242,6 @@ Biomedical knowledge discovery depends on integration of sources and data types 
 
 We agree with Visscher et al. that: "the paradigm of 'one gene, one function, one trait' is the wrong way to view genetic variation"\cite{Visscher2017-jp}. Yet given the intrinsic complexity of biomedical science, progress often requires simplifying assumptions. Findings must be interpreted in context for an audience and application. Mindful of these concerns and limitations, TIGA provides a directly interpretable window into GWAS data, specifically for drug target hypothesis generation and elucidation. As interest in "interpretable machine learning" and "explainable artificial intelligence"\cite{Gilpin2018-da} grows, TIGA summarizes gene-trait associations derived solely and transparently from GWAS summary- and meta-data, with rational and intuitive evidence metrics and a robust, open-source pipeline designed for continual updates and improvements. Whether in stand-alone mode, or by integration with other interfaces, TIGA aims to contribute to drug target identification and prioritization. 
 
-\section{Abbreviations and Definitions}
-
-Common terms used in GWAS and related fields can vary in their definitions and connotations depending on context. Therefore for clarity and rigor the following definitions are provided, which we consider consistent with best practices in the GWAS and drug discovery communities.
-
-\begin{table}
-\caption{Abbreviations and Definitions}
-\begin{center}
-\begin{tabular}{p{0.2\linewidth}p{0.8\linewidth}}
-\hline
-\textbf{genotype} & An organism has one genotype, comprised of a germ line genome and multiple somatic genomes. Statistical models may assume a population distribution hence a population genotype. \\
-\hline
-\textbf{phenotype} & An organism has one phenotype, comprised of (potentially) all non-genomic observable characteristics, a.k.a. phenotypic traits. \\
-\hline
-\textbf{gene} & Genomic unit responsible for an expression product. Protein coding genes are a subset of this definition.  \\
-\hline
-\textbf{trait} & Single non-genomic, observable characteristic. \\
-\hline
-\textbf{drug target} & Biomolecular entity involved in the mechanism of action of a drug. The IDG project is protein-centric; hence drug targets are all proteins. \\
-\hline
-\end{tabular}
-\end{center}
-\end{table}
 
 \section{Supplementary material}
 
@@ -288,4 +266,16 @@ $W_{Exp}(d) = 2^{-d/k}$ \\
 where d = distance in base pairs \\ 
 and k = ”half-life distance” (50k) \\
 \end{center}
+
+\section{Researcher contributions}
+
+TIGA was an team science effort with several contributors. Tudor Oprea conceived and managed the project. Lars Juhl Jensen co-managed the project focusing on algorithm validation. Dhouha Grissa implemented algorithm validation studies resulting in improved method selection (meanRankScore). Christophe Lambert guided approaches to multivariate optimization and overall GWAS analytics. JY provided a leading and major effort (\href{http://purl.org/spar/scoro/major-effort}{scoro:major-effort}), specifically:
+
+\begin{itemize}
+    \item Lead developer for workflows and web application.
+    \item Project lead (\href{http://purl.org/spar/scoro/project-leader}{scoro:project-leader})
+    \item Principal author of paper (\href{http://purl.org/spar/scoro/principal-author}{scoro:principal-author}
+    \item Identified and sourced datasets from GWAS Catalog, iCite, Ensembl, etc.
+    \item Developed scoring functions: (1) RCRAS, (2) N\_snpw (weighted SNP count), and (3) meanRankScore.
+\end{itemize}
 

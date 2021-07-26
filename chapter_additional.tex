@@ -36,8 +36,6 @@ CARLSBAD CCPs are pre-calculated and stored for all chemical structures in the d
     \label{fig:cb_schematic}
 \end{figure}
 
-\subsection{Results}
-
 The CARLSBAD database is implemented as a PostgreSQL relational database with entities such as substance, compound, activity, target and so forth, and the various relationships between them (figure \ref{fig:cb_erd}). The CHORD chemical cartridge from \href{https://www.gnova.com/}{gNova Scientific Software} is used to provide fast chemical functionalities such as SMILES canonicalization\cite{Weininger1989-kh}, chemical fingerprints and structure searching. CHORD is based on the OEChem toolkit, available from \href{https://www.eyesopen.com/}{OpenEye Scientific Software}.
 
 
@@ -174,7 +172,7 @@ Chemical space overlap between structures in the CARLSBAD database and drugs app
 
 CARLSBAD is a database focused on high-quality subsets aggregated from several bioactivity databases, which are integrated in a uniform interface and manner, suitable for chemical biology and drug discovery studies, as well as large scale, ‘big data’ informatics and knowledge mining. In contrast to the original data collections, CARLSBAD provides a single normalized activity value of a given type for each unique chemical–protein target pair. Aggregation accounted for $\sim$25\% of the \textgreater 975,000 structure–target pairs processed, up to and including 109 bioactivities for a single chemical. We implemented two types of chemotype perception for common chemical patterns, HierS and MCES. CARLSBAD contains 439,985 unique chemical structures, mapped onto 1,420,889 unique bioactivities and annotated with 277,140 HierS scaffolds and 54,135 MCES patterns, respectively. It also contains bioactivities and tags for 1435 unique active pharmaceutical ingredients.
 
-\subsection{Author contributions}
+\subsection{Researcher contributions}
 
 CARLSBAD was very much a collaborative team effort, involving many meetings and interactions among members, but also with designated roles and tasks. JY was a major contributor (\href{http://purl.org/spar/scoro/major-effort}{scoro:major-effort}) fully engaged in the team effort, and also responsible for research and development tasks, specifically:
 
@@ -214,7 +212,7 @@ The initial version of the KN is intended to provide a clear and easily comprehe
 
 The KN uses the following ontologies:
 
-\begin{table}[]
+\begin{table}
 \caption{Ontologies}
 \label{tab:opddr_01}
 \centering
@@ -269,7 +267,7 @@ CCO = ChEMBL Core Ontology
 
 Note that PubChem compounds are required in addition to substances.  Compounds refer to canonically defined and identifiable chemical entities which can be linked across databases; Substances refer to specific samples of compounds as provided by a supplier.  We thus include both, to be as comprehensive and specific as possible.   Note also that PubChem measuregroups are defined for each assay, for example, the measuregroup URI for AID12345 is http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup/AID12345.  PubChem endpoints represent activity outcomes.  ChEMBL RDF represents bioactivities somewhat differently than PubChem, but we can rigorously link these data via chemical structure and CIDs.
 
-\begin{table}[]
+\begin{table}
 \caption{KN Statistics}
 \label{tab:opddr_03}
 \centering
@@ -366,7 +364,7 @@ PubChem substance to ChEMBL molecule & \makecell[l]{\texttt{substance:SID2251442
 
 This initial KN Beta Version provides sufficient associations for semantic exploration across PD2 phenotypic and public biochemical assays for the NPC substances.  The integration with PubChem, ChEMBL, and OpenPHACTS adds value in multiple ways, linking to a large, diverse and expanding ecosystem of public biomedical knowledge.  Additional assay annotations can add further value, whereby the knowledge model developed can represent and derive high value from the unique knowledge of domain specialists and facilitate the links which power and advance data intensive research.
 
-\subsection{Author contributions}
+\subsection{Researcher contributions}
 
 OPDDR was a collaboration involving Lilly's Open Innovation Drug Discovery (OIDD), NIH-NCATS, Data2Discovery and IU. The experimental activities involved compounds supplied by NIH-NCATS, and bioassays performed by Lilly. The informatics activities were primarily the responsibility of Data2Discovery and IU, and in these, JY provided a major effort ((\href{http://purl.org/spar/scoro/major-effort}{scoro:major-effort})), which included: 
 
@@ -431,7 +429,7 @@ In figure \ref{fig:tinx_01}, TIN-X displays targets for a selected disease class
 
 TIN-X provides an intuitive visualization, ranking, and prioritization platform for scientists interested in potentially novel drug targets, and exploring the relationship between diseases, disease categories, proteins and protein classes, using literature mining.  As with all current text mining, TIN-X cannot replace expert human readers and curators, yet, it is increasingly clear that automated bibliometry is essential given the volume of literature to be processed.  TIN-X is an important interactive tool in the IDG project, and future plans include adding functionality relating to known drugs and drug classes, and inclusion of additional protein classes. 
 
-\subsection{Author contributions}
+\subsection{Researcher contributions}
 
 TIN-X was originally developed by Cristian Bologa, implemented by Daniel Cannon, and supervised by Tudor Oprea. Subsequent improvements have involved a team effort in which JY has provided a major effort (\href{http://purl.org/spar/scoro/major-effort}{scoro:major-effort}), including:
 
