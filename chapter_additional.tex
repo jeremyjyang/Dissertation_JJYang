@@ -1,8 +1,29 @@
 \chapter{Additional and related research involving evidence evaluation, biomedical knowledge graphs, and pharmaceutical discovery}
 
-\section{CARLSBAD: Confederated, annotated research library of small-molecule bioactivity data}
 
-(Publication: The CARLSBAD Database: A Confederated Database of Chemical Bioactivities, S.L. Mathias et al., Database, 2013\cite{Mathias2013-hj}.)
+\vspace*{\fill}
+Projects described in this chapter:
+
+
+\noindent
+\ref{section:carlsbad} CARLSBAD: Confederated, annotated research library of small-molecule bioactivity data
+
+\noindent
+\ref{section:opddr} OPDDR: Open phenotypic drug discovery resource
+
+\noindent
+\ref{section:tinx} TIN-X: Target importance and novelty explorer
+
+\vspace*{\fill}
+
+
+\newpage
+\section{CARLSBAD: Confederated, annotated research library of small-molecule bioactivity data}
+\label{section:carlsbad}
+
+\textbf{Publication}: The CARLSBAD Database: A Confederated Database of Chemical Bioactivities, S.L. Mathias et al., Database, 2013\cite{Mathias2013-hj}.\\
+\textbf{Web application}: \href{https://datascience.unm.edu/tomcat/carlsbad/carlsbadone}{CarlsbadOne}\\
+\textbf{Source code}: \href{https://github.com/unmtransinfo/CARLSBAD}{GitHub:CARLSBAD}
 
 \subsection{Introduction}
 
@@ -27,7 +48,6 @@ The focus on high-quality subsets of data from the five aforementioned databases
 For the purpose of data mining, patent analytics and decision making, a single (highest confidence) activity value for any given bioactivity type, e.g. inhibition constant, Ki, or effective concentration at which 50\% of the response is obtained (EC50) is calculated, and returned for each unique chemical–protein target pair (‘CARLSBAD activity’). CARLSBAD activities correspond to unique four-tuples (chemical, protein, species, activity-type). For example, the cholesterol-lowering drug lovastatin has only one activity of type Ki on the human HMG CoA reductase protein (the rate-limiting enzyme in the metabolic pathway that produces cholesterol) stored in the CARLSBAD database. To generate these unique four-tuples, we defined confidence levels to establish a hierarchy for data sources during aggregation. When multiple activity values of the same type (e.g. Ki) with equal confidence levels were found, the mean value was indexed.
 
 CARLSBAD CCPs are pre-calculated and stored for all chemical structures in the database, using the maximum common edge subgraph (MCES) and hierarchical scaffold (HierS) algorithms. MCES and HierS are complementary, as each method perceives structural chemotypes in a different manner. The cross-indexing of bioactivity, target and CCP data enables scientists to perform multiple tasks related to data mining, hypothesis generation and chemical biology space exploration. Classes of structural features that might be responsible for invoking certain biological responses can thus be examined within the CARLSBAD platform. Alternatively, biological targets could be categorized based on their preference toward particular CCPs.
-
 
 \begin{figure}
     \centering
@@ -176,17 +196,21 @@ CARLSBAD is a database focused on high-quality subsets aggregated from several b
 
 CARLSBAD was very much a collaborative team effort, involving many meetings and interactions among members, but also with designated roles and tasks. JY was a major contributor (\href{http://purl.org/spar/scoro/major-effort}{scoro:major-effort}) fully engaged in the team effort, and also responsible for research and development tasks, specifically:
 
-\begin{itemize}
+\begin{itemize}[topsep=0pt,itemsep=0pt,partopsep=0pt,parsep=0pt]
     \item Scientific software development of web applications SNAKE and CarlsbadOne. These Java web applications were developed iteratively, with ongoing feedback from scientific users, to address pharmaceutical research use cases. The addition of KEGG diseases and disease queries was a notable result of scientific user feedback. (\href{http://purl.org/spar/scoro/IntellectualContribution}{scoro:IntellectualContribution}, \href{http://purl.org/spar/scoro/OrganizationalContribution}{scoro:OrganizationalContribution})
     \item Support, documentation, outreach (conference talk, etc.) and publication (\href{http://purl.org/spar/scoro/AuthorshipContribution}{scoro:AuthorshipContribution}). 
 \end{itemize}
 
+%\rule[0.5ex]{\linewidth}{2pt}
+\newpage
+
 \section{OPDDR: Open phenotypic drug discovery resource}
+\label{section:opddr}
 
-OPDDR: Open Phenotypic Drug Discovery Resource
-Novel Phenotypic Outcomes Identified for a Public Collection of Approved Drugs from a Publicly Accessible Panel of Assays, J. Lee, et al, PLoS ONE, 2015\cite{Lee2015-vg}.
-
-
+\textbf{Publication}: Novel Phenotypic Outcomes Identified for a Public Collection of Approved Drugs from a Publicly Accessible Panel of Assays, J. Lee, et al, PLoS ONE, 2015\cite{Lee2015-vg}.\\
+\textbf{Source code}: \href{https://github.com/IUIDSL/OPDDR}{GitHub:OPDDR}\\
+\textbf{PubChem Bioassay}: \href{https://pubchem.ncbi.nlm.nih.gov/bioassay/1117321}{1117321}\\
+\textbf{Poster}: \href{https://zenodo.org/record/4844529}{https://zenodo.org/record/4844529}
 
 \subsection{Introduction}
 
@@ -241,7 +265,7 @@ CCO = ChEMBL Core Ontology
 
 \subsubsection{Entities}
 
-\begin{table}[]
+\begin{table}
 \caption{Entities}
 \label{tab:opddr_02}
 \centering
@@ -368,7 +392,7 @@ This initial KN Beta Version provides sufficient associations for semantic explo
 
 OPDDR was a collaboration involving Lilly's Open Innovation Drug Discovery (OIDD), NIH-NCATS, Data2Discovery and IU. The experimental activities involved compounds supplied by NIH-NCATS, and bioassays performed by Lilly. The informatics activities were primarily the responsibility of Data2Discovery and IU, and in these, JY provided a major effort ((\href{http://purl.org/spar/scoro/major-effort}{scoro:major-effort})), which included: 
 
-\begin{itemize}
+\begin{itemize}[topsep=0pt,itemsep=0pt,partopsep=0pt,parsep=0pt]
     \item Converting dataset to RDF.
     \item Annotating assays using BioAssay Ontology (BAO).
     \item Coordinating with PubChem to deposit assay results.
@@ -376,27 +400,28 @@ OPDDR was a collaboration involving Lilly's Open Innovation Drug Discovery (OIDD
     \item Outreach and publication (See \href{https://zenodo.org/record/4844529}{poster}).
 \end{itemize}
 
+%\rule[0.5ex]{\linewidth}{2pt}
+\newpage
+
 \section{TIN-X: Target importance and novelty explorer}
+\label{section:tinx}
 
-TIN-X: Target importance and novelty explorer
-TIN-X: Target Importance and Novelty Explorer, D.C. Cannon et al., Bioinformatics, 2017\cite{Cannon2017-af}.
-
-Estimates and visualizes the association between proteins and diseases, based on text mining data processed from scientific literature.  Novelty estimates the scarcity of publications about a protein target. Importance estimates the strength of the association between that protein target and a specific disease.
-Web application: https://newdrugtargets.org
-Poster: https://zenodo.org/record/5038628
+\textbf{Publication}: TIN-X: Target Importance and Novelty Explorer, D.C. Cannon et al., Bioinformatics, 2017\cite{Cannon2017-af}.\\
+\textbf{Web application}: \href{https://newdrugtargets.org}{https://newdrugtargets.org}\\
+\textbf{Poster}: \href{https://zenodo.org/record/5038628}{https://zenodo.org/record/5038628}
 
 \subsection{Introduction}
 
-The increasing amount of peer-reviewed manuscripts requires the development of specific mining tools to facilitate the visual exploration of evidence linking diseases and proteins. We developed TIN-X, the Target Importance and Novelty eXplorer, to visualize the association between proteins and diseases, based on text mining data processed from scientific literature. In the current implementation, TIN-X supports exploration of data for G-protein coupled receptors, kinases, ion channels, and nuclear receptors. TIN-X supports browsing and navigating across proteins and diseases based on ontology classes, and displays a scatter plot with two proposed new bibliometric statistics: Importance and Novelty. 
+The increasing amount of peer-reviewed manuscripts requires the development of specific mining tools to facilitate the visual exploration of evidence linking diseases and proteins. We developed TIN-X, the Target Importance and Novelty eXplorer, to visualize the association between proteins and diseases, based on text mining data processed from scientific literature. TIN-X supports browsing and navigating across proteins and diseases based on ontology classes, and displays a scatter plot with two proposed new bibliometric statistics: Importance and Novelty. Novelty estimates the scarcity of publications about a protein target. Importance estimates the strength of the association between that protein target and a specific disease.
 
-Science builds upon past discoveries, traditionally communicated through words and symbols assembled into works of (peer-reviewed) scientific literature. However, scale-out of traditional and alternate publication modes has exceeded the limit of how much the human mind can process, creating the need for computer-assisted methods\cite{Hunter2006-om}. Text mining, ontologies, and interactive visualization are some of the emerging technologies that can alleviate information overload. We present a new method and software tool utilizing these technologies, to provide biomedical scientists with rankings and visualizations linking proteins and diseases.  The information is derived from PubMed abstracts, text mined using previously published tools for named entity recognition (NER) of gene/protein and disease names\cite{Pletscher-Frankild2015-oo,Szklarczyk2015-bl}. We propose two new bibliometric indices based on NER mentions, specifically devised to address research planning use cases. Our goal is to enable scientists to identify research subjects with sufficient evidence of importance, but not already well-studied. Novelty measures the scarcity of publications about a protein target (see also equation \ref{eq:tinx_n}). Importance measures the strength of the association between that target and a disease (see also equation \ref{eq:tinx_i}). By visualizing Novelty and Importance on a 2D plot, users can easily examine the strength of the evidence linking protein targets and diseases of interest. TIN-X is a web application which allows users to navigate targets via the Drug Target Ontology (DTO, http://drugtargetontology.org) and diseases via the Disease Ontology (DO)\cite{Kibbe2015-li}, and for selected classes, to display and browse Importance–Novelty plots. These plots are interactive, with built-in drill-down and link-out functionality for in-depth examination of selected targets. TIN-X was inspired by and developed for the Illuminating the Druggable Genome (IDG) Knowledge Management Center (KMC, http://targetcentral.ws), which seeks to identify and prioritize understudied genes and proteins for investigation and validation as new drug targets.
+Science builds upon past discoveries, traditionally communicated through words and symbols assembled into works of (peer-reviewed) scientific literature. However, scale-out of traditional and alternate publication modes has exceeded the limits of human processing, creating the need for computer-assisted methods\cite{Hunter2006-om}. Text mining, ontologies, and interactive visualization are some of the emerging technologies that can alleviate information overload. We present a new method and software tool utilizing these technologies, to provide biomedical scientists with rankings and visualizations linking proteins and diseases.  The information is derived from PubMed abstracts, text mined using previously published tools for named entity recognition (NER) of gene/protein and disease names\cite{Pletscher-Frankild2015-oo,Szklarczyk2015-bl}. We propose two new bibliometric indices based on NER mentions, specifically devised to address research planning use cases. Our goal is to enable scientists to identify research subjects with sufficient evidence of importance, but not already well-studied. Novelty measures the scarcity of publications about a protein target (see also equation \ref{eq:tinx_n}). Importance measures the strength of the association between that target and a disease (see also equation \ref{eq:tinx_i}). By visualizing Novelty and Importance on a 2D plot, users can easily examine the strength of the evidence linking protein targets and diseases of interest. TIN-X is a web application which allows users to navigate targets via the \href{Drug Target Ontology (DTO)}{https://drugtargetontology.org} and diseases via the Disease Ontology (DO)\cite{Kibbe2015-li}, and for selected classes, to display and browse Importance–Novelty plots. These plots are interactive, with built-in drill-down and link-out functionality for in-depth examination of selected targets. TIN-X was inspired by and developed for the Illuminating the Druggable Genome (IDG) Project\cite{Oprea2018-cp}, which seeks to identify and prioritize understudied genes and proteins for investigation and validation as new drug targets.
 
 \subsection{Methods}
 
-The TIN-X web application is implemented in Scala using the Lift web framework (http://liftweb.net), which provides inherent scalability and compatibility with Java.  The back-end utilizes a PostgreSQL database built using the knowledge base developed by the IDG-KMC, and known as the Target Central Research Database (TCRD)\cite{Nguyen2017-lo}.  TCRD compiles data from a variety of sources, including Disease Ontology, and, by special arrangement with IDG-KMC network members, (1) U. Miami, developers of DTO, and (2) NNFCPR, mapping to genes/proteins and diseases using a highly efficient dictionary-based named entity recognition engine\cite{Pafilis2013-ml} with dictionaries from the STRING\cite{Szklarczyk2015-bl} and DISEASES\cite{Pletscher-Frankild2015-oo} databases, respectively.  Data is transferred, processed, and loaded into TCRD by automated and semi-automated protocols, with routine updates approximately bi-annually.  PubMed abstracts are obtained via NCBI web services.  Bibliometric statistics and the derived novelty ($N_i$) and importance ($I_{ij}$) scores are pre-computed for runtime performance, using equations \ref{eq:tinx_n} and \ref{eq:tinx_i}.
+The TIN-X web application is implemented in Python and includes a Swagger/Django REST API, D3 thin client, and tight integration with Target Central Research Database (TCRD)\cite{Nguyen2017-lo}. Updates and deployment automation employs Docker and AWS. TCRD compiles data from a variety of sources, including Disease Ontology\cite{Kibbe2015-li}, Drug Target Ontology (DTO)\cite{Vempati2012-ns} from the U. Miami Sch\"urer Group, and DISEASES\cite{Pletscher-Frankild2015-oo} from JensenLab, which maps to genes/proteins and diseases using a high performance named entity recognition (NER) engine\cite{Pafilis2013-ml} with dictionaries used also by STRING\cite{Szklarczyk2015-bl}.  Data is transferred, processed, and loaded into TCRD by automated protocols, with routine updates approximately bi-annually.  PubMed abstracts are obtained via NCBI web services.  Bibliometric statistics and the derived novelty ($N_i$) and importance ($I_{ij}$) scores are pre-computed, using equations \ref{eq:tinx_n} and \ref{eq:tinx_i}.
 
 \begin{equation}
-N_i = \frac{1}{\sum_{k}^{}\frac{1}{T_k}}
+N_i = (\sum_{k}^{}\frac{1}{T_k})^{-1}
 \label{eq:tinx_n}
 \end{equation}
 
@@ -405,7 +430,7 @@ I_{ij} = \sum_{k}^{}\frac{1}{T_kD_k}
 \label{eq:tinx_i}
 \end{equation}
 
-where $T_k$ and $D_k$ are the numbers of targets and diseases in abstract k, respectively, and summation over all publications including target (i), and for importance, also including disease (j). Fractional counts are employed to reflect strength of association.  E.g. if a paper mentions three targets, each receives a fractional count $\frac{1}{T} = \frac{1}{3}$.
+where $T_k$ and $D_k$ are the numbers of targets and diseases in abstract $k$, respectively, and summation over all publications including target $i$, and for importance, also including disease $j$. Fractional counts are employed to reflect strength of association.  E.g. if a paper mentions three targets, each receives a fractional count $\frac{1}{T} = \frac{1}{3}$.
 
 \subsection{Results}
 
@@ -433,8 +458,9 @@ TIN-X provides an intuitive visualization, ranking, and prioritization platform 
 
 TIN-X was originally developed by Cristian Bologa, implemented by Daniel Cannon, and supervised by Tudor Oprea. Subsequent improvements have involved a team effort in which JY has provided a major effort (\href{http://purl.org/spar/scoro/major-effort}{scoro:major-effort}), including:
 
-\begin{itemize}
+\begin{itemize}[topsep=0pt,itemsep=0pt,partopsep=0pt,parsep=0pt]
     \item Co-authorship of paper.
     \item Project management for version 2 redesign.
-    \item Support, outreach, documentation (see \href{https://zenodo.org/record/5038628}{poster}).
+    \item Support, outreach, documentation (see version 2 \href{https://zenodo.org/record/5038628}{poster}).
+    \item Application science via KGAP project.
 \end{itemize}
