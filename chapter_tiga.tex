@@ -129,7 +129,7 @@ $\mu$ scores were implemented via the muStat\cite{Wittkowski2012-fk} R package. 
 
 Simply put, case $k$’ is higher than case $k$ if it is higher in some variable(s) and lower in none.
 
-\subsection{Benchmark against gold standard}
+\subsection{Validation: benchmark against gold standard}
 
 Lacking a suitable gold standard set of gene–trait associations in general, we instead relied on established gene–disease associations from the Genetics Home Reference, GHR\cite{Fomous2006-wm} and UniProtKB\cite{UniProt_Consortium2018-kq} databases. This gold stand set was built following a previously described approach\cite{Pletscher-Frankild2015-oo}. It consists of 5,366 manually curated associations (positive examples) between 3,495 genes and 709 diseases. All other (2,472,589) possible pairings of these genes and diseases were considered negative examples.
 
@@ -154,8 +154,6 @@ Hits are ranked by meanRankScore described in Methods. Scatterplot axes are Effe
 	\caption{Performance evaluation. The performance of TIGA on the gold standard of gene-disease associations. A) Results for the top-3 individual variables of merit. B) Results for the multivariate ranking by meanRankScore and $\mu$ score.}
 	\label{fig:TIGA_rocs}
 \end{figure}
-
-\subsection{}
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{figures/tiga/SupFIG01_AdditionalROCs.png}
@@ -256,7 +254,7 @@ Interpretability concerns exist throughout science, but GWAS is understood to pr
 
 \subsection{Designing for downstream integration}
 
-Biomedical knowledge discovery depends on integration of sources and data types which are heterogeneous in the extreme, reflecting the underlying complexity of biomedical science. These challenges are increasingly understood and addressed by improving data science methodology. However, provenance, interpretability and confidence aspects are underappreciated and rarely discussed. As in all signal propagation, errors and uncertainty accrue and confidence decays. Here, we proposed the use of simple, transparent, and comprehensible metrics to assess the relative confidence of disease-gene associations, via the unbiased meanRank scores. Figure \ref{fig:TIGA_09}, summarizing TIGA sources and interfaces, illustrates its well-defined role. Continuous confidence scores support algorithmic weighting and filtering. Standard identifiers and semantics support rigorous integration. Limiting provenance to the Catalog and its linked publications, semantic interpretability is enhanced. 
+Biomedical knowledge discovery depends on integration of sources and data types which are heterogeneous in the extreme, reflecting the underlying complexity of biomedical science. These challenges are increasingly understood and addressed by improving data science methodology. However, provenance, interpretability and confidence aspects are underappreciated. As in all signal propagation, errors and uncertainty accrue and confidence decays. Here, we proposed the use of simple, transparent, and comprehensible metrics to assess the relative confidence of disease-gene associations, via the unbiased meanRank scores. Figure \ref{fig:TIGA_09}, summarizing TIGA sources and interfaces, illustrates its well-defined role. Continuous confidence scores support algorithmic weighting and filtering. Standard identifiers and semantics support rigorous integration. Limiting provenance to the Catalog and its linked publications, semantic interpretability is enhanced. TIGA was designed an implemented with downstream integration and interpretability in mind, and has been integrated with DISEASES and Pharos. TIGA is similarly well suited for KG integration, with well defined semantics for traits, genes, and SNPs.
 
 \section{Conclusions}
 
