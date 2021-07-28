@@ -133,7 +133,7 @@ Simply put, case $k$’ is higher than case $k$ if it is higher in some variable
 
 Lacking a suitable gold standard set of gene–trait associations in general, we instead relied on established gene–disease associations from the Genetics Home Reference, GHR\cite{Fomous2006-wm} and UniProtKB\cite{UniProt_Consortium2018-kq} databases. This gold stand set was built following a previously described approach\cite{Pletscher-Frankild2015-oo}. It consists of 5,366 manually curated associations (positive examples) between 3,495 genes and 709 diseases. All other (2,472,589) possible pairings of these genes and diseases were considered negative examples.
 
-To assess the quality of the TIGA gene–trait associations, we mapped the Ensembl gene IDs to STRING v11 identifiers using the STRING alias file [23] and the EFO terms to Disease Ontology\cite{Schriml2019-uh} identifiers based on ontology cross-references and the EMBL-EBI Ontology Xref Service. We then benchmark any individual-variable or multivariate ranking of the associations by constructing the receiver operating characteristic (ROC) curve by counting the agreement with the gold standard.
+To assess the quality of the TIGA gene–trait associations, we mapped the Ensembl gene IDs to STRING v11 identifiers using the STRING alias file\cite{Szklarczyk2019-bc} and the EFO terms to Disease Ontology\cite{Schriml2019-uh} identifiers based on ontology cross-references and the EMBL-EBI Ontology Xref Service. We then benchmark any individual-variable or multivariate ranking of the associations by constructing the receiver operating characteristic (ROC) curve by counting the agreement with the gold standard. See figure \ref{fig:TIGA_Rocs}.
 
 \section{Results}
 
@@ -151,17 +151,25 @@ Hits are ranked by meanRankScore described in Methods. Scatterplot axes are Effe
 
 
 \begin{figure}
-\begin{subfigure}[c]{\textwidth}
-	\includegraphics[width=\textwidth]{figures/tiga/FIG04_ROC_a.png}
-	\caption{Performance evaluation. The performance of TIGA on the gold standard of gene-disease associations. A) Results for the top-3 individual variables of merit. B) Results for the multivariate ranking by meanRankScore and $\mu$ score.}
-	\label{fig:TIGA_rocs_a}
+\begin{subfigure}[c]{0.5\textwidth}
+\includegraphics[width=8cm]{figures/tiga/FIG04_ROC_a.png}
+\caption{Benchmark results against gold-standard disease–gene associations for the top-3 individual variables of merit.}
+\label{fig:TIGA_rocs_a}
+\end{subfigure}
+\begin{subfigure}[c]{0.5\textwidth}
+\includegraphics[width=8cm]{figures/tiga/FIG04_ROC_b.png}
+\caption{Results for the multivariate ranking by meanRankScore and $\mu$ score.}
+\label{fig:TIGA_rocs_b}
 \end{subfigure}
 
+\centering
 \begin{subfigure}[c]{0.5\textwidth}
-	\includegraphics[width=\textwidth]{figures/tiga/SupFIG01_AdditionalROCs.png}
-	\caption{Benchmark against gold-standard disease–gene associations, for additional individual variables of merit not in the top 3 selected for TIGA scoring.}
-	\label{fig:TIGA_Sup01}
+\includegraphics[width=\textwidth]{figures/tiga/SupFIG01_AdditionalROCs.png}
+\caption{Benchmark for additional individual variables of merit not in the top 3.}
+\label{fig:TIGA_Sup01}
 \end{subfigure}
+\caption{Performance evaluation. The performance of TIGA on the gold standard of gene-disease associations.}
+\label{fig:TIGA_rocs}
 \end{figure}
 
 \subsection{Using TIGA for drug target illumination}
@@ -270,8 +278,8 @@ TIGA was an team science effort with several contributors. Tudor Oprea conceived
 
 \begin{itemize}[topsep=0pt,itemsep=0pt,partopsep=0pt,parsep=0pt]
     \item Lead developer for workflows and web application.
-    \item Project lead (\href{http://purl.org/spar/scoro/project-leader}{scoro:project-leader})
-    \item Principal author of paper (\href{http://purl.org/spar/scoro/principal-author}{scoro:principal-author}
+    \item Project lead (\href{http://purl.org/spar/scoro/project-leader}{scoro:project-leader}).
+    \item Principal author of paper (\href{http://purl.org/spar/scoro/principal-author}{scoro:principal-author}).
     \item Identified and sourced datasets from GWAS Catalog, iCite, Ensembl, etc.
     \item Developed scoring functions: (1) RCRAS, (2) N\_snpw (weighted SNP count), and (3) meanRankScore.
 \end{itemize}
