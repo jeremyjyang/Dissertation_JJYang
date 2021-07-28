@@ -1,5 +1,9 @@
 \chapter{KGAP (Knowledge graph analytics platform combining LINCS and IDG for drug target illumination)}
 
+\textbf{Publication (preprint)}: Knowledge graph analytics platform with LINCS and IDG for Parkinson’s disease target illumination, J. J. Yang et al., 2021\cite{Yang2021-yv}.\\
+\textbf{Poster}: \href{https://doi.org/10.5281/zenodo.5142103}{https://doi.org/10.5281/zenodo.5142103}\\
+\textbf{Source code}: \href{https://github.com/IUIDSL/kgap\_lincs-idg}{GitHub:kgap\_lincs-idg}
+
 \section{Introduction}
 
 LINCS, "Library of Integrated Network-based Cellular Signatures", and IDG, "Illuminating the Druggable Genome", are both NIH projects and consortia that have generated rich datasets for the study of the molecular basis of human health and disease.  LINCS L1000 expression signatures provide unbiased systems/omics experimental evidence. IDG provides compiled and curated knowledge for illumination and prioritization of novel drug target hypotheses. Together, these resources can support a powerful new approach to identifying novel drug targets for complex diseases, such as Parkinson's disease (PD), which continues to inflict severe harm on human health, and resist traditional research approaches.
@@ -216,57 +220,57 @@ To apply KGAP to PD knowledge discovery, the set of drugs indicated by PD and re
 \begin{center}
 \begin{tabular}{ |l|c|c|c| } 
 \hline
-\textbf{Name} & \textbf{Struct\_ID} & \textbf{PubChem\_CID} & \textbf{In\_LINCS} \\
+\makecell[c]{\textbf{Name}} & \textbf{Struct\_ID} & \textbf{PubChem\_CID} & \textbf{In\_LINCS} \\
 \hline
-amantadine & 144 & 2130 & TRUE \\
+amantadine & \href{https://drugcentral.org/drugcard/144}{144} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/2130}{2130} & TRUE \\
 \hline
-apomorphine & 228 & 6005 & TRUE \\
+apomorphine & \href{https://drugcentral.org/drugcard/228}{228} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/6005}{6005} & TRUE \\
 \hline
-benzatropine & 333 & 1201549 & TRUE \\
+benzatropine & \href{https://drugcentral.org/drugcard/333}{333} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/1201549}{1201549} & TRUE \\
 \hline
-biperiden & 374 & 2381 & TRUE \\
+biperiden & \href{https://drugcentral.org/drugcard/374}{374} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/2381}{2381} & TRUE \\
 \hline
-bromocriptine & 403 & 31101 & TRUE \\
+bromocriptine & \href{https://drugcentral.org/drugcard/403}{403} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/31101}{31101} & TRUE \\
 \hline
-dexetimide & 831 & 30843 & FALSE \\
+dexetimide & \href{https://drugcentral.org/drugcard/831}{831} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/30843}{30843} & FALSE \\
 \hline
-entacapone & 1018 & 5281081 & TRUE \\
+entacapone & \href{https://drugcentral.org/drugcard/1018}{1018} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/5281081}{5281081} & TRUE \\
 \hline
-levodopa & 1567 & 6047 & TRUE \\
+levodopa & \href{https://drugcentral.org/drugcard/1567}{1567} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/6047}{6047} & TRUE \\
 \hline
-melevodopa & 1673 & 23497 & FALSE \\
+melevodopa & \href{https://drugcentral.org/drugcard/1673}{1673} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/23497}{23497} & FALSE \\
 \hline
-metixene & 1780 & 4167 & TRUE \\
+metixene & \href{https://drugcentral.org/drugcard/1780}{1780} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/4167}{4167} & TRUE \\
 \hline
-opicapone & 5143 & 135565903 & FALSE \\
+opicapone & \href{https://drugcentral.org/drugcard/5143}{5143} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/135565903}{135565903} & FALSE \\
 \hline
-orphenadrine & 1999 & 4601 & TRUE \\
+orphenadrine & \href{https://drugcentral.org/drugcard/1999}{1999} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/4601}{4601} & TRUE \\
 \hline
-pergolide & 2105 & 47811 & TRUE \\
+pergolide & \href{https://drugcentral.org/drugcard/2105}{2105} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/47811}{47811} & TRUE \\
 \hline
-pimavanserin & 5142 & 10071196 & TRUE \\
+pimavanserin & \href{https://drugcentral.org/drugcard/5142}{5142} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/10071196}{10071196} & TRUE \\
 \hline
-piribedil & 2202 & 4850 & TRUE \\
+piribedil & \href{https://drugcentral.org/drugcard/2202}{2202} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/4850}{4850} & TRUE \\
 \hline
-pramipexole & 2233 & 119570 & TRUE \\
+pramipexole & \href{https://drugcentral.org/drugcard/2233}{2233} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/119570}{119570} & TRUE \\
 \hline
-procyclidine & 2276 & 4919 & TRUE \\
+procyclidine & \href{https://drugcentral.org/drugcard/2276}{2276} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/4919}{4919} & TRUE \\
 \hline
-rasagiline & 3521 & 3052776 & TRUE \\
+rasagiline & \href{https://drugcentral.org/drugcard/3521}{3521} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/3052776}{3052776} & TRUE \\
 \hline
-rivastigmine & 2392 & 77991 & TRUE \\
+rivastigmine & \href{https://drugcentral.org/drugcard/2392}{2392} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/77991}{77991} & TRUE \\
 \hline
-ropinirole & 2402 & 5095 & TRUE \\
+ropinirole & \href{https://drugcentral.org/drugcard/2402}{2402} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/5095}{5095} & TRUE \\
 \hline
-rotigotine & 2407 & 59227 & TRUE \\
+rotigotine & \href{https://drugcentral.org/drugcard/2407}{2407} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/59227}{59227} & TRUE \\
 \hline
-safinamide & 4921 & 131682 & TRUE \\
+safinamide & \href{https://drugcentral.org/drugcard/4921}{4921} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/131682}{131682} & TRUE \\
 \hline
-selegiline & 2429 & 26757 & TRUE \\
+selegiline & \href{https://drugcentral.org/drugcard/2429}{2429} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/26757}{26757} & TRUE \\
 \hline
-tolcapone & 2697 & 4659569 & TRUE \\
+tolcapone & \href{https://drugcentral.org/drugcard/2697}{2697} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/4659569}{4659569} & TRUE \\
 \hline
-trihexyphenidyl & 2745 & 5572 & TRUE \\
+trihexyphenidyl & \href{https://drugcentral.org/drugcard/2745}{2745} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/5572}{5572} & TRUE \\
 \hline
 \end{tabular}
 \end{center}
