@@ -1,0 +1,43 @@
+
+\begin{singlespace}
+\begin{longtable}{p{0.3\linewidth}p{0.7\linewidth}}
+\caption{Data science terms: Statistics}\\
+\multicolumn{2}{c}{\emph{(See statistics textbooks and other resources for more authoritative definitions of these terms.)}} \\ 
+\hline
+\makecell[r]{\textbf{Confidence Interval (CI)}} & Typical 95\% CI means given the sample data and assumptions, the parameter will be within the CI 95\% of the time if the data is
+re-sampled. \\
+\makecell[r]{\textbf{P-Value}} & Probability of the sample data if the null hypothesis is true. \\
+\makecell[r]{\textbf{Probability Distribution}} & For a discrete random variable, gives the probability of any value, for a continuous random variable, gives the probability of
+any interval. \\
+\makecell[r]{\textbf{Statistic}} & Any formulaic numerical descriptor of a sample (e.g. mean, median). \\
+\makecell[r]{\textbf{Parameter}} & The parameters of a normal or Gaussian distribution are the mean and variance.  For any such family, the function can be fully defined by the
+parameters.  Parametric statistics is largely focused on estimating population (global) parameters and their uncertainty from sample data. \\
+\makecell[r]{\textbf{Multiple Testing}} & If a coin is flipped 5 times, all heads, the coin is likely unfair.  However, if 100 coins are all flipped 5 times, it is highly likely
+at least one will be all heads, and that will provide no evidence of unfairness.  In this way the interpretation of P-values and other metrics much be adjusted in
+multiple testing scenarios. \\
+\makecell[r]{\textbf{Chance Correlation}} & With random variables, correlation may reflect explanatory truths, or simply be due to random chance. \\
+\makecell[r]{\textbf{False Discovery Rate}} & A quantification of the probability of false discovery, or chance correlation. (See XKCD comic on M\&M associated risks.) \\
+\makecell[r]{\textbf{Confounder}} & When associating two variables, a confounder is another third variable which may be more explanatory.  In an ideally executed randomized
+controlled trial, confounders are impossible since only the controlled independent variables differ between the control and test groups. \\
+\makecell[r]{\textbf{Independent Variables}} & Random variables which are not correlated, not affecting each other or each affected by another variable. \\
+\makecell[r]{\textbf{Correlation versus} \\ \textbf{causation}} & Despite being a fundamental truth of statistics and rationality, an common area of confusion and misinterpretation in
+science, and in human cognition more generally. \\
+\makecell[r]{\textbf{Random sampling}} & Selecting a representative subset of a population by some random process. \\
+\makecell[r]{\textbf{Sampling bias}} & Non-random sampling.  For example, online surveys are biased toward persons who are online and like to respond to surveys, thus not
+representative of the general population. \\
+\makecell[r]{\textbf{Population}} & Conceptually the global set of entities of interest.  For analytics pertaining to US federal elections, the population would be all US voters.
+For anti-depressant drug trials, the population might be all humans diagnosed with major depressive disorder. In a study, a sample is used to make inferences about
+the population. \\
+\makecell[r]{\textbf{Frequentist versus} \\ \textbf{Bayesian Statistics}} & Among statisticians and statistical scholarship, there are two main schools, frequentist and Bayesian.
+Oversimplifying somewhat, these schools don't disagree about math, including Bayes Theorem, but do disagree about interpretations.  Frequentists tend to view
+population parameters as truth.  Bayesians tend to view evidence as updating belief. \\
+\makecell[r]{\textbf{Bayesian Approach}} & Somewhat beyond the basic truth of Bayes Theorem, a Bayesian approach is often iterative, and can adjust the parameters of a
+distribution, as a way of continuous learning from streams of evidence. \\
+\makecell[r]{\textbf{Prior Distribution}} & A Bayesian learning iteration begins with belief in a prior distribution, to be adjusted according to the evidence in the sample data.
+In a simple univariate case, this involves multiplication by a Bayesian factor.  For a simple coin flip, we would probably believe in a prior of 50-50\% head vs
+tail.  Posterior Distribution	After adjustment of the belief represented by the prior distribution, the result of the Bayesian learning iteration is the posterior
+distribution.  After flipping our coin and getting 5 heads in a row, our posterior might be 70-30\% head vs tail. \\
+\hline
+\end{longtable}
+\end{singlespace}
+
