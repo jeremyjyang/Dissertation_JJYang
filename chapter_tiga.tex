@@ -149,16 +149,19 @@ TIGA facilitates drug target illumination by currently scoring and ranking assoc
 
 Hits are ranked by meanRankScore described in Methods. Scatterplot axes are Effect (OR or N\_beta) vs. Evidence as measured by meanRankScore. Plot markers may be sized by pValue or RCRAS. This app accepts "trait" and "gene" query parameters via URL, e.g. ?trait=EFO\_0004541, ?gene=ENSG00000075073, ?trait=EFO\_0004541\&gene=ENSG00000075073.  Gene markers are colored by Target Development Level (TDL)\cite{Oprea2018-cp}. TDL is a knowledge-based classification that bins human proteins into four categories: Tclin, mechanism-of-action designated targets via which approved drugs act\cite{Santos2017-sd,Ursu2019-hx,Avram2020-ff}; Tchem are proteins known to bind small molecules with high potency; Tbio includes proteins that have Gene Ontology\cite{Ashburner2000-aw} “leaf” (lowest level) experimental terms; or meet two of these conditions:  A fractional publication count\cite{Pafilis2013-ml} above 5, three or more Gene “Reference Into Function” annotations\cite{Mitchell2003-ty}, or 50 or more commercial antibodies in Antibodypedia\cite{Bjorling2008-ia}; Tdark are manually curated UniProtKB proteins that fail to place in any of the previous categories.
 
+
 \begin{figure}
+\begin{subfigure}[c]{\textwidth}
 	\includegraphics[width=\textwidth]{figures/tiga/FIG04_ROCs.png}
 	\caption{Performance evaluation. The performance of TIGA on the gold standard of gene-disease associations. A) Results for the top-3 individual variables of merit. B) Results for the multivariate ranking by meanRankScore and $\mu$ score.}
 	\label{fig:TIGA_rocs}
-\end{figure}
+\end{subfigure}
 
-\begin{figure}
+\begin{subfigure}[c]{0.5\textwidth}
 	\includegraphics[width=\textwidth]{figures/tiga/SupFIG01_AdditionalROCs.png}
 	\caption{Benchmark against gold-standard disease–gene associations, for additional individual variables of merit not in the top 3 selected for TIGA scoring.}
 	\label{fig:TIGA_Sup01}
+\end{subfigure}
 \end{figure}
 
 \subsection{Using TIGA for drug target illumination}
