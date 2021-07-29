@@ -56,14 +56,14 @@ The Badapple formula is shown as equation \ref{eq:ba_formula}. The promiscuity s
 score = \frac{s_A}{s_T + med(s_T)} * \frac{a_A}{a_T + med(a_T)} * \frac{w_A}{w_T + med(w_T)} * 10^5
 \label{eq:ba_formula}
 \end{equation}
-where \\
+where\\
 \begin{itemize}
-\item[] $s_T$ = tested substances with scaffold \\ 
-$s_A$ = active substances with scaffold \\ 
-$a_T$ = assays with tested compounds with scaffold \\
-$a_A$ = assays with active compounds with scaffold \\ 
-$w_T$ = tested samples with scaffold \\
-$w_A$ = active samples with scaffold \\
+\item[] $s_T$ = tested substances with scaffold\\ 
+$s_A$ = active substances with scaffold\\ 
+$a_T$ = assays with tested compounds with scaffold\\
+$a_A$ = assays with active compounds with scaffold\\ 
+$w_T$ = tested samples with scaffold\\
+$w_A$ = active samples with scaffold\\
 $med()$ = median
 \end{itemize}
 
@@ -74,12 +74,12 @@ Experienced practitioners of HTS know that errors occur despite diligent use of 
 \begin{center}
 \begin{tabular}{r|l} 
 \hline
-\textbf{pScore range} & \textbf{Advisory} \\
+\textbf{pScore range} & \textbf{Advisory}\\
 \hline
-\~{} & Unknown; no data \\
-0-99 & Low pScore; no indication \\
-100-299 & Moderate pScore; weak indication of promiscuity \\
-300+ & High pScore; strong indication of promiscuity \\
+\~{} & Unknown; no data\\
+0-99 & Low pScore; no indication\\
+100-299 & Moderate pScore; weak indication of promiscuity\\
+300+ & High pScore; strong indication of promiscuity\\
 \hline
 \end{tabular}
 \end{center}
@@ -104,10 +104,10 @@ score = \frac{vR}{v + m} * \frac{mC}{v + m}
 \end{equation}
 where
 \begin{itemize}
-\item[] R = average rating for the movie \\
-v = votes for the movie \\
-m = minimum votes to be in Top 250 (currently 25,000) \\
-C = the mean vote across the whole report (currently 7.0) \\
+\item[] R = average rating for the movie\\
+v = votes for the movie\\
+m = minimum votes to be in Top 250 (currently 25,000)\\
+C = the mean vote across the whole report (currently 7.0)\\
 \end{itemize}
 
 In particular, the use of the minimum-votes expression has a similar effect in devaluing high BAs if the weight of evidence is relatively low. IMDb describes their score as a “Bayesian Estimate” (BE). Although neither Badapple nor IMDb makes use of Bayes’ theorem, it may be both justified and explanatory to represent these methods as Bayesian-like. Badapple shares some key features of Bayesian approaches: (1) absence of any assumed probability distribution, and (2) by iterative learning cycles, new data can be used to continually improve the prediction model. Badapple also reflects systematic skeptical bias, meaning restricting the number of high scores using weight of evidence as a marker of confidence, because in the domain of bioassay data analysis, a semi-automated endeavor requiring human judgment, there is a limit to the number of red flags which can be readily processed.
@@ -137,20 +137,20 @@ Output scores and statistics Complete Badapple output is provided in the Additio
 \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_01.png} 
 & \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_02.png}
 & \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_03.png}
-& \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_04.png} \\
-\texttt{2544} & \texttt{2445} & \texttt{2413} & \texttt{2315} \\
+& \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_04.png}\\
+\texttt{2544} & \texttt{2445} & \texttt{2413} & \texttt{2315}\\
 \hline
 \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_05.png} 
 & \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_06.png}
 & \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_07.png}
-& \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_08.png} \\
-\texttt{2182} & \texttt{2147} & \texttt{1996} & \texttt{1888} \\
+& \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_08.png}\\
+\texttt{2182} & \texttt{2147} & \texttt{1996} & \texttt{1888}\\
 \hline
 \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_09.png} 
 & \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_10.png}
 & \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_11.png}
-& \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_12.png} \\
-\texttt{1888} & \texttt{1707} & \texttt{1631} & \texttt{1443} \\
+& \includegraphics[align=t,width=0.2\textwidth]{data/badapple/Fig2_scaf_12.png}\\
+\texttt{1888} & \texttt{1707} & \texttt{1631} & \texttt{1443}\\
 \hline
 \end{tabular}
 \end{center}
@@ -187,15 +187,15 @@ To validate Badapple we used retrospective datasets to indicate whether scores g
 \begin{center}
 \begin{tabular}{ |l|c|c|c|c|c|c|l| } 
 \hline
-& \textbf{\#scafs} & \textbf{Tested} & \textbf{Nonzero} & \textbf{\#assy} & \textbf{Activities} & \textbf{Date} & \textbf{Source} \\
+& \textbf{\#scafs} & \textbf{Tested} & \textbf{Nonzero} & \textbf{\#assy} & \textbf{Activities} & \textbf{Date} & \textbf{Source}\\
 \hline
-Bard1 & 146,024 & 141,642 & 54,136 & 510 & 30M & 2013-01 & BARD \\
+Bard1 & 146,024 & 141,642 & 54,136 & 510 & 30M & 2013-01 & BARD\\
 \hline
-Bard2 & 143,098 & 137,668 & 52,328 & 383 & 46M & 2014-06 & BARD \\
+Bard2 & 143,098 & 137,668 & 52,328 & 383 & 46M & 2014-06 & BARD\\
 \hline
-Pc1 & 143,098 & 141,533 & 60,200 & 822 & 223M & 2014-06 & PubChem \\
+Pc1 & 143,098 & 141,533 & 60,200 & 822 & 223M & 2014-06 & PubChem\\
 \hline
-Pc2 & 143,098 & 125,940 & 50,912 & 527 & 113M & 2010-12 & PubChem \\
+Pc2 & 143,098 & 125,940 & 50,912 & 527 & 113M & 2010-12 & PubChem\\
 \hline
 \end{tabular}
 \end{center}
@@ -211,13 +211,13 @@ BARD assay counts are experiment counts. Tested means bioassay data exist. Nonze
 \begin{center}
 \begin{tabular}{ |r|c|c|c| } 
 \hline
-& \textbf{Bard2} & \textbf{Pc2} & \textbf{Pc1} \\
+& \textbf{Bard2} & \textbf{Pc2} & \textbf{Pc1}\\
 \hline
-\textbf{Bard1} & 141896 ; 41,218 & 141,629 ; 49,844 & 141,629 ; 43,951 \\
+\textbf{Bard1} & 141896 ; 41,218 & 141,629 ; 49,844 & 141,629 ; 43,951\\
 \hline
-\textbf{Bard2} & & 142,817 ; 43,083 & 142,817 ; 40,463 \\
+\textbf{Bard2} & & 142,817 ; 43,083 & 142,817 ; 40,463\\
 \hline
-\textbf{Pc2} & & & 143,087 ; 47,252 \\
+\textbf{Pc2} & & & 143,087 ; 47,252\\
 \hline
 \end{tabular}
 \end{center}
@@ -231,13 +231,13 @@ BARD assay counts are experiment counts. Tested means bioassay data exist. Nonze
 \begin{center}
 \begin{tabular}{ |r|c|c|c| } 
 \hline
-& \textbf{Bard2} & \textbf{Pc2} & \textbf{Pc1} \\
+& \textbf{Bard2} & \textbf{Pc2} & \textbf{Pc1}\\
 \hline
-\textbf{Bard1} & 0.85 ; 0.73 & 0.95 ; 0.89 & 0.92 ; 0.85 \\
+\textbf{Bard1} & 0.85 ; 0.73 & 0.95 ; 0.89 & 0.92 ; 0.85\\
 \hline
-\textbf{Bard2} & & 0.86 ; 0.69 & 0.85 ; 0.72 \\
+\textbf{Bard2} & & 0.86 ; 0.69 & 0.85 ; 0.72\\
 \hline
-\textbf{Pc2} & & & 0.96 ; 0.87 \\
+\textbf{Pc2} & & & 0.96 ; 0.87\\
 \hline
 \end{tabular}
 \end{center}
@@ -256,33 +256,33 @@ results are summarized in table \ref{table:ba_cmp_corr}.
 \begin{longtable}{ccccc}
 \caption{Retrospective comparison of high scores, pc2 versus pc1}\\
 \hline
-\textbf{Scaffold} & \textbf{pscore\_pc2} & \textbf{pscore\_pc1} & \textbf{pscore\_diff} & \textbf{wTested\_diff} \\
+\textbf{Scaffold} & \textbf{pscore\_pc2} & \textbf{pscore\_pc1} & \textbf{pscore\_diff} & \textbf{wTested\_diff}\\
 \hline
 \endfirsthead
 \multicolumn{5}{c}
-{\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
+{\tablename\ \thetable\ -- \textit{Continued from previous page}}\\
 \hline
-\textbf{Scaffold} & \textbf{pscore\_pc2} & \textbf{pscore\_pc1} & \textbf{pscore\_diff} & \textbf{wTested\_diff} \\
+\textbf{Scaffold} & \textbf{pscore\_pc2} & \textbf{pscore\_pc1} & \textbf{pscore\_diff} & \textbf{wTested\_diff}\\
 \hline
 \endhead
-\hline \multicolumn{5}{r}{\textit{Continued on next page}} \\
+\hline \multicolumn{5}{r}{\textit{Continued on next page}}\\
 \endfoot
 \endlastfoot
-\includegraphics[width=60px]{data/badapple/scaf_01.png} & \makecell[{{m{1cm}}}]{436} & 395 & 41 & 7,234,388 \\
-\includegraphics[width=60px]{data/badapple/scaf_02.png} & 374 & 343 & 31 & 5,511,793 \\
-\includegraphics[width=60px]{data/badapple/scaf_03.png} & 443 & 369 & 74 & 2,644,122 \\
-\includegraphics[width=60px]{data/badapple/scaf_04.png} & 432 & 392 & 40 & 1,701,524 \\
-\includegraphics[width=60px]{data/badapple/scaf_05.png} & 578 & 468 & 110 & 1,652,980 \\
-\includegraphics[width=60px]{data/badapple/scaf_06.png} & 618 & 627 & -9 & 1,019,584 \\
-\includegraphics[width=60px]{data/badapple/scaf_07.png} & 375 & 315 & 60 & 899,779 \\
-\includegraphics[width=60px]{data/badapple/scaf_08.png} & 463 & 366 & 97 & 654,420 \\
-\includegraphics[width=60px]{data/badapple/scaf_09.png} & 365 & 361 & 4 & 524,438 \\
-\includegraphics[width=60px]{data/badapple/scaf_10.png} & 461 & 367 & 94 & 496,504 \\
-\includegraphics[width=60px]{data/badapple/scaf_11.png} & 358 & 303 & 55 & 422,280 \\
-\includegraphics[width=60px]{data/badapple/scaf_12.png} & 805 & 696 & 109 & 376,575 \\
-\includegraphics[width=60px]{data/badapple/scaf_13.png} & 403 & 331 & 72 & 358,012 \\
-\includegraphics[width=60px]{data/badapple/scaf_14.png} & 459 & 487 & -28 & 319,746 \\
-\includegraphics[width=60px]{data/badapple/scaf_15.png} & 841 & 721 & 120 & 318,307 \\
+\includegraphics[width=60px]{data/badapple/scaf_01.png} & \makecell[{{m{1cm}}}]{436} & 395 & 41 & 7,234,388\\
+\includegraphics[width=60px]{data/badapple/scaf_02.png} & 374 & 343 & 31 & 5,511,793\\
+\includegraphics[width=60px]{data/badapple/scaf_03.png} & 443 & 369 & 74 & 2,644,122\\
+\includegraphics[width=60px]{data/badapple/scaf_04.png} & 432 & 392 & 40 & 1,701,524\\
+\includegraphics[width=60px]{data/badapple/scaf_05.png} & 578 & 468 & 110 & 1,652,980\\
+\includegraphics[width=60px]{data/badapple/scaf_06.png} & 618 & 627 & -9 & 1,019,584\\
+\includegraphics[width=60px]{data/badapple/scaf_07.png} & 375 & 315 & 60 & 899,779\\
+\includegraphics[width=60px]{data/badapple/scaf_08.png} & 463 & 366 & 97 & 654,420\\
+\includegraphics[width=60px]{data/badapple/scaf_09.png} & 365 & 361 & 4 & 524,438\\
+\includegraphics[width=60px]{data/badapple/scaf_10.png} & 461 & 367 & 94 & 496,504\\
+\includegraphics[width=60px]{data/badapple/scaf_11.png} & 358 & 303 & 55 & 422,280\\
+\includegraphics[width=60px]{data/badapple/scaf_12.png} & 805 & 696 & 109 & 376,575\\
+\includegraphics[width=60px]{data/badapple/scaf_13.png} & 403 & 331 & 72 & 358,012\\
+\includegraphics[width=60px]{data/badapple/scaf_14.png} & 459 & 487 & -28 & 319,746\\
+\includegraphics[width=60px]{data/badapple/scaf_15.png} & 841 & 721 & 120 & 318,307\\
 \hline
 \label{table:ba_cmp_retro}
 \end{longtable}
@@ -293,17 +293,17 @@ results are summarized in table \ref{table:ba_cmp_corr}.
 \begin{center}
 \begin{tabular}{ |c|c|c|c| } 
 \hline
-\textbf{k} & \textbf{Ntrain} & \textbf{Ntest} & \textbf{Correlation} \\
+\textbf{k} & \textbf{Ntrain} & \textbf{Ntest} & \textbf{Correlation}\\
 \hline
-1 & 311,540 & 77,993 & 0.895 \\
+1 & 311,540 & 77,993 & 0.895\\
 \hline
-2 & 311,463 & 78,070 & 0.891 \\
+2 & 311,463 & 78,070 & 0.891\\
 \hline
-3 & 311,652 & 77,881 & 0.898 \\
+3 & 311,652 & 77,881 & 0.898\\
 \hline
-4 & 311,565 & 77,968 & 0.901 \\
+4 & 311,565 & 77,968 & 0.901\\
 \hline
-5 & 311,454 & 78,079 & 0.903 \\
+5 & 311,454 & 78,079 & 0.903\\
 \hline
 \end{tabular}
 \end{center}
@@ -315,12 +315,12 @@ results are summarized in table \ref{table:ba_cmp_corr}.
 \caption{Medchem analysis of selected high scoring, promiscuous scaffolds}
 \begin{tabular}{p{0.3\linewidth}p{0.7\linewidth}}
 \hline
-\includegraphics[align=t,width=0.25\textwidth]{data/badapple/medchem_01.png} & Scaffold of well-known toxin toxoflavin present in Burkholderia glumae, it was also previously identified by workers at Abbott using the ALARM NMR assay as a thiol trap and cause of false positives in HTS\cite{Huth2007-kc} \\
-\includegraphics[align=t,width=0.25\textwidth]{data/badapple/medchem_02.png} & Scaffold a 6H-anthra[1,9-cd]isoxazol-6-one is known to react with DMSO acting as a nucleophile and undergoes N–O cleavage of the isoxazole ring to form the ring opened anthraquinone, a species known to form covalent adducts\cite{Sutter1982-qu} \\
-\includegraphics[align=t,width=0.25\textwidth]{data/badapple/medchem_03.png} & Scaffold likely made by reaction of orthophenylene diamine with the corresponding furanyl alpha diketone. It could be a false positive if contaminated with the furanyl alpha diketone. It has only weak metal coordinating activity \\
+\includegraphics[align=t,width=0.25\textwidth]{data/badapple/medchem_01.png} & Scaffold of well-known toxin toxoflavin present in Burkholderia glumae, it was also previously identified by workers at Abbott using the ALARM NMR assay as a thiol trap and cause of false positives in HTS\cite{Huth2007-kc}\\
+\includegraphics[align=t,width=0.25\textwidth]{data/badapple/medchem_02.png} & Scaffold a 6H-anthra[1,9-cd]isoxazol-6-one is known to react with DMSO acting as a nucleophile and undergoes N–O cleavage of the isoxazole ring to form the ring opened anthraquinone, a species known to form covalent adducts\cite{Sutter1982-qu}\\
+\includegraphics[align=t,width=0.25\textwidth]{data/badapple/medchem_03.png} & Scaffold likely made by reaction of orthophenylene diamine with the corresponding furanyl alpha diketone. It could be a false positive if contaminated with the furanyl alpha diketone. It has only weak metal coordinating activity\\
 \includegraphics[align=t,width=0.25\textwidth]{data/badapple/medchem_04.png} & Scaffold the synthesis of the tricyclic scaffold by a malononitrile cyclization with a 2-amino-3-formyl-4-oxo-4H-pyrido[1,2-a] pyrimidine suggests that the
-scaffold in this series may be susceptible to Michael attack at what was originally the formyl precursor carbon \\
-\includegraphics[align=t,width=0.25\textwidth]{data/badapple/medchem_05.png} & Scaffold is reported to possess strong fluorescence, UV absorbance as well as strong mutagenic activity\cite{Oda2008-at}. The phenyl-2-(2H-benzotriazol-2-yl) scaffold is also found in the photostabilizer Tinuvin P \\
+scaffold in this series may be susceptible to Michael attack at what was originally the formyl precursor carbon\\
+\includegraphics[align=t,width=0.25\textwidth]{data/badapple/medchem_05.png} & Scaffold is reported to possess strong fluorescence, UV absorbance as well as strong mutagenic activity\cite{Oda2008-at}. The phenyl-2-(2H-benzotriazol-2-yl) scaffold is also found in the photostabilizer Tinuvin P\\
 \hline
 \end{tabular}
 \label{table:ba_cmp_medchem}

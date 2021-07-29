@@ -28,7 +28,7 @@ We have combined the complementary strengths of LINCS and IDG to derive new drug
 \label{table:LINCS-IDG-Conc}
 \begin{tabular}{|p{0.5\linewidth}|p{0.5\linewidth}|}
 \hline
-\makecell[c]{\textbf{LINCS key concepts}} & \makecell[c]{\textbf{IDG key concepts}} \\
+\makecell[c]{\textbf{LINCS key concepts}} & \makecell[c]{\textbf{IDG key concepts}}\\
 \hline
 \textbf{L1000}: Broad Institute microarray platform and LINCS project involving landmark genes. \newline
 \textbf{Landmark Gene}: approximately 1000 genes representing the full human genome, from which a maximum set of gene responses can be inferred.\newline
@@ -41,11 +41,11 @@ We have combined the complementary strengths of LINCS and IDG to derive new drug
 \textbf{Disease}: Working definition is anything which could be the clinical indication for a drug.\newline
 \textbf{Ligand}: Small molecule with known or hypothesized relationship with one or more targets.\newline
 \textbf{Target Development Level (TDL)}: Simple measure of illumination: Tdark, Tbio, Tchem and Tclin.\newline
-\textbf{Target Importance and Novelty}: Bibliometric measures from TIN-X for target prioritization. \\
+\textbf{Target Importance and Novelty}: Bibliometric measures from TIN-X for target prioritization.\\
 \hline
-\multicolumn{2}{|c|}{\textbf{LINCS-IDG semantic linkage}} \\
+\multicolumn{2}{|c|}{\textbf{LINCS-IDG semantic linkage}}\\
 \hline
-\multicolumn{2}{|p{1.0\linewidth}|}{LINCS centers utilize in-depth gene and protein expression assays to generate signatures directly mappable to IDG protein targets. Disease and phenotype ontology mapping is a community challenge with useful, working solutions such as UMLS\cite{Bodenreider2004-gn}. LINCS perturbagens include rigorously defined chemical entities and small molecule drugs included in IDG resource DrugCentral. Therefore, LINCS’s vast number of human cell lines and experimental chemical perturbation datasets, combined with IDG’s protein targets (gene and protein IDs) and DrugCentral active pharmaceutical ingredients (drug compounds) databases, provide a tightly integrated combination resource for drug target discovery.} \\
+\multicolumn{2}{|p{1.0\linewidth}|}{LINCS centers utilize in-depth gene and protein expression assays to generate signatures directly mappable to IDG protein targets. Disease and phenotype ontology mapping is a community challenge with useful, working solutions such as UMLS\cite{Bodenreider2004-gn}. LINCS perturbagens include rigorously defined chemical entities and small molecule drugs included in IDG resource DrugCentral. Therefore, LINCS’s vast number of human cell lines and experimental chemical perturbation datasets, combined with IDG’s protein targets (gene and protein IDs) and DrugCentral active pharmaceutical ingredients (drug compounds) databases, provide a tightly integrated combination resource for drug target discovery.}\\
 \hline
 \end{tabular}
 \end{table}
@@ -171,15 +171,15 @@ Table \ref{table:kg_rel} shows the complete list of relationships present in the
 \begin{center}
 \begin{tabular}{ |c|c|c|c|c| } 
 \hline
-\textbf{Vertex type} & \textbf{Edge type} & \textbf{Vertex type} & \textbf{Source} & \textbf{Count} \\ 
+\textbf{Vertex type} & \textbf{Edge type} & \textbf{Vertex type} & \textbf{Source} & \textbf{Count}\\ 
 \hline
-\textbf{Signature} & SIGNATURE\_GENE & Gene & L1000 & 45623637 \\ 
+\textbf{Signature} & SIGNATURE\_GENE & Gene & L1000 & 45623637\\ 
 \hline
-\textbf{Cell} & CELL\_SIGNATURE & Signature & L1000 & 591676 \\ 
+\textbf{Cell} & CELL\_SIGNATURE & Signature & L1000 & 591676\\ 
 \hline
-\textbf{Drug} & DRUG\_SIGNATURE & Signature & L1000 & 85814 \\ 
+\textbf{Drug} & DRUG\_SIGNATURE & Signature & L1000 & 85814\\ 
 \hline
-\textbf{Drug} & INDICATION & Concept & DrugCentral, L1000 & 7164 \\ 
+\textbf{Drug} & INDICATION & Concept & DrugCentral, L1000 & 7164\\ 
 \hline
 \end{tabular}
 \end{center}
@@ -191,17 +191,17 @@ Table \ref{table:kg_rel} shows the complete list of relationships present in the
 \begin{center}
 \begin{tabular}{ |c|c|c| } 
 \hline
-\textbf{Vertex type} & \textbf{Source} & \textbf{Count} \\ 
+\textbf{Vertex type} & \textbf{Source} & \textbf{Count}\\ 
 \hline
-Signature & L1000 & 591676 \\ 
+Signature & L1000 & 591676\\ 
 \hline
-Gene & L1000, TCRD & 12329 \\ 
+Gene & L1000, TCRD & 12329\\ 
 \hline
-Concept & DrugCentral 2021 & 2241 \\ 
+Concept & DrugCentral 2021 & 2241\\ 
 \hline
-Drug & L1000, DrugCentral 2021 & 1613 \\ 
+Drug & L1000, DrugCentral 2021 & 1613\\ 
 \hline
-Cell & L1000 & 99 \\ 
+Cell & L1000 & 99\\ 
 \hline
 \end{tabular}
 \end{center}
@@ -220,57 +220,57 @@ To apply KGAP to PD knowledge discovery, the set of drugs indicated by PD and re
 \begin{center}
 \begin{tabular}{ |l|c|c|c| } 
 \hline
-\makecell[c]{\textbf{Name}} & \textbf{Struct\_ID} & \textbf{PubChem\_CID} & \textbf{In\_LINCS} \\
+\makecell[c]{\textbf{Name}} & \textbf{Struct\_ID} & \textbf{PubChem\_CID} & \textbf{In\_LINCS}\\
 \hline
-amantadine & \href{https://drugcentral.org/drugcard/144}{144} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/2130}{2130} & TRUE \\
+amantadine & \href{https://drugcentral.org/drugcard/144}{144} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/2130}{2130} & TRUE\\
 \hline
-apomorphine & \href{https://drugcentral.org/drugcard/228}{228} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/6005}{6005} & TRUE \\
+apomorphine & \href{https://drugcentral.org/drugcard/228}{228} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/6005}{6005} & TRUE\\
 \hline
-benzatropine & \href{https://drugcentral.org/drugcard/333}{333} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/1201549}{1201549} & TRUE \\
+benzatropine & \href{https://drugcentral.org/drugcard/333}{333} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/1201549}{1201549} & TRUE\\
 \hline
-biperiden & \href{https://drugcentral.org/drugcard/374}{374} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/2381}{2381} & TRUE \\
+biperiden & \href{https://drugcentral.org/drugcard/374}{374} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/2381}{2381} & TRUE\\
 \hline
-bromocriptine & \href{https://drugcentral.org/drugcard/403}{403} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/31101}{31101} & TRUE \\
+bromocriptine & \href{https://drugcentral.org/drugcard/403}{403} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/31101}{31101} & TRUE\\
 \hline
-dexetimide & \href{https://drugcentral.org/drugcard/831}{831} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/30843}{30843} & FALSE \\
+dexetimide & \href{https://drugcentral.org/drugcard/831}{831} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/30843}{30843} & FALSE\\
 \hline
-entacapone & \href{https://drugcentral.org/drugcard/1018}{1018} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/5281081}{5281081} & TRUE \\
+entacapone & \href{https://drugcentral.org/drugcard/1018}{1018} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/5281081}{5281081} & TRUE\\
 \hline
-levodopa & \href{https://drugcentral.org/drugcard/1567}{1567} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/6047}{6047} & TRUE \\
+levodopa & \href{https://drugcentral.org/drugcard/1567}{1567} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/6047}{6047} & TRUE\\
 \hline
-melevodopa & \href{https://drugcentral.org/drugcard/1673}{1673} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/23497}{23497} & FALSE \\
+melevodopa & \href{https://drugcentral.org/drugcard/1673}{1673} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/23497}{23497} & FALSE\\
 \hline
-metixene & \href{https://drugcentral.org/drugcard/1780}{1780} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/4167}{4167} & TRUE \\
+metixene & \href{https://drugcentral.org/drugcard/1780}{1780} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/4167}{4167} & TRUE\\
 \hline
-opicapone & \href{https://drugcentral.org/drugcard/5143}{5143} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/135565903}{135565903} & FALSE \\
+opicapone & \href{https://drugcentral.org/drugcard/5143}{5143} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/135565903}{135565903} & FALSE\\
 \hline
-orphenadrine & \href{https://drugcentral.org/drugcard/1999}{1999} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/4601}{4601} & TRUE \\
+orphenadrine & \href{https://drugcentral.org/drugcard/1999}{1999} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/4601}{4601} & TRUE\\
 \hline
-pergolide & \href{https://drugcentral.org/drugcard/2105}{2105} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/47811}{47811} & TRUE \\
+pergolide & \href{https://drugcentral.org/drugcard/2105}{2105} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/47811}{47811} & TRUE\\
 \hline
-pimavanserin & \href{https://drugcentral.org/drugcard/5142}{5142} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/10071196}{10071196} & TRUE \\
+pimavanserin & \href{https://drugcentral.org/drugcard/5142}{5142} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/10071196}{10071196} & TRUE\\
 \hline
-piribedil & \href{https://drugcentral.org/drugcard/2202}{2202} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/4850}{4850} & TRUE \\
+piribedil & \href{https://drugcentral.org/drugcard/2202}{2202} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/4850}{4850} & TRUE\\
 \hline
-pramipexole & \href{https://drugcentral.org/drugcard/2233}{2233} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/119570}{119570} & TRUE \\
+pramipexole & \href{https://drugcentral.org/drugcard/2233}{2233} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/119570}{119570} & TRUE\\
 \hline
-procyclidine & \href{https://drugcentral.org/drugcard/2276}{2276} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/4919}{4919} & TRUE \\
+procyclidine & \href{https://drugcentral.org/drugcard/2276}{2276} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/4919}{4919} & TRUE\\
 \hline
-rasagiline & \href{https://drugcentral.org/drugcard/3521}{3521} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/3052776}{3052776} & TRUE \\
+rasagiline & \href{https://drugcentral.org/drugcard/3521}{3521} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/3052776}{3052776} & TRUE\\
 \hline
-rivastigmine & \href{https://drugcentral.org/drugcard/2392}{2392} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/77991}{77991} & TRUE \\
+rivastigmine & \href{https://drugcentral.org/drugcard/2392}{2392} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/77991}{77991} & TRUE\\
 \hline
-ropinirole & \href{https://drugcentral.org/drugcard/2402}{2402} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/5095}{5095} & TRUE \\
+ropinirole & \href{https://drugcentral.org/drugcard/2402}{2402} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/5095}{5095} & TRUE\\
 \hline
-rotigotine & \href{https://drugcentral.org/drugcard/2407}{2407} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/59227}{59227} & TRUE \\
+rotigotine & \href{https://drugcentral.org/drugcard/2407}{2407} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/59227}{59227} & TRUE\\
 \hline
-safinamide & \href{https://drugcentral.org/drugcard/4921}{4921} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/131682}{131682} & TRUE \\
+safinamide & \href{https://drugcentral.org/drugcard/4921}{4921} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/131682}{131682} & TRUE\\
 \hline
-selegiline & \href{https://drugcentral.org/drugcard/2429}{2429} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/26757}{26757} & TRUE \\
+selegiline & \href{https://drugcentral.org/drugcard/2429}{2429} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/26757}{26757} & TRUE\\
 \hline
-tolcapone & \href{https://drugcentral.org/drugcard/2697}{2697} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/4659569}{4659569} & TRUE \\
+tolcapone & \href{https://drugcentral.org/drugcard/2697}{2697} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/4659569}{4659569} & TRUE\\
 \hline
-trihexyphenidyl & \href{https://drugcentral.org/drugcard/2745}{2745} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/5572}{5572} & TRUE \\
+trihexyphenidyl & \href{https://drugcentral.org/drugcard/2745}{2745} & \href{https://pubchem.ncbi.nlm.nih.gov/compound/5572}{5572} & TRUE\\
 \hline
 \end{tabular}
 \end{center}

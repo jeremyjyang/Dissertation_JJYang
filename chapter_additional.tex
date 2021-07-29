@@ -56,8 +56,7 @@ CARLSBAD CCPs are pre-calculated and stored for all chemical structures in the d
     \label{fig:cb_schematic}
 \end{figure}
 
-The CARLSBAD database is implemented as a PostgreSQL relational database with entities such as substance, compound, activity, target and so forth, and the various relationships between them (figure \ref{fig:cb_erd}). The CHORD chemical cartridge from \href{https://www.gnova.com/}{gNova Scientific Software} is used to provide fast chemical functionalities such as SMILES canonicalization\cite{Weininger1989-kh}, chemical fingerprints and structure searching. CHORD is based on the OEChem toolkit, available from \href{https://www.eyesopen.com/}{OpenEye Scientific Software}.
-
+The CARLSBAD database is implemented as a PostgreSQL relational database with entities including substance, compound, activity, target, and the various relationships between them. The CHORD chemical cartridge from \href{https://www.gnova.com/}{gNova Scientific Software} is used to provide fast chemical functionalities such as SMILES canonicalization\cite{Weininger1989-kh}, chemical fingerprints and structure searching. CHORD is based on the OEChem toolkit, available from \href{https://www.eyesopen.com/}{OpenEye Scientific Software}.
 
 Separate extract, transform and load (ETL) pipelines were built for each of the data sources. The sections later in the text detail the specific source of data used and the extraction criteria applied for each.
 
@@ -81,7 +80,7 @@ When pairing structures with targets and bioactivities in a similar effort, Tikk
 \centering
 \begin{tabular}{l|c}
 \hline
-\textbf{Bioactivities} & \textbf{Substance–target pairs} \\
+\textbf{Bioactivities} & \textbf{Substance–target pairs}\\
 \hline
 Initial aggregated data & 975,117\\
 Valid processed pairs & 975,110\\
@@ -165,17 +164,17 @@ The net result of chemical, bioactivity and target aggregation, curation and har
 \centering
 \begin{tabular}{p{0.25\linewidth}p{0.15\linewidth}p{0.15\linewidth}p{0.15\linewidth}p{0.30\linewidth}}
 \hline
-\textbf{Source (Version)} & \textbf{Release date} & \textbf{Structures} & \textbf{Activities} & \textbf{CCPs} \\
+\textbf{Source (Version)} & \textbf{Release date} & \textbf{Structures} & \textbf{Activities} & \textbf{CCPs}\\
 \hline
-ChEMBL (13) & 2012–02–21 & 267,744 & 798,755 & \makecell[l]{182,496 scaf \\ 32,794 mces} \\
-IUPHAR & 2011 & 2297 & 6049 & \makecell[l]{2704 scaf \\ 652 mces} \\
-PDSP (kidb110121) & & 3499 & 22,202 & \makecell[l]{3422 scaf \\ 823 mces} \\
-PubChem (MLP) & 2011–11–04 & 133,435 & 320,311 & \makecell[l]{83,570 scaf \\ 20,867 mces} \\
-WOMBAT & 2011.2 & 124,873  & 273,572 & \makecell[l]{88,135 scaf \\ 17,086 mces} \\
+ChEMBL (13) & 2012–02–21 & 267,744 & 798,755 & \makecell[l]{182,496 scaf\\ 32,794 mces}\\
+IUPHAR & 2011 & 2297 & 6049 & \makecell[l]{2704 scaf\\ 652 mces}\\
+PDSP (kidb110121) & & 3499 & 22,202 & \makecell[l]{3422 scaf\\ 823 mces}\\
+PubChem (MLP) & 2011–11–04 & 133,435 & 320,311 & \makecell[l]{83,570 scaf\\ 20,867 mces}\\
+WOMBAT & 2011.2 & 124,873  & 273,572 & \makecell[l]{88,135 scaf\\ 17,086 mces}\\
 \hline
-Total & & 531,848 & 1,420,889 & \makecell[l]{360,327 scaf \\ 72,222 mces} \\
+Total & & 531,848 & 1,420,889 & \makecell[l]{360,327 scaf\\ 72,222 mces}\\
 \hline
-CARLSBAD & 2012.1 & 439,985 & 932,881 & \makecell[l]{277,140 scaf \\ 54,135 mces} \\
+CARLSBAD & 2012.1 & 439,985 & 932,881 & \makecell[l]{277,140 scaf\\ 54,135 mces}\\
 \hline
 \end{tabular}
 \end{table}
@@ -270,20 +269,20 @@ The KG includes the entities listed in table \ref{tab:opddr_02}.
 \centering
 \begin{tabular}{p{0.7\linewidth}p{0.3\linewidth}}
 \hline
-\makecell[c]{\textbf{namespace}} & \textbf{example} \\
+\makecell[c]{\textbf{namespace}} & \textbf{example}\\
 \hline
-\makecell[r]{http://rdf.ncbi.nlm.nih.gov/pubchem/substance/} & SID124893119 \\
-\makecell[r]{http://rdf.ncbi.nlm.nih.gov/pubchem/compound/} & CID1131 \\
-\makecell[r]{http://rdf.ncbi.nlm.nih.gov/pubchem/bioassay/} & AID1117354 \\
-\makecell[r]{http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup/} & AID1117354 \\
-\makecell[r]{http://rdf.ncbi.nlm.nih.gov/pubchem/endpoint/} & SID124893119\_AID1117354 \\
-\makecell[r]{http://rdf.ncbi.nlm.nih.gov/pubchem/protein/} & GI124375976 \\
-\makecell[r]{http://rdf.ebi.ac.uk/resource/chembl/target/} & CHEMBL3038470 \\
-\makecell[r]{http://rdf.ebi.ac.uk/resource/chembl/targetcomponent/} & CHEMBL\_TC\_1927 \\
-\makecell[r]{http://rdf.ebi.ac.uk/terms/chembl\#\textit{UniprotRef}} & P53350 \\
-\makecell[r]{http://rdf.ebi.ac.uk/resource/chembl/assay/} & CHEMBL987214 \\
-\makecell[r]{http://rdf.ebi.ac.uk/resource/chembl/activity/} & CHEMBL\_ACT\_2470294 \\
-\makecell[r]{http://rdf.ebi.ac.uk/resource/chembl/molecule/} & CHEMBL44884 \\
+\makecell[r]{http://rdf.ncbi.nlm.nih.gov/pubchem/substance/} & SID124893119\\
+\makecell[r]{http://rdf.ncbi.nlm.nih.gov/pubchem/compound/} & CID1131\\
+\makecell[r]{http://rdf.ncbi.nlm.nih.gov/pubchem/bioassay/} & AID1117354\\
+\makecell[r]{http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup/} & AID1117354\\
+\makecell[r]{http://rdf.ncbi.nlm.nih.gov/pubchem/endpoint/} & SID124893119\_AID1117354\\
+\makecell[r]{http://rdf.ncbi.nlm.nih.gov/pubchem/protein/} & GI124375976\\
+\makecell[r]{http://rdf.ebi.ac.uk/resource/chembl/target/} & CHEMBL3038470\\
+\makecell[r]{http://rdf.ebi.ac.uk/resource/chembl/targetcomponent/} & CHEMBL\_TC\_1927\\
+\makecell[r]{http://rdf.ebi.ac.uk/terms/chembl\#\textit{UniprotRef}} & P53350\\
+\makecell[r]{http://rdf.ebi.ac.uk/resource/chembl/assay/} & CHEMBL987214\\
+\makecell[r]{http://rdf.ebi.ac.uk/resource/chembl/activity/} & CHEMBL\_ACT\_2470294\\
+\makecell[r]{http://rdf.ebi.ac.uk/resource/chembl/molecule/} & CHEMBL44884\\
 \hline
 \end{tabular}
 \end{table}
@@ -296,18 +295,18 @@ Note that PubChem compounds are required in addition to substances.  Compounds r
 \centering
 \begin{tabular}{p{0.3\linewidth}p{0.2\linewidth}p{0.5\linewidth}}
 \hline
-\textbf{type} & \textbf{count} & \textbf{notes} \\
+\textbf{type} & \textbf{count} & \textbf{notes}\\
 \hline
-substance & 2511 & PubChem SIDs \\
-compound & 2511 & PubChem CIDs \\
-assay & 35 & PubChem AIDs.  Summary AID is 36th. \\
-measuregroup & 35 & PubChem AIDs.  Default for assay. \\
-endpoint & 2511*35 & PubChem SID-AID pairs. \\
-targets & 4977 & ChEMBL IDs.  All single-component. \\
-protein & 4977 & A.k.a. target component.  With UniprotRefs. \\
-protein activity & 584,157 & From ChEMBL, but includes PubChem data. \\
-PD2 activity & 5320 & All “ACTIVE” outcomes from results. \\
-assay classifications & 155 & Manually curated PD2 to BAO associations.  Exported from worksheet. \\
+substance & 2511 & PubChem SIDs\\
+compound & 2511 & PubChem CIDs\\
+assay & 35 & PubChem AIDs.  Summary AID is 36th.\\
+measuregroup & 35 & PubChem AIDs.  Default for assay.\\
+endpoint & 2511*35 & PubChem SID-AID pairs.\\
+targets & 4977 & ChEMBL IDs.  All single-component.\\
+protein & 4977 & A.k.a. target component.  With UniprotRefs.\\
+protein activity & 584,157 & From ChEMBL, but includes PubChem data.\\
+PD2 activity & 5320 & All “ACTIVE” outcomes from results.\\
+assay classifications & 155 & Manually curated PD2 to BAO associations.  Exported from worksheet.\\
 \hline
 \end{tabular}
 \end{table}
@@ -318,24 +317,24 @@ assay classifications & 155 & Manually curated PD2 to BAO associations.  Exporte
 \centering
 \begin{tabular}{p{0.25\linewidth}p{0.75\linewidth}}
 \hline
-\textbf{description} & \textbf{examples} \\
+\textbf{description} & \textbf{examples}\\
 \hline
-assay to BAO class & \makecell[l]{\texttt{bioassay:AID1117354 rdf:type bao:BAO\_0000015}} \\ 
-assay title & \makecell[l]{\texttt{bioassay:AID1117354 dcterms:title} \\ \texttt{"human JAK2 kinase inhibition-screen"@en}} \\
-assay to measuregroup & \makecell[l]{\texttt{bioassay:AID1117354} \\ \texttt{bao:BAO\_0000209 measuregroup:AID1117354}} \\
-substance to NCGC ID & \makecell[l]{\texttt{substance:SID144206486} \\ \texttt{skos:exactMatch ncats\_sample:NCGC00182710-02 .}} \\
-substance to measure group & \makecell[l]{\texttt{substance:SID124882766 obo:BFO\_0000056} \\ \texttt{measureg:AID1117326}} \\
-endpoint outcome (activity) & \makecell[l]{\texttt{endpoint:SID170466632\_AID743241} \\ \texttt{vocabulary:PubChemAssayOutcome vocabulary:inactive}} \\
-endpoint class & \makecell[l]{\texttt{endpoint:SID103164874\_AID443491 rdf:type} \\ \texttt{bao:BAO\_0000190}} \\
-substance to compound association & \makecell[l]{\texttt{substance:SID124893119} \\ \texttt{sio:CHEMINF\_000477 compound:CID1131}} \\
-assay to OIDD ID & \makecell[l]{\texttt{bioassay:AID1117350 skos:exactMatch} \\ \texttt{oidd\_assay:17}} \\
-ChEMBL target to UniProt & \makecell[l]{\texttt{chembl\_target:CHEMBL5464} \\ \texttt{cco:targetXref uniprot:Q13546}} \\
-ChEMBL target to assay & \makecell[l]{\texttt{chembl\_target:CHEMBL5464} \\ \texttt{cco:hasAssay assay:CHEMBL3110727}} \\
-ChEMBL target to target component & \makecell[l]{\texttt{chembl\_target:CHEMBL1867} \\ \texttt{cco:hasTargetComponent} \\ \texttt{chembl\_targetcmpt:CHEMBL\_TC\_180}} \\
-ChEMBL target component to Uniprot & \makecell[l]{\texttt{chembl\_targetcmpt:CHEMBL\_TC\_180} \\ \texttt{cco:targetCmptXref uniprot:P08913}} \\
-ChEMBL assay to activity & \makecell[l]{\texttt{assay:CHEMBL3110727 cco:hasActivity} \\ \texttt{activity:CHEMBL\_ACT\_13890030}} \\
-ChEMBL molecule to activity & \makecell[l]{\texttt{chembl\_molecule:CHEMBL313842} \\ \texttt{cco:hasActivity activity:CHEMBL\_ACT\_14447741}} \\
-PubChem substance to ChEMBL molecule & \makecell[l]{\texttt{substance:SID225144242} \\ \texttt{skos:exactMatch molecule:CHEMBL1474122}}  \\
+assay to BAO class & \makecell[l]{\texttt{bioassay:AID1117354 rdf:type bao:BAO\_0000015}}\\ 
+assay title & \makecell[l]{\texttt{bioassay:AID1117354 dcterms:title}\\ \texttt{"human JAK2 kinase inhibition-screen"@en}}\\
+assay to measuregroup & \makecell[l]{\texttt{bioassay:AID1117354}\\ \texttt{bao:BAO\_0000209 measuregroup:AID1117354}}\\
+substance to NCGC ID & \makecell[l]{\texttt{substance:SID144206486}\\ \texttt{skos:exactMatch ncats\_sample:NCGC00182710-02 .}}\\
+substance to measure group & \makecell[l]{\texttt{substance:SID124882766 obo:BFO\_0000056}\\ \texttt{measureg:AID1117326}}\\
+endpoint outcome (activity) & \makecell[l]{\texttt{endpoint:SID170466632\_AID743241}\\ \texttt{vocabulary:PubChemAssayOutcome vocabulary:inactive}}\\
+endpoint class & \makecell[l]{\texttt{endpoint:SID103164874\_AID443491 rdf:type}\\ \texttt{bao:BAO\_0000190}}\\
+substance to compound association & \makecell[l]{\texttt{substance:SID124893119}\\ \texttt{sio:CHEMINF\_000477 compound:CID1131}}\\
+assay to OIDD ID & \makecell[l]{\texttt{bioassay:AID1117350 skos:exactMatch}\\ \texttt{oidd\_assay:17}}\\
+ChEMBL target to UniProt & \makecell[l]{\texttt{chembl\_target:CHEMBL5464}\\ \texttt{cco:targetXref uniprot:Q13546}}\\
+ChEMBL target to assay & \makecell[l]{\texttt{chembl\_target:CHEMBL5464}\\ \texttt{cco:hasAssay assay:CHEMBL3110727}}\\
+ChEMBL target to target component & \makecell[l]{\texttt{chembl\_target:CHEMBL1867}\\ \texttt{cco:hasTargetComponent}\\ \texttt{chembl\_targetcmpt:CHEMBL\_TC\_180}}\\
+ChEMBL target component to Uniprot & \makecell[l]{\texttt{chembl\_targetcmpt:CHEMBL\_TC\_180}\\ \texttt{cco:targetCmptXref uniprot:P08913}}\\
+ChEMBL assay to activity & \makecell[l]{\texttt{assay:CHEMBL3110727 cco:hasActivity}\\ \texttt{activity:CHEMBL\_ACT\_13890030}}\\
+ChEMBL molecule to activity & \makecell[l]{\texttt{chembl\_molecule:CHEMBL313842}\\ \texttt{cco:hasActivity activity:CHEMBL\_ACT\_14447741}}\\
+PubChem substance to ChEMBL molecule & \makecell[l]{\texttt{substance:SID225144242}\\ \texttt{skos:exactMatch molecule:CHEMBL1474122}} \\
 \hline
 \end{tabular}
 \end{table}
@@ -349,31 +348,31 @@ The files comprising OPDDR are listed in table \ref{tab:opddr_05}.  Files are gr
 \caption{OPDDR files.}
 \label{tab:opddr_05}\\
 \hline
-\makecell{\textbf{filename} \\ \textbf{source: description}} & \makecell[c]{\textbf{example}} \\
+\makecell{\textbf{filename}\\ \textbf{source: description}} & \makecell[c]{\textbf{example}}\\
 \hline
-\makecell[l]{npcpd2\_assay.ttl \\ OPDDR: Assay links to OIDD namespace} & \makecell[l]{bioassay:AID1117326\\ skos:exactMatch oidd\_assay:4} \\
+\makecell[l]{npcpd2\_assay.ttl\\ OPDDR: Assay links to OIDD namespace} & \makecell[l]{bioassay:AID1117326\\ skos:exactMatch oidd\_assay:4}\\
 \hline
-\makecell[l]{npcpd2\_bao.ttl \\ OPDDR: Manually curated BAO\\ classifications.} & \makecell[l]{bioassay:AID1117352\\ rdf:type bao:BAO\_0000219} \\
+\makecell[l]{npcpd2\_bao.ttl\\ OPDDR: Manually curated BAO\\ classifications.} & \makecell[l]{bioassay:AID1117352\\ rdf:type bao:BAO\_0000219}\\
 \hline
-\makecell[l]{npcpd2\_substance.ttl \\ OPDDR: Substance links to NCATS\\ namespace.} & \makecell[l]{substance:SID170465644\\ skos:exactMatch \\ ncats\_sample:NCGC00160518-03} \\
+\makecell[l]{npcpd2\_substance.ttl\\ OPDDR: Substance links to NCATS\\ namespace.} & \makecell[l]{substance:SID170465644\\ skos:exactMatch\\ ncats\_sample:NCGC00160518-03}\\
 \hline
-\makecell[l]{bao\_vocabulary\_assay.owl \\ BAO: BAO module with bioassay\\ class hierarchy.} &  \\
+\makecell[l]{bao\_vocabulary\_assay.owl\\ BAO: BAO module with bioassay\\ class hierarchy.} & \\
 \hline
-\makecell[l]{pubchem\_vocabulary.owl \\ PubChem: module with bioactivity\\ terms etc.} & \\
+\makecell[l]{pubchem\_vocabulary.owl\\ PubChem: module with bioactivity\\ terms etc.} &\\
 \hline
-\makecell[l]{pubchem\_pd2\_assay.ttl \\ PubChem: RDF, includes titles, \\ measuregroups. } & \makecell[l]{bioassay:AID1117356 \\ bao:BAO\_0000209 \\ measuregroup:AID1117356\\ bioassay:AID1117351 \\ dcterms:title \\ "Increased HeLa cells \\ with 4N DNA content-IC50"@en}  \\
+\makecell[l]{pubchem\_pd2\_assay.ttl\\ PubChem: RDF, includes titles,\\ measuregroups. } & \makecell[l]{bioassay:AID1117356\\ bao:BAO\_0000209\\ measuregroup:AID1117356\\ bioassay:AID1117351\\ dcterms:title\\ "Increased HeLa cells\\ with 4N DNA content-IC50"@en} \\
 \hline
-\makecell[l]{pubchem\_pd2\_substance.ttl \\ PubChem: RDF, includes CIDs,\\ measuregroups. } & \makecell[l]{substance:SID124882766\\ obo:BFO\_0000056 measuregroup:AID1117326 .\\ endpoint:SID124882766\_AID1117342\\ obo:IAO\_0000136\\ substance:SID124882766 .} \\
+\makecell[l]{pubchem\_pd2\_substance.ttl\\ PubChem: RDF, includes CIDs,\\ measuregroups. } & \makecell[l]{substance:SID124882766\\ obo:BFO\_0000056 measuregroup:AID1117326 .\\ endpoint:SID124882766\_AID1117342\\ obo:IAO\_0000136\\ substance:SID124882766 .}\\
 \hline
-\makecell[l]{pubchem\_pd2\_endpoint.ttl \\ PubChem: RDF, includes endpoints,\\ activity results.} & \makecell[l]{endpoint:SID170464708\_AID1117354\\ obo:IAO\_0000136 substance:SID170464708 ;\\ vocabulary:PubChemAssayOutcome\\ vocabulary:inactive .\\ measuregroup:AID1117354\\ obo:OBI\_0000299\\ endpoint:SID170464708\_AID1117354 .} \\
+\makecell[l]{pubchem\_pd2\_endpoint.ttl\\ PubChem: RDF, includes endpoints,\\ activity results.} & \makecell[l]{endpoint:SID170464708\_AID1117354\\ obo:IAO\_0000136 substance:SID170464708 ;\\ vocabulary:PubChemAssayOutcome\\ vocabulary:inactive .\\ measuregroup:AID1117354\\ obo:OBI\_0000299\\ endpoint:SID170464708\_AID1117354 .}\\
 \hline
-\makecell[l]{chembl\_cco.ttl \\ ChEMBL: Core Ontology} & \\
+\makecell[l]{chembl\_cco.ttl\\ ChEMBL: Core Ontology} &\\
 \hline
-\makecell[l]{chembl\_target.ttl \\ ChEMBL: protein targets.} & \makecell[l]{chembl\_target:CHEMBL2366239\\ a cco:SingleProtein ;\\ dcterms:title "KLE"} \\
+\makecell[l]{chembl\_target.ttl\\ ChEMBL: protein targets.} & \makecell[l]{chembl\_target:CHEMBL2366239\\ a cco:SingleProtein ;\\ dcterms:title "KLE"}\\
 \hline
-\makecell[l]{chembl\_rdf\_activity.ttl \\ ChEMBL: PubChem substance links\\ to ChEMBL molecules, activities,\\ assays, targets, target components,\\ Uniprots.} & \makecell[l]{substance:SID170466134\\ skos:exactMatch\\ chembl\_molecule:CHEMBL1230222\\ chembl\_molecule:CHEMBL44884\\ cco:hasActivity\\ chembl\_activity:CHEMBL\_ACT\_7667167 .\\ chembl\_target:CHEMBL218 cco:hasAssay\\
+\makecell[l]{chembl\_rdf\_activity.ttl\\ ChEMBL: PubChem substance links\\ to ChEMBL molecules, activities,\\ assays, targets, target components,\\ Uniprots.} & \makecell[l]{substance:SID170466134\\ skos:exactMatch\\ chembl\_molecule:CHEMBL1230222\\ chembl\_molecule:CHEMBL44884\\ cco:hasActivity\\ chembl\_activity:CHEMBL\_ACT\_7667167 .\\ chembl\_target:CHEMBL218 cco:hasAssay\\
 chembl\_assay:CHEMBL1909122 .\\ chembl\_target:CHEMBL218\\
-cco:hasTargetComponent\\ chembl\_targetcmpt:CHEMBL\_TC\_172 .\\ chembl\_targetcmpt:CHEMBL\_TC\_172\\ cco:targetCmptXref\\ uniprot:P21554 .\\ uniprot:P21554 a cco:UniprotRef .} \\
+cco:hasTargetComponent\\ chembl\_targetcmpt:CHEMBL\_TC\_172 .\\ chembl\_targetcmpt:CHEMBL\_TC\_172\\ cco:targetCmptXref\\ uniprot:P21554 .\\ uniprot:P21554 a cco:UniprotRef .}\\
 \hline
 \end{longtable}
 \end{singlespace}

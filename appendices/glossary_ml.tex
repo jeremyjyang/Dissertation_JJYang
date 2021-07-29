@@ -3,65 +3,65 @@
 \begin{longtable}{p{0.3\linewidth}p{0.7\linewidth}}
 \caption{Data science terms: Machine learning}\\
 \hline
-\makecell[r]{\textbf{Supervised learning}} & ML involving a training set of labeled cases. \\
-\makecell[r]{\textbf{Unsupervised learning}} & ML with no training, detecting patterns as in clustering. \\
-\makecell[r]{\textbf{Clustering}} & Grouping of cases, which may be overlapping or disjoint, hierarchical or not, with many possible algorithms. \\
-\makecell[r]{\textbf{Validation}} & Assessment of a predictive model versus some asserted truth. \\
-\makecell[r]{\textbf{Cross-validation}} & Splitting a dataset into training and test cases, and repeatedly training and testing the resulting models. \\
-\makecell[r]{\textbf{Overfitting}} & Training a model to fit the training data, but with sub-optimal applicability to other cases. \\
-\makecell[r]{\textbf{Regularization}} & In training a predictive model, a method of reducing overfitting. \\
-\makecell[r]{\textbf{Loss function}} & In training a predictive model, a measure of performance loss, to be minimized.  A.k.a. cost function. \\
-\makecell[r]{\textbf{Confusion matrix}} & For a predictive classification model, a matrix of true positives, true negatives, false positives, etc., i.e. counts comprising the performance. \\
-\makecell[r]{\textbf{True Positives, False} \\ \textbf{Positives, True Negatives,} \\ \textbf{etc.}} & True Positive means predicted true by the model and labeled true in a classification scenario.  Abbreviated TP, FP, TN, FN. \\
-\makecell[r]{\textbf{Accuracy}} & (TP + TN) / (P + N).  Equivalently, fraction of correct predictions. \\
-\makecell[r]{\textbf{Sensitivity or Recall}} & TP / P \\
-\makecell[r]{\textbf{Specificity}} & TN / N \\
-\makecell[r]{\textbf{F1 Score}} & 2TP / (2TP + FP + FN) \\
-\makecell[r]{\textbf{Classification}} & Predicting non-numerical classes to cases, for example, recognizing a character from an image. \\
-\makecell[r]{\textbf{Binary classifier}} & Classifier with two possibilities. \\
-\makecell[r]{\textbf{Regression}} & Predicting a numerical endpoint. \\
-\makecell[r]{\textbf{Cases}} & Instances of the entity under study, e.g. customers, patients, website sessions, molecules or genes. \\
-\makecell[r]{\textbf{Features}} & The variables describing each case. \\
-\makecell[r]{\textbf{Endpoints}} & One or more results or observations to be analyzed and/or predicted. \\
-\makecell[r]{\textbf{Labels}} & Label generally means a known endpoint, suitable for training. \\
-\makecell[r]{\textbf{Vectorization}} & Transformation of nominal features into numeric.  A set of numerical features for a single case is thereby a vector, a.k.a. 1D array or matrix row. \\
-\makecell[r]{\textbf{Numerical vs. Categorical} \\ \textbf{data}} & Input data may be numerical or if not, categorical, normally identified by some textual name. \\
-\makecell[r]{\textbf{Binary feature}} & True or False, Yes or No, equivalently 1 or 0. \\
-\makecell[r]{\textbf{Ordinal data}} & Categorical but ordered, e.g. Low, Medium, High. \\
-\makecell[r]{\textbf{Nominal data}} & Non-numerical, textual names. \\
-\makecell[r]{\textbf{Training set}} & For a supervised ML workflow, the dataset used to train the predictive model. \\
-\makecell[r]{\textbf{Test set}} & For a supervised ML workflow, the dataset used to test the predictive model. \\
-\makecell[r]{\textbf{Online learning}} & Whereas many ML scenarios start with gathering a defined dataset, online learning implies a continuous stream of input data.  Thus, the methods applied must be capable of continuous learning. \\
-\makecell[r]{\textbf{Predictive model}} & A formal, explicit, method for computing classes or quantities from input cases. \\
-\makecell[r]{\textbf{Statistical model}} & The characteristics of the probability distribution of a population feature is one important meaning of this term.  E.g. human weight may be assumed to be normally distributed in the overall population to assess percentiles. \\
-\makecell[r]{\textbf{Model selection}} & In ML this may mean attempting several types of predictive model and selecting the best performing. \\
-\makecell[r]{\textbf{Feature selection}} & Rational selection of input features to improve performance, or to discard redundant or non-informative features. \\
-\makecell[r]{\textbf{Bias and variance}} & In ML bias and variance are terms describing a predictive model which should be balanced to avoid overfitting or underfitting, respectively.  I.e. excess bias means overly biased toward the training set.  Excess variance means the model will vary excessively from the training set. \\
-\makecell[r]{\textbf{Parameters}} & In terms of predictive models, the parameters define the model within a given family.  For example a simple 2D linear regression has two parameters, slope and y-intercept.  A neural network has a weight parameter for every input to every node in every layer, input, hidden and output.  In all scenarios, training the model means determining the parameters. \\
-\makecell[r]{\textbf{Recommender system}} & A type of predictive model which an entity of some defined output type, to an input case of another type.  E.g. Netflix recommends movies to users.  A sales recommender might recommend prospects for a given product. \\
-\makecell[r]{\textbf{Linear Regression}} & Supervised regression method whereby endpoints are formulated as linear sums of input variables weighted by parameter coefficients.  N. B. input variables may be raw features or some transformation (e.g. log or square). \\
-\makecell[r]{\textbf{K-Nearest Neighbors} \\ \textbf{Algorithm}} & Supervised classification method based on distances in a space of dimensionality equal to the feature count, and voting by the K nearest neighbors to any case, where K is an adjustable parameter. \\
-\makecell[r]{\textbf{K-Means Clustering} \\ \textbf{Algorithm}} & Unsupervised method, based on distances in a space of dimensionality equal to the feature count, where here K is a pre-defined count of clusters to be detected. \\
-\makecell[r]{\textbf{Support Vector Machine} \\ \textbf{(SVM) Algorithm}} & Supervised classification method, based on distances in a space of dimensionality equal to the feature count, which generates a decision boundary, by minimizing based on a cost "kernel" function. \\
-\makecell[r]{\textbf{Naïve Bayes Algorithm}} & Using Bayes theorem, and assuming independence, training cases can be used to infer conditional probabilities and thereby predict new cases. \\
-\makecell[r]{\textbf{Decision Trees Algorithm}} & Also known as Classification and Regression Trees (CART).  At each node in a tree, a decision based on partitioning of one feature is designed to optimize information gain. \\
-\makecell[r]{\textbf{Random Forests} \\ \textbf{Algorithm}} & An extension of CART, whereby ensembles (forests) of decision trees are generated with random selection of training cases and features. \\
-\makecell[r]{\textbf{Logistic Regression}} & Uses a sigmoid function domain [-Inf, +Inf] and range [0,1] interpretable as a probability and a binary classification.  This is employed as the activation function of each neuron (node) of a neural net. \\
-\makecell[r]{\textbf{Artificial Neural Network} \\ \textbf{(ANN) Algorithm}} & Supervised classification method, modeled on a specific conception of biological neurocognition.  The network consists of neurons (a.k.a. nodes) in  one input layer, one output layer, and one or more hidden layers.  Each neuron is represented by a logistic activation function, linear weighted combination of inputs from the preceding layer, and a single output.  Learning is achieved by assessing the error (a.k.a. loss or cost) at the outputs, then back-propagating that error through the layers to optimize the weight parameters.  Overall learning is by iteratively processing errors from many training cases. \\
-\makecell[r]{\textbf{Deep Learning}} & Typically refers to ANN with multiple (3+) hidden layers. \\
-\makecell[r]{\textbf{Evolutionary Algorithm}} & A.k.a. genetic algorithm.  Involves an intial population, and successive generations selected according to a fitness function, and mutated, possibly by combination and cross-linking of genetic units (genes). \\
-\makecell[r]{\textbf{Probabilistic Graph} \\ \textbf{Models}} & Two main types are Bayesian and Markov Networks.  Variables are nodes, and edges represent dependencies, possibly causal. \\
-\makecell[r]{\textbf{Agent Based Models}} & Agents a.k.a. cellular automata.  Some classic examples are ant colonies, economic systems, and terrorists.  In contrast to models involving centralized command and control, in agent based models, behavior is an emergent property of the group. \\
-\makecell[r]{\textbf{Complex, adaptive, and} \\ \textbf{non-linear systems}} & A large commercial aircraft is a very complicated machine with millions of parts, but these terms refer to a very different kind of complexity.  Whereas the aircraft is designed to behave very precisely and reproducibly for a given set of inputs, according to defined mathematical functions, complex and adaptive systems cannot be described thus.  Agent based modeling is a promising approach.  The overall behavior is said to have emergent properties. \\
-\makecell[r]{\textbf{A/B Testing}} & Onlne evaluation of two (or more) options, such as in e-commerce or political solicitation. \\
-\makecell[r]{\textbf{Reinforcement Learning}} & With no initial training set, but defined success criteria, the space must be explored, behaviors learned and reinforced by successful outcomes, and successful strategies exploited.   Thus a balance is required between exploration and exploitation.  The prototypical scenario is the "Multi-armed bandit".  \\
-\makecell[r]{\textbf{Transfer Learning}} &  \\
-\makecell[r]{\textbf{Representation Learning}} &  \\
-\makecell[r]{\textbf{Generative Adversarial} \\ \textbf{Network (GAN)}} &  \\
-\makecell[r]{\textbf{Autoencoder}} &  \\
-\makecell[r]{\textbf{Feature Engineering}} &  \\
-\makecell[r]{\textbf{Regularization}} &  \\
-\makecell[r]{\textbf{Interpretability}} &  \\
+\makecell[r]{\textbf{Supervised learning}} & ML involving a training set of labeled cases.\\
+\makecell[r]{\textbf{Unsupervised learning}} & ML with no training, detecting patterns as in clustering.\\
+\makecell[r]{\textbf{Clustering}} & Grouping of cases, which may be overlapping or disjoint, hierarchical or not, with many possible algorithms.\\
+\makecell[r]{\textbf{Validation}} & Assessment of a predictive model versus some asserted truth.\\
+\makecell[r]{\textbf{Cross-validation}} & Splitting a dataset into training and test cases, and repeatedly training and testing the resulting models.\\
+\makecell[r]{\textbf{Overfitting}} & Training a model to fit the training data, but with sub-optimal applicability to other cases.\\
+\makecell[r]{\textbf{Regularization}} & In training a predictive model, a method of reducing overfitting.\\
+\makecell[r]{\textbf{Loss function}} & In training a predictive model, a measure of performance loss, to be minimized.  A.k.a. cost function.\\
+\makecell[r]{\textbf{Confusion matrix}} & For a predictive classification model, a matrix of true positives, true negatives, false positives, etc., i.e. counts comprising the performance.\\
+\makecell[r]{\textbf{True Positives, False}\\ \textbf{Positives, True Negatives,}\\ \textbf{etc.}} & True Positive means predicted true by the model and labeled true in a classification scenario.  Abbreviated TP, FP, TN, FN.\\
+\makecell[r]{\textbf{Accuracy}} & (TP + TN) / (P + N).  Equivalently, fraction of correct predictions.\\
+\makecell[r]{\textbf{Sensitivity or Recall}} & TP / P\\
+\makecell[r]{\textbf{Specificity}} & TN / N\\
+\makecell[r]{\textbf{F1 Score}} & 2TP / (2TP + FP + FN)\\
+\makecell[r]{\textbf{Classification}} & Predicting non-numerical classes to cases, for example, recognizing a character from an image.\\
+\makecell[r]{\textbf{Binary classifier}} & Classifier with two possibilities.\\
+\makecell[r]{\textbf{Regression}} & Predicting a numerical endpoint.\\
+\makecell[r]{\textbf{Cases}} & Instances of the entity under study, e.g. customers, patients, website sessions, molecules or genes.\\
+\makecell[r]{\textbf{Features}} & The variables describing each case.\\
+\makecell[r]{\textbf{Endpoints}} & One or more results or observations to be analyzed and/or predicted.\\
+\makecell[r]{\textbf{Labels}} & Label generally means a known endpoint, suitable for training.\\
+\makecell[r]{\textbf{Vectorization}} & Transformation of nominal features into numeric.  A set of numerical features for a single case is thereby a vector, a.k.a. 1D array or matrix row.\\
+\makecell[r]{\textbf{Numerical vs. Categorical}\\ \textbf{data}} & Input data may be numerical or if not, categorical, normally identified by some textual name.\\
+\makecell[r]{\textbf{Binary feature}} & True or False, Yes or No, equivalently 1 or 0.\\
+\makecell[r]{\textbf{Ordinal data}} & Categorical but ordered, e.g. Low, Medium, High.\\
+\makecell[r]{\textbf{Nominal data}} & Non-numerical, textual names.\\
+\makecell[r]{\textbf{Training set}} & For a supervised ML workflow, the dataset used to train the predictive model.\\
+\makecell[r]{\textbf{Test set}} & For a supervised ML workflow, the dataset used to test the predictive model.\\
+\makecell[r]{\textbf{Online learning}} & Whereas many ML scenarios start with gathering a defined dataset, online learning implies a continuous stream of input data.  Thus, the methods applied must be capable of continuous learning.\\
+\makecell[r]{\textbf{Predictive model}} & A formal, explicit, method for computing classes or quantities from input cases.\\
+\makecell[r]{\textbf{Statistical model}} & The characteristics of the probability distribution of a population feature is one important meaning of this term.  E.g. human weight may be assumed to be normally distributed in the overall population to assess percentiles.\\
+\makecell[r]{\textbf{Model selection}} & In ML this may mean attempting several types of predictive model and selecting the best performing.\\
+\makecell[r]{\textbf{Feature selection}} & Rational selection of input features to improve performance, or to discard redundant or non-informative features.\\
+\makecell[r]{\textbf{Bias and variance}} & In ML bias and variance are terms describing a predictive model which should be balanced to avoid overfitting or underfitting, respectively.  I.e. excess bias means overly biased toward the training set.  Excess variance means the model will vary excessively from the training set.\\
+\makecell[r]{\textbf{Parameters}} & In terms of predictive models, the parameters define the model within a given family.  For example a simple 2D linear regression has two parameters, slope and y-intercept.  A neural network has a weight parameter for every input to every node in every layer, input, hidden and output.  In all scenarios, training the model means determining the parameters.\\
+\makecell[r]{\textbf{Recommender system}} & A type of predictive model which an entity of some defined output type, to an input case of another type.  E.g. Netflix recommends movies to users.  A sales recommender might recommend prospects for a given product.\\
+\makecell[r]{\textbf{Linear Regression}} & Supervised regression method whereby endpoints are formulated as linear sums of input variables weighted by parameter coefficients.  N. B. input variables may be raw features or some transformation (e.g. log or square).\\
+\makecell[r]{\textbf{K-Nearest Neighbors}\\ \textbf{Algorithm}} & Supervised classification method based on distances in a space of dimensionality equal to the feature count, and voting by the K nearest neighbors to any case, where K is an adjustable parameter.\\
+\makecell[r]{\textbf{K-Means Clustering}\\ \textbf{Algorithm}} & Unsupervised method, based on distances in a space of dimensionality equal to the feature count, where here K is a pre-defined count of clusters to be detected.\\
+\makecell[r]{\textbf{Support Vector Machine}\\ \textbf{(SVM) Algorithm}} & Supervised classification method, based on distances in a space of dimensionality equal to the feature count, which generates a decision boundary, by minimizing based on a cost "kernel" function.\\
+\makecell[r]{\textbf{Naïve Bayes Algorithm}} & Using Bayes theorem, and assuming independence, training cases can be used to infer conditional probabilities and thereby predict new cases.\\
+\makecell[r]{\textbf{Decision Trees Algorithm}} & Also known as Classification and Regression Trees (CART).  At each node in a tree, a decision based on partitioning of one feature is designed to optimize information gain.\\
+\makecell[r]{\textbf{Random Forests}\\ \textbf{Algorithm}} & An extension of CART, whereby ensembles (forests) of decision trees are generated with random selection of training cases and features.\\
+\makecell[r]{\textbf{Logistic Regression}} & Uses a sigmoid function domain [-Inf, +Inf] and range [0,1] interpretable as a probability and a binary classification.  This is employed as the activation function of each neuron (node) of a neural net.\\
+\makecell[r]{\textbf{Artificial Neural Network}\\ \textbf{(ANN) Algorithm}} & Supervised classification method, modeled on a specific conception of biological neurocognition.  The network consists of neurons (a.k.a. nodes) in  one input layer, one output layer, and one or more hidden layers.  Each neuron is represented by a logistic activation function, linear weighted combination of inputs from the preceding layer, and a single output.  Learning is achieved by assessing the error (a.k.a. loss or cost) at the outputs, then back-propagating that error through the layers to optimize the weight parameters.  Overall learning is by iteratively processing errors from many training cases.\\
+\makecell[r]{\textbf{Deep Learning}} & Typically refers to ANN with multiple (3+) hidden layers.\\
+\makecell[r]{\textbf{Evolutionary Algorithm}} & A.k.a. genetic algorithm.  Involves an intial population, and successive generations selected according to a fitness function, and mutated, possibly by combination and cross-linking of genetic units (genes).\\
+\makecell[r]{\textbf{Probabilistic Graph}\\ \textbf{Models}} & Two main types are Bayesian and Markov Networks.  Variables are nodes, and edges represent dependencies, possibly causal.\\
+\makecell[r]{\textbf{Agent Based Models}} & Agents a.k.a. cellular automata.  Some classic examples are ant colonies, economic systems, and terrorists.  In contrast to models involving centralized command and control, in agent based models, behavior is an emergent property of the group.\\
+\makecell[r]{\textbf{Complex, adaptive, and}\\ \textbf{non-linear systems}} & A large commercial aircraft is a very complicated machine with millions of parts, but these terms refer to a very different kind of complexity.  Whereas the aircraft is designed to behave very precisely and reproducibly for a given set of inputs, according to defined mathematical functions, complex and adaptive systems cannot be described thus.  Agent based modeling is a promising approach.  The overall behavior is said to have emergent properties.\\
+\makecell[r]{\textbf{A/B Testing}} & Onlne evaluation of two (or more) options, such as in e-commerce or political solicitation.\\
+\makecell[r]{\textbf{Reinforcement Learning}} & With no initial training set, but defined success criteria, the space must be explored, behaviors learned and reinforced by successful outcomes, and successful strategies exploited.   Thus a balance is required between exploration and exploitation.  The prototypical scenario is the "Multi-armed bandit". \\
+\makecell[r]{\textbf{Transfer Learning}} & \\
+\makecell[r]{\textbf{Representation Learning}} & \\
+\makecell[r]{\textbf{Generative Adversarial}\\ \textbf{Network (GAN)}} & \\
+\makecell[r]{\textbf{Autoencoder}} & \\
+\makecell[r]{\textbf{Feature Engineering}} & \\
+\makecell[r]{\textbf{Regularization}} & \\
+\makecell[r]{\textbf{Interpretability}} & \\
 \hline
 \end{longtable}
 \end{singlespace}
