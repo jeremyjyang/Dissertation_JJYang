@@ -21,8 +21,11 @@ TEXFILES = \
 	titlePage.tex \
 	vita.tex
 
-main: $(TEXFILES)
+main: Dissertation_JJYang.pdf
+
+Dissertation_JJYang.pdf: $(TEXFILES)
 	latexmk -pdf main.tex
+	mv main.pdf Dissertation_JJYang.pdf
 
 clean:
 	latexmk -C
