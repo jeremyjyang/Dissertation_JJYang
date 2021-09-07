@@ -27,7 +27,9 @@ small-molecule bioactivity data}
 \textbf{Web application}: \href{https://datascience.unm.edu/tomcat/carlsbad/carlsbadone}{https://datascience.unm.edu/tomcat/carlsbad/carlsbadone}\\
 \textbf{Source code}: \href{https://github.com/unmtransinfo/CARLSBAD}{GitHub:CARLSBAD}
 
-\section{Dissertation themes and relevance}
+\subsection{Dissertation themes and relevance}
+
+The CARLSBAD KG is composed of rigorously defined entities, specifically (1) diseases, (2) protein targets, (3) chemical compounds, and (4) chemical patterns, a.k.a. chemotypes, either scaffolds or MCS-based. The central relationships are bioactivity values selected, normalized, and aggregated from high-confidence sources. Although implemented as a relational (PostgreSQL) database, the analytics, results, and visualizations are KG-based. This KG is designed for pharmaceutical research use cases including off-target bioactivity (missing link) prediction, chemotype based discovery, and drug repurposing. For each use case, bioactivity instances are aggregated to evaluate evidence.
 
 \subsection{Introduction}
 
@@ -410,7 +412,9 @@ OPDDR was a collaboration involving Lilly's Open Innovation Drug Discovery (OIDD
 \textbf{Web application}: \href{https://newdrugtargets.org}{https://newdrugtargets.org}\\
 \textbf{Poster}: \href{https://doi.org/10.5281/zenodo.5038628}{https://doi.org/10.5281/zenodo.5038628}
 
-\section{Dissertation themes and relevance}
+\subsection{Dissertation themes and relevance}
+
+TIN-X is fundamentally a bibliometric approach, so accordingly the central entities are publications, mentions and co-mentions of entities via named entity recognition (NER). By rigorous resolution of synonyms into semantic entities, the essential qualities of a knowledge graph are achieved, described by Ding et al. as entitymetrics\cite{Ding2013-ua}. Evidence is aggregated and evaluated from the PubMed corpus to associate diseases with genes and prioritize targets for druggability analysis.
 
 \subsection{Introduction}
 
