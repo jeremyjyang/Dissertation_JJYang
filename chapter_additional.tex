@@ -1,4 +1,4 @@
-\chapter{Additional and related research involving evidence evaluation, biomedical knowledge graphs, and pharmaceutical discovery}
+\chapter{Additional and related research involving evidence evaluation in biomedical knowledge graphs for pharmaceutical discovery}
 
 
 \vspace*{\fill}
@@ -25,7 +25,7 @@ small-molecule bioactivity data}
 \textbf{Publication}: The CARLSBAD Database: A Confederated Database of Chemical Bioactivities, S.L. Mathias et al., Database, 2013\cite{Mathias2013-hj}.\\
 \textbf{PI}: Tudor I Oprea, MD, PhD\\
 \textbf{Web application}: \href{https://datascience.unm.edu/tomcat/carlsbad/carlsbadone}{https://datascience.unm.edu/tomcat/carlsbad/carlsbadone}\\
-\textbf{Source code}: \href{https://github.com/unmtransinfo/CARLSBAD}{GitHub:CARLSBAD}
+\textbf{Source code}: \href{https://github.com/unmtransinfo/CARLSBAD}{https://github.com/unmtransinfo/CARLSBAD}
 
 \subsection{Dissertation themes and relevance}
 
@@ -213,23 +213,23 @@ CARLSBAD was very much a collaborative team effort, involving many meetings and 
 
 \textbf{Publication}: Novel Phenotypic Outcomes Identified for a Public Collection of Approved Drugs from a Publicly Accessible Panel of Assays, J. Lee, et al, PLoS ONE, 2015\cite{Lee2015-vg}.\\
 \textbf{PI}: Craig J Thomas, PhD (overall); David J Wild, PhD (informatics)\\
-\textbf{Source code}: \href{https://github.com/IUIDSL/OPDDR}{GitHub:OPDDR}\\
+\textbf{Source code}: \href{https://github.com/IUIDSL/OPDDR}{https://github.com/IUIDSL/OPDDR}\\
 \textbf{PubChem}: \href{https://pubchem.ncbi.nlm.nih.gov/bioassay/1117321}{BioAssay:1117321}\\
 \textbf{Poster}: \href{https://doi.org/10.5281/zenodo.4844529}{https://doi.org/10.5281/zenodo.4844529}
 
 \subsection{Dissertation themes and relevance}
 
-The OPDDR project involved an experimental component conducted by Lilly, with compounds supplied by NCATS, and an informatics component, led by IU. The informatics work was designed to maximize the benefits of public release of results to the scientific community through semantic integration with existing public resources PubChem and OpenPHACTS, and the design and release of an RDF schema and knowledge graph comprised of these data. This project employed Semantic Web Technologies (SWT) inspired by the semantic web vision \cite{Berners-Lee2001-wi} and developed through the W3C, including RDF, OWL and Sparql (see also Appendix \ref{appendix:glossary_datascience_semantics}). Moreover, these technologies, approaches, and concepts are foundational to advances in knowledge graph methodology and thus an important theme of this dissertation.
+The OPDDR project was mainly an experimental component conducted by Lilly, with compounds supplied by NCATS, and a supporting informatics component, led by IU. The informatics work was designed to maximize the benefits of public release of experimental results to the scientific community through semantic integration with existing public resources PubChem and OpenPHACTS, and the design and release of an RDF schema and knowledge graph comprised of these data. This project employed Semantic Web Technologies (SWT) inspired by the semantic web vision \cite{Berners-Lee2001-wi} and developed through the W3C, including RDF, OWL and Sparql (see also Appendix \ref{appendix:glossary_datascience_semantics}). Moreover, these technologies, approaches, and concepts are foundational to advances in knowledge graph methodology and thus an important theme of this dissertation.
 
 \subsection{Introduction}
 
 Phenotypic assays have a proven track record for generating leads that become first-in-class therapies. Whole cell assays that inform on a phenotype or mechanism also possess great potential in drug repositioning studies by illuminating new activities for the existing pharmacopeia. The National Center for Advancing Translational Sciences (NCATS) pharmaceutical collection (NPC) is the largest reported collection of approved small molecule therapeutics that is available for screening in a high-throughput setting. Via a wide-ranging collaborative effort, this library was analyzed in the Open Innovation Drug Discovery (OIDD) phenotypic assay modules publicly offered by Lilly. 
 
-This project involved the characterization of 2460 clinical phase/approved drugs in five Lilly OIDD phenotypic assays. The work was part of an ongoing collaboration involving Lilly, NIH-NCATS, and Data2Discovery.  The focus of this description of OPDDR is the informatics: transforming and integrating data to enhance semantic value, development of a knowledge graph (KG) -- a.k.a. knowledge network (KN), a publicly shared Open Phenotypic Drug Discovery Resource (OPDDR, aka PD2) which can be used to identify relationships between National Pharmaceutical Collection (NPC) compounds, phenotypic assays, ontological classes of assays, and associated public data on related molecular targets. The results of these tests are publicly available online at \href{https://www.ncats.nih.gov/expertise/preclinical/pd2}{NCATS} and via PubChem (\href{https://pubchem.ncbi.nlm.nih.gov/bioassay/1117321}{BioAssay:1117321}).
+This project involved the characterization of 2460 clinical phase/approved drugs in five Lilly OIDD phenotypic assays. The work was part of an ongoing collaboration involving Lilly, NIH-NCATS, and Data2Discovery.  The focus of this description of OPDDR is the informatics: transforming and integrating data to enhance semantic value, development of a knowledge graph (KG) -- a.k.a. knowledge network (KN), a publicly shared Open Phenotypic Drug Discovery Resource (OPDDR) which can be used to identify relationships between National Pharmaceutical Collection (NPC) compounds, phenotypic assays, ontological classes of assays, and associated public data on related molecular targets. The results of these tests are publicly available online at \href{https://www.ncats.nih.gov/expertise/preclinical/pd2}{NCATS} and via PubChem (\href{https://pubchem.ncbi.nlm.nih.gov/bioassay/1117321}{BioAssay:1117321}).
 
 \subsection{Results}
 
-The significantly revised (June 2015) PubChem RDF data model was integrated, informed via engagement with PubChem team (Bolton et al.). BioAssay Ontology (BAO) integration informed by discussions with BAO team (Sch\"urer et al.), and with AstraZeneca (Enqvist) regarding their assay annotation template. OpenPHACTS (OP) integration informed by discussions with the OP team, which entailed major revisions in the KN, and also revisions in the OP data model and API, to handle phenotypic assays. Figure \ref{fig:opddr_01} illustrates the OPDDR RDF schema, or data model, grouped by data source.
+The significantly revised (June 2015) PubChem RDF data model was integrated, informed via engagement with PubChem team\cite{Kim2016-cl}. BioAssay Ontology (BAO) integration informed by discussions with BAO team\cite{Vempati2012-ns}, and with AstraZeneca (Enqvist) regarding their assay annotation template. OpenPHACTS (OP) integration informed by discussions with the OP team\cite{Williams2012-wx,Digles2018-qs}, which entailed major revisions in the KG, and also revisions in the OP data model and API, to handle phenotypic assays. Figure \ref{fig:opddr_01} illustrates the OPDDR RDF schema, or data model, grouped by data source.
 
 \begin{figure}
     \centering
@@ -304,18 +304,18 @@ Note that PubChem compounds are required in addition to substances.  Compounds r
 \centering
 \begin{tabular}{p{0.3\linewidth}p{0.2\linewidth}p{0.5\linewidth}}
 \hline
-\textbf{type} & \textbf{count} & \textbf{notes}\\
+\textbf{type} & \textbf{count} & \textbf{description}\\
 \hline
 substance & 2511 & PubChem SIDs\\
 compound & 2511 & PubChem CIDs\\
-assay & 35 & PubChem AIDs.  Summary AID is 36th.\\
+assay & 35 & PubChem AIDs, not counting summary AID.\\
 measuregroup & 35 & PubChem AIDs.  Default for assay.\\
-endpoint & 2511*35 & PubChem SID-AID pairs.\\
+endpoint & 87,885 & PubChem SID-AID pairs.\\
 targets & 4977 & ChEMBL IDs.  All single-component.\\
-protein & 4977 & A.k.a. target component.  With UniprotRefs.\\
+protein & 4977 & ChEMBL target component, with UniprotRefs.\\
 protein activity & 584,157 & From ChEMBL, but includes PubChem data.\\
 PD2 activity & 5320 & All “ACTIVE” outcomes from results.\\
-assay classifications & 155 & Manually curated PD2 to BAO associations.  Exported from worksheet.\\
+assay classifications & 155 & Manually curated BAO annotations.\\
 \hline
 \end{tabular}
 \end{table}
@@ -365,9 +365,9 @@ The files comprising OPDDR are listed in table \ref{tab:opddr_05}.  Files are gr
 \hline
 \makecell[l]{npcpd2\_substance.ttl\\ OPDDR: Substance links to NCATS\\ namespace.} & \makecell[l]{substance:SID170465644\\ skos:exactMatch\\ ncats\_sample:NCGC00160518-03}\\
 \hline
-\makecell[l]{bao\_vocabulary\_assay.owl\\ BAO: BAO module with bioassay\\ class hierarchy.} & \\
+\makecell[l]{bao\_vocabulary\_assay.owl\\ BAO: BAO module with bioassay\\ class hierarchy.} & \makecell[l]{bao:BAO\_0000008 ("bioassay type")} \\
 \hline
-\makecell[l]{pubchem\_vocabulary.owl\\ PubChem: module with bioactivity\\ terms etc.} &\\
+\makecell[l]{pubchem\_vocabulary.owl\\ PubChem: module with bioactivity\\ terms etc.} & \makecell[l]{pubchem:vocabulary\#active}\\
 \hline
 \makecell[l]{pubchem\_pd2\_assay.ttl\\ PubChem: RDF, includes titles,\\ measuregroups. } & \makecell[l]{bioassay:AID1117356\\ bao:BAO\_0000209\\ measuregroup:AID1117356\\ bioassay:AID1117351\\ dcterms:title\\ "Increased HeLa cells\\ with 4N DNA content-IC50"@en} \\
 \hline
@@ -375,7 +375,7 @@ The files comprising OPDDR are listed in table \ref{tab:opddr_05}.  Files are gr
 \hline
 \makecell[l]{pubchem\_pd2\_endpoint.ttl\\ PubChem: RDF, includes endpoints,\\ activity results.} & \makecell[l]{endpoint:SID170464708\_AID1117354\\ obo:IAO\_0000136 substance:SID170464708 ;\\ vocabulary:PubChemAssayOutcome\\ vocabulary:inactive .\\ measuregroup:AID1117354\\ obo:OBI\_0000299\\ endpoint:SID170464708\_AID1117354 .}\\
 \hline
-\makecell[l]{chembl\_cco.ttl\\ ChEMBL: Core Ontology} &\\
+\makecell[l]{chembl\_cco.ttl\\ ChEMBL: Core Ontology} & \makecell[l]{cco:Phenotype}\\
 \hline
 \makecell[l]{chembl\_target.ttl\\ ChEMBL: protein targets.} & \makecell[l]{chembl\_target:CHEMBL2366239\\ a cco:SingleProtein ;\\ dcterms:title "KLE"}\\
 \hline
@@ -388,11 +388,11 @@ cco:hasTargetComponent\\ chembl\_targetcmpt:CHEMBL\_TC\_172 .\\ chembl\_targetcm
 
 \subsection{Conclusions}
 
-This initial KG Beta Version provides sufficient associations for semantic exploration across PD2 phenotypic and public biochemical assays for the NPC substances.  The integration with PubChem, ChEMBL, and OpenPHACTS adds value in multiple ways, linking to a large, diverse and expanding ecosystem of public biomedical knowledge.  Additional assay annotations can add further value, whereby the knowledge model developed can represent and derive high value from the unique knowledge of domain specialists and facilitate the links which power and advance data intensive research.
+This initial KG version provides sufficient associations for semantic exploration across phenotypic and public biochemical assays for the NPC substances.  The integration with PubChem, ChEMBL, and OpenPHACTS adds value in multiple ways, linking to a large, diverse and expanding ecosystem of public biomedical knowledge.  Additional assay annotations can add further value, whereby the knowledge model developed can represent and derive high value from the unique knowledge of domain specialists and facilitate the links which power and advance data intensive research. However, since the release of this KG as an RDF dataset in 2015, there are indications suggesting that RDF triple-stores are being surpassed for scalability and enterprise use by KG technologies such as GraphQL and databases such as Neo4j. 
 
 \subsection{Researcher contributions}
 
-OPDDR was a collaboration involving Lilly's Open Innovation Drug Discovery (OIDD), NIH-NCATS, Data2Discovery and IU. The experimental activities involved compounds supplied by NIH-NCATS, and bioassays performed by Lilly. The informatics activities were primarily the responsibility of Data2Discovery and IU, and in these, JY provided a major effort ((\href{http://purl.org/spar/scoro/major-effort}{scoro:major-effort})), which included: 
+OPDDR was a collaboration involving Lilly's Open Innovation Drug Discovery (OIDD), NIH-NCATS, Data2Discovery and IU. The experimental activities involved compounds supplied by NIH-NCATS, and bioassays performed by Lilly. The informatics activities were primarily the responsibility of Data2Discovery and IU, and in these, JY provided a major effort (\href{http://purl.org/spar/scoro/major-effort}{scoro:major-effort}), which included: 
 
 \begin{itemize}[topsep=0pt,itemsep=0pt,partopsep=0pt,parsep=0pt]
     \item Converting dataset to RDF.

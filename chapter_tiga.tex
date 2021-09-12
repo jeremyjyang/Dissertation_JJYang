@@ -3,7 +3,7 @@
 \textbf{Publication}: TIGA: Target illumination GWAS analytics, J. J. Yang et al., Bioinformatics, 2021\cite{Yang2021-di}.\\
 \textbf{PI}: Tudor I Oprea, MD, PhD\\
 \textbf{Web application}: \href{https://unmtid-shinyapps.net/tiga}{https://unmtid-shinyapps.net/tiga}\\
-\textbf{Source code}: \href{https://github.com/unmtransinfo/tiga-gwas-explorer}{GitHub:tiga-gwas-explorer}\\
+\textbf{Source code}: \href{https://github.com/unmtransinfo/tiga-gwas-explorer}{https://github.com/unmtransinfo/tiga-gwas-explorer}\\
 \textbf{Abbreviations}: Appendix \ref{appendix:tiga}
 
 \section{Dissertation themes and relevance}
@@ -270,7 +270,13 @@ Interpretability concerns exist throughout science, but GWAS is understood to pr
 
 \subsection{Designing for downstream integration}
 
-Biomedical knowledge discovery depends on integration of sources and data types which are heterogeneous in the extreme, reflecting the underlying complexity of biomedical science. These challenges are increasingly understood and addressed by improving data science methodology. However, provenance, interpretability and confidence aspects are underappreciated. As in all signal propagation, errors and uncertainty accrue and confidence decays. Here, we proposed the use of simple, transparent, and comprehensible metrics to assess the relative confidence of disease-gene associations, via the unbiased meanRank scores. Figure \ref{fig:TIGA_09}, summarizing TIGA sources and interfaces, illustrates its well-defined role. Continuous confidence scores support algorithmic weighting and filtering. Standard identifiers and semantics support rigorous integration. Limiting provenance to the Catalog and its linked publications, semantic interpretability is enhanced. TIGA was designed an implemented with downstream integration and interpretability in mind, and has been integrated with DISEASES and Pharos. TIGA is similarly well suited for KG integration, with well defined semantics for traits, genes, and SNPs.
+Biomedical knowledge discovery depends on integration of sources and data types which are heterogeneous in the extreme, reflecting the underlying complexity of biomedical science. These challenges are increasingly understood and addressed by improving data science methodology. However, provenance, interpretability and confidence aspects are underappreciated. As in all signal propagation, errors and uncertainty accrue and confidence decays. Here, we proposed the use of simple, transparent, and comprehensible metrics to assess the relative confidence of disease-gene associations, via the unbiased meanRank scores. Figure \ref{fig:TIGA_09}, summarizing TIGA sources and interfaces, illustrates its well-defined role. Continuous confidence scores support algorithmic weighting and filtering. Standard identifiers and semantics support rigorous integration. Limiting provenance to the Catalog and its linked publications, semantic interpretability is enhanced. TIGA was designed an implemented with downstream integration and interpretability in mind, and has been integrated with DISEASES and Pharos. TIGA is similarly well suited for KG integration, with well defined semantics for traits, genes, and SNPs, as illustrated in figure \ref{fig:TIGA_metagraph}.
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/tiga/TIGA_metagraph.png}
+	\caption{TIGA metagraph indicating major entities and relationships.}
+	\label{fig:TIGA_metagraph}
+\end{figure}
 
 \section{Conclusions}
 
