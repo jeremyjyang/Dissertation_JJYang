@@ -156,14 +156,13 @@ As shown in figure \ref{fig:KGAP_LINCS-IDG_Schematic} an understanding of entiti
 
 \subsection{Data modeling, representing the knowledge}
 
-Graphs in Neo4j are composed of nodes and relationships, which correspond with vertices and edges in graph theory terms, respectively. Graph queries can be thought of as patterns for matching paths through the graph, which consist of specified relationship types, each between two nodes, a semantic triple, subject-predicate-object. Neo4j is considered a schema-less database, meaning that data is loaded without constraints. But a strict schema with strong semantics informed by domain knowledge can be implemented, and is essential for accurate knowledge representation and interpretability. The meta-model for a graph can be reported by introspective Cypher query (CALL apoc.meta.graph). The meta-model for this graph is shown in figure \ref{fig:neo4jmetagraph}.
-
-
 \begin{figure}
 	\includegraphics[width=\textwidth]{figures/kgap/KGAP_neo4jmetagraph.png}
 	\caption{Neo4j meta graph. Both nodes and relationships have properties which can be used in query filtering and analysis.}
 	\label{fig:neo4jmetagraph}
 \end{figure}
+
+Graphs in Neo4j are composed of nodes and relationships, which correspond with vertices and edges in graph theory terms, respectively. Graph queries can be thought of as patterns for matching paths through the graph, which consist of specified relationship types, each between two nodes, a semantic triple, subject-predicate-object. Neo4j is considered a schema-less database, meaning that data is loaded without constraints. But a strict schema with strong semantics informed by domain knowledge can be implemented, and is essential for accurate knowledge representation and interpretability. The meta-model for a graph can be reported by introspective Cypher query (CALL apoc.meta.graph). The meta-model for this graph is shown in figure \ref{fig:neo4jmetagraph}.
 
 Our graph is constructed of the following.
 
