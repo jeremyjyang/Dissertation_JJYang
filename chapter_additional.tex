@@ -25,7 +25,8 @@ small-molecule bioactivity data}
 \textbf{Publication}: The CARLSBAD Database: A Confederated Database of Chemical Bioactivities, S.L. Mathias et al., Database, 2013\cite{Mathias2013-hj}.\\
 \textbf{PI}: Tudor I Oprea, MD, PhD\\
 \textbf{Web application}: \href{https://datascience.unm.edu/tomcat/carlsbad/carlsbadone}{https://datascience.unm.edu/tomcat/carlsbad/carlsbadone}\\
-\textbf{Source code}: \href{https://github.com/unmtransinfo/CARLSBAD}{https://github.com/unmtransinfo/CARLSBAD}
+\textbf{Source code}: \href{https://github.com/unmtransinfo/CARLSBAD}{https://github.com/unmtransinfo/CARLSBAD},\\
+\href{https://github.com/unmtransinfo/unm_biocomp_hscaf}{https://github.com/unmtransinfo/unm\_biocomp\_hscaf}
 
 \subsection{Dissertation themes and relevance}
 
@@ -150,7 +151,7 @@ In the CARLSBAD database, chemical substances are distinguished from compounds i
 
 \subsubsection{HierS}
 
-HierS, the hierarchical scaffold grouping algorithm\cite{Wilkens2005-ja} (9), is based on the molecular framework concept described by Bemis and Murcko\cite{Bemis1996-jg}. The ‘scaffold’ concept is central in medicinal chemistry and provides a chemically intuitive manner to visualize chemical classes, as ring-based linkages are central structural features in most (\textgreater 90\%) drug molecules. The algorithm relates any two compounds by their common shared scaffolds. Scaffolds generally have two advantages over MCS: (i) computational speed and (ii) chemical interpretability. To our knowledge, there is no currently available implementation of HierS in any commercial or open-source package. We have implemented these tools in an open-source Java library \href{https://github.com/unmtransinfo/unm_biocomp_hscaf}{HScaf}\cite{Yang2012-qd} built on the JChem toolkit from ChemAxon.
+HierS, the hierarchical scaffold grouping algorithm\cite{Wilkens2005-ja} (9), is based on the molecular framework concept described by Bemis and Murcko\cite{Bemis1996-jg}. The ‘scaffold’ concept is central in medicinal chemistry and provides a chemically intuitive manner to visualize chemical classes, as ring-based linkages are central structural features in most (\textgreater 90\%) drug molecules. The algorithm relates any two compounds by their common shared scaffolds. Scaffolds generally have two advantages over MCS: (i) computational speed and (ii) chemical interpretability. To our knowledge, there is no currently available implementation of HierS in any commercial or open-source package. We have implemented these tools in an open-source Java library \href{https://github.com/unmtransinfo/unm_biocomp_hscaf}{HScaf} built on the JChem Base toolkit from ChemAxon\cite{ChemAxon2012-py}.
 
 \subsubsection{MCES}
 
@@ -456,6 +457,12 @@ In figure \ref{fig:tinx_01}, TIN-X displays targets for a selected disease class
     \includegraphics[width=\linewidth]{figures/tinx/TINX_SYNRG3articles_rev2.png}
     \caption{TIN-X articles for gene-disease association}
     \label{fig:tinx_02}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{figures/tinx/TIN-X_metagraph.png}
+    \caption{TIN-X metagraph}
+    \label{fig:tinx_metagraph}
 \end{figure}
 
 \subsection{Conclusions}
