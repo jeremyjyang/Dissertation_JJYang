@@ -1,0 +1,23 @@
+\begin{table}
+\caption{Data science terms: Wrangling}
+\begin{tabular}{p{0.3\linewidth}p{0.7\linewidth}}
+\hline
+\makecell[r]{\textbf{Data cleaning}} & Processing of files to fix or remove various kinds of errors and inconsistencies and prepare for analysis.  E.g. numerical values which are
+not interpretable as numbers, removal of cases with missing necessary values, values which are obvious errors (e.g. DOB in future).  E.g. converting problematic
+character encodings to ASCII or UTF-8.\\
+\makecell[r]{\textbf{Dirty data}} & Needs a lot of cleaning, maybe much of the overall effort.\\
+\makecell[r]{\textbf{Tidy data}} & Data organized and described well by metadata, such as in tables with well defined columns, and files with standard formats (e.g. CSV).\\
+\makecell[r]{\textbf{Data munging}} & Approximately: Various transformations to process data into clean and tidy files.  Converting among formats, parsing multiple fields from
+one delimited string, etc.\\
+\makecell[r]{\textbf{Noisy data}} & Data may be clean and tidy but the values may reflect much randomness, such as measurement error.  E.g. resting blood pressure measurements
+may vary a lot from the "true" value for a patient.\\
+\makecell[r]{\textbf{Data wrangling}} & Approximately: Various processes for cleaning, tidying, and transforming data into forms suitable for computation.\\
+\makecell[r]{\textbf{Data formats}} & File types used to contain and communicate data, such as JSON, XML, and CSV, but which can vary greatly within these and other general
+families.\\
+\makecell[r]{\textbf{Extract, Transform}\\ \textbf{and Load (ETL)}} & Common term describing the wrangling workflow for building a database from a data source.\\
+\makecell[r]{\textbf{Feature Extraction}} & Some types of raw data such as image or audio lack well defined features, which must be defined based on domain knowledge.\\
+\makecell[r]{\textbf{ML-Ready Dataset}} & After all the cleaning and other wrangling is done, and the dataset is an acceptable input file for the ML components, it is said to be
+ML-ready.  Many ML examples, tutorials and challenges (e.g. Kaggle) deal with ML-ready data only and ignore or minimize the importance of data wrangling.\\
+\hline
+\end{tabular}
+\end{table}
