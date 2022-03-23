@@ -33,7 +33,7 @@ We have combined the complementary strengths of LINCS and IDG to derive new drug
 \begin{table}
 \caption{Key concepts from LINCS and IDG}
 \label{table:LINCS-IDG-Conc}
-\begin{tabular}{|p{0.5\linewidth}|p{0.5\linewidth}|}
+\begin{tabular}{|p{0.45\linewidth}|p{0.45\linewidth}|}
 \hline
 \makecell[c]{\textbf{LINCS key concepts}} & \makecell[c]{\textbf{IDG key concepts}}\\
 \hline
@@ -52,7 +52,7 @@ We have combined the complementary strengths of LINCS and IDG to derive new drug
 \hline
 \multicolumn{2}{|c|}{\textbf{LINCS-IDG semantic linkage}}\\
 \hline
-\multicolumn{2}{|p{1.0\linewidth}|}{LINCS centers utilize in-depth gene and protein expression assays to generate signatures directly mappable to IDG protein targets. Disease and phenotype ontology mapping is a community challenge with useful, working solutions such as UMLS\cite{Bodenreider2004-gn}. LINCS perturbagens include rigorously defined chemical entities and small molecule drugs included in IDG resource DrugCentral. Therefore, LINCS’s vast number of human cell lines and experimental chemical perturbation datasets, combined with IDG’s protein targets (gene and protein IDs) and DrugCentral active pharmaceutical ingredients (drug compounds) databases, provide a tightly integrated combination resource for drug target discovery.}\\
+\multicolumn{2}{|p{0.9\linewidth}|}{LINCS centers utilize in-depth gene and protein expression assays to generate signatures directly mappable to IDG protein targets. Disease and phenotype ontology mapping is a community challenge with useful, working solutions such as UMLS\cite{Bodenreider2004-gn}. LINCS perturbagens include rigorously defined chemical entities and small molecule drugs included in IDG resource DrugCentral. Therefore, LINCS’s vast number of human cell lines and experimental chemical perturbation datasets, combined with IDG’s protein targets (gene and protein IDs) and DrugCentral active pharmaceutical ingredients (drug compounds) databases, provide a tightly integrated combination resource for drug target discovery.}\\
 \hline
 \end{tabular}
 \end{table}
@@ -296,11 +296,12 @@ Cypher query used for PD target association:\\
 \rule[0.5ex]{\linewidth}{1pt}
 \begin{singlespace}
 \begin{lstlisting}[caption=KGAP Cypher query,label=listing:kgap_01]
-MATCH p=(d:Drug)-[]-(s:Signature)-[r]-(g:Gene), p1=(s)-[]-(c:Cell)
-WHERE (d.pubchem_cid in [2130, 2381, 4167, 4601, 4850, 4919, 5095, 
-    5572, 6005, 6047, 23497, 26757, 30843, 31101,47811, 59227, 
-    77991, 119570, 131682, 1201549, 1201549, 3052776, 4659569, 
-    5281081, 10071196, 135565903])
+MATCH p=(d:Drug)-[]-(s:Signature)-[r]-(g:Gene),
+    p1=(s)-[]-(c:Cell)
+WHERE (d.pubchem_cid in [2130, 2381, 4167, 4601, 4850, 4919, 
+    5095, 5572, 6005, 6047, 23497, 26757, 30843, 31101, 47811, 
+    59227, 77991, 119570, 131682, 1201549, 1201549, 3052776, 
+    4659569, 5281081, 10071196, 135565903])
 WITH g, sum(r.zscore)/sqrt(count(r)) AS score
 RETURN g.id, g.name, score
 ORDER BY score DESC
@@ -324,7 +325,7 @@ Human interaction with the KG through an effective GUI can greatly facilitate un
 
 \section{Availability of data and materials}
 
-Source code for processing and analysis is available publicly under Creative Commons Zero v1.0 Universal license at  \href{https://github.com/IUIDSL/kgap\_lincs-idg}{https://github.com/IUIDSL/kgap\_lincs-idg}. A Knime workflow is employed to extract, transform and load the graph database from sources, and generate TSV files of nodes and relationships. The database is queried, and results reported and visualized using Python and Cypher. A full dump of the KGAP\_LINCS-IDG dataset is available at \href{https://cheminfov.informatics.indiana.edu/projects/kgap/data/dclneodb.dump}{https://cheminfov.informatics.indiana.edu/projects/kgap/data/dclneodb.dump}. Source datasets used to build Neo4j database are: (1) DrugCentral-LINCS database dump: \href{https://cheminfov.informatics.indiana.edu/projects/kgap/data/drugcentral\_lincs.pgdump}{https://cheminfov.informatics.indiana.edu/projects/kgap/data/drugcentral\_lincs.pgdump}; (2) TCRD targets: \href{https://cheminfov.informatics.indiana.edu/projects/kgap/data/tcrd\_targets.tsv.gz}{https://cheminfov.informatics.indiana.edu/projects/kgap/data/tcrd\_targets.tsv.gz}. Neo4j Community Edition, Python, Scikit-learn, Cytoscape and other packages used in this work are freely and easily findable and accessible.
+Source code for processing and analysis is available publicly under Creative Commons Zero v1.0 Universal license at  \href{https://github.com/IUIDSL/kgap\_lincs-idg}{https://github.com/IUIDSL/kgap\_lincs-idg}. A Knime workflow is employed to extract, transform and load the graph database from sources, and generate TSV files of nodes and relationships. The database is queried, and results reported and visualized using Python and Cypher. A \href{https://cheminfov.informatics.indiana.edu/projects/kgap/data/dclneodb.dump}{full dump of the KGAP\_LINCS-IDG dataset} is available. Source datasets used to build Neo4j database are: (1) \href{https://cheminfov.informatics.indiana.edu/projects/kgap/data/drugcentral\_lincs.pgdump}{DrugCentral-LINCS database dump}; (2) \href{https://cheminfov.informatics.indiana.edu/projects/kgap/data/tcrd\_targets.tsv.gz}{TCRD targets}. Neo4j Community Edition, Python, Scikit-learn, Cytoscape and other packages used in this work are freely and easily findable and accessible.
 
 \section{Researcher contributions}
 

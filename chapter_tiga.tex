@@ -152,7 +152,15 @@ To assess the quality of the TIGA gene–trait associations, we mapped the Ensem
 
 TIGA facilitates drug target illumination by currently scoring and ranking associations between protein-coding genes and GWAS traits. While not capturing the entire Catalog, the TIGA app can aggregate and filter GWAS findings for actionable intelligence, e.g., to enrich target prioritization via interactive plots and hitlists (figure \ref{fig:TIGA_app}), allowing users to identify the strongest associations supported by evidence.
 
-Hits are ranked by meanRankScore described in Methods. Scatterplot axes are Effect (OR or N\_beta) vs. Evidence as measured by meanRankScore. Plot markers may be sized by pValue or RCRAS. This app accepts "trait" and "gene" query parameters via URL, e.g. ?trait=EFO\_0004541, ?gene=ENSG00000075073, ?trait=EFO\_0004541\&gene=ENSG00000075073.  Gene markers are colored by Target Development Level (TDL)\cite{Oprea2018-cp}. TDL is a knowledge-based classification that bins human proteins into four categories: Tclin, mechanism-of-action designated targets via which approved drugs act\cite{Santos2017-sd,Ursu2019-hx,Avram2020-ff}; Tchem are proteins known to bind small molecules with high potency; Tbio includes proteins that have Gene Ontology\cite{Ashburner2000-aw} “leaf” (lowest level) experimental terms; or meet two of these conditions:  A fractional publication count\cite{Pafilis2013-ml} above 5, three or more Gene “Reference Into Function” annotations\cite{Mitchell2003-ty}, or 50 or more commercial antibodies in Antibodypedia\cite{Bjorling2008-ia}; Tdark are manually curated UniProtKB proteins that fail to place in any of the previous categories.
+Hits are ranked by meanRankScore described in Methods. Scatterplot axes are Effect (OR or N\_beta) vs. Evidence as measured by meanRankScore. Plot markers may be sized by pValue or RCRAS. This app accepts "trait" and "gene" query parameters via URL, e.g.
+\begin{singlespace}
+\begin{itemize}
+\item ?trait=EFO\_0004541
+\item ?gene=ENSG00000075073
+\item ?trait=EFO\_0004541\&gene=ENSG00000075073
+\end{itemize}
+\end{singlespace}
+Gene markers are colored by Target Development Level (TDL)\cite{Oprea2018-cp}. TDL is a knowledge-based classification that bins human proteins into four categories: Tclin, mechanism-of-action designated targets via which approved drugs act\cite{Santos2017-sd,Ursu2019-hx,Avram2020-ff}; Tchem are proteins known to bind small molecules with high potency; Tbio includes proteins that have Gene Ontology\cite{Ashburner2000-aw} “leaf” (lowest level) experimental terms; or meet two of these conditions:  A fractional publication count\cite{Pafilis2013-ml} above 5, three or more Gene “Reference Into Function” annotations\cite{Mitchell2003-ty}, or 50 or more commercial antibodies in Antibodypedia\cite{Bjorling2008-ia}; Tdark are manually curated UniProtKB proteins that fail to place in any of the previous categories.
 
 
 \begin{figure}
@@ -190,30 +198,30 @@ The main motivation of developing TIGA is to capture GWAS data when illuminating
 \hline
 \makecell[c]{\textbf{Family}} & \textbf{Tclin} & \textbf{Tchem} & \textbf{Tbio} & \textbf{Tdark} & \textbf{Total}\\
 \hline
-GPCR & 73 / 101 & 78 / 143 & 73 / 129 & 110 / 407 & 334 / 780\\
-Ion channel & 97 / 127 & 59 / 89 & 72 / 116 & 12 / 20 & 240 / 352\\
-Kinase & 57 / 66 & 278 / 360 & 97 / 133 & 12 / 20 & 444 / 579\\
-Calcium-binding  & 3 / 5 & 1 / 3 & 58 / 93 & 8 / 11 & 70 / 112\\
-Cell-cell junction & 0 / 0 & 0 / 0 & 22 / 49 & 8 / 12 & 30 / 61\\
-Cell adhesion & 0 / 1 & 0 / 2 & 23 / 52 & 6 / 15 & 29 / 70\\
-Cellular structure & 4 / 10 & 5 / 11 & 244 / 323 & 44 / 86 & 297 / 430\\
-Chaperone & 0 / 1 & 8 / 9 & 27 / 46 & 6 / 8 & 41 / 64\\
-Enzyme modulator & 4 / 5 & 25 / 44 & 376 / 532 & 50 / 101 & 455 / 682\\
-Enzyme & 69 / 104 & 277 / 387 & 1022 / 1553 & 177 / 332 & 1545 / 2376\\
-Epigenetic regulator & 9 / 13 & 41 / 55 & 16 / 22 & 0 / 1 & 66 / 91\\
-Extracellular & 0 / 1 & 0 / 1 & 50 / 57 & 8 / 9 & 58 / 68\\
-Immune response & 0 / 1 & 0 / 2 & 13 / 41 & 4 / 6 & 17 / 50\\
-Nuclear rec & 16 / 18 & 16 / 19 & 8 / 11 & 0 / 0 & 40 / 48\\
-Nucleic acid binding & 0 / 1 & 13 / 19 & 354 / 603 & 67 / 131 & 434 / 754\\
-Transcription factor & 1 / 2 & 12 / 16 & 385 / 557 & 73 / 163 & 471 / 738\\
-Transporter & 31 / 37 & 63 / 82 & 405 / 605 & 105 / 160 & 604 / 884\\
-Receptor & 20 / 24 & 6 / 12 & 157 / 225 & 27 / 55 & 210 / 316\\
-Signaling & 13 / 24 & 24 / 32 & 245 / 338 & 17 / 34 & 299 / 428\\
-Storage & 0 / 1 & 0 / 1 & 2 / 7 & 1 / 2 & 3 / 11\\
-Surfactant & 0 / 0 & 0 / 0 & 3 / 5 & 0 / 0 & 3 / 5\\
-Other & 95 / 134 & 233 / 337 & 3973 / 6131 & 1734 / 3416 & 6035 / 10018\\
+GPCR & 73/101 & 78/143 & 73/129 & 110/407 & 334/780\\
+Ion channel & 97/127 & 59/89 & 72/116 & 12/20 & 240/352\\
+Kinase & 57/66 & 278/360 & 97/133 & 12/20 & 444/579\\
+Calcium-binding  & 3/5 & 1/3 & 58/93 & 8/11 & 70/112\\
+Cell-cell junction & 0/0 & 0/0 & 22/49 & 8/12 & 30/61\\
+Cell adhesion & 0/1 & 0/2 & 23/52 & 6/15 & 29/70\\
+Cellular structure & 4/10 & 5/11 & 244/323 & 44/86 & 297/430\\
+Chaperone & 0/1 & 8/9 & 27/46 & 6/8 & 41/64\\
+Enzyme modulator & 4/5 & 25/44 & 376/532 & 50/101 & 455/682\\
+Enzyme & 69/104 & 277/387 & 1022/1553 & 177/332 & 1545/2376\\
+Epigenetic regulator & 9/13 & 41/55 & 16/22 & 0/1 & 66/91\\
+Extracellular & 0/1 & 0/1 & 50/57 & 8/9 & 58/68\\
+Immune response & 0/1 & 0/2 & 13/41 & 4/6 & 17/50\\
+Nuclear rec & 16/18 & 16/19 & 8/11 & 0/0 & 40/48\\
+Nucleic acid binding & 0/1 & 13/19 & 354/603 & 67/131 & 434/754\\
+Transcription factor & 1/2 & 12/16 & 385/557 & 73/163 & 471/738\\
+Transporter & 31/37 & 63/82 & 405/605 & 105/160 & 604/884\\
+Receptor & 20/24 & 6/12 & 157/225 & 27/55 & 210/316\\
+Signaling & 13/24 & 24/32 & 245/338 & 17/34 & 299/428\\
+Storage & 0/1 & 0/1 & 2/7 & 1/2 & 3/11\\
+Surfactant & 0/0 & 0/0 & 3/5 & 0/0 & 3/5\\
+Other & 95/134 & 233/337 & 3973/6131 & 1734/3416 & 6035/10018\\
 \hline
-Total & 492 / 676 & 1139 / 1624 & 7625 / 11628 & 2469 / 4989 & 11725 / 18917\\
+Total & 492/676 & 1139/1624 & 7625/11628 & 2469/4989 & 11725/18917\\
 \hline
 \end{tabular}
 \end{center}
